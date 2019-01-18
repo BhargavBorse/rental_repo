@@ -1,0 +1,234 @@
+HTTrack3.49-2+htsswf+htsjava launched on Thu, 27 Dec 2018 14:36:12 at http://your-dress.ancorathemes.com/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" http://your-dress.ancorathemes.com/ -O1 "C:\Users\Dharmesh Patel\Desktop\study\SE\Fashion & Freedom" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+14:39:45	Error: 	"Method Not Allowed" (405) at link your-dress.ancorathemes.com/xmlrpc.php (from your-dress.ancorathemes.com/)
+14:54:36	Warning: 	Link your-dress.ancorathemes.com/cdn-cgi/l/email-protection not scanned (follow robots meta tag)
+14:54:36	Warning: 	Moved Permanently for your-dress.ancorathemes.com/date-night/
+14:54:36	Warning: 	File has moved from your-dress.ancorathemes.com/date-night/ to http://your-dress.ancorathemes.com/services/date-night/
+14:54:36	Warning: 	Moved Permanently for your-dress.ancorathemes.com/prom/
+14:54:36	Warning: 	File has moved from your-dress.ancorathemes.com/prom/ to http://your-dress.ancorathemes.com/services/prom/
+14:54:36	Warning: 	Moved Permanently for your-dress.ancorathemes.com/wedding/
+14:54:36	Warning: 	File has moved from your-dress.ancorathemes.com/wedding/ to http://your-dress.ancorathemes.com/services/wedding/
+14:54:36	Warning: 	Moved Permanently for your-dress.ancorathemes.com/night-out/
+14:54:36	Warning: 	File has moved from your-dress.ancorathemes.com/night-out/ to http://your-dress.ancorathemes.com/services/night-out/
+14:54:36	Warning: 	Moved Permanently for your-dress.ancorathemes.com/dresses/
+14:54:36	Warning: 	File has moved from your-dress.ancorathemes.com/dresses/ to http://your-dress.ancorathemes.com/services/dresses/
+14:54:36	Error: 	"Bad Request" (400) at link your-dress.ancorathemes.com/wp-admin/admin-ajax.php (from your-dress.ancorathemes.com/)
+14:55:08	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/wp-content/plugins/trx_addons/css/controls.png (from your-dress.ancorathemes.com/wp-content/plugins/trx_addons/css/trx_addons.css)
+14:55:08	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/wp-content/themes/your-dress/images/woo/shop-cat-bg-1.jpg (from your-dress.ancorathemes.com/wp-content/themes/your-dress/css/__styles.css?ver=5.0.2)
+14:55:09	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/wp-content/themes/your-dress/images/woo/shop-cat-bg-2.jpg (from your-dress.ancorathemes.com/wp-content/themes/your-dress/css/__styles.css?ver=5.0.2)
+14:55:09	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/wp-content/themes/your-dress/images/woo/shop-cat-bg-3.jpg (from your-dress.ancorathemes.com/wp-content/themes/your-dress/css/__styles.css?ver=5.0.2)
+14:55:09	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/wp-content/themes/your-dress/images/woo/shop-cat-bg-4.jpg (from your-dress.ancorathemes.com/wp-content/themes/your-dress/css/__styles.css?ver=5.0.2)
+14:55:09	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/wp-content/themes/your-dress/images/woo/shop-cat-bg-5.jpg (from your-dress.ancorathemes.com/wp-content/themes/your-dress/css/__styles.css?ver=5.0.2)
+14:55:10	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/wp-content/themes/your-dress/images/woo/shop-cat-bg-6.jpg (from your-dress.ancorathemes.com/wp-content/themes/your-dress/css/__styles.css?ver=5.0.2)
+14:55:10	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=90
+14:55:10	Warning: 	File has moved from your-dress.ancorathemes.com/?p=90 to http://your-dress.ancorathemes.com/contacts/
+14:55:10	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=336
+14:55:10	Warning: 	File has moved from your-dress.ancorathemes.com/?p=336 to http://your-dress.ancorathemes.com/home-2/
+14:55:10	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=675
+14:55:10	Warning: 	File has moved from your-dress.ancorathemes.com/?p=675 to http://your-dress.ancorathemes.com/home-3/
+14:55:10	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=84
+14:55:10	Warning: 	File has moved from your-dress.ancorathemes.com/?p=84 to http://your-dress.ancorathemes.com/rent-a-dress/
+14:55:23	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=88
+14:55:23	Warning: 	File has moved from your-dress.ancorathemes.com/?p=88 to http://your-dress.ancorathemes.com/occasions/
+14:56:16	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/classic-1-column/%22https:/player.vimeo.com/video/47664227?autoplay=1%22 (from your-dress.ancorathemes.com/classic-1-column/)
+14:56:47	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=80
+14:56:47	Warning: 	File has moved from your-dress.ancorathemes.com/?p=80 to http://your-dress.ancorathemes.com/about-us-style-1/
+14:57:00	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=82
+14:57:00	Warning: 	File has moved from your-dress.ancorathemes.com/?p=82 to http://your-dress.ancorathemes.com/about-us-style-2/
+14:57:25	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=143
+14:57:25	Warning: 	File has moved from your-dress.ancorathemes.com/?p=143 to http://your-dress.ancorathemes.com/grid/
+14:57:25	Warning: 	Retry after error -4 (Incorrect length (332361 Bytes, 418124 expected)) at link your-dress.ancorathemes.com/wp-content/uploads/2017/03/image-1.jpg (from your-dress.ancorathemes.com/grid/)
+14:57:26	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=149
+14:57:26	Warning: 	File has moved from your-dress.ancorathemes.com/?p=149 to http://your-dress.ancorathemes.com/masonry/
+14:58:03	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=145
+14:58:03	Warning: 	File has moved from your-dress.ancorathemes.com/?p=145 to http://your-dress.ancorathemes.com/cobbles/
+14:58:03	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=210
+14:58:03	Warning: 	File has moved from your-dress.ancorathemes.com/?p=210 to http://your-dress.ancorathemes.com/typography/
+14:58:03	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=208
+14:58:03	Warning: 	File has moved from your-dress.ancorathemes.com/?p=208 to http://your-dress.ancorathemes.com/shortcodes/
+14:58:03	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/shortcodes/%22https:/player.vimeo.com/video/47664227?autoplay=1%22 (from your-dress.ancorathemes.com/shortcodes/)
+14:58:03	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=814
+14:58:03	Warning: 	File has moved from your-dress.ancorathemes.com/?p=814 to http://your-dress.ancorathemes.com/privacy-policy/
+14:58:07	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=172
+14:58:07	Warning: 	File has moved from your-dress.ancorathemes.com/?p=172 to http://your-dress.ancorathemes.com/services/dresses/
+14:58:40	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=170
+14:58:40	Warning: 	File has moved from your-dress.ancorathemes.com/?p=170 to http://your-dress.ancorathemes.com/services/accessories/
+14:58:40	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=168
+14:58:40	Warning: 	File has moved from your-dress.ancorathemes.com/?p=168 to http://your-dress.ancorathemes.com/services/handbags/
+14:58:40	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=166
+14:58:40	Warning: 	File has moved from your-dress.ancorathemes.com/?p=166 to http://your-dress.ancorathemes.com/services/designer-clothing/
+14:58:42	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=275
+14:58:42	Warning: 	File has moved from your-dress.ancorathemes.com/?p=275 to http://your-dress.ancorathemes.com/product/occasion-dress/
+14:58:46	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=269
+14:58:46	Warning: 	File has moved from your-dress.ancorathemes.com/?p=269 to http://your-dress.ancorathemes.com/product/white-dress/
+14:58:49	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=263
+14:58:49	Warning: 	File has moved from your-dress.ancorathemes.com/?p=263 to http://your-dress.ancorathemes.com/product/skinny-dress/
+14:58:51	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=257
+14:58:51	Warning: 	File has moved from your-dress.ancorathemes.com/?p=257 to http://your-dress.ancorathemes.com/product/maxi-dress/
+14:58:51	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=251
+14:58:51	Warning: 	File has moved from your-dress.ancorathemes.com/?p=251 to http://your-dress.ancorathemes.com/product/oversized-dress/
+14:58:52	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=244
+14:58:52	Warning: 	File has moved from your-dress.ancorathemes.com/?p=244 to http://your-dress.ancorathemes.com/product/cocktail-dress/
+14:58:52	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=215
+14:58:52	Warning: 	File has moved from your-dress.ancorathemes.com/?p=215 to http://your-dress.ancorathemes.com/product/zoe-dress/
+14:58:52	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=232
+14:58:52	Warning: 	File has moved from your-dress.ancorathemes.com/?p=232 to http://your-dress.ancorathemes.com/product/multiway-dress/
+14:58:53	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=228
+14:58:53	Warning: 	File has moved from your-dress.ancorathemes.com/?p=228 to http://your-dress.ancorathemes.com/product/gold-clutch-bag/
+14:58:53	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=224
+14:58:53	Warning: 	File has moved from your-dress.ancorathemes.com/?p=224 to http://your-dress.ancorathemes.com/product/gold-bracelet/
+14:58:53	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=220
+14:58:53	Warning: 	File has moved from your-dress.ancorathemes.com/?p=220 to http://your-dress.ancorathemes.com/product/studded-bag/
+14:58:54	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=238
+14:58:54	Warning: 	File has moved from your-dress.ancorathemes.com/?p=238 to http://your-dress.ancorathemes.com/product/black-bag/
+14:58:54	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=140
+14:58:54	Warning: 	File has moved from your-dress.ancorathemes.com/?p=140 to http://your-dress.ancorathemes.com/wedding-inspiration/
+14:58:55	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/author/anc_admin/%22https:/player.vimeo.com/video/47664227?autoplay=1%22 (from your-dress.ancorathemes.com/author/anc_admin/)
+14:58:55	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=137
+14:58:55	Warning: 	File has moved from your-dress.ancorathemes.com/?p=137 to http://your-dress.ancorathemes.com/100-beauty-tips/
+14:58:55	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=134
+14:58:55	Warning: 	File has moved from your-dress.ancorathemes.com/?p=134 to http://your-dress.ancorathemes.com/your-travel-style/
+14:59:05	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=421
+14:59:05	Warning: 	File has moved from your-dress.ancorathemes.com/?p=421 to http://your-dress.ancorathemes.com/my-account/
+14:59:06	Warning: 	Moved Permanently for your-dress.ancorathemes.com/shop/page/1/
+14:59:06	Warning: 	File has moved from your-dress.ancorathemes.com/shop/page/1/ to http://your-dress.ancorathemes.com/shop/
+14:59:06	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=75
+14:59:06	Warning: 	File has moved from your-dress.ancorathemes.com/?p=75 to http://your-dress.ancorathemes.com/15-easy-and-stylish-casual-summer-outfits/
+14:59:06	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=60
+14:59:06	Warning: 	File has moved from your-dress.ancorathemes.com/?p=60 to http://your-dress.ancorathemes.com/wedding-fashion-beauty-style-ideas/
+14:59:07	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=56
+14:59:07	Warning: 	File has moved from your-dress.ancorathemes.com/?p=56 to http://your-dress.ancorathemes.com/how-to-pick-the-right-handbag-for-lifestyle/
+14:59:07	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=53
+14:59:07	Warning: 	File has moved from your-dress.ancorathemes.com/?p=53 to http://your-dress.ancorathemes.com/how-to-find-affordable-bridesmaid-dresses/
+14:59:07	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=50
+14:59:07	Warning: 	File has moved from your-dress.ancorathemes.com/?p=50 to http://your-dress.ancorathemes.com/why-you-should-wear-interesting-accessories/
+14:59:07	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=47
+14:59:07	Warning: 	File has moved from your-dress.ancorathemes.com/?p=47 to http://your-dress.ancorathemes.com/the-little-black-dress-the-fashion-historian/
+14:59:07	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=44
+14:59:07	Warning: 	File has moved from your-dress.ancorathemes.com/?p=44 to http://your-dress.ancorathemes.com/the-new-shoes-are-sure-to-make-you-smile/
+14:59:07	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=41
+14:59:07	Warning: 	File has moved from your-dress.ancorathemes.com/?p=41 to http://your-dress.ancorathemes.com/celebrity-style-and-fashion-trend-coverage/
+14:59:07	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=38
+14:59:07	Warning: 	File has moved from your-dress.ancorathemes.com/?p=38 to http://your-dress.ancorathemes.com/9-ways-to-make-your-clothes-look-more-expensive/
+14:59:07	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=35
+14:59:07	Warning: 	File has moved from your-dress.ancorathemes.com/?p=35 to http://your-dress.ancorathemes.com/top-10-best-fashion-designers-of-all-time/
+14:59:07	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/category/beauty/%22https:/player.vimeo.com/video/47664227?autoplay=1%22 (from your-dress.ancorathemes.com/category/beauty/)
+14:59:08	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=70
+14:59:08	Warning: 	File has moved from your-dress.ancorathemes.com/?p=70 to http://your-dress.ancorathemes.com/birthday-dresses-for-women/
+14:59:08	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=66
+14:59:08	Warning: 	File has moved from your-dress.ancorathemes.com/?p=66 to http://your-dress.ancorathemes.com/get-ready-for-fall-fashion/
+14:59:12	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=63
+14:59:12	Warning: 	File has moved from your-dress.ancorathemes.com/?p=63 to http://your-dress.ancorathemes.com/the-7-biggest-trends-of-the-oscars-red-carpet/
+14:59:12	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/tag/clothes/%22https:/player.vimeo.com/video/47664227?autoplay=1%22 (from your-dress.ancorathemes.com/tag/clothes/)
+14:59:12	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/tag/dresses/%22https:/player.vimeo.com/video/47664227?autoplay=1%22 (from your-dress.ancorathemes.com/tag/dresses/)
+14:59:13	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/tag/girl/%22https:/player.vimeo.com/video/47664227?autoplay=1%22 (from your-dress.ancorathemes.com/tag/girl/)
+14:59:14	Error: 	"Not Found" (404) at link your-dress.ancorathemes.com/tag/jewelry/%22https:/player.vimeo.com/video/47664227?autoplay=1%22 (from your-dress.ancorathemes.com/tag/jewelry/)
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=32
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=32 to http://your-dress.ancorathemes.com/the-best-dressed-celebrities-of-the-week/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=28
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=28 to http://your-dress.ancorathemes.com/the-8-best-look-pretty-tips-ever/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=161
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=161 to http://your-dress.ancorathemes.com/team/linda-grosh/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=159
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=159 to http://your-dress.ancorathemes.com/team/miranda-green/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=157
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=157 to http://your-dress.ancorathemes.com/team/tim-brook/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=188
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=188 to http://your-dress.ancorathemes.com/services/wedding/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=186
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=186 to http://your-dress.ancorathemes.com/services/gala/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=184
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=184 to http://your-dress.ancorathemes.com/services/mardi-gras/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=182
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=182 to http://your-dress.ancorathemes.com/services/valentines-day/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=523
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=523 to http://your-dress.ancorathemes.com/appointment/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=76
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=76 to http://your-dress.ancorathemes.com/15-easy-and-stylish-casual-summer-outfits/image-1/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=147
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=147 to http://your-dress.ancorathemes.com/image-17/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=54
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=54 to http://your-dress.ancorathemes.com/how-to-find-affordable-bridesmaid-dresses/image-6/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=51
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=51 to http://your-dress.ancorathemes.com/why-you-should-wear-interesting-accessories/image-7/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=49
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=49 to http://your-dress.ancorathemes.com/the-little-black-dress-the-fashion-historian/image-8/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=45
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=45 to http://your-dress.ancorathemes.com/the-new-shoes-are-sure-to-make-you-smile/image-9/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=39
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=39 to http://your-dress.ancorathemes.com/9-ways-to-make-your-clothes-look-more-expensive/image-11/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=36
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=36 to http://your-dress.ancorathemes.com/top-10-best-fashion-designers-of-all-time/image-12/
+14:59:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=148
+14:59:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=148 to http://your-dress.ancorathemes.com/image-18/
+14:59:18	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=33
+14:59:18	Warning: 	File has moved from your-dress.ancorathemes.com/?p=33 to http://your-dress.ancorathemes.com/the-best-dressed-celebrities-of-the-week/image-2/
+14:59:18	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=29
+14:59:18	Warning: 	File has moved from your-dress.ancorathemes.com/?p=29 to http://your-dress.ancorathemes.com/the-8-best-look-pretty-tips-ever/image-13/
+14:59:18	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=42
+14:59:18	Warning: 	File has moved from your-dress.ancorathemes.com/?p=42 to http://your-dress.ancorathemes.com/celebrity-style-and-fashion-trend-coverage/image-10/
+14:59:26	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=174
+14:59:26	Warning: 	File has moved from your-dress.ancorathemes.com/?p=174 to http://your-dress.ancorathemes.com/services/night-out/
+15:00:03	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=773
+15:00:03	Warning: 	File has moved from your-dress.ancorathemes.com/?p=773 to http://your-dress.ancorathemes.com/wishlist/
+15:00:04	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=180
+15:00:04	Warning: 	File has moved from your-dress.ancorathemes.com/?p=180 to http://your-dress.ancorathemes.com/services/date-night/
+15:00:07	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=178
+15:00:07	Warning: 	File has moved from your-dress.ancorathemes.com/?p=178 to http://your-dress.ancorathemes.com/services/prom/
+15:00:08	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=61
+15:00:08	Warning: 	File has moved from your-dress.ancorathemes.com/?p=61 to http://your-dress.ancorathemes.com/wedding-fashion-beauty-style-ideas/image-3/
+15:00:08	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=281
+15:00:08	Warning: 	File has moved from your-dress.ancorathemes.com/?p=281 to http://your-dress.ancorathemes.com/gallery-1/
+15:00:14	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=176
+15:00:14	Warning: 	File has moved from your-dress.ancorathemes.com/?p=176 to http://your-dress.ancorathemes.com/services/engagement-party/
+15:00:15	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=282
+15:00:15	Warning: 	File has moved from your-dress.ancorathemes.com/?p=282 to http://your-dress.ancorathemes.com/gallery-2/
+15:00:25	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=283
+15:00:25	Warning: 	File has moved from your-dress.ancorathemes.com/?p=283 to http://your-dress.ancorathemes.com/gallery-3/
+15:00:31	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=284
+15:00:31	Warning: 	File has moved from your-dress.ancorathemes.com/?p=284 to http://your-dress.ancorathemes.com/gallery-4/
+15:00:38	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=285
+15:00:38	Warning: 	File has moved from your-dress.ancorathemes.com/?p=285 to http://your-dress.ancorathemes.com/gallery-5/
+15:00:44	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=302
+15:00:44	Warning: 	File has moved from your-dress.ancorathemes.com/?p=302 to http://your-dress.ancorathemes.com/bg-9/
+15:00:48	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=303
+15:00:48	Warning: 	File has moved from your-dress.ancorathemes.com/?p=303 to http://your-dress.ancorathemes.com/bg-8/
+15:00:55	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=352
+15:00:55	Warning: 	File has moved from your-dress.ancorathemes.com/?p=352 to http://your-dress.ancorathemes.com/7_supporta/
+15:01:01	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=353
+15:01:01	Warning: 	File has moved from your-dress.ancorathemes.com/?p=353 to http://your-dress.ancorathemes.com/7_support-updated-tablet/
+15:01:08	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=354
+15:01:08	Warning: 	File has moved from your-dress.ancorathemes.com/?p=354 to http://your-dress.ancorathemes.com/inmotion/
+15:01:13	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=355
+15:01:13	Warning: 	File has moved from your-dress.ancorathemes.com/?p=355 to http://your-dress.ancorathemes.com/mediatemple/
+15:01:17	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=358
+15:01:17	Warning: 	File has moved from your-dress.ancorathemes.com/?p=358 to http://your-dress.ancorathemes.com/cideoclipart/
+15:01:23	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=359
+15:01:23	Warning: 	File has moved from your-dress.ancorathemes.com/?p=359 to http://your-dress.ancorathemes.com/cideoclipart2/
+15:01:27	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=360
+15:01:27	Warning: 	File has moved from your-dress.ancorathemes.com/?p=360 to http://your-dress.ancorathemes.com/cideoclipart3/
+15:01:32	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=362
+15:01:32	Warning: 	File has moved from your-dress.ancorathemes.com/?p=362 to http://your-dress.ancorathemes.com/cideoclipart4/
+15:01:36	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=429
+15:01:36	Warning: 	File has moved from your-dress.ancorathemes.com/?p=429 to http://your-dress.ancorathemes.com/favicon/
+15:01:40	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=431
+15:01:40	Warning: 	File has moved from your-dress.ancorathemes.com/?p=431 to http://your-dress.ancorathemes.com/logo/
+15:01:44	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=614
+15:01:44	Warning: 	File has moved from your-dress.ancorathemes.com/?p=614 to http://your-dress.ancorathemes.com/slide1/
+15:01:49	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=615
+15:01:49	Warning: 	File has moved from your-dress.ancorathemes.com/?p=615 to http://your-dress.ancorathemes.com/slide2/
+15:01:56	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=616
+15:01:56	Warning: 	File has moved from your-dress.ancorathemes.com/?p=616 to http://your-dress.ancorathemes.com/slide4/
+15:02:01	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=810
+15:02:01	Warning: 	File has moved from your-dress.ancorathemes.com/?p=810 to http://your-dress.ancorathemes.com/favicon-2/
+15:02:05	Warning: 	Moved Permanently for your-dress.ancorathemes.com/?p=811
+15:02:05	Warning: 	File has moved from your-dress.ancorathemes.com/?p=811 to http://your-dress.ancorathemes.com/cropped-favicon-png/
+
+HTTrack Website Copier/3.49-2 mirror complete in 25 minutes 53 seconds : 1036 links scanned, 915 files written (57392958 bytes overall) [33866828 bytes received at 21807 bytes/sec], 33293671 bytes transferred using HTTP compression in 488 files, ratio 25%, 11.6 requests per connection
+(17 errors, 206 warnings, 0 messages)

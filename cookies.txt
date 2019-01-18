@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.ancorathemes.com	TRUE	/	FALSE	1999999999	__cfduid	dac64044cb33a531cfdfb74edcf61a4571545901571
+your-dress.ancorathemes.com	TRUE	/	FALSE	1999999999	yith_wcwl_products	%7B%220%22%3A%7B%22prod_id%22%3A%22228%22%2C%22quantity%22%3A1%2C%22wishlist_id%22%3Afalse%2C%22dateadded%22%3A%222018-12-27+09%3A23%3A25%22%7D%2C%223%22%3A%7B%22prod_id%22%3A%22238%22%2C%22quantity%22%3A1%2C%22wishlist_id%22%3Afalse%2C%22dateadded%22%3A%222018-12-27+09%3A24%3A02%22%7D%7D
+
