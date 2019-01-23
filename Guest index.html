@@ -2,7 +2,7 @@
 <html lang="zxx">
 
 <head>
-    <title>Fashion Hub Ecommerce Category Bootstrap Responsive Website Template| Home :: w3layouts</title>
+    <title>F4F</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
     
@@ -29,6 +29,8 @@
     <link href="//fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
     <!-- //online-fonts -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 </head>
 
 <body>
@@ -1810,7 +1812,7 @@
                             <img src="images/p3.png" class="img-fluid" alt="login_image" />
                         </div>
                         <div class="col-md-6">
-                            <form action="#" method="post">
+                            <!-- <form action="#" method="post">
                                 <div class="form-group">
                                     <label for="recipient-name1" class="col-form-label">Your Name</label>
                                     <input type="text" class="form-control" placeholder=" " name="Name" id="recipient-name1" required="">
@@ -1837,11 +1839,13 @@
                                 <div class="right-w3l">
                                     <input type="submit" class="form-control" value="Register">
                                 </div>
-                            </form>
-                            <p class="text-center mt-3">Already a member?
+                            </form> -->
+                            <div id="firebaseui-auth-container"></div>
+                            <div id="loader">Loading...</div>
+                            <!-- <p class="text-center mt-3">Already a member?
                                 <a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-dark login_btn">
                                     Login Now</a>
-                            </p>
+                            </p> -->
                         </div>
                     </div>
                 </div>
@@ -2031,6 +2035,29 @@
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.js"></script>
+
+    <script src="js/bootstrap.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+    
+<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBCXYBy-ry760TM9x-CEsLzIgoZJ3ucv4g",
+    authDomain: "trial-c2b17.firebaseapp.com",
+    databaseURL: "https://trial-c2b17.firebaseio.com",
+    projectId: "trial-c2b17",
+    storageBucket: "trial-c2b17.appspot.com",
+    messagingSenderId: "181878503934"
+  };
+  firebase.initializeApp(config);
+</script>
+<script type="text/javascript" src="js_files/login.js"></script>
 </body>
 
 </html>
