@@ -276,7 +276,7 @@ h3.agile_btxt {
 h3.agile_btxt span {
     font-size: 3em;
     text-transform: uppercase;
-    color: #f0475f;
+    color: skyblue;
     font-family: 'Elsie Swash Caps', cursive;
 }
 
@@ -897,12 +897,12 @@ form.f-color .form-control {
 }
 
 .footer-copy_w3ls {
-    background: #d8e9fa;
+    background: #000000;
 }
 
 .w3agile_footer_copy {
     padding: 1em 0;
-    background: #02a388;
+    background: #000;
 }
 
 .footerv2-w3ls h5 {
@@ -1387,7 +1387,7 @@ ul.bottom-links-agile li a {
 .testi-w3agileinfo .nav-tabs li a {
     text-decoration: none;
     outline: none;
-    -webkit-transition: 0.5s all;
+    /* -webkit-transition: 0.5s all; */
     padding: 0;
     margin: 0;
     border: none;
@@ -1846,7 +1846,7 @@ ul.bottom-links-agile li a {
         font-size: 1.5em;
     }
     h3.agile_btxt {
-        font-size: 1.7em;
+        font-size: 2em;
     }
     .sub-some .list-inline-item {
         margin: 0.5rem 0 0;
