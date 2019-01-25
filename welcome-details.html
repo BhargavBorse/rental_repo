@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>F4F - Feedback</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Fashion Hub Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+        
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <!-- shop css -->
+    <link href="css/shop.css" type="text/css" rel="stylesheet" media="all">
+    <!-- Owl Stylesheets -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+    <!-- //online-fonts -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    
+    <style>
+        @media screen and (max-width: 450px){
+            .img-feed{
+                visibility:hidden;
+            }
+            .heading{
+                /* margin-right: 10% !important; */
+                font-size: 20pt;
+            }
+        }
+        /* .heading{
+            margin-left: 25%;
+        } */
+        
+        .parallax { 
+            /* The image used */
+            background-image: url("images/bann1.jpg");
+            
+            /* Set a specific height */
+            height: 100%;; 
+            
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .bgx{
+            /* background-color: rgba(255, 255, 255, 0.8); */
+            background-color: rgba(34, 31, 32, 0.87);
+            padding: 35px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body class="parallax">
+    <!-- header -->
+    <header>
+        <div class="container">
+            <!-- top nav -->
+            <nav class="top_nav d-flex pt-3 pb-1">
+                <!-- logo -->
+                <h1 class="heading">
+                    <a href="">W</a>elcome to 
+                    <a href="">F</a>reedom for
+                    <a href="">F</a>ashion
+                </h1>
+                <!-- //logo -->
+                
+            </nav>
+            <!-- //top nav -->
+            
+        </div>
+        <!-- //header container -->
+    </header>
+    <!-- //header -->
+	<!-- inner banner -->
+	<div class="pt-sm-5 pt-3">
+        <section class="wthree-row pt-3 pb-sm-5 w3-contact">
+            <div class="container py-sm-1 pb-1">
+                <h5 class="head_agileinfo text-capitalize pb-3">
+                    <span>D</span>etails</h5>
+                    <div class="row contact-form pt-lg-1">
+                        <div class="col-lg-8 wthree-form-center">
+                            <!-- contact form grid -->
+                            <div class="contact-top1">
+                                <!-- <h5 class="text-dark mb-4 text-capitalize">Fill the given </h5> -->
+                                <form class="bgx" action="index.html" method="get" >
+                                    <div class="form-group">
+                                        <label style="color:white;">Name</label>
+                                        <input style="background-color:white;" type="text" class="form-control" id="contactusername" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contactemail" style="color:white;">Email</label>
+                                        <h5><a style="color:white;" id="user_email"></a></h5>
+                                        <!-- <input style="background-color:white;" type="Email" class="form-control Email" id="user_email" readonly> -->
+                                        <!-- <input type="text" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" style="color:black; border: hidden;" placeholder="Created By" class="form-control" id="created_by" style="color: white;" required readonly> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contactemail" style="color:white;">Phone Number</label>
+                                        <input style="background-color:white;" type="number" class="form-control" id="contactemail" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="color:white;">Address</label>
+                                        <input style="background-color:white;" type="text" class="form-control" id="contactusername" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="color:white;">Pin Code</label>
+                                        <input style="background-color:white;" type="text" class="form-control" id="contactusername" required>
+                                    </div>
+                                    
+                                    <button style="width:30%;" type="submit" class="btn btn-info btn-block">Submit</button>
+                                </form>
+                            </div>
+                            <!--  //contact form grid ends here -->
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </section>
+            
+        </div>
+        
+        
+                <!-- js -->
+                <script src="js/jquery-2.2.3.min.js"></script>
+                <!-- //js -->
+               
+                <!-- script for password match -->
+                <!-- <script>
+                    window.onload = function () {
+                        document.getElementById("password1").onchange = validatePassword;
+                        document.getElementById("password2").onchange = validatePassword;
+                    }
+                    
+                    function validatePassword() {
+                        var pass2 = document.getElementById("password2").value;
+                        var pass1 = document.getElementById("password1").value;
+                        if (pass1 != pass2)
+                        document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+                        else
+                        document.getElementById("password2").setCustomValidity('');
+                        //empty string means no validation error
+                    }
+                </script> -->
+                <!-- script for password match -->
+               
+                <!-- start-smooth-scrolling -->
+                <script src="js/move-top.js"></script>
+                <script src="js/easing.js"></script>
+                <script>
+                    jQuery(document).ready(function ($) {
+                        $(".scroll").click(function (event) {
+                            event.preventDefault();
+                            
+                            $('html,body').animate({
+                                scrollTop: $(this.hash).offset().top
+                            }, 1000);
+                        });
+                    });
+                </script>
+                <!-- //end-smooth-scrolling -->
+                <!-- smooth-scrolling-of-move-up -->
+                <script>
+                    $(document).ready(function () {
+                        /*
+                        var defaults = {
+                            containerID: 'toTop', // fading element id
+                            containerHoverID: 'toTopHover', // fading element hover id
+                            scrollSpeed: 1200,
+                            easingType: 'linear' 
+                        };
+                        */
+                        
+                        $().UItoTop({
+                            easingType: 'easeOutQuart'
+                        });
+                        
+                    });
+                </script>
+                <script src="js/SmoothScroll.min.js"></script>
+                <!-- //smooth-scrolling-of-move-up -->
+                <!-- Bootstrap core JavaScript
+                    ================================================== -->
+                    <!-- Placed at the end of the document so the pages load faster -->
+                    <script src="js/bootstrap.js"></script>
+                    
+                    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+                    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+                    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+                    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+                    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+                    
+                    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+                    <script>
+                        // Initialize Firebase
+                        var config = {
+                            apiKey: "AIzaSyBCXYBy-ry760TM9x-CEsLzIgoZJ3ucv4g",
+                            authDomain: "trial-c2b17.firebaseapp.com",
+                            databaseURL: "https://trial-c2b17.firebaseio.com",
+                            projectId: "trial-c2b17",
+                            storageBucket: "trial-c2b17.appspot.com",
+                            messagingSenderId: "181878503934"
+                        };
+                        firebase.initializeApp(config);
+                    </script>
+                    <!-- <script type="text/javascript" src="js_files/login.js"></script> -->
+                    <!-- <script type="text/javascript" src="js_files/index.js"></script> -->
+                    <script>
+                        var eventRef = firebase.database().ref('users');
+                        
+                        firebase.auth().onAuthStateChanged(function(user) {
+                            if (user) {
+                                // User is signed in.
+                                // console.log(user.uid);
+                                // console.log(user.email);
+                                eventRef.child(user.uid).child('details').update({
+                                    email : user.email
+                                });
+                                var nav_user_prof = document.getElementById('user_email');
+                                nav_user_prof.innerHTML = user.email;
+                                
+                            } else {
+                                // No user is signed in.
+                                window.alert('Sorry! No user has been signed in. Please try logging in again');
+                                window.location = 'Guest index.html';
+                            }
+                        });
+                        
+                    </script>
+                </body>
+                
+                </html>
