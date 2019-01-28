@@ -95,36 +95,38 @@
             <div class="container py-sm-1 pb-1">
                 <h5 class="head_agileinfo text-capitalize pb-3">
                     <span>D</span>etails</h5>
+                    Fill the details to proceed.
                     <div class="row contact-form pt-lg-1">
                         <div class="col-lg-8 wthree-form-center">
                             <!-- contact form grid -->
                             <div class="contact-top1">
                                 <!-- <h5 class="text-dark mb-4 text-capitalize">Fill the given </h5> -->
-                                <form class="bgx" action="index.html" method="get" >
+                                <form class="bgx">
                                     <div class="form-group">
                                         <label style="color:white;">Name</label>
-                                        <input style="background-color:white;" type="text" class="form-control" id="contactusername" required>
+                                        <input style="background-color:white;" type="text" class="form-control" id="name" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="contactemail" style="color:white;">Email</label>
-                                        <h5><a style="color:white;" id="user_email"></a></h5>
-                                        <!-- <input style="background-color:white;" type="Email" class="form-control Email" id="user_email" readonly> -->
+                                        <!-- <h5><a style="color:white;" id="user_email"></a></h5> -->
+                                        <input style="background-color:white;" type="Email" class="form-control Email" id="user_email" readonly>
                                         <!-- <input type="text" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" style="color:black; border: hidden;" placeholder="Created By" class="form-control" id="created_by" style="color: white;" required readonly> -->
                                     </div>
                                     <div class="form-group">
-                                        <label for="contactemail" style="color:white;">Phone Number</label>
-                                        <input style="background-color:white;" type="number" class="form-control" id="contactemail" required>
+                                        <label for="contactemail" style="color:white;">Phone Number (xxxx-xxx-xxx)</label>
+                                        <input style="background-color:white;" pattern="^\d{4}\d{3}\d{3}$" type="tel" class="form-control" id="phone_no" required>
+                                        <!-- <input type="tel" id="phone"  name="phone" required> -->
                                     </div>
                                     <div class="form-group">
                                         <label style="color:white;">Address</label>
-                                        <input style="background-color:white;" type="text" class="form-control" id="contactusername" required>
+                                        <input style="background-color:white;" type="text" class="form-control" id="address" required>
                                     </div>
                                     <div class="form-group">
-                                        <label style="color:white;">Pin Code</label>
-                                        <input style="background-color:white;" type="text" class="form-control" id="contactusername" required>
+                                        <label style="color:white;">Pin Code (000-000)</label>
+                                        <input style="background-color:white;" pattern="[0-9]{6}" type="text" class="form-control" id="pin_code" required>
                                     </div>
                                     
-                                    <button style="width:30%;" type="submit" class="btn btn-info btn-block">Submit</button>
+                                    <button style="width:30%;" type="button" id="wd_form_submit" class="btn btn-info btn-block">Submit</button>
                                 </form>
                             </div>
                             <!--  //contact form grid ends here -->
@@ -221,29 +223,8 @@
                         firebase.initializeApp(config);
                     </script>
                     <!-- <script type="text/javascript" src="js_files/login.js"></script> -->
-                    <!-- <script type="text/javascript" src="js_files/index.js"></script> -->
-                    <script>
-                        var eventRef = firebase.database().ref('users');
-                        
-                        firebase.auth().onAuthStateChanged(function(user) {
-                            if (user) {
-                                // User is signed in.
-                                // console.log(user.uid);
-                                // console.log(user.email);
-                                eventRef.child(user.uid).child('details').update({
-                                    email : user.email
-                                });
-                                var nav_user_prof = document.getElementById('user_email');
-                                nav_user_prof.innerHTML = user.email;
-                                
-                            } else {
-                                // No user is signed in.
-                                window.alert('Sorry! No user has been signed in. Please try logging in again');
-                                window.location = 'Guest index.html';
-                            }
-                        });
-                        
-                    </script>
+                    <script type="text/javascript" src="js_files/welcome-details.js"></script>
+                    
                 </body>
                 
                 </html>

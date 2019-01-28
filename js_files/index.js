@@ -5,12 +5,23 @@ firebase.auth().onAuthStateChanged(function(user) {
         // User is signed in.
         // console.log(user.uid);
         // console.log(user.email);
-        eventRef.child(user.uid).child('details').update({
-            email : user.email
+        eventRef.child(user.uid).child('details').on('value',function(return_value){
+            return_value_value = return_value.val();
+            console.log(return_value_value);
+            if(return_value_value === null){
+                window.location = 'welcome-details.html';
+            }
+            else
+            {
+                eventRef.child(user.uid).child('details').update({
+                    email : user.email
+                });
+            }
         });
-        var nav_user_prof = document.getElementById('user_email');
-        nav_user_prof.innerHTML = user.email;
-
+        
+        
+        document.getElementById('user_email').innerHTML = user.email;
+        
     } else {
         // No user is signed in.
         window.alert('Sorry! No user has been signed in. Please try logging in again');
@@ -27,5 +38,5 @@ function logout_user(){
         // An error happened.
         alert('Please try again');
     });
-
+    
 }
