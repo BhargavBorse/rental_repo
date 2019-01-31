@@ -2,7 +2,7 @@
 <html lang="zxx">
 
 <head>
-    <title>Fashion Hub Ecommerce Category Bootstrap Responsive Website Template| Checkout :: w3layouts</title>
+    <title>F4F - Checkout</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
     <meta name="keywords" content="Fashion Hub Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -31,7 +31,7 @@
     <!-- //online-fonts -->
     
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />  
 </head>
 
 <body>
@@ -246,13 +246,13 @@
     <!-- //header container --> <br><br><br>
 </header>
 <!-- //header -->
-<!-- banner -->
+<!-- inner banner -->
 <div class="ibanner_w3 pt-sm-5 pt-3">
     <h4 class="head_agileinfo text-center text-capitalize text-center pt-5">
         <span>F</span>reedom
         <span>f</span>or
         <span>F</span>ashion</h4>
-    </div>
+	</div>
 	<!-- //inner banner -->
     <!-- breadcrumbs -->
     <nav aria-label="breadcrumb">
@@ -260,7 +260,7 @@
             <li class="breadcrumb-item">
                 <a href="index.html">Home</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+            <li class="breadcrumb-item active" aria-current="page">Checkout</li>
         </ol>
     </nav>
     <!-- //breadcrumbs -->
@@ -406,31 +406,38 @@
                                 <div class="information-wrapper">
                                     <div class="first-row form-group">
                                         <div class="controls">
-                                            <label class="control-label">Full name: </label>
-                                            <input class="billing-address-name form-control" type="text" name="name">
+                                            <label class="control-label">First Name: </label>
+                                            <input class="billing-address-name form-control" type="text" id="name">
+                                        </div>
+                                        <div class="controls">
+                                            <label class="control-label">Last Name: </label>
+                                            <input class="billing-address-name form-control" id="l_name" type="text">
                                         </div>
                                         <div class="card_number_grids">
                                             <div class="card_number_grid_left">
                                                 <div class="controls">
-                                                    <label class="control-label">Mobile number: (xxxx-xxx-xxx)</label>
+                                                    <label class="control-label">Mobile number:</label>
                                                     <input class="form-control" pattern="^\d{4}\d{3}\d{3}$" type="tel" id="phone_no">
                                                 </div>
                                             </div>
                                             <div class="card_number_grid_right">
                                                 <div class="controls">
-                                                    <label class="control-label">Email: </label>
-                                                    <input class="form-control" type="email" id="user_email_text">
+                                                    <label class="control-label">Address: </label>
+                                                    <input class="form-control" type="text" id="address">
                                                 </div>
                                             </div>
                                             <div class="clear"> </div>
                                         </div>
                                         <div class="controls">
-                                            <label class="control-label">Address: </label>
-                                            <input class="form-control" type="text" id="address">
+                                            <label class="control-label">Pin Code: </label>
+                                            <input pattern="[0-9]{6}" type="text" class="form-control" id="pin_code">
                                         </div>
-                                        <div class="controls">
-                                            <label class="control-label">Pin-code: (000-000)</label>
-                                            <input class="form-control" pattern="[0-9]{6}" id="pin_code" type="text">
+                                        <div class="card_number_grid_right">
+                                            <div class="controls">
+                                                <label class="control-label">E-mail: </label>
+                                                <!-- <input class="form-control" type="email" id="user_email_text"> -->
+                                                <h5><a style="color:black;" id="user_email_text"></a></h5>
+                                            </div>
                                         </div>
                                     </div>
                                     <button class="submit check_out">place order</button>
@@ -443,622 +450,371 @@
         </div>
     </section>
     <!--//checkout-->
-    <footer>
-        <div class="footerv2-w3ls">
-            <div class="footer-w3lagile-innerr">
-                <!-- footer-top -->
-                <div class="container-fluid">
-                    <div class="row  footer-v2grids w3-agileits">
-                        <!-- services -->
-                        <div class="col-lg-2 col-sm-6 footer-v2grid">
-                            <h4>Support</h4>
-                            <ul>
-                                
-                                <li>
-                                    <a href="payment.html">Payment</a>
-                                </li>
-                                <li>
-                                    <a href="#">Shipping</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cancellation & Returns</a>
-                                </li>
-                                <li>
-                                    <a href="faq.html">FAQ</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- //services -->
-                        <!-- latest posts -->
-                        <div class="col-lg-3 col-sm-6 footer-v2grid mt-sm-0 mt-5">
-                            <h4>Latest Blog</h4>
-                            <div class="footer-v2grid1 row">
-                                <div class="col-4 footer-v2grid1-left">
-                                    <a href="blog.html">
-                                        <img src="images/bl2.jpg" alt=" " class="img-fluid">
-                                    </a>
-                                </div>
-                                <div class="col-8 footer-v2grid1-right p-0">
-                                    <a href="blog.html">eveniie arcet ut moles morbi dapiti</a>
-                                </div>
-                            </div>
-                            <div class="footer-v2grid1 row my-2">
-                                <div class="col-4 footer-v2grid1-left">
-                                    <a href="blog.html">
-                                        <img src="images/bl1.jpg" alt=" " class="img-fluid">
-                                    </a>
-                                </div>
-                                <div class="col-8 footer-v2grid1-right p-0">
-                                    <a href="blog.html">earum rerum tenmorbi dapiti et</a>
-                                </div>
-                            </div>
-                            <div class="footer-v2grid1 row">
-                                <div class="col-4 footer-v2grid1-left">
-                                    <a href="blog.html">
-                                        <img src="images/bl3.jpg" alt=" " class="img-fluid">
-                                    </a>
-                                </div>
-                                <div class="col-8 footer-v2grid1-right p-0">
-                                    <a href="blog.html">morbi dapiti eveniet ut molesti</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- //latest posts -->
-                        <!-- locations -->
-                        <div class="col-lg-2 col-sm-6 footer-v2grid my-lg-0 my-5">
-                            <h4>office locations</h4>
-                            <ul>
-                                <li>
-                                    <a href="#">new jersey</a>
-                                </li>
-                                <li>
-                                    <a href="#">texas</a>
-                                </li>
-                                <li>
-                                    <a href="#">michigan</a>
-                                </li>
-                                <li>
-                                    <a href="#">cannada</a>
-                                </li>
-                                <li>
-                                    <a href="#">brazil</a>
-                                </li>
-                                <li>
-                                    <a href="#">california</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- //locations -->
-                        <!-- flickr posts -->
-                        <div class="col-lg-3 col-sm-6 footer-v2grid my-lg-0 my-sm-5">
-                            <h4 class="b-log">
-                                flickr posts
-                            </h4>
-                            <div class="footer-v2grid-instagram">
-                                <a href="#">
-                                    <img src="images/bl4.jpg" alt=" " class="img-fluid">
-                                </a>
-                            </div>
-                            <div class="footer-v2grid-instagram">
-                                <a href="#">
-                                    <img src="images/bl1.jpg" alt=" " class="img-fluid">
-                                </a>
-                            </div>
-                            <div class="footer-v2grid-instagram">
-                                <a href="#">
-                                    <img src="images/bl6.jpg" alt=" " class="img-fluid">
-                                </a>
-                            </div>
-                            <div class="footer-v2grid-instagram">
-                                <a href="#">
-                                    <img src="images/bl5.jpg" alt=" " class="img-fluid">
-                                </a>
-                            </div>
-                            
-                            <div class="footer-v2grid-instagram">
-                                <a href="#">
-                                    <img src="images/bl2.jpg" alt=" " class="img-fluid">
-                                </a>
-                            </div>
-                            <div class="footer-v2grid-instagram">
-                                <a href="#">
-                                    <img src="images/bl3.jpg" alt=" " class="img-fluid">
-                                </a>
-                            </div>
-                            <div class="footer-v2grid-instagram">
-                                <a href="#">
-                                    <img src="images/bl6.jpg" alt=" " class="img-fluid">
-                                </a>
-                            </div>
-                            <div class="footer-v2grid-instagram">
-                                <a href="#">
-                                    <img src="images/bl4.jpg" alt=" " class="img-fluid">
-                                </a>
-                            </div>
-                            <div class="footer-v2grid-instagram">
-                                <a href="#">
-                                    <img src="images/bl5.jpg" alt=" " class="img-fluid">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- //flickr posts -->
-                        <!-- popular tags -->
-                        <div class="col-lg-2  footer-v2grid mt-sm-0 mt-5">
-                            <h4>popular tags</h4>
-                            <ul class="w3-tag2">
-                                <li>
-                                    <a href="shop.html">amet</a>
-                                </li>
-                                <li>
-                                    <a href="men.html">placerat</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">Proin </a>
-                                </li>
-                                <li>
-                                    <a href="boys.html">vehicula</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">diam</a>
-                                </li>
-                                <li>
-                                    <a href="women.html">velit</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">felis</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">mauris</a>
-                                </li>
-                                <li>
-                                    <a href="girls.html">amet</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">placerat</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">Proin </a>
-                                </li>
-                                <li>
-                                    <a href="index.html">vehicula</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">diam</a>
-                                </li>
-                                <li>
-                                    <a href="men.html">velit</a>
-                                </li>
-                                <li>
-                                    <a href="shop.html">felis</a>
-                                </li>
-                                <li>
-                                    <a href="women.html">mauris</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- //popular tags -->
-                    </div>
-                </div>
-                <!-- //footer-top -->
-                <div class="footer-bottomv2 py-5">
-                    <div class="container">
-                        <ul class="bottom-links-agile">
-                            <li>
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li>
-                                <a href="about.html">About Us</a>
-                            </li>
-                            <li>
-                                <a href="shop.html">Shop</a>
-                            </li>
-                            <li>
-                                <a href="contact.html">Contact</a>
-                            </li>
-                            
-                        </ul>
-                        <h3 class="text-center follow">Follow Us</h3>
-                        <ul class="social-iconsv2 agileinfo">
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-google-plus-g"></i>
-                                </a>
-                            </li>
-                        </ul>
+    <footer>   
+        <!-- //footer-top -->
+        <div class="footer-bottomv2 py-5" style="background-color: black;">
+            <div class="container">
+                <ul class="bottom-links-agile">
+                    <li>
+                        <a href="index.html" style="color: white;">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="shop.html" style="color: white;">Shop</a>
+                    </li>
+                    <li>
+                        <a href="Feedback.html" style="color: white;">Feedback</a>
+                    </li>
+                    
+                </ul>
+                
+                
+                <div class="cpy-right align-self-center">
+                    <h2 class="agile_btxt">
+                        <a href="index.html" style="color: white;">
+                            <span>F</span>reedom
+                            <span>f</span>or
+                            <span>F</span>ashion</a>
+                        </h2>
+                        <p style="float:right;">© 2019 Freedom for Fashion. All rights reserved 
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid py-5 footer-copy_w3ls">
-                <div class="d-lg-flex justify-content-between">
-                    <div class="mt-2 sub-some align-self-lg-center">
-                        <h5>Payment Method</h5>
-                        <ul class="mt-4">
-                            <li class="list-inline-item">
-                                <img src="images/pay2.png" alt="">
-                            </li>
-                            <li class="list-inline-item">
-                                <img src="images/pay5.png" alt="">
-                            </li>
-                            <li class="list-inline-item">
-                                <img src="images/pay3.png" alt="">
-                            </li>
-                            <li class="list-inline-item">
-                                <img src="images/pay7.png" alt="">
-                            </li>
-                            <li class="list-inline-item">
-                                <img src="images/pay8.png" alt="">
-                            </li>
-                            <li class="list-inline-item ">
-                                <img src="images/pay9.png" alt="">
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="cpy-right align-self-center">
-                        <h2 class="agile_btxt">
-                            <a href="index.html">
-                                <span>f</span>ashion
-                                <span>h</span>ub</a>
-                            </h2>
-                            <p>© 2018 Fashion Hub. All rights reserved | Design by
-                                <a href="http://w3layouts.com" class="text-secondary"> W3layouts.</a>
-                            </p>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal_btn" role="dialog" aria-labelledby="myModal_btn" aria-hidden="true">
+        <div class="agilemodal-dialog modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Deals of the Day</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-3 pb-5 px-sm-5">
+                    <div class="row">
+                        <div class="col-md-4 mx-auto align-self-center">
+                            <div class="item">
+                                <!-- card -->
+                                <div class="card product-men p-3">
+                                    <div class="men-thumb-item">
+                                        <img src="images/pb8.jpg" alt="img" class="card-img-top">
+                                        <div class="men-cart-pro">
+                                            <div class="inner-men-cart-pro">
+                                                <a href="boy.html" class="link-product-add-cart">View</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- card body -->
+                                    <div class="card-body  py-3 px-2">
+                                        <h5 class="card-title text-capitalize">Casual Shirt and Denim Jeans</h5>
+                                        <div class="card-text d-flex justify-content-between">
+                                            <p class="text-dark font-weight-bold">$15.99</p>
+                                            <p class="line-through">$25.99</p>
+                                        </div>
+                                    </div>
+                                    <!-- card footer -->
+                                    <div class="card-footer d-flex justify-content-end">
+                                        <form action="#" method="post">
+                                            <input type="hidden" name="cmd" value="_cart">
+                                            <input type="hidden" name="add" value="1">
+                                            <input type="hidden" name="hub_item" value="Casual Shirt and Denim Jeans">
+                                            <input type="hidden" name="amount" value="15.99">
+                                            <button type="submit" class="hub-cart phub-cart btn">
+                                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- //card -->
+                            </div>
                         </div>
+                        <div class="col-md-4 mx-auto align-self-center">
+                            <div class="item">
+                                <!-- card -->
+                                <div class="card product-men p-3">
+                                    <div class="men-thumb-item">
+                                        <img src="images/pb8.jpg" alt="img" class="card-img-top">
+                                        <div class="men-cart-pro">
+                                            <div class="inner-men-cart-pro">
+                                                <a href="boy.html" class="link-product-add-cart">View</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- card body -->
+                                    <div class="card-body  py-3 px-2">
+                                        <h5 class="card-title text-capitalize">Casual Shirt and Denim Jeans</h5>
+                                        <div class="card-text d-flex justify-content-between">
+                                            <p class="text-dark font-weight-bold">$15.99</p>
+                                            <p class="line-through">$25.99</p>
+                                        </div>
+                                    </div>
+                                    <!-- card footer -->
+                                    <div class="card-footer d-flex justify-content-end">
+                                        <form action="#" method="post">
+                                            <input type="hidden" name="cmd" value="_cart">
+                                            <input type="hidden" name="add" value="1">
+                                            <input type="hidden" name="hub_item" value="Casual Shirt and Denim Jeans">
+                                            <input type="hidden" name="amount" value="15.99">
+                                            <button type="submit" class="hub-cart phub-cart btn">
+                                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- //card -->
+                            </div>
+                        </div>
+                        <div class="col-md-4 mx-auto align-self-center">
+                            <div class="item">
+                                <!-- card -->
+                                <div class="card product-men p-3">
+                                    <div class="men-thumb-item">
+                                        <img src="images/pb8.jpg" alt="img" class="card-img-top">
+                                        <div class="men-cart-pro">
+                                            <div class="inner-men-cart-pro">
+                                                <a href="boy.html" class="link-product-add-cart">View</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- card body -->
+                                    <div class="card-body  py-3 px-2">
+                                        <h5 class="card-title text-capitalize">Casual Shirt and Denim Jeans</h5>
+                                        <div class="card-text d-flex justify-content-between">
+                                            <p class="text-dark font-weight-bold">$15.99</p>
+                                            <p class="line-through">$25.99</p>
+                                        </div>
+                                    </div>
+                                    <!-- card footer -->
+                                    <div class="card-footer d-flex justify-content-end">
+                                        <form action="#" method="post">
+                                            <input type="hidden" name="cmd" value="_cart">
+                                            <input type="hidden" name="add" value="1">
+                                            <input type="hidden" name="hub_item" value="Casual Shirt and Denim Jeans">
+                                            <input type="hidden" name="amount" value="15.99">
+                                            <button type="submit" class="hub-cart phub-cart btn">
+                                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- //card -->
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-8">
+                            
+                            <div class="right-w3l">
+                                <p> Logged in as: </p>
+                                <h4><a id="user_email"></a></h4>
+                            </div>
+                            <br>
+                            <div class="right-w3l">
+                                <input type="submit" class="form-control" value="Update Details">
+                            </div>
+                            <br>                        
+                            <div class="right-w3l">
+                                <input type="submit" class="form-control" value="Order History">
+                            </div>
+                            <br>
+                            <div class="right-w3l">
+                                <button class="btn form-control btn-block" style="color: black;" id="logout_btn" onclick="logout_user()">LOGOUT</button>
+                            </div>
+                            
+                        </div> -->
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- //footer -->
-        <!-- Modal -->
-        <div class="modal fade" id="myModal_btn" role="dialog" aria-labelledby="myModal_btn" aria-hidden="true">
-            <div class="agilemodal-dialog modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Deals of the Day</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body pt-3 pb-5 px-sm-5">
-                        <div class="row">
-                            <div class="col-md-4 mx-auto align-self-center">
-                                <div class="item">
-                                    <!-- card -->
-                                    <div class="card product-men p-3">
-                                        <div class="men-thumb-item">
-                                            <img src="images/pb8.jpg" alt="img" class="card-img-top">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="boy.html" class="link-product-add-cart">View</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card body -->
-                                        <div class="card-body  py-3 px-2">
-                                            <h5 class="card-title text-capitalize">Casual Shirt and Denim Jeans</h5>
-                                            <div class="card-text d-flex justify-content-between">
-                                                <p class="text-dark font-weight-bold">$15.99</p>
-                                                <p class="line-through">$25.99</p>
-                                            </div>
-                                        </div>
-                                        <!-- card footer -->
-                                        <div class="card-footer d-flex justify-content-end">
-                                            <form action="#" method="post">
-                                                <input type="hidden" name="cmd" value="_cart">
-                                                <input type="hidden" name="add" value="1">
-                                                <input type="hidden" name="hub_item" value="Casual Shirt and Denim Jeans">
-                                                <input type="hidden" name="amount" value="15.99">
-                                                <button type="submit" class="hub-cart phub-cart btn">
-                                                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                                </button>
-                                                <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <!-- //card -->
-                                </div>
+        </div>
+    </div>
+    <!-- //modal -->
+    
+    
+    <!-- My account -->
+    <div class="modal fade" id="myacc" role="dialog" aria-labelledby="myacc" aria-hidden="true">
+        <div class="agilemodal-dialog modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">My Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body pt-3 pb-5 px-sm-5">
+                    <div class="row">
+                        <div class="col-md-4 mx-auto align-self-center">
+                            <img src="images/p3.png" class="img-fluid" alt="login_image" />
+                        </div>
+                        <div class="col-md-8">
+                            
+                            <div class="right-w3l">
+                                <p> Logged in as: </p>
+                                <h4><a id="user_email"></a></h4>
                             </div>
-                            <div class="col-md-4 mx-auto align-self-center">
-                                <div class="item">
-                                    <!-- card -->
-                                    <div class="card product-men p-3">
-                                        <div class="men-thumb-item">
-                                            <img src="images/pb8.jpg" alt="img" class="card-img-top">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="boy.html" class="link-product-add-cart">View</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card body -->
-                                        <div class="card-body  py-3 px-2">
-                                            <h5 class="card-title text-capitalize">Casual Shirt and Denim Jeans</h5>
-                                            <div class="card-text d-flex justify-content-between">
-                                                <p class="text-dark font-weight-bold">$15.99</p>
-                                                <p class="line-through">$25.99</p>
-                                            </div>
-                                        </div>
-                                        <!-- card footer -->
-                                        <div class="card-footer d-flex justify-content-end">
-                                            <form action="#" method="post">
-                                                <input type="hidden" name="cmd" value="_cart">
-                                                <input type="hidden" name="add" value="1">
-                                                <input type="hidden" name="hub_item" value="Casual Shirt and Denim Jeans">
-                                                <input type="hidden" name="amount" value="15.99">
-                                                <button type="submit" class="hub-cart phub-cart btn">
-                                                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                                </button>
-                                                <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <!-- //card -->
-                                </div>
+                            <br>
+                            <div class="right-w3l">
+                                <input type="submit" class="form-control" value="Update Details">
                             </div>
-                            <div class="col-md-4 mx-auto align-self-center">
-                                <div class="item">
-                                    <!-- card -->
-                                    <div class="card product-men p-3">
-                                        <div class="men-thumb-item">
-                                            <img src="images/pb8.jpg" alt="img" class="card-img-top">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="boy.html" class="link-product-add-cart">View</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- card body -->
-                                        <div class="card-body  py-3 px-2">
-                                            <h5 class="card-title text-capitalize">Casual Shirt and Denim Jeans</h5>
-                                            <div class="card-text d-flex justify-content-between">
-                                                <p class="text-dark font-weight-bold">$15.99</p>
-                                                <p class="line-through">$25.99</p>
-                                            </div>
-                                        </div>
-                                        <!-- card footer -->
-                                        <div class="card-footer d-flex justify-content-end">
-                                            <form action="#" method="post">
-                                                <input type="hidden" name="cmd" value="_cart">
-                                                <input type="hidden" name="add" value="1">
-                                                <input type="hidden" name="hub_item" value="Casual Shirt and Denim Jeans">
-                                                <input type="hidden" name="amount" value="15.99">
-                                                <button type="submit" class="hub-cart phub-cart btn">
-                                                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                                                </button>
-                                                <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <!-- //card -->
-                                </div>
+                            <br>                        
+                            <div class="right-w3l">
+                                <input type="submit" class="form-control" value="Order History">
                             </div>
-                            <!-- <div class="col-md-8">
-                                
-                                <div class="right-w3l">
-                                    <p> Logged in as: </p>
-                                    <h4><a id="user_email"></a></h4>
-                                </div>
-                                <br>
-                                <div class="right-w3l">
-                                    <input type="submit" class="form-control" value="Update Details">
-                                </div>
-                                <br>                        
-                                <div class="right-w3l">
-                                    <input type="submit" class="form-control" value="Order History">
-                                </div>
-                                <br>
-                                <div class="right-w3l">
-                                    <button class="btn form-control btn-block" style="color: black;" id="logout_btn" onclick="logout_user()">LOGOUT</button>
-                                </div>
-                                
-                            </div> -->
+                            <br>
+                            <div class="right-w3l">
+                                <button class="btn form-control btn-block" style="color: black;" id="logout_btn" onclick="logout_user()">LOGOUT</button>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- //modal -->
-        
-        
-        <!-- My account -->
-        <div class="modal fade" id="myacc" role="dialog" aria-labelledby="myacc" aria-hidden="true">
-            <div class="agilemodal-dialog modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">My Account</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body pt-3 pb-5 px-sm-5">
-                        <div class="row">
-                            <div class="col-md-4 mx-auto align-self-center">
-                                <img src="images/p3.png" class="img-fluid" alt="login_image" />
-                            </div>
-                            <div class="col-md-8">
-                                
-                                <div class="right-w3l">
-                                    <p> Logged in as: </p>
-                                    <h4><a id="user_email"></a></h4>
-                                </div>
-                                <br>
-                                <div class="right-w3l">
-                                    <input type="submit" class="form-control" value="Update Details">
-                                </div>
-                                <br>                        
-                                <div class="right-w3l">
-                                    <input type="submit" class="form-control" value="Order History">
-                                </div>
-                                <br>
-                                <div class="right-w3l">
-                                    <button class="btn form-control btn-block" style="color: black;" id="logout_btn" onclick="logout_user()">LOGOUT</button>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- //my account -->
-        <!-- js -->
-        <script src="js/jquery-2.2.3.min.js"></script>
-        <!-- //js -->
-        <!-- smooth dropdown -->
-        <script>
-            $(document).ready(function () {
-                $('ul li.dropdown').hover(function () {
-                    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
-                }, function () {
-                    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
-                });
+    </div>
+    <!-- //my account -->
+    <!-- js -->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!-- smooth dropdown -->
+    <script>
+        $(document).ready(function () {
+            $('ul li.dropdown').hover(function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
+            }, function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
             });
-        </script>
-        <!-- //smooth dropdown -->
-        <!-- script for password match -->
-        <!-- <script>
-            window.onload = function () {
-                document.getElementById("password1").onchange = validatePassword;
-                document.getElementById("password2").onchange = validatePassword;
+        });
+    </script>
+    <!-- //smooth dropdown -->
+    <!-- script for password match -->
+    <script>
+        window.onload = function () {
+            document.getElementById("password1").onchange = validatePassword;
+            document.getElementById("password2").onchange = validatePassword;
+        }
+        
+        function validatePassword() {
+            var pass2 = document.getElementById("password2").value;
+            var pass1 = document.getElementById("password1").value;
+            if (pass1 != pass2)
+            document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+            else
+            document.getElementById("password2").setCustomValidity('');
+            //empty string means no validation error
+        }
+    </script>
+    <!-- script for password match -->
+    <!-- cart-js -->
+    <script src="js/minicart.js"></script>
+    <script>
+        hub.render();
+        
+        hub.cart.on('new_checkout', function (evt) {
+            var items, len, i;
+            
+            if (this.subtotal() > 0) {
+                items = this.items();
+                
+                for (i = 0, len = items.length; i < len; i++) {}
             }
-            
-            function validatePassword() {
-                var pass2 = document.getElementById("password2").value;
-                var pass1 = document.getElementById("password1").value;
-                if (pass1 != pass2)
-                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-                else
-                document.getElementById("password2").setCustomValidity('');
-                //empty string means no validation error
-            }
-        </script> -->
-        <!-- script for password match -->
-        <!-- cart-js -->
-        <script src="js/minicart.js"></script>
-        <script>
-            hub.render();
-            
-            hub.cart.on('new_checkout', function (evt) {
-                var items, len, i;
-                
-                if (this.subtotal() > 0) {
-                    items = this.items();
-                    
-                    for (i = 0, len = items.length; i < len; i++) {}
-                }
-            });
-        </script>
-        <!-- //cart-js -->
-        <!--quantity-->
-        <script>
-            $('.value-plus').on('click', function () {
-                var divUpd = $(this).parent().find('.value'),
-                newVal = parseInt(divUpd.text(), 10) + 1;
-                divUpd.text(newVal);
-            });
-            
-            $('.value-minus').on('click', function () {
-                var divUpd = $(this).parent().find('.value'),
-                newVal = parseInt(divUpd.text(), 10) - 1;
-                if (newVal >= 1) divUpd.text(newVal);
-            });
-        </script>
-        <!--quantity-->
-        <!-- FadeOut-Script -->
-        <script>
-            $(document).ready(function (c) {
-                $('.close1').on('click', function (c) {
-                    $('.rem1').fadeOut('slow', function (c) {
-                        $('.rem1').remove();
-                    });
-                });
-            });
-        </script>
-        <script>
-            $(document).ready(function (c) {
-                $('.close2').on('click', function (c) {
-                    $('.rem2').fadeOut('slow', function (c) {
-                        $('.rem2').remove();
-                    });
-                });
-            });
-        </script>
-        <script>
-            $(document).ready(function (c) {
-                $('.close3').on('click', function (c) {
-                    $('.rem3').fadeOut('slow', function (c) {
-                        $('.rem3').remove();
-                    });
-                });
-            });
-        </script>
-        <!--// FadeOut-Script -->
+        });
+    </script>
+    <!-- //cart-js -->
+    <!--quantity-->
+    <script>
+        $('.value-plus').on('click', function () {
+            var divUpd = $(this).parent().find('.value'),
+            newVal = parseInt(divUpd.text(), 10) + 1;
+            divUpd.text(newVal);
+        });
         
-        <!-- start-smooth-scrolling -->
-        <script src="js/move-top.js"></script>
-        <script src="js/easing.js"></script>
-        <script>
-            jQuery(document).ready(function ($) {
-                $(".scroll").click(function (event) {
-                    event.preventDefault();
-                    
-                    $('html,body').animate({
-                        scrollTop: $(this.hash).offset().top
-                    }, 1000);
+        $('.value-minus').on('click', function () {
+            var divUpd = $(this).parent().find('.value'),
+            newVal = parseInt(divUpd.text(), 10) - 1;
+            if (newVal >= 1) divUpd.text(newVal);
+        });
+    </script>
+    <!--quantity-->
+    <!-- FadeOut-Script -->
+    <script>
+        $(document).ready(function (c) {
+            $('.close1').on('click', function (c) {
+                $('.rem1').fadeOut('slow', function (c) {
+                    $('.rem1').remove();
                 });
             });
-        </script>
-        <!-- //end-smooth-scrolling -->
-        <!-- smooth-scrolling-of-move-up -->
-        <script>
-            $(document).ready(function () {
-                /*
-                var defaults = {
-                    containerID: 'toTop', // fading element id
-                    containerHoverID: 'toTopHover', // fading element hover id
-                    scrollSpeed: 1200,
-                    easingType: 'linear' 
-                };
-                */
-                
-                $().UItoTop({
-                    easingType: 'easeOutQuart'
+        });
+    </script>
+    <script>
+        $(document).ready(function (c) {
+            $('.close2').on('click', function (c) {
+                $('.rem2').fadeOut('slow', function (c) {
+                    $('.rem2').remove();
                 });
-                
             });
-        </script>
-        <script src="js/SmoothScroll.min.js"></script>
-        <!-- //smooth-scrolling-of-move-up -->
-        <!-- Bootstrap core JavaScript -->
+        });
+    </script>
+    <script>
+        $(document).ready(function (c) {
+            $('.close3').on('click', function (c) {
+                $('.rem3').fadeOut('slow', function (c) {
+                    $('.rem3').remove();
+                });
+            });
+        });
+    </script>
+    <!--// FadeOut-Script -->
+    
+    <!-- start-smooth-scrolling -->
+    <script src="js/move-top.js"></script>
+    <script src="js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear' 
+            };
+            */
+            
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+            
+        });
+    </script>
+    <script src="js/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="js/bootstrap.js"></script>
-        
         <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
         
+        <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
         <script>
             // Initialize Firebase
             var config = {
@@ -1071,8 +827,7 @@
             };
             firebase.initializeApp(config);
         </script>
-        <!-- <script type='text/javascript'src='________checkout file name'> </script> -->
-        
-        <!-- <script type="text/javascript" src="js_files/welcome-details.js"></script> -->
+        <!-- <script type="text/javascript" src="js_files/login.js"></script> -->
         <script type="text/javascript" src="js_files/checkout.js"></script>
+        
         </html>
