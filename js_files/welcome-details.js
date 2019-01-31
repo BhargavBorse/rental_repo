@@ -35,7 +35,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 Address: address_wd,
                 pin_code: pincode_wd
             });
-            // window.location = 'index.html';
+            window.location = 'index.html';
         };
         
     } else {
