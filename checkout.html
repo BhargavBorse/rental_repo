@@ -1,9 +1,3 @@
-<!--Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -17,7 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
-
+        
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
@@ -35,17 +29,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="//fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
     <!-- //online-fonts -->
+    
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
 </head>
 
 <body>
-	 <!-- header -->
+    <!-- header -->
     <header>
         <div class="container">
             <!-- top nav -->
             <nav class="top_nav d-flex pt-3 pb-1">
                 <!-- logo -->
                 <h1>
-                    <a class="navbar-brand" href="index.html">fh
+                    <a class="navbar-brand" href="index.html">F|IV|F 
                     </a>
                 </h1>
                 <!-- //logo -->
@@ -91,6 +88,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="nav-icon d-flex">
                         <!-- sigin and sign up -->
                         <a class="text-dark login_btn align-self-center mx-3" href="#myModal_btn" data-toggle="modal" data-target="#myModal_btn">
+                            <i class="fas fa-gift"></i>
+                        </a>
+                        <a class="text-dark login_btn align-self-center mx-3" href="#myacc" data-toggle="modal" data-target="#myacc">
                             <i class="far fa-user"></i>
                         </a>
                         <!-- sigin and sign up -->
@@ -114,144 +114,145 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <!-- bottom nav -->
             <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto text-center">
-                        <li class="nav-item">
-                            <a class="nav-link  active" href="index.html">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown has-mega-menu" style="position:static;">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Men's clothing</a>
-                            <div class="dropdown-menu" style="width:100%">
-                                <div class="px-0 container">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <a class="dropdown-item" href="men.html">T-Shirts</a>
-                                            <a class="dropdown-item" href="men.html">Coats</a>
-                                            <a class="dropdown-item" href="men.html">Shirts</a>
-                                            <a class="dropdown-item" href="men.html">Suits & Blazers</a>
-                                            <a class="dropdown-item" href="men.html">Jackets</a>
-                                            <a class="dropdown-item" href="men.html">Trousers</a>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <a class="dropdown-item" href="men.html">T-Shirts</a>
-                                            <a class="dropdown-item" href="men.html">Trousers</a>
-                                            <a class="dropdown-item" href="men.html">Shirts</a>
-                                            <a class="dropdown-item" href="men.html">Suits & Blazers</a>
-                                            <a class="dropdown-item" href="men.html">Coats & Jackets</a>
-                                            <a class="dropdown-item" href="men.html">Jackets</a>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <a class="dropdown-item" href="men.html">T-Shirts</a>
-                                            <a class="dropdown-item" href="men.html">Coats</a>
-                                            <a class="dropdown-item" href="men.html">Shirts</a>
-                                            <a class="dropdown-item" href="men.html">Suits & Blazers</a>
-                                            <a class="dropdown-item" href="men.html">Jackets</a>
-                                            <a class="dropdown-item" href="men.html">Trousers</a>
-                                        </div>
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item">
+                        <a class="nav-link  active" href="index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown has-mega-menu" style="position:static;">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Men's clothing</a>
+                        <div class="dropdown-menu" style="width:100%">
+                            <div class="px-0 container">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a class="dropdown-item" href="men.html">T-Shirts</a>
+                                        <a class="dropdown-item" href="men.html">Coats</a>
+                                        <a class="dropdown-item" href="men.html">Shirts</a>
+                                        <a class="dropdown-item" href="men.html">Suits & Blazers</a>
+                                        <a class="dropdown-item" href="men.html">Jackets</a>
+                                        <a class="dropdown-item" href="men.html">Trousers</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a class="dropdown-item" href="men.html">T-Shirts</a>
+                                        <a class="dropdown-item" href="men.html">Trousers</a>
+                                        <a class="dropdown-item" href="men.html">Shirts</a>
+                                        <a class="dropdown-item" href="men.html">Suits & Blazers</a>
+                                        <a class="dropdown-item" href="men.html">Coats & Jackets</a>
+                                        <a class="dropdown-item" href="men.html">Jackets</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a class="dropdown-item" href="men.html">T-Shirts</a>
+                                        <a class="dropdown-item" href="men.html">Coats</a>
+                                        <a class="dropdown-item" href="men.html">Shirts</a>
+                                        <a class="dropdown-item" href="men.html">Suits & Blazers</a>
+                                        <a class="dropdown-item" href="men.html">Jackets</a>
+                                        <a class="dropdown-item" href="men.html">Trousers</a>
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="nav-item dropdown has-mega-menu" style="position:static;">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Women's clothing</a>
-                            <div class="dropdown-menu" style="width:100%">
-                                <div class="px-0 container">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <a class="dropdown-item" href="women.html">Dresses</a>
-                                            <a class="dropdown-item" href="women.html">T-shirts</a>
-                                            <a class="dropdown-item" href="women.html">Skirts</a>
-                                            <a class="dropdown-item" href="women.html">Jeans</a>
-                                            <a class="dropdown-item" href="women.html">Tunics</a>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <a class="dropdown-item" href="women.html">T-shirts</a>
-                                            <a class="dropdown-item" href="women.html">Dresses</a>
-                                            <a class="dropdown-item" href="women.html">Tunics</a>
-                                            <a class="dropdown-item" href="women.html">Skirts</a>
-                                            <a class="dropdown-item" href="women.html">Jeans</a>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <a class="dropdown-item" href="women.html">Dresses</a>
-                                            <a class="dropdown-item" href="women.html">T-shirts</a>
-                                            <a class="dropdown-item" href="women.html">Skirts</a>
-                                            <a class="dropdown-item" href="women.html">Jeans</a>
-                                            <a class="dropdown-item" href="women.html">Tunics</a>
-                                        </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown has-mega-menu" style="position:static;">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Women's clothing</a>
+                        <div class="dropdown-menu" style="width:100%">
+                            <div class="px-0 container">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a class="dropdown-item" href="women.html">Dresses</a>
+                                        <a class="dropdown-item" href="women.html">T-shirts</a>
+                                        <a class="dropdown-item" href="women.html">Skirts</a>
+                                        <a class="dropdown-item" href="women.html">Jeans</a>
+                                        <a class="dropdown-item" href="women.html">Tunics</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a class="dropdown-item" href="women.html">T-shirts</a>
+                                        <a class="dropdown-item" href="women.html">Dresses</a>
+                                        <a class="dropdown-item" href="women.html">Tunics</a>
+                                        <a class="dropdown-item" href="women.html">Skirts</a>
+                                        <a class="dropdown-item" href="women.html">Jeans</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a class="dropdown-item" href="women.html">Dresses</a>
+                                        <a class="dropdown-item" href="women.html">T-shirts</a>
+                                        <a class="dropdown-item" href="women.html">Skirts</a>
+                                        <a class="dropdown-item" href="women.html">Jeans</a>
+                                        <a class="dropdown-item" href="women.html">Tunics</a>
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="nav-item dropdown has-mega-menu" style="position:static;">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kids Clothing</a>
-                            <div class="dropdown-menu" style="width:100%">
-                                <div class="container">
-                                    <div class="row w3_kids  py-3">
-                                        <div class="col-md-3 ">
-                                            <span class="bg-light">Boy's Clothing</span>
-                                            <a class="dropdown-item" href="boys.html">T-Shirts</a>
-                                            <a class="dropdown-item" href="boys.html">Coats</a>
-                                            <a class="dropdown-item" href="boys.html">Shirts</a>
-                                            <a class="dropdown-item" href="boys.html">Suits & Blazers</a>
-                                            <a class="dropdown-item" href="boys.html">Jackets</a>
-                                            <a class="dropdown-item" href="boys.html">Trousers</a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a class="dropdown-item mt-4" href="boys.html">T-Shirts</a>
-                                            <a class="dropdown-item" href="boys.html">Coats</a>
-                                            <a class="dropdown-item" href="boys.html">Shirts</a>
-                                            <a class="dropdown-item" href="boys.html">Suits & Blazers</a>
-                                            <a class="dropdown-item" href="boys.html">Jackets</a>
-                                            <a class="dropdown-item" href="boys.html">Trousers</a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <span>Girl's Clothing</span>
-                                            <a class="dropdown-item" href="girls.html">T-shirts</a>
-                                            <a class="dropdown-item" href="girls.html">Dresses</a>
-                                            <a class="dropdown-item" href="girls.html">Tunics</a>
-                                            <a class="dropdown-item" href="girls.html">Skirts</a>
-                                            <a class="dropdown-item" href="girls.html">Jeans</a>
-                                            <a class="dropdown-item" href="girls.html">Midi</a>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <a class="dropdown-item  mt-4" href="girls.html">Tunics</a>
-                                            <a class="dropdown-item" href="girls.html">Skirts</a>
-                                            <a class="dropdown-item" href="girls.html">T-shirts</a>
-                                            <a class="dropdown-item" href="girls.html">Dresses</a>
-                                            <a class="dropdown-item" href="girls.html">Jeans</a>
-                                        </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown has-mega-menu" style="position:static;">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kids Clothing</a>
+                        <div class="dropdown-menu" style="width:100%">
+                            <div class="container">
+                                <div class="row w3_kids  py-3">
+                                    <div class="col-md-3 ">
+                                        <span class="bg-light">Boy's Clothing</span>
+                                        <a class="dropdown-item" href="boys.html">T-Shirts</a>
+                                        <a class="dropdown-item" href="boys.html">Coats</a>
+                                        <a class="dropdown-item" href="boys.html">Shirts</a>
+                                        <a class="dropdown-item" href="boys.html">Suits & Blazers</a>
+                                        <a class="dropdown-item" href="boys.html">Jackets</a>
+                                        <a class="dropdown-item" href="boys.html">Trousers</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="dropdown-item mt-4" href="boys.html">T-Shirts</a>
+                                        <a class="dropdown-item" href="boys.html">Coats</a>
+                                        <a class="dropdown-item" href="boys.html">Shirts</a>
+                                        <a class="dropdown-item" href="boys.html">Suits & Blazers</a>
+                                        <a class="dropdown-item" href="boys.html">Jackets</a>
+                                        <a class="dropdown-item" href="boys.html">Trousers</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <span>Girl's Clothing</span>
+                                        <a class="dropdown-item" href="girls.html">T-shirts</a>
+                                        <a class="dropdown-item" href="girls.html">Dresses</a>
+                                        <a class="dropdown-item" href="girls.html">Tunics</a>
+                                        <a class="dropdown-item" href="girls.html">Skirts</a>
+                                        <a class="dropdown-item" href="girls.html">Jeans</a>
+                                        <a class="dropdown-item" href="girls.html">Midi</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="dropdown-item  mt-4" href="girls.html">Tunics</a>
+                                        <a class="dropdown-item" href="girls.html">Skirts</a>
+                                        <a class="dropdown-item" href="girls.html">T-shirts</a>
+                                        <a class="dropdown-item" href="girls.html">Dresses</a>
+                                        <a class="dropdown-item" href="girls.html">Jeans</a>
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="blog.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- //bottom nav -->
-        </div>
-        <!-- //header container -->
-    </header>
-    <!-- //header -->
-	<!-- inner banner -->
-	<div class="ibanner_w3 pt-sm-5 pt-3">
-		<h4 class="head_agileinfo text-center text-capitalize text-center pt-5">
-			<span>f</span>ashion
-			<span>h</span>ub</h4>
-	</div>
+                        </div>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- //bottom nav -->
+    </div>
+    <!-- //header container --> <br><br><br>
+</header>
+<!-- //header -->
+<!-- banner -->
+<div class="ibanner_w3 pt-sm-5 pt-3">
+    <h4 class="head_agileinfo text-center text-capitalize text-center pt-5">
+        <span>F</span>reedom
+        <span>f</span>or
+        <span>F</span>ashion</h4>
+    </div>
 	<!-- //inner banner -->
     <!-- breadcrumbs -->
     <nav aria-label="breadcrumb">
@@ -282,7 +283,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <th>Product</th>
                                 <th>Quantity</th>
                                 <th>Product Name</th>
-
+                                
                                 <th>Price</th>
                                 <th>Remove</th>
                             </tr>
@@ -307,13 +308,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     </div>
                                 </td>
                                 <td class="invert">Solid Men's Black Shirt</td>
-
+                                
                                 <td class="invert">$20.00</td>
                                 <td class="invert">
                                     <div class="rem">
                                         <div class="close1"> </div>
                                     </div>
-
+                                    
                                 </td>
                             </tr>
                             <tr class="rem2">
@@ -335,13 +336,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     </div>
                                 </td>
                                 <td class="invert">Women's Light Blue Tunic</td>
-
+                                
                                 <td class="invert">$35.00</td>
                                 <td class="invert">
                                     <div class="rem">
                                         <div class="close2"> </div>
                                     </div>
-
+                                    
                                 </td>
                             </tr>
                             <tr class="rem3">
@@ -363,16 +364,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     </div>
                                 </td>
                                 <td class="invert">Boy's Casual Shirt & Trouser Set</td>
-
+                                
                                 <td class="invert">$23.00</td>
                                 <td class="invert">
                                     <div class="rem">
                                         <div class="close3"> </div>
                                     </div>
-
+                                    
                                 </td>
                             </tr>
-
+                            
                         </tbody>
                     </table>
                 </div>
@@ -406,35 +407,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <div class="first-row form-group">
                                         <div class="controls">
                                             <label class="control-label">Full name: </label>
-                                            <input class="billing-address-name form-control" type="text" name="name" placeholder="Full name">
+                                            <input class="billing-address-name form-control" type="text" name="name">
                                         </div>
                                         <div class="card_number_grids">
                                             <div class="card_number_grid_left">
                                                 <div class="controls">
-                                                    <label class="control-label">Mobile number:</label>
-                                                    <input class="form-control" type="text" placeholder="Mobile number">
+                                                    <label class="control-label">Mobile number: (xxxx-xxx-xxx)</label>
+                                                    <input class="form-control" pattern="^\d{4}\d{3}\d{3}$" type="tel" id="phone_no">
                                                 </div>
                                             </div>
                                             <div class="card_number_grid_right">
                                                 <div class="controls">
-                                                    <label class="control-label">Landmark: </label>
-                                                    <input class="form-control" type="text" placeholder="Landmark">
+                                                    <label class="control-label">Email: </label>
+                                                    <input class="form-control" type="email" id="user_email_text">
                                                 </div>
                                             </div>
                                             <div class="clear"> </div>
                                         </div>
                                         <div class="controls">
-                                            <label class="control-label">Town/City: </label>
-                                            <input class="form-control" type="text" placeholder="Town/City">
+                                            <label class="control-label">Address: </label>
+                                            <input class="form-control" type="text" id="address">
                                         </div>
                                         <div class="controls">
-                                            <label class="control-label">Address type: </label>
-                                            <select class="form-control option-fieldf">
-                                                <option>Office</option>
-                                                <option>Home</option>
-                                                <option>Commercial</option>
-
-                                            </select>
+                                            <label class="control-label">Pin-code: (000-000)</label>
+                                            <input class="form-control" pattern="[0-9]{6}" id="pin_code" type="text">
                                         </div>
                                     </div>
                                     <button class="submit check_out">place order</button>
@@ -447,7 +443,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </section>
     <!--//checkout-->
- <footer>
+    <footer>
         <div class="footerv2-w3ls">
             <div class="footer-w3lagile-innerr">
                 <!-- footer-top -->
@@ -457,7 +453,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="col-lg-2 col-sm-6 footer-v2grid">
                             <h4>Support</h4>
                             <ul>
-
+                                
                                 <li>
                                     <a href="payment.html">Payment</a>
                                 </li>
@@ -558,7 +554,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <img src="images/bl5.jpg" alt=" " class="img-fluid">
                                 </a>
                             </div>
-
+                            
                             <div class="footer-v2grid-instagram">
                                 <a href="#">
                                     <img src="images/bl2.jpg" alt=" " class="img-fluid">
@@ -586,7 +582,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </div>
                         </div>
                         <!-- //flickr posts -->
-                       <!-- popular tags -->
+                        <!-- popular tags -->
                         <div class="col-lg-2  footer-v2grid mt-sm-0 mt-5">
                             <h4>popular tags</h4>
                             <ul class="w3-tag2">
@@ -659,7 +655,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <li>
                                 <a href="contact.html">Contact</a>
                             </li>
-
+                            
                         </ul>
                         <h3 class="text-center follow">Follow Us</h3>
                         <ul class="social-iconsv2 agileinfo">
@@ -673,7 +669,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <i class="fab fa-twitter"></i>
                                 </a>
                             </li>
-
+                            
                             <li>
                                 <a href="#">
                                     <i class="fab fa-youtube"></i>
@@ -723,238 +719,360 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <a href="index.html">
                                 <span>f</span>ashion
                                 <span>h</span>ub</a>
-                        </h2>
-                        <p>© 2018 Fashion Hub. All rights reserved | Design by
-                            <a href="http://w3layouts.com" class="text-secondary"> W3layouts.</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- //footer -->
-    <!-- sign up Modal -->
-    <div class="modal fade" id="myModal_btn" tabindex="-1" role="dialog" aria-labelledby="myModal_btn" aria-hidden="true">
-        <div class="agilemodal-dialog modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Register Now</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body pt-3 pb-5 px-sm-5">
-                    <div class="row">
-                        <div class="col-md-6 align-self-center">
-                            <img src="images/p3.png" class="img-fluid" alt="login_image" />
-                        </div>
-                        <div class="col-md-6">
-                            <form action="#" method="post">
-                                <div class="form-group">
-                                    <label for="recipient-name1" class="col-form-label">Your Name</label>
-                                    <input type="text" class="form-control" placeholder=" " name="Name" id="recipient-name1" required="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="recipient-email" class="col-form-label">Email</label>
-                                    <input type="email" class="form-control" placeholder=" " name="Email" id="recipient-email" required="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password1" class="col-form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder=" " name="Password" id="password1" required="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password2" class="col-form-label">Confirm Password</label>
-                                    <input type="password" class="form-control" placeholder=" " name="Confirm Password" id="password2" required="">
-                                </div>
-                                <div class="sub-w3l">
-                                    <div class="sub-agile">
-                                        <input type="checkbox" id="brand2" value="">
-                                        <label for="brand2" class="mb-3">
-                                            <span></span>I Accept to the Terms & Conditions</label>
-                                    </div>
-                                </div>
-                                <div class="right-w3l">
-                                    <input type="submit" class="form-control" value="Register">
-                                </div>
-                            </form>
-                            <p class="text-center mt-3">Already a member?
-                                <a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-dark login_btn">
-                                    Login Now</a>
+                            </h2>
+                            <p>© 2018 Fashion Hub. All rights reserved | Design by
+                                <a href="http://w3layouts.com" class="text-secondary"> W3layouts.</a>
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- //signup modal -->
-    <!-- signin Modal -->
-    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModal1" aria-hidden="true">
-        <div class="agilemodal-dialog modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body  pt-3 pb-5 px-sm-5">
-                    <div class="row">
-                        <div class="col-md-6 align-self-center">
-                            <img src="images/p3.png" class="img-fluid" alt="login_image" />
-                        </div>
-                        <div class="col-md-6">
-                            <form action="#" method="post">
-                                <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Your Name</label>
-                                    <input type="text" class="form-control" placeholder=" " name="Name" id="recipient-name" required="">
+        </footer>
+        <!-- //footer -->
+        <!-- Modal -->
+        <div class="modal fade" id="myModal_btn" role="dialog" aria-labelledby="myModal_btn" aria-hidden="true">
+            <div class="agilemodal-dialog modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Deals of the Day</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body pt-3 pb-5 px-sm-5">
+                        <div class="row">
+                            <div class="col-md-4 mx-auto align-self-center">
+                                <div class="item">
+                                    <!-- card -->
+                                    <div class="card product-men p-3">
+                                        <div class="men-thumb-item">
+                                            <img src="images/pb8.jpg" alt="img" class="card-img-top">
+                                            <div class="men-cart-pro">
+                                                <div class="inner-men-cart-pro">
+                                                    <a href="boy.html" class="link-product-add-cart">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- card body -->
+                                        <div class="card-body  py-3 px-2">
+                                            <h5 class="card-title text-capitalize">Casual Shirt and Denim Jeans</h5>
+                                            <div class="card-text d-flex justify-content-between">
+                                                <p class="text-dark font-weight-bold">$15.99</p>
+                                                <p class="line-through">$25.99</p>
+                                            </div>
+                                        </div>
+                                        <!-- card footer -->
+                                        <div class="card-footer d-flex justify-content-end">
+                                            <form action="#" method="post">
+                                                <input type="hidden" name="cmd" value="_cart">
+                                                <input type="hidden" name="add" value="1">
+                                                <input type="hidden" name="hub_item" value="Casual Shirt and Denim Jeans">
+                                                <input type="hidden" name="amount" value="15.99">
+                                                <button type="submit" class="hub-cart phub-cart btn">
+                                                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                                </button>
+                                                <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- //card -->
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder=" " name="Password" required="">
+                            </div>
+                            <div class="col-md-4 mx-auto align-self-center">
+                                <div class="item">
+                                    <!-- card -->
+                                    <div class="card product-men p-3">
+                                        <div class="men-thumb-item">
+                                            <img src="images/pb8.jpg" alt="img" class="card-img-top">
+                                            <div class="men-cart-pro">
+                                                <div class="inner-men-cart-pro">
+                                                    <a href="boy.html" class="link-product-add-cart">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- card body -->
+                                        <div class="card-body  py-3 px-2">
+                                            <h5 class="card-title text-capitalize">Casual Shirt and Denim Jeans</h5>
+                                            <div class="card-text d-flex justify-content-between">
+                                                <p class="text-dark font-weight-bold">$15.99</p>
+                                                <p class="line-through">$25.99</p>
+                                            </div>
+                                        </div>
+                                        <!-- card footer -->
+                                        <div class="card-footer d-flex justify-content-end">
+                                            <form action="#" method="post">
+                                                <input type="hidden" name="cmd" value="_cart">
+                                                <input type="hidden" name="add" value="1">
+                                                <input type="hidden" name="hub_item" value="Casual Shirt and Denim Jeans">
+                                                <input type="hidden" name="amount" value="15.99">
+                                                <button type="submit" class="hub-cart phub-cart btn">
+                                                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                                </button>
+                                                <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- //card -->
                                 </div>
+                            </div>
+                            <div class="col-md-4 mx-auto align-self-center">
+                                <div class="item">
+                                    <!-- card -->
+                                    <div class="card product-men p-3">
+                                        <div class="men-thumb-item">
+                                            <img src="images/pb8.jpg" alt="img" class="card-img-top">
+                                            <div class="men-cart-pro">
+                                                <div class="inner-men-cart-pro">
+                                                    <a href="boy.html" class="link-product-add-cart">View</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- card body -->
+                                        <div class="card-body  py-3 px-2">
+                                            <h5 class="card-title text-capitalize">Casual Shirt and Denim Jeans</h5>
+                                            <div class="card-text d-flex justify-content-between">
+                                                <p class="text-dark font-weight-bold">$15.99</p>
+                                                <p class="line-through">$25.99</p>
+                                            </div>
+                                        </div>
+                                        <!-- card footer -->
+                                        <div class="card-footer d-flex justify-content-end">
+                                            <form action="#" method="post">
+                                                <input type="hidden" name="cmd" value="_cart">
+                                                <input type="hidden" name="add" value="1">
+                                                <input type="hidden" name="hub_item" value="Casual Shirt and Denim Jeans">
+                                                <input type="hidden" name="amount" value="15.99">
+                                                <button type="submit" class="hub-cart phub-cart btn">
+                                                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                                </button>
+                                                <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- //card -->
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-8">
+                                
                                 <div class="right-w3l">
-                                    <input type="submit" class="form-control" value="Login">
+                                    <p> Logged in as: </p>
+                                    <h4><a id="user_email"></a></h4>
                                 </div>
-                            </form>
+                                <br>
+                                <div class="right-w3l">
+                                    <input type="submit" class="form-control" value="Update Details">
+                                </div>
+                                <br>                        
+                                <div class="right-w3l">
+                                    <input type="submit" class="form-control" value="Order History">
+                                </div>
+                                <br>
+                                <div class="right-w3l">
+                                    <button class="btn form-control btn-block" style="color: black;" id="logout_btn" onclick="logout_user()">LOGOUT</button>
+                                </div>
+                                
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- signin Modal -->
-    <!-- js -->
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <!-- //js -->
-    <!-- smooth dropdown -->
-    <script>
-        $(document).ready(function () {
-            $('ul li.dropdown').hover(function () {
-                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
-            }, function () {
-                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
+        <!-- //modal -->
+        
+        
+        <!-- My account -->
+        <div class="modal fade" id="myacc" role="dialog" aria-labelledby="myacc" aria-hidden="true">
+            <div class="agilemodal-dialog modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">My Account</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body pt-3 pb-5 px-sm-5">
+                        <div class="row">
+                            <div class="col-md-4 mx-auto align-self-center">
+                                <img src="images/p3.png" class="img-fluid" alt="login_image" />
+                            </div>
+                            <div class="col-md-8">
+                                
+                                <div class="right-w3l">
+                                    <p> Logged in as: </p>
+                                    <h4><a id="user_email"></a></h4>
+                                </div>
+                                <br>
+                                <div class="right-w3l">
+                                    <input type="submit" class="form-control" value="Update Details">
+                                </div>
+                                <br>                        
+                                <div class="right-w3l">
+                                    <input type="submit" class="form-control" value="Order History">
+                                </div>
+                                <br>
+                                <div class="right-w3l">
+                                    <button class="btn form-control btn-block" style="color: black;" id="logout_btn" onclick="logout_user()">LOGOUT</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //my account -->
+        <!-- js -->
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <!-- //js -->
+        <!-- smooth dropdown -->
+        <script>
+            $(document).ready(function () {
+                $('ul li.dropdown').hover(function () {
+                    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
+                }, function () {
+                    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
+                });
             });
-        });
-    </script>
-    <!-- //smooth dropdown -->
-    <!-- script for password match -->
-    <script>
-        window.onload = function () {
-            document.getElementById("password1").onchange = validatePassword;
-            document.getElementById("password2").onchange = validatePassword;
-        }
-
-        function validatePassword() {
-            var pass2 = document.getElementById("password2").value;
-            var pass1 = document.getElementById("password1").value;
-            if (pass1 != pass2)
-                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-            else
-                document.getElementById("password2").setCustomValidity('');
-            //empty string means no validation error
-        }
-    </script>
-    <!-- script for password match -->
-    <!-- cart-js -->
-    <script src="js/minicart.js"></script>
-    <script>
-        hub.render();
-
-        hub.cart.on('new_checkout', function (evt) {
-            var items, len, i;
-
-            if (this.subtotal() > 0) {
-                items = this.items();
-
-                for (i = 0, len = items.length; i < len; i++) {}
+        </script>
+        <!-- //smooth dropdown -->
+        <!-- script for password match -->
+        <!-- <script>
+            window.onload = function () {
+                document.getElementById("password1").onchange = validatePassword;
+                document.getElementById("password2").onchange = validatePassword;
             }
-        });
-    </script>
-    <!-- //cart-js -->
-    <!--quantity-->
-    <script>
-        $('.value-plus').on('click', function () {
-            var divUpd = $(this).parent().find('.value'),
+            
+            function validatePassword() {
+                var pass2 = document.getElementById("password2").value;
+                var pass1 = document.getElementById("password1").value;
+                if (pass1 != pass2)
+                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+                else
+                document.getElementById("password2").setCustomValidity('');
+                //empty string means no validation error
+            }
+        </script> -->
+        <!-- script for password match -->
+        <!-- cart-js -->
+        <script src="js/minicart.js"></script>
+        <script>
+            hub.render();
+            
+            hub.cart.on('new_checkout', function (evt) {
+                var items, len, i;
+                
+                if (this.subtotal() > 0) {
+                    items = this.items();
+                    
+                    for (i = 0, len = items.length; i < len; i++) {}
+                }
+            });
+        </script>
+        <!-- //cart-js -->
+        <!--quantity-->
+        <script>
+            $('.value-plus').on('click', function () {
+                var divUpd = $(this).parent().find('.value'),
                 newVal = parseInt(divUpd.text(), 10) + 1;
-            divUpd.text(newVal);
-        });
-
-        $('.value-minus').on('click', function () {
-            var divUpd = $(this).parent().find('.value'),
+                divUpd.text(newVal);
+            });
+            
+            $('.value-minus').on('click', function () {
+                var divUpd = $(this).parent().find('.value'),
                 newVal = parseInt(divUpd.text(), 10) - 1;
-            if (newVal >= 1) divUpd.text(newVal);
-        });
-    </script>
-    <!--quantity-->
-    <!-- FadeOut-Script -->
-    <script>
-        $(document).ready(function (c) {
-            $('.close1').on('click', function (c) {
-                $('.rem1').fadeOut('slow', function (c) {
-                    $('.rem1').remove();
+                if (newVal >= 1) divUpd.text(newVal);
+            });
+        </script>
+        <!--quantity-->
+        <!-- FadeOut-Script -->
+        <script>
+            $(document).ready(function (c) {
+                $('.close1').on('click', function (c) {
+                    $('.rem1').fadeOut('slow', function (c) {
+                        $('.rem1').remove();
+                    });
                 });
             });
-        });
-    </script>
-    <script>
-        $(document).ready(function (c) {
-            $('.close2').on('click', function (c) {
-                $('.rem2').fadeOut('slow', function (c) {
-                    $('.rem2').remove();
+        </script>
+        <script>
+            $(document).ready(function (c) {
+                $('.close2').on('click', function (c) {
+                    $('.rem2').fadeOut('slow', function (c) {
+                        $('.rem2').remove();
+                    });
                 });
             });
-        });
-    </script>
-    <script>
-        $(document).ready(function (c) {
-            $('.close3').on('click', function (c) {
-                $('.rem3').fadeOut('slow', function (c) {
-                    $('.rem3').remove();
+        </script>
+        <script>
+            $(document).ready(function (c) {
+                $('.close3').on('click', function (c) {
+                    $('.rem3').fadeOut('slow', function (c) {
+                        $('.rem3').remove();
+                    });
                 });
             });
-        });
-    </script>
-    <!--// FadeOut-Script -->
-
-    <!-- start-smooth-scrolling -->
-    <script src="js/move-top.js"></script>
-    <script src="js/easing.js"></script>
-    <script>
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 1000);
+        </script>
+        <!--// FadeOut-Script -->
+        
+        <!-- start-smooth-scrolling -->
+        <script src="js/move-top.js"></script>
+        <script src="js/easing.js"></script>
+        <script>
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
+                    
+                    $('html,body').animate({
+                        scrollTop: $(this.hash).offset().top
+                    }, 1000);
+                });
             });
-        });
-    </script>
-    <!-- //end-smooth-scrolling -->
-    <!-- smooth-scrolling-of-move-up -->
-    <script>
-        $(document).ready(function () {
-            /*
-            var defaults = {
-                containerID: 'toTop', // fading element id
-                containerHoverID: 'toTopHover', // fading element hover id
-                scrollSpeed: 1200,
-                easingType: 'linear' 
+        </script>
+        <!-- //end-smooth-scrolling -->
+        <!-- smooth-scrolling-of-move-up -->
+        <script>
+            $(document).ready(function () {
+                /*
+                var defaults = {
+                    containerID: 'toTop', // fading element id
+                    containerHoverID: 'toTopHover', // fading element hover id
+                    scrollSpeed: 1200,
+                    easingType: 'linear' 
+                };
+                */
+                
+                $().UItoTop({
+                    easingType: 'easeOutQuart'
+                });
+                
+            });
+        </script>
+        <script src="js/SmoothScroll.min.js"></script>
+        <!-- //smooth-scrolling-of-move-up -->
+        <!-- Bootstrap core JavaScript -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/bootstrap.js"></script>
+        
+        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+        
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyBCXYBy-ry760TM9x-CEsLzIgoZJ3ucv4g",
+                authDomain: "trial-c2b17.firebaseapp.com",
+                databaseURL: "https://trial-c2b17.firebaseio.com",
+                projectId: "trial-c2b17",
+                storageBucket: "trial-c2b17.appspot.com",
+                messagingSenderId: "181878503934"
             };
-            */
-
-            $().UItoTop({
-                easingType: 'easeOutQuart'
-            });
-
-        });
-    </script>
-    <script src="js/SmoothScroll.min.js"></script>
-    <!-- //smooth-scrolling-of-move-up -->
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
-
-</html>
+            firebase.initializeApp(config);
+        </script>
+        <!-- <script type='text/javascript'src='________checkout file name'> </script> -->
+        
+        <!-- <script type="text/javascript" src="js_files/welcome-details.js"></script> -->
+        <script type="text/javascript" src="js_files/checkout.js"></script>
+        </html>
