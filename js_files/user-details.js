@@ -4,11 +4,9 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         // User is signed in.
         // console.log(user.uid);
-        // console.log(user.email);
-        eventRef.child(user.uid).child('details').update({
-            email : user.email
-        });
-        document.getElementById('user_email').value = user.email;
+        console.log(user.email);
+        document.getElementById('user_email').innerHTML = user.email;
+        document.getElementById('user_email_text').innerHTML = user.email;
         
         // this part is for auto fill. will be used in personal details
         eventRef.child(user.uid).child('details').on('value',function(user_details_snapshot){
@@ -21,7 +19,6 @@ firebase.auth().onAuthStateChanged(function(user) {
         });
         // end of fetching personal details
 
-        // this part is for storing data in datbase
         document.getElementById('wd_form_submit').onclick = function(){
             var name_wd = document.getElementById('name').value;
             var l_name_wd = document.getElementById('l_name').value;
@@ -36,14 +33,24 @@ firebase.auth().onAuthStateChanged(function(user) {
                 Address: address_wd,
                 pin_code: pincode_wd
             });
-            window.location = 'index.html';
+            // window.location = 'index.html';
         };
-        // end of storing data
         
     } else {
         // No user is signed in.
         window.alert('Sorry! No user has been signed in. Please try logging in again');
         window.location = 'Guest index.html';
     }
-
 });
+
+function logout_user(){
+    firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+        alert('Signout Successful');
+        window.location = 'Guest index.html';
+    }).catch(function(error) {
+        // An error happened.
+        alert('Please try again');
+    });
+    
+}
