@@ -8,6 +8,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         document.getElementById('user_email').innerHTML = user.email;
         document.getElementById('user_email_text').innerHTML = user.email;
         
+        
         // this part is for auto fill. will be used in personal details
         eventRef.child(user.uid).child('details').on('value',function(user_details_snapshot){
             var user_details = user_details_snapshot.val();
@@ -33,7 +34,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 Address: address_wd,
                 pin_code: pincode_wd
             });
-            // window.location = 'index.html';
+            window.location = 'checkout-confirm.html';
         };
         
     } else {
