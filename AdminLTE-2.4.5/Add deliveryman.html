@@ -1,183 +1,183 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <style>@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
-        * {
-            
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-        body {
-            margin:0;
-            padding:0;
-            font-family: 'Roboto Slab', serif;
-        }
-        div#envelope{
-            width: 80%;
-            margin: 5px 30% 10px 10%;
-            padding:10px 0;
-            border: 2px solid gray;
-            border-radius:10px;
-        }
-        form{
-            width:70%;
-            margin:4% 15%;
-        }
-        header{
-            background-color: #4180C5;
-            text-align: center;
-            padding-top: 12px;
-            padding-bottom: 8px;
-            margin-top: -11px;
-            margin-bottom: -8px;
-            border-radius: 10px 10px 0 0;
-            color: aliceblue;
-        }
-        
-        /* Makes responsive fields. Sets size and field alignment.*/
-        input[type=text]{
-            margin-bottom: 20px;
-            margin-top: 10px;
-            width:100%;
-            padding: 15px;
-            border-radius:5px;
-            border:1px solid #7ac9b7;
-        }
-        input[type=submit]
-        {
-            margin-bottom: 20px;
-            width:100%;
-            padding: 15px;
-            border-radius:5px;
-            border:1px solid #7ac9b7;
-            background-color: #4180C5;
-            color: aliceblue;
-            font-size:15px;
-            cursor:pointer;
-        }
-        #submit:hover
-        {
-            background-color: black;
-        }
-        textarea{
-            width:100%;
-            padding: 15px;
-            margin-top: 10px;
-            border:1px solid #7ac9b7;
-            border-radius:5px;
-            margin-bottom: 20px;
-            resize:none;
-        }
-        input[type=text]:focus,textarea:focus {
-            border-color: #4697e4;
-        }</style>
-        <style>
-            * {
-                box-sizing: border-box;
-            }
-            
-            input[type=text], select, textarea {
-                width: 100%;
-                padding: 12px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                resize: vertical;
-            }
-            
-            label {
-                padding: 12px 12px 12px 0;
-                display: inline-block;
-            }
-            
-            
-            
-            input[type=submit]:hover {
-                background-color: #45a049;
-            }
-            
-            .container {
-                border-radius: 5px;
-                background-color: #f2f2f2;
-                padding: 20px;
-            }
-            
-            .col-25 {
-                float: left;
-                width: 25%;
-                margin-top: 6px;
-            }
-            
-            .col-75 {
-                float: left;
-                width: 75%;
-                margin-top: 6px;
-            }
-            
-            /* Clear floats after the columns */
-            .row:after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-            
-            /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-            @media screen and (max-width: 600px) {
-                .col-25, .col-75, input[type=submit] {
-                    width: 100%;
-                    margin-top: 0;
-                }
-            }
-        </style>
-         <script src=" http://www.sitepoint.com/responsive-data-tables-comprehensive-list-solutions"></script>
-            
-            <title>F4F | Dashboard</title>
-            <!-- Tell the browser to be responsive to screen width -->
-            <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-            <!-- Bootstrap 3.3.7 -->
-            <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-            <!-- Font Awesome -->
-            <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-            <!-- Ionicons -->
-            <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-            <!-- Theme style -->
-            <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-            <!-- AdminLTE Skins. Choose a skin from the css/skins
-                folder instead of downloading all of them to reduce the load. -->
-                <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-                <!-- Morris chart -->
-                <link rel="stylesheet" href="bower_components/morris.js/morris.css">
-                <!-- jvectormap -->
-                <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
-                <!-- Date Picker -->
-                <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-                <!-- Daterange picker -->
-                <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
-                <!-- bootstrap wysihtml5 - text editor -->
-                <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-                
-                
-                <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-                <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-                <!--[if lt IE 9]>
-                    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-                    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-                    <![endif]-->
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <style>@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+                    * {
+                        
+                        -webkit-box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        box-sizing: border-box;
+                    }
+                    body {
+                        margin:0;
+                        padding:0;
+                        font-family: 'Roboto Slab', serif;
+                    }
+                    div#envelope{
+                        width: 80%;
+                        margin: 5px 30% 10px 10%;
+                        padding:10px 0;
+                        border: 2px solid gray;
+                        border-radius:10px;
+                    }
+                    form{
+                        width:70%;
+                        margin:4% 15%;
+                    }
+                    header{
+                        background-color: #4180C5;
+                        text-align: center;
+                        padding-top: 12px;
+                        padding-bottom: 8px;
+                        margin-top: -11px;
+                        margin-bottom: -8px;
+                        border-radius: 10px 10px 0 0;
+                        color: aliceblue;
+                    }
                     
-                    <!-- Google Font -->
-                    
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-                    
-                    
-                    
-                    <link rel="stylesheet" type="text/css" href="responsiveform.css">
-                    <link rel="stylesheet" media="screen and (max-width: 1200px) and (min-width: 601px)" href="responsiveform1.css" />
-                    <link rel="stylesheet" media="screen and (max-width: 600px) and (min-width: 351px)" href="responsiveform2.css" />
-                    <link rel="stylesheet" media="screen and (max-width: 350px)" href="responsiveform3.css" />
-                    
-                </head>
+                    /* Makes responsive fields. Sets size and field alignment.*/
+                    input[type=text]{
+                        margin-bottom: 15px;
+                        margin-top: 0px;
+                        width:100%;
+                        padding: 15px;
+                        border-radius:5px;
+                        border:1px solid #7ac9b7;
+                    }
+                    input[type=submit]
+                    {
+                        margin-bottom: 20px;
+                        width:100%;
+                        padding: 15px;
+                        border-radius:5px;
+                        border:1px solid #7ac9b7;
+                        background-color: #4180C5;
+                        color: aliceblue;
+                        font-size:15px;
+                        cursor:pointer;
+                    }
+                    #submit:hover
+                    {
+                        background-color: black;
+                    }
+                    textarea{
+                        width:100%;
+                        padding: 15px;
+                        margin-top: 10px;
+                        border:1px solid #7ac9b7;
+                        border-radius:5px;
+                        margin-bottom: 20px;
+                        resize:none;
+                    }
+                    input[type=text]:focus,textarea:focus {
+                        border-color: #4697e4;
+                    }</style>
+                    <style>
+                        * {
+                            box-sizing: border-box;
+                        }
+                        
+                        input[type=text], select, textarea {
+                            width: 100%;
+                            padding: 12px;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            resize: vertical;
+                        }
+                        
+                        label {
+                            padding: 12px 12px 12px 0;
+                            display: inline-block;
+                        }
+                        
+                        
+                        
+                        input[type=submit]:hover {
+                            background-color: #45a049;
+                        }
+                        
+                        .container {
+                            border-radius: 5px;
+                            background-color: #f2f2f2;
+                            padding: 20px;
+                        }
+                        
+                        .col-25 {
+                            float: left;
+                            width: 25%;
+                            margin-top: 6px;
+                        }
+                        
+                        .col-75 {
+                            float: left;
+                            width: 75%;
+                            margin-top: 6px;
+                        }
+                        
+                        /* Clear floats after the columns */
+                        .row:after {
+                            content: "";
+                            display: table;
+                            clear: both;
+                        }
+                        
+                        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+                        @media screen and (max-width: 600px) {
+                            .col-25, .col-75, input[type=submit] {
+                                width: 100%;
+                                margin-top: 0;
+                            }
+                        }
+                    </style>
+                     <script src=" http://www.sitepoint.com/responsive-data-tables-comprehensive-list-solutions"></script>
+                        
+                        <title>F4F | Dashboard</title>
+                        <!-- Tell the browser to be responsive to screen width -->
+                        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+                        <!-- Bootstrap 3.3.7 -->
+                        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+                        <!-- Font Awesome -->
+                        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+                        <!-- Ionicons -->
+                        <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+                        <!-- Theme style -->
+                        <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+                        <!-- AdminLTE Skins. Choose a skin from the css/skins
+                            folder instead of downloading all of them to reduce the load. -->
+                            <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+                            <!-- Morris chart -->
+                            <link rel="stylesheet" href="bower_components/morris.js/morris.css">
+                            <!-- jvectormap -->
+                            <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+                            <!-- Date Picker -->
+                            <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+                            <!-- Daterange picker -->
+                            <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+                            <!-- bootstrap wysihtml5 - text editor -->
+                            <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+                            
+                            
+                            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+                            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+                            <!--[if lt IE 9]>
+                                <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+                                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+                                <![endif]-->
+                                
+                                <!-- Google Font -->
+                                
+                                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+                                
+                                
+                                
+                                <link rel="stylesheet" type="text/css" href="responsiveform.css">
+                                <link rel="stylesheet" media="screen and (max-width: 1200px) and (min-width: 601px)" href="responsiveform1.css" />
+                                <link rel="stylesheet" media="screen and (max-width: 600px) and (min-width: 351px)" href="responsiveform2.css" />
+                                <link rel="stylesheet" media="screen and (max-width: 350px)" href="responsiveform3.css" />
+                                
+                            </head>
                 <body class="hold-transition skin-blue sidebar-mini">
                     <div class="wrapper">
                         
@@ -470,7 +470,7 @@
                                         <!-- sidebar menu: : style can be found in sidebar.less -->
                                         <ul class="sidebar-menu" data-widget="tree">
                                             <li class="header">MAIN NAVIGATION</li>
-                                            <li class="active treeview">
+                                            <li class="treeview">
                                                 <a href="#">
                                                     <i class="fa fa-edit"></i> <span>Manage Item</span>
                                                     <span class="pull-right-container">
@@ -478,11 +478,11 @@
                                                     </span>
                                                 </a>
                                                 <ul class="treeview-menu">
-                                                    <li class="active"><a href="Add.html"><i class="fa fa-circle-o"></i> Add Item</a></li>
+                                                    <li><a href="Add.html"><i class="fa fa-circle-o"></i> Add Item</a></li>
                                                     <li><a href="View.html"><i class="fa fa-circle-o"></i> View Item</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="treeview">
+                                            <li class="active treeview">
                                                 <a href="#">
                                                     <i class="fa fa-files-o"></i>
                                                     <span>Manage Delivery</span>
@@ -491,7 +491,7 @@
                                                     </span>
                                                 </a>
                                                 <ul class="treeview-menu">
-                                                    <li><a href="Add deliveryman.html"><i class="fa fa-circle-o"></i>Add Delivery Man</a></li>
+                                                    <li class="active"><a href="Add deliveryman.html"><i class="fa fa-circle-o"></i>Add Delivery Man</a></li>
                                                     <li><a href="Deliveryman Details.html"><i class="fa fa-circle-o"></i>Deliveryman Details</a></li>
                                                     
                                                 </ul>
@@ -523,7 +523,7 @@
                                     
                                     <section class="content-header">
                                         <h2>
-                                            <center><b>Add Item</b></center>
+                                            <center><b>Add Delievryman</b></center>
                                             
                                         </h2>
                                         
@@ -538,32 +538,23 @@
                                             <div class="row" id="envelope">
                                                     <form action="" method="post">
                                                 <div class="col-md-6">
-                                                        <label>Item Id</label>
-                                                        <input name="Id" placeholder="1001" type="text" width="100px;">
-                                                        <label>Item Name</label>
-                                                        <input name="Name" placeholder="Sherwani" type="text">
-                                                        <label>Description</label>
-                                                        <input name="Description" placeholder="it is ....." type="text">
-                                                        <label>Select Category</label>
-                                                        <select id = "myList">
-                                                            <option value = "1">one</option>
-                                                            <option value = "2">two</option>
-                                                            <option value = "3">three</option>
-                                                            <option value = "4">four</option>
-                                                        </select>
+                                                        <label>Id</label>
+                                                        <input name="Id" placeholder="1" type="text" width="100px;">
+                                                        <label>Name</label>
+                                                        <input name="Name" placeholder="Suresh" type="text">
+                                                        <label>Address</label>
+                                                        <input name="Address" placeholder="b-2..." type="text">
+                                                       
                                                 </div>
                                                 
                                                 <div class="col-md-6">
-                                                        <label>Quantity</label>
-                                                        <input name="Quantity" placeholder="0-100" type="text">
-                                                        <label>Price</label>
-                                                        <input name="Price" placeholder="500rs" type="text">
-                                                        
-                                                        <label>Item Image</label>
+                                                        <label>Mobile Number</label>
+                                                        <input name="Mobile" placeholder="9998295252" type="text"><br>                                                                                   
+                                                        <label>Id Proof</label>
+                                                        <input type="file" id="myFile">
+                                                        <label>Image</label>
                                                         <input type="file" id="myFile"><br>
-                                                        <label>Optional Image</label>
-                                                        <input type="file" id="myFile"><br><br><br>
-                                                        <input id="submit" type="submit" value="Add Item">
+                                                        <input id="submit" type="submit" value="Add">
                                                 </div>
                                                 </form>
                                             </div>
