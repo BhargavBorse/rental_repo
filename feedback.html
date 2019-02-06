@@ -36,7 +36,8 @@
     <style>
         @media screen and (max-width: 450px){
             .img-feed{
-                visibility:hidden;
+                /* visibility:hidden; */
+                display: none;
             }
         }
     </style>
@@ -282,7 +283,7 @@
                         <!-- contact form grid -->
                         <div class="contact-top1">
                             <h5 class="text-dark mb-4 text-capitalize">send us a note</h5>
-                            <form action="#" method="get" class="f-color">
+                            <!-- <form action="#" method="get" class="f-color"> -->
                                 <div class="form-group">
                                     <label for="contactusername">Name</label>
                                     <input type="text" class="form-control" id="name" required>
@@ -294,15 +295,16 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="contactcomment">Your Message</label>
-                                    <textarea class="form-control" rows="5" id="contactcomment" required></textarea>
+                                    <textarea class="form-control" rows="5" id="message" required></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-info btn-block">Submit</button>
-                            </form>
+                                
+                                <input id="btn_feedback"class="btn btn-block btn-primary" type="button" value="Submit">
+                            <!-- </form> -->
                         </div>
                         <!--  //contact form grid ends here -->
                     </div>
                     <!-- contact details -->
-                    <div class="col-lg-6 contact-bottom pl-5 mt-lg-0 mt-5">
+                    <div class="col-lg-6 img-feed contact-bottom pl-5 mt-lg-0 mt-5">
                         <!-- contact details grid1-->
                         <!-- <div class="address">
                             <h5 class="pb-3 text-capitalize">Address</h5>
@@ -332,7 +334,7 @@
                                         </p>
                                     </div> -->
                                     <!-- //contact details row ends here -->
-                                    <img class="img-feed" src="images/feedback.png" style="width:110%; height: 400px;" alt="">
+                                    <img class="" src="images/feedback.png" style="width:110%; height: 400px;" alt="">
                                 </div>
                             </div>
                             <!-- //contact details container -->
@@ -687,6 +689,7 @@
                         </script>
                         <!-- <script type="text/javascript" src="js_files/login.js"></script> -->
                         <script type="text/javascript" src="js_files/feedback.js"></script>
+                        <script type="text/javascript" src="AdminLTE-2.4.5/js_files/Feedback.js"></script>
                     </body>
                     
                     </html>

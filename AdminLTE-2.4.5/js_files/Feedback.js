@@ -5,21 +5,28 @@ var database = firebase.database().ref();
 
 document.getElementById('btn_feedback').onclick = function(){
 
-   
+// alert('inf');
+    // document.getElementById('user_email_text').innerHTML = user.email;
+    // alert('database is :'+database);
     
-   var name = document.getElementById('name').value;
-   var user_email_text = document.getElementById('user_email_text').value;
-   var message = document.getElementById('message').value;
-   
+    var uname = document.getElementById('name').value;
+    // var email = document.getElementById('user_email_text').value;
+    // alert(uname);
+   var umessage = document.getElementById('message').value;
+//    document.getElementById('user_email_text').innerHTML = user.email;
+
+//    alert(umessage);
+alert('Feedback submitted Successfully');
 
     // var image = document.getElementById('image').value;
 
     database.child('Feedback').push({
 
         
-        name : name,
-        user_email_text : user_email_text,
-        message : message
+        name : uname,
+        // email: user.email,
+        // email: user_email_text,
+        message : umessage
         
 
 
@@ -28,7 +35,7 @@ document.getElementById('btn_feedback').onclick = function(){
     });
 
    
-    alert('Added');
+  
   
 
    
