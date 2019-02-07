@@ -255,13 +255,15 @@ h5.shop_w3 {
 }
 
 .ibanner_w3 {
-    background: url(../images/inner_ban.jpg)no-repeat center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-    min-height: 260px;
+    /* background: url(../images/inner_ban.jpg)no-repeat center; */
+    background-image: url(../images/inner_ban.jpg);
+  /* Set a specific height */
+  min-height: 250px; 
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h3.agile_btxt {
