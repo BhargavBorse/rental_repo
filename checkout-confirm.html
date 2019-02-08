@@ -121,7 +121,7 @@
                                                 <div class="card_number_grid_left">
                                                     <div class="controls">
                                                         <label class="control-label">Mobile number:</label>
-                                                        <input class="form-control" pattern="^\d{4}\d{3}\d{3}$" type="tel" id="phone_no">
+                                                        <input class="form-control" pattern="^\d{4}\d{3}\d{3}$" type="tel" id="phone_no" readonly>
                                                     </div>
                                                 </div>
                                                 
@@ -146,27 +146,28 @@
                                                 <div class="card_number_grid_right">
                                                     <div class="controls">
                                                         <label class="control-label">Address: </label>
-                                                        <input class="form-control" type="text" id="address">
+                                                        <input class="form-control" type="text" id="address" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="clear"> </div>
                                             </div>
                                             <div class="controls">
                                                 <label class="control-label">Pin Code: </label>
-                                                <input pattern="[0-9]{6}" type="text" class="form-control" id="pin_code">
+                                                <input pattern="[0-9]{6}" type="text" class="form-control" id="pin_code" readonly>
                                             </div>
                                             <div class="card_number_grid_right">
                                                 <div class="controls">
                                                     <label class="control-label">E-mail: </label>
-                                                    <!-- <input class="form-control" type="email" id="user_email_text"> -->
-                                                    <h5><a style="color:black;" id="user_email_text"></a></h5>
+                                                    <input class="form-control" type="email" id="user_email_text" readonly>
+                                                    <!-- <h5><a style="color:black;" id="user_email_text"></a></h5> -->
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="submit check_out" id="">Changes</button>
-                                <button class="submit check_out" id="wd_form_submit">Finish</button>
+                                <button class="submit check_out" id="back_changes">Changes</button>
+                                <button class="submit check_out" id="wd_submit">Finish</button>
+                                <br><br>
                             </div>
                             
                             <div class="col-md-2">
