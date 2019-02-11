@@ -13,6 +13,7 @@ document.getElementById('btn_insertname').onclick = function(){
    var item_category = document.getElementById('item_category').value;
    var item_quantity = document.getElementById('item_quantity').value;
    var item_price = document.getElementById('item_price').value;
+   var display_page = document.getElementById('display_page').value;
    var item_image = document.getElementById('item_image').value;
    var optional_image = document.getElementById('optional_image').value;
 
@@ -26,6 +27,7 @@ document.getElementById('btn_insertname').onclick = function(){
         item_category : item_category,
         item_quantity : item_quantity,
         item_price : item_price,
+        display_page : display_page,
         item_image : item_image,
         optional_image : optional_image
 
