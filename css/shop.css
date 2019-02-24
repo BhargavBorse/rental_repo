@@ -164,9 +164,9 @@ div#my-cart-modal .close:hover,
 #staplesbmincart {
 	display: none;
 	position: fixed;
-	left: 68%;
+	left: 38%;
 	top: 16.9%;
-	width: 420px;
+	width: 570px;
 }
 
 .sbmincart-showing #staplesbmincart {
@@ -1461,7 +1461,7 @@ a.link-product-add-cart.position-absolute {
 	#staplesbmincart {
 		left: 52%;
 		top: 16.9%;
-		width: 420px;
+		width: 470px;
 	}
 	.inner-men-cart-pro .link-product-add-cart {
 		top: 49%;
@@ -1524,7 +1524,7 @@ a.link-product-add-cart.position-absolute {
 	#staplesbmincart {
 		left: 52%;
 		top: 16.9%;
-		width: 322px;
+		width: 335px;
 	}
 	#staplesbmincart .sbmincart-footer {
 		margin-right: 0em;
@@ -1554,7 +1554,7 @@ a.link-product-add-cart.position-absolute {
 	#staplesbmincart {
 		left: 51%;
 		top: 29.9%;
-		width: 284px;
+		width: 335px;
 	}
 	#staplesbmincart .sbmincart-item a {
 		font-size: 0.8em;
@@ -1583,7 +1583,7 @@ a.link-product-add-cart.position-absolute {
 	#staplesbmincart {
 		left: 44.5%;
 		top: 29.9%;
-		width: 284px;
+		width: 335px;
 	}
 }
 
@@ -1591,7 +1591,7 @@ a.link-product-add-cart.position-absolute {
 	#staplesbmincart {
 		left: 22%;
 		top: 15.9%;
-		width: 294px;
+		width: 335px;
 	}
 }
 
@@ -1619,7 +1619,7 @@ a.link-product-add-cart.position-absolute {
 	#staplesbmincart {
 		left: 9%;
 		top: 15.9%;
-		width: 294px;
+		width: 335px;
 	}
 	#staplesbmincart {
 		left: 3%;
@@ -1635,7 +1635,7 @@ a.link-product-add-cart.position-absolute {
 @media(max-width:320px) {
 	#staplesbmincart {
 		left: 2%;
-		width: 290px;
+		width: 335px;
 	}
 	.hub.single-item.single_page_b {
 		width: 58%;

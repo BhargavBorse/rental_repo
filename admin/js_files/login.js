@@ -1,3 +1,4 @@
+var database = firebase.database().ref();
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
@@ -23,12 +24,27 @@ firebase.auth().onAuthStateChanged(function(user) {
     //   document.getElementById("user_para").innerHTML = "Email-Id : " + email_id + "<br/> Verified: " + email_verified;
       
     // }
- window.location.href ="index.html";   
+    database.child('users').child(user.uid).child('role').child('admin').on('value',function(getadminrolesnapshot){
+
+      var getadminrole = getadminrolesnapshot.val();
+      console.log(getadminrole);
+      if(getadminrole == true)
+      {
+        alert('Youre admin, you can proceed');
+        window.location.href = 'index.html';
+      }
+      else
+      {
+          alert('Sorry, you aren"t admin');
+      }
+
+  });
+    
   } else {
     // No user is signed in.
     
-    document.getElementById("user_div").style.display = "none";
-    document.getElementById("login_div").style.display = "block";
+    // document.getElementById("user_div").style.display = "none";
+    // document.getElementById("login_div").style.display = "block";
     
   }
 });

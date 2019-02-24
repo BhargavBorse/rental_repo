@@ -1,13 +1,3 @@
-/*!
- * mincart
- * The Mini Cart is a great way to improve your PayPal shopping cart integration.
- *
- * @version 3.0.6
- * @author Jeff Harrell <https://github.com/jeffharrell/>
- * @url http://www.mincartjs.com/
- * @license MIT <https://github.com/jeffharrell/mincart/raw/master/LICENSE.md>
- */
-
 ;
 (function e(t, n, r) {
   function s(o, u) {
@@ -2635,8 +2625,8 @@
       UAH: {
         before: '\u20b4'
       },
-      USD: {
-        before: '$',
+      IND: {
+        before: 'Rs',
         code: true
       },
       UYU: {
@@ -2659,7 +2649,7 @@
 
 
     module.exports = function currency(amount, config) {
-      var code = config && config.currency || 'USD',
+      var code = config && config.currency || 'IND',
         value = currencies[code],
         before = value.before || '',
         after = value.after || '',
