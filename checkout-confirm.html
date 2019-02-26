@@ -31,6 +31,19 @@
     
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />  
+    
+    <style>
+        .log-out{
+            background-color:#005073;
+            border: none;
+            color: white;
+            transition: 0.3s;
+        }
+        .log-out:hover{
+            background-color:darkred;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
@@ -186,9 +199,11 @@
                             <li>
                                 <a href="index.html" style="color: white;">Home</a>
                             </li>
-                            
                             <li>
-                                <a href="shop.html" style="color: white;">Shop</a>
+                                <a href="#myModal_btn" data-toggle="modal" data-target="#myModal_btn" style="color: white;">Deals</a>
+                            </li>
+                            <li>
+                                <a href="#myacc" data-toggle="modal" data-target="#myacc" style="color: white;">Profile</a>
                             </li>
                             <li>
                                 <a href="Feedback.html" style="color: white;">Feedback</a>
@@ -396,7 +411,7 @@
                                     </div>
                                     <br>
                                     <div class="right-w3l">
-                                        <button class="btn btn-danger form-control" style="color: black;" id="logout_btn" onclick="logout_user()">LOGOUT</button>
+                                        <button class="btn btn-danger form-control log-out" id="logout_btn" onclick="logout_user()">LOGOUT</button>
                                     </div>
                                     
                                 </div>
