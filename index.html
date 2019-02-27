@@ -39,25 +39,40 @@
                 visibility:hidden;
             }
         }
-        .log-out{
-            background-color:#005073;
-            border: none;
-            color: white;
-            transition: 0.3s;
+        .top-container {
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
         }
-        .log-out:hover{
-            background-color:darkred;
-            color: white;
+        
+        .header {
+            
+            background: white;
+            z-index: 2;
+        }
+        .content {
+            padding: 16px;
+        }
+        
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-shadow: 0px 10px 9px rgba(0,0, 0, 0.3);
+        }
+        
+        .sticky + .content {
+            padding-top: 102px;
         }
     </style>
 </head>
 
 <body>
     <!-- header -->
-    <header>
+    <header class="header" id="myHeader">
         <div class="container">
             <!-- top nav -->
-            <nav class="top_nav d-flex pt-3 pb-1">
+            <nav class="top_nav top-c d-flex pt-3 pb-1">
                 <!-- logo -->
                 <h1>
                     <a class="navbar-brand" href="index.html">F|4|F 
@@ -129,144 +144,145 @@
                 </div>
             </nav>
             <!-- //top nav -->
-            <!-- bottom nav -->
-            <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto text-center">
-                    <li class="nav-item">
-                        <a class="nav-link  active" href="index.html">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown has-mega-menu">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Men's clothing</a>
-                        <div class="dropdown-menu" >
-                            <div class="px-0 container">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <a class="dropdown-item" href="men.html">Blazer</a>
-                                        <a class="dropdown-item" href="men.html">Indo-Western</a>
-                                        <a class="dropdown-item" href="men.html">Kurta Pyjama</a>
-                                        <a class="dropdown-item" href="men.html">Nehru Jacket</a>
-                                        <a class="dropdown-item" href="men.html">Sherwani</a>
-                                        <a class="dropdown-item" href="men.html">Suit</a>
-                                        <a class="dropdown-item" href="men.html">Accessories</a>
-                                    </div>
-                                    <!-- <div class="col-md-4">
-                                        <a class="dropdown-item" href="men.html">T-Shirts</a>
-                                        <a class="dropdown-item" href="men.html">Trousers</a>
-                                        <a class="dropdown-item" href="men.html">Shirts</a>
-                                        <a class="dropdown-item" href="men.html">Suits & Blazers</a>
-                                        <a class="dropdown-item" href="men.html">Coats & Jackets</a>
-                                        <a class="dropdown-item" href="men.html">Jackets</a>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <a class="dropdown-item" href="men.html">T-Shirts</a>
-                                        <a class="dropdown-item" href="men.html">Coats</a>
-                                        <a class="dropdown-item" href="men.html">Shirts</a>
-                                        <a class="dropdown-item" href="men.html">Suits & Blazers</a>
-                                        <a class="dropdown-item" href="men.html">Jackets</a>
-                                        <a class="dropdown-item" href="men.html">Trousers</a>
-                                    </div> -->
-                                </div>
+            
+            <!-- //bottom nav -->
+        </div>
+        <!-- //header container --> 
+    </header>
+    <!-- bottom nav -->
+    <nav class="navbar med-fix navbar-expand-lg navbar-light justify-content-center" id="med-fix">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto text-center">
+            <li class="nav-item">
+                <a class="nav-link  active" href="index.html">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown has-mega-menu">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Men's clothing</a>
+                <div class="dropdown-menu" >
+                    <div class="px-0 container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a class="dropdown-item" href="men.html">Blazer</a>
+                                <a class="dropdown-item" href="men.html">Indo-Western</a>
+                                <a class="dropdown-item" href="men.html">Kurta Pyjama</a>
+                                <a class="dropdown-item" href="men.html">Nehru Jacket</a>
+                                <a class="dropdown-item" href="men.html">Sherwani</a>
+                                <a class="dropdown-item" href="men.html">Suit</a>
+                                <a class="dropdown-item" href="men.html">Accessories</a>
+                            </div>
+                            <!-- <div class="col-md-4">
+                                <a class="dropdown-item" href="men.html">T-Shirts</a>
+                                <a class="dropdown-item" href="men.html">Trousers</a>
+                                <a class="dropdown-item" href="men.html">Shirts</a>
+                                <a class="dropdown-item" href="men.html">Suits & Blazers</a>
+                                <a class="dropdown-item" href="men.html">Coats & Jackets</a>
+                                <a class="dropdown-item" href="men.html">Jackets</a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="dropdown-item" href="men.html">T-Shirts</a>
+                                <a class="dropdown-item" href="men.html">Coats</a>
+                                <a class="dropdown-item" href="men.html">Shirts</a>
+                                <a class="dropdown-item" href="men.html">Suits & Blazers</a>
+                                <a class="dropdown-item" href="men.html">Jackets</a>
+                                <a class="dropdown-item" href="men.html">Trousers</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item dropdown has-mega-menu" style="position:static;">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Women's clothing</a>
+                <div class="dropdown-menu" style="width:100%">
+                    <div class="px-0 container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="dropdown-item" href="women.html">Dresses</a>
+                                <a class="dropdown-item" href="women.html">T-shirts</a>
+                                <a class="dropdown-item" href="women.html">Skirts</a>
+                                <a class="dropdown-item" href="women.html">Jeans</a>
+                                <a class="dropdown-item" href="women.html">Tunics</a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="dropdown-item" href="women.html">T-shirts</a>
+                                <a class="dropdown-item" href="women.html">Dresses</a>
+                                <a class="dropdown-item" href="women.html">Tunics</a>
+                                <a class="dropdown-item" href="women.html">Skirts</a>
+                                <a class="dropdown-item" href="women.html">Jeans</a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="dropdown-item" href="women.html">Dresses</a>
+                                <a class="dropdown-item" href="women.html">T-shirts</a>
+                                <a class="dropdown-item" href="women.html">Skirts</a>
+                                <a class="dropdown-item" href="women.html">Jeans</a>
+                                <a class="dropdown-item" href="women.html">Tunics</a>
                             </div>
                         </div>
-                    </li>
-                    <li class="nav-item dropdown has-mega-menu" style="position:static;">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Women's clothing</a>
-                        <div class="dropdown-menu" style="width:100%">
-                            <div class="px-0 container">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <a class="dropdown-item" href="women.html">Dresses</a>
-                                        <a class="dropdown-item" href="women.html">T-shirts</a>
-                                        <a class="dropdown-item" href="women.html">Skirts</a>
-                                        <a class="dropdown-item" href="women.html">Jeans</a>
-                                        <a class="dropdown-item" href="women.html">Tunics</a>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <a class="dropdown-item" href="women.html">T-shirts</a>
-                                        <a class="dropdown-item" href="women.html">Dresses</a>
-                                        <a class="dropdown-item" href="women.html">Tunics</a>
-                                        <a class="dropdown-item" href="women.html">Skirts</a>
-                                        <a class="dropdown-item" href="women.html">Jeans</a>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <a class="dropdown-item" href="women.html">Dresses</a>
-                                        <a class="dropdown-item" href="women.html">T-shirts</a>
-                                        <a class="dropdown-item" href="women.html">Skirts</a>
-                                        <a class="dropdown-item" href="women.html">Jeans</a>
-                                        <a class="dropdown-item" href="women.html">Tunics</a>
-                                    </div>
-                                </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item dropdown has-mega-menu" style="position:static;">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kids Clothing</a>
+                <div class="dropdown-menu" style="width:100%">
+                    <div class="container">
+                        <div class="row w3_kids  py-3">
+                            <div class="col-md-3 ">
+                                <span class="bg-light">Boy's Clothing</span>
+                                <a class="dropdown-item" href="boys.html">T-Shirts</a>
+                                <a class="dropdown-item" href="boys.html">Coats</a>
+                                <a class="dropdown-item" href="boys.html">Shirts</a>
+                                <a class="dropdown-item" href="boys.html">Suits & Blazers</a>
+                                <a class="dropdown-item" href="boys.html">Jackets</a>
+                                <a class="dropdown-item" href="boys.html">Trousers</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="dropdown-item mt-4" href="boys.html">T-Shirts</a>
+                                <a class="dropdown-item" href="boys.html">Coats</a>
+                                <a class="dropdown-item" href="boys.html">Shirts</a>
+                                <a class="dropdown-item" href="boys.html">Suits & Blazers</a>
+                                <a class="dropdown-item" href="boys.html">Jackets</a>
+                                <a class="dropdown-item" href="boys.html">Trousers</a>
+                            </div>
+                            <div class="col-md-3">
+                                <span>Girl's Clothing</span>
+                                <a class="dropdown-item" href="girls.html">T-shirts</a>
+                                <a class="dropdown-item" href="girls.html">Dresses</a>
+                                <a class="dropdown-item" href="girls.html">Tunics</a>
+                                <a class="dropdown-item" href="girls.html">Skirts</a>
+                                <a class="dropdown-item" href="girls.html">Jeans</a>
+                                <a class="dropdown-item" href="girls.html">Midi</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="dropdown-item  mt-4" href="girls.html">Tunics</a>
+                                <a class="dropdown-item" href="girls.html">Skirts</a>
+                                <a class="dropdown-item" href="girls.html">T-shirts</a>
+                                <a class="dropdown-item" href="girls.html">Dresses</a>
+                                <a class="dropdown-item" href="girls.html">Jeans</a>
                             </div>
                         </div>
-                    </li>
-                    <li class="nav-item dropdown has-mega-menu" style="position:static;">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kids Clothing</a>
-                        <div class="dropdown-menu" style="width:100%">
-                            <div class="container">
-                                <div class="row w3_kids  py-3">
-                                    <div class="col-md-3 ">
-                                        <span class="bg-light">Boy's Clothing</span>
-                                        <a class="dropdown-item" href="boys.html">T-Shirts</a>
-                                        <a class="dropdown-item" href="boys.html">Coats</a>
-                                        <a class="dropdown-item" href="boys.html">Shirts</a>
-                                        <a class="dropdown-item" href="boys.html">Suits & Blazers</a>
-                                        <a class="dropdown-item" href="boys.html">Jackets</a>
-                                        <a class="dropdown-item" href="boys.html">Trousers</a>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <a class="dropdown-item mt-4" href="boys.html">T-Shirts</a>
-                                        <a class="dropdown-item" href="boys.html">Coats</a>
-                                        <a class="dropdown-item" href="boys.html">Shirts</a>
-                                        <a class="dropdown-item" href="boys.html">Suits & Blazers</a>
-                                        <a class="dropdown-item" href="boys.html">Jackets</a>
-                                        <a class="dropdown-item" href="boys.html">Trousers</a>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <span>Girl's Clothing</span>
-                                        <a class="dropdown-item" href="girls.html">T-shirts</a>
-                                        <a class="dropdown-item" href="girls.html">Dresses</a>
-                                        <a class="dropdown-item" href="girls.html">Tunics</a>
-                                        <a class="dropdown-item" href="girls.html">Skirts</a>
-                                        <a class="dropdown-item" href="girls.html">Jeans</a>
-                                        <a class="dropdown-item" href="girls.html">Midi</a>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <a class="dropdown-item  mt-4" href="girls.html">Tunics</a>
-                                        <a class="dropdown-item" href="girls.html">Skirts</a>
-                                        <a class="dropdown-item" href="girls.html">T-shirts</a>
-                                        <a class="dropdown-item" href="girls.html">Dresses</a>
-                                        <a class="dropdown-item" href="girls.html">Jeans</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="feedback.html">Feedback</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!-- //bottom nav -->
+                    </div>
+                </div>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="feedback.html">Feedback</a>
+            </li>
+        </ul>
     </div>
-    <!-- //header container --> 
-</header>
+</nav>
 <!-- //header -->
 <!-- banner -->
-<div class="ibanner_w3 pt-sm-5 pt-3">
+<div class="ibanner_w3 pt-sm-5 pt-3 content">
     <h4 class="head_agileinfo text-center text-capitalize text-center pt-5" style="margin-top:20%;">
         <span>F</span>reedom
         <span>f</span>or
@@ -351,6 +367,7 @@
                             <a class="nav-link" href="#boy" role="tab" id="boy-tab" data-toggle="tab" aria-controls="boy">Boy's Fashion</a>
                         </li>
                     </ul>
+                    <p>Swipe for more choices</p>
                 </nav>
                 <!-- Content Panel -->
                 <div id="clothing-nav-content" class="tab-content py-sm-5">
@@ -1509,12 +1526,12 @@
                                 <br>
                                 <div class="right-w3l">
                                     <!-- <input type="submit" class="form-control" value="Update Details"> -->
-                                    <a href="user-details.html" style="background-color:#005073"  class="btn btn-primary form-control">Update Details</a>
+                                    <a href="user-details.html"  class="btn btn-primary btn-norm form-control">Update Details</a>
                                 </div>
                                 <br>                        
                                 <div class="right-w3l">
                                     <!-- <input type="submit" class="form-control" value="Order History"> -->
-                                    <a href="" style="background-color:#005073" class="form-control btn btn-primary">Order History</a>
+                                    <a href="order-history.html" class="form-control btn-norm btn btn-primary">Order History</a>
                                 </div>
                                 <br>
                                 <div class="right-w3l">
@@ -1668,6 +1685,20 @@
                 });
                 
             });
+        </script>
+        <script>
+            window.onscroll = function() {myFunction()};
+            
+            var header = document.getElementById("myHeader");
+            var sticky = header.offsetTop;
+            
+            function myFunction() {
+                if (window.pageYOffset > sticky) {
+                    header.classList.add("sticky");
+                } else {
+                    header.classList.remove("sticky");
+                }
+            }
         </script>
         <script src="js/SmoothScroll.min.js"></script>
         <!-- //smooth-scrolling-of-move-up -->

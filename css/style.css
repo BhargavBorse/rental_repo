@@ -138,7 +138,6 @@ h1 a.navbar-brand {
 a.navbar-brand:first-letter {
     color: #000;
 }
-
 .w3_kids span {
     color: #000;
     font-weight: 600;
@@ -250,7 +249,7 @@ h5.shop_w3 {
 
 .ibanner_w3 {
     /* background: url(../images/inner_ban.jpg)no-repeat center; */
-    background-image: url(../images/SNEHALAMAR_MEHANDINIGHT.jpg);
+    background-image: url(../images/SNEHALAMAR_MEHANDINIGHT_0371.jpg);
   /* Set a specific height */
   min-height: 500px; 
   /* Create the parallax scrolling effect */
@@ -294,6 +293,27 @@ h4.head_agileinfo {
     word-spacing: 25px;
     line-height: 70px;
     text-align: right;
+}
+
+.log-out{
+    background-color:#005073;
+    border: none;
+    color: white;
+    transition: 0.3s;
+}
+.log-out:hover{
+    background-color:darkred;
+    color: white;
+}
+.btn-norm{
+    background-color:#005073;
+    border: none;
+    color: white;
+    transition: 0.3s;
+}
+.btn-norm:hover{
+    background-color:black;
+    color: white;
 }
 
 h2.agile_btxt span {

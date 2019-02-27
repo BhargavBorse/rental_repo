@@ -1,0 +1,42 @@
+.form-container{
+    background: #fff;
+    padding: 30px;
+    border-radius:30px;
+    box-shadow: 0px 0px 10px 0px #000;
+    position: absolute;
+    top: 20vh; 
+    
+}
+.label1{
+    text-align: center;
+    font-weight: 600;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    font-family: sofia;
+    font-size: 20px;
+    padding-left: 100px; 
+    bottom: 300px;
+}
+.lebal2{
+        padding: 12px;
+}
+.addr{
+    padding: 10px;
+    padding-top: 5px;
+}
+.btncenter{
+    border-radius: 50px;
+    background: #F9FE14;
+    font-family: baloo;
+    font-size: 16px;
+    align-content: flex-end;
+    align-items: center;
+    margin-top:50px;
+    
+}
+.btnreplace{
+    border-radius: 30px;
+    border-block-start-width: 2px;
+    background:   #f2f3f4 ;
+}
