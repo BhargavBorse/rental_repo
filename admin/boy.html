@@ -39,8 +39,8 @@
         
         /* Makes responsive fields. Sets size and field alignment.*/
         input[type=text]{
-            margin-bottom: 15px;
-            margin-top: 0px;
+            margin-bottom: 20px;
+            margin-top: 10px;
             width:100%;
             padding: 15px;
             border-radius:5px;
@@ -177,6 +177,8 @@
                 <link rel="stylesheet" media="screen and (max-width: 600px) and (min-width: 351px)" href="responsiveform2.css" />
                 <link rel="stylesheet" media="screen and (max-width: 350px)" href="responsiveform3.css" />
                 
+                <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />  
             </head>
             <body class="hold-transition skin-blue sidebar-mini">
                 <div class="wrapper">
@@ -470,7 +472,7 @@
                                     <!-- sidebar menu: : style can be found in sidebar.less -->
                                     <ul class="sidebar-menu" data-widget="tree">
                                         <li class="header">MAIN NAVIGATION</li>
-                                        <li class="treeview">
+                                        <li class="active treeview">
                                             <a href="#">
                                                 <i class="fa fa-edit"></i> <span>Manage Item</span>
                                                 <span class="pull-right-container">
@@ -478,11 +480,25 @@
                                                 </span>
                                             </a>
                                             <ul class="treeview-menu">
-                                                <li><a href="Add.html"><i class="fa fa-circle-o"></i> Add Item</a></li>
+                                                <li class="treeview">
+                                                  <a href="Dod.html"><i class="fa fa-circle-o"></i> Add Item
+                                                    <span class="pull-right-container">
+                                                      <i class="fa fa-angle-left pull-right"></i>
+                                                    </span>
+                                                  </a>
+                                                  <ul class="treeview-menu">
+                                                      <li><a href="Dod.html"><i class="fa fa-circle-o"></i>Deals Of The Day</a></li>
+                                                      <li><a href="Men.html"><i class="fa fa-circle-o"></i>Men's Fashion</a></li>
+                                                      <li><a href="Women.html"><i class="fa fa-circle-o"></i>Women's Fashion</a></li>
+                                                      <li class="active"><a href="Boy.html"><i class="fa fa-circle-o"></i>Boy's Fashion</a></li>
+                                                      <li><a href="Girl.html"><i class="fa fa-circle-o"></i>Girl's Fashion</a></li>
+                                                </ul>
+                                                </li>
+                        
                                                 <li><a href="View.html"><i class="fa fa-circle-o"></i> View Item</a></li>
-                                            </ul>
+                                              </ul>
                                         </li>
-                                        <li class="active treeview">
+                                        <li class="treeview">
                                             <a href="#">
                                                 <i class="fa fa-files-o"></i>
                                                 <span>Manage Delivery</span>
@@ -491,7 +507,7 @@
                                                 </span>
                                             </a>
                                             <ul class="treeview-menu">
-                                                <li class="active"><a href="Add deliveryman.html"><i class="fa fa-circle-o"></i>Add Delivery Man</a></li>
+                                                <li><a href="Add deliveryman.html"><i class="fa fa-circle-o"></i>Add Delivery Man</a></li>
                                                 <li><a href="Deliveryman Details.html"><i class="fa fa-circle-o"></i>Deliveryman Details</a></li>
                                                 
                                             </ul>
@@ -523,7 +539,7 @@
                                 
                                 <section class="content-header">
                                     <h2>
-                                        <center><b>Add Deliveryman</b></center>
+                                        <center><b>Boy's Fashion</b></center>
                                         
                                     </h2>
                                     
@@ -536,29 +552,56 @@
                                     
                                     <body>
                                         <div class="row" id="envelope">
-                                            <!-- <form action="" method="post"> -->
+                                            <form action="" method="post">
                                                 <div class="col-md-6">
-                                                    <label>Email Id</label>
-                                                    <input id="email_field" placeholder="1" type="text" width="100px;">
-                                                    <label>Name</label>
-                                                    <input id="name" placeholder="Suresh" type="text">
-                                                    <label>Address</label>
-                                                    <input id="address" placeholder="b-2..." type="text">
-                                                    
+                                                    <label>Item Id</label>
+                                                    <input id="item_id" placeholder="1001" type="text"  width="100px;">
+                                                    <label>Item Name</label>
+                                                    <input id="item_name" placeholder="Sherwani" type="text">
+                                                    <label>Description</label>
+                                                    <input id="item_description" placeholder="it is ....." type="text">
+                                                    <label>Select Category</label>
+                                                    <select id = "item_category">
+                                                        <option value = "1">one</option>
+                                                        <option value = "2">two</option>
+                                                        <option value = "3">three</option>
+                                                        <option value = "4">four</option>
+                                                    </select>
+                                                    <label>Item Image</label>
+                                                    <input type="file" id="item_image"><br><br>
+                
                                                 </div>
                                                 
                                                 <div class="col-md-6">
-                                                    <label>Password</label>
-                                                    <input id="password_field" type="text"><br>
-                                                    <label>Mobile Number</label>
-                                                    <input id="mobile" placeholder="9998295252" type="text"><br>                                                                                   
-                                                    <label>Id Proof</label>
-                                                    <input id="id_proof" type="file" id="myFile">
-                                                    <label>Image</label>
-                                                    <input id="profile_image" type="file" id="myFile"><br>
-                                                    <button class="btn btn-block btn-primary" onclick="create_account();" id="create_account" type="button" value="Add"> Create Account </button>
+                                                    <label>Quantity</label>
+                                                    <input id="item_quantity" placeholder="0-100" type="text">
+                                                    <label>Price</label>
+                                                    <input id="item_price" placeholder="500rs" type="text"><br>
+                                                    
+                                                    <label>Display page</label>
+                                                    <select id = "display_page" style="margin-top: 4% !important;">
+                                                        <option value = "1">one</option>
+                                                        <option value = "2">two</option>
+                                                        <option value = "3">three</option>
+                                                        <option value = "4">four</option>
+                                                    </select>
+
+                                                    <label style="margin-top: 9% !important" >Size</label>
+                                                    <select id = "size" >
+                                                        <option value = "1">S</option>
+                                                        <option value = "2">M</option>
+                                                        <option value = "3">L</option>
+                                                        <option value = "4">XL</option>
+                                                        <option value = "5">XXL</option>
+                                                    </select>
+
+
+                                                    <label>Optional Image</label>
+                                                    <input type="file" id="optional_image"><br>
+                                                   
                                                 </div>
-                                            <!-- </form> -->
+                                                <center><input id="btn_insertname" class="btn btn-block btn-primary" type="button" value="Add Item"></center>
+                                            </form>
                                         </div>
                                         
                                         
@@ -644,7 +687,7 @@
                                     };
                                     firebase.initializeApp(config);
                                 </script>
-                                <script src="js_files/add-deliveryman.js"></script>
+                                <script src="js_files/Add.js" type="text/javascript"></script>
                             </body>
                             </html>
                             

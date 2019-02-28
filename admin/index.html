@@ -21,7 +21,13 @@
     text-align: center;
     padding-top: 140px;
     font-size: 14px;
-  }</style>
+  }
+    .light_image{
+      height: 50px;
+      width: 50px;
+    }
+
+  </style>
   <script src=" http://www.sitepoint.com/responsive-data-tables-comprehensive-list-solutions"></script>
   
   <title>F4F | Dashboard</title>
@@ -48,6 +54,8 @@
     <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
+    <link rel="stylesheet" href="lightbox/dist/css/lightbox.min.css">
     
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -344,20 +352,11 @@
                     </div>
                     <div class="pull-left info">
                       <p>Dharmesh Patel</p>
-                      <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                      <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
                     </div>
                   </div>
                   <!-- search form -->
-                  <form action="#" method="get" class="sidebar-form">
-                    <div class="input-group">
-                      <input type="text" name="q" class="form-control" placeholder="Search...">
-                      <span class="input-group-btn">
-                        <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                        </button>
-                      </span>
-                    </div>
-                    
-                  </form>
+                  
                   <!-- /.search form -->
                   <!-- sidebar menu: : style can be found in sidebar.less -->
                   <ul class="sidebar-menu" data-widget="tree">
@@ -564,8 +563,8 @@
                             <thead>
                               <tr>
                                 <th>Customer Name</th>
-                                <th>Address</th>
-                                <th>Delivery Man</th> 
+                                <th>Item Image</th>
+                                <th>Item Price</th> 
                                 <th>More Info</th>
                                 
                               </tr>
@@ -573,23 +572,23 @@
                             <tbody>
                               <tr>
                                 <td>Navin</td>
-                                <td>41,803,125</td>
-                                <td>ashu boiii</td>
+                                <td> <a class="example-image-link" href="dist/img/avatar04.png" data-lightbox="example-1"><img class="light_image" src="dist/img/avatar04.png" alt="image-1" /></a></td>
+                                <td>500rs</td>
                                 <td><button class="fa fa-info btn btn-primary">
                                 </button></td>
                               </tr>
                               
                               <tr>
                                 <td>Navin</td>
-                                <td>41,803,125</td>
-                                <td>ashu boiii</td>
+                                <td> <a class="example-image-link" href="dist/img/avatar04.png" data-lightbox="example-1"><img class="light_image" src="dist/img/avatar04.png" alt="image-1" /></a></td>
+                                <td>500rs</td>
                                 <td><button class="fa fa-info btn btn-primary">
                                 </button></td>
                               </tr>
                               <tr>
                                 <td>Navin</td>
-                                <td>41,803,125</td>
-                                <td>ashu boiii</td>
+                                <td> <a class="example-image-link" href="dist/img/avatar04.png" data-lightbox="example-1"><img class="light_image" src="dist/img/avatar04.png" alt="image-1" /></a></td>
+                                <td>500rs</td>
                                 <td><button class="fa fa-info btn btn-primary">
                                 </button></td>
                               </tr>
