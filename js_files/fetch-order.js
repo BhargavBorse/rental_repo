@@ -4,13 +4,13 @@ var eventRef = firebase.database().ref('users');
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
 
-        // var databaseRef = firebase.database().ref()('users');
+        // var eventRef = firebase.database().ref()('users');
         // eventRef.on('value', function(snap){
         //     var users = snap.val();
         //     var keys = Object.keys(users);
             
         //     for(var i = 0; i< keys.length;i++){
-        //         console.log( 'st user key- '+ keys[0]);
+        //         console.log( i +'st user key- '+ keys[i]);
         //     }
         // });
         eventRef.child(user.uid).child('details').on('value',function(user_details_snapshot){
@@ -42,8 +42,8 @@ firebase.auth().onAuthStateChanged(function(user) {
             var Price_cell = newRow.insertCell(2);
             var Ordered_Date_cell = newRow.insertCell(3);
             var Order_Type_cell = newRow.insertCell(4);
-            var Order_Status_cell = newRow.insertCell(5);
-            var Delivery_Return_Date_cell = newRow.insertCell(6);
+            var Delivery_Return_Date_cell = newRow.insertCell(5);
+            var Order_Status_cell = newRow.insertCell(6);
             var Address_cell = newRow.insertCell(7);
             
             //CellValue
@@ -52,8 +52,8 @@ firebase.auth().onAuthStateChanged(function(user) {
             var Price_cell_value = document.createTextNode(Price);
             var Ordered_Date_cell_value = document.createTextNode(Ordered_Date);
             var Order_Type_cell_value = document.createTextNode(Order_Type);
-            var Order_Status_cell_value = document.createTextNode(Order_Status);
             var Delivery_Return_Date_cell_value = document.createTextNode(Delivery_Return_Date);
+            var Order_Status_cell_value = document.createTextNode(Order_Status);
             var Address_cell_value = document.createTextNode(Address);
             
             product_name_cell.appendChild(product_name_cell_value);
