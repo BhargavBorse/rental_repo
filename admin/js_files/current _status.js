@@ -1,4 +1,6 @@
 var tableRef = document.getElementById('current_status').getElementsByTagName('tbody')[0];
+// var eventRef = firebase.database().ref('admin');
+// var eventRef = firebase.database().ref('users');
 
 firebase.database().ref().child('Admin').child('Order').on('child_added',function(cs_order){
     
@@ -31,6 +33,9 @@ firebase.database().ref().child('Admin').child('Order').on('child_added',functio
 
   button.addEventListener ("click", function() {
     window.location.href='order_details.html';
+
+   
   });
-});
+  });
+
 
