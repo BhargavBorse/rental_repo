@@ -14,7 +14,7 @@ if(isset($_POST["category"])){
     // Display city dropdown based on country name
     if($category !== 'Select'){
         echo "<label>Subcategory:</label>";
-        echo "<select>";
+        echo "<select id='response_val'>";
         foreach($categoryArr[$category] as $value){
             echo "<option>". $value . "</option>";
         }
