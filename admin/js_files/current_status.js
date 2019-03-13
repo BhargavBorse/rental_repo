@@ -7,10 +7,13 @@ firebase.database().ref().child('Admin').child('Order').on('child_added',functio
     var cs_order_status = cs_order.child('Order_Status').val();
     var cs_item_name = cs_order.child('product_name').val();
     var cs_item_price = cs_order.child('Price').val();
-    var button = document.createElement("button");
+    var user_id = cs_order.child('Placed_By').val();
+    var id = cs_order.key;
+
+    // var button = document.createElement("button");
     // var button_text = document.createAttribute("bhargav").value;
-    var button_text_cell_value = document.createTextNode('Info');
-    button.appendChild(button_text_cell_value);
+    // var button_text_cell_value = document.createTextNode('Info');
+    // button.appendChild(button_text_cell_value);
     // Insert a row in the table at the last row
     var newRow   = tableRef.insertRow(0);
     
@@ -18,24 +21,35 @@ firebase.database().ref().child('Admin').child('Order').on('child_added',functio
     var order_status_cell = newRow.insertCell(0);
     var item_name_cell = newRow.insertCell(1);
     var item_price_cell = newRow.insertCell(2);
-   // var more_info_cell = newRow.insertCell(3);
-   var more_info_cell = newRow.appendChild(button);
+    var item_more_info_link = newRow.insertCell(3);
+    var id_cell = newRow.insertCell(4).hidden;
+
+
+    //Creation of More Info Link (Not Cell)
+    var item_more_info_actual_link = document.createElement("a");
+    item_more_info_actual_link.setAttribute('href','order_details.html?id='+id+'&uid='+user_id);
+    var item_more_info_actual_link_text = document.createTextNode('More Info');
+    item_more_info_actual_link.appendChild(item_more_info_actual_link_text);
+
     //CellValue
     var order_status_cell_value = document.createTextNode(cs_order_status);
     var  item_name_cell_value = document.createTextNode(cs_item_name);
     var item_price_cell_value = document.createTextNode(cs_item_price);
-   
+    var id_cell_text = document.createTextNode(id);
     
+    //Append Cell value to cell   
     order_status_cell.appendChild(order_status_cell_value);
     item_name_cell.appendChild(item_name_cell_value);
     item_price_cell.appendChild(item_price_cell_value);
+    item_more_info_link.appendChild(item_more_info_actual_link);
+    id_cell.appendChild(id_cell_text);
   //  more_info_cell.appendChild(button_text_cell_value);
 
-  button.addEventListener ("click", function() {
-    window.location.href='order_details.html';
+  // button.addEventListener ("click", function() {
+  //   window.location.href='order_details.html';
 
    
-  });
+  // });
   });
 
 
