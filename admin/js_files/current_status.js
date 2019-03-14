@@ -27,9 +27,19 @@ firebase.database().ref().child('Admin').child('Order').on('child_added',functio
 
     //Creation of More Info Link (Not Cell)
     var item_more_info_actual_link = document.createElement("a");
-    item_more_info_actual_link.setAttribute('href','order_details.html?id='+id+'&uid='+user_id);
-    var item_more_info_actual_link_text = document.createTextNode('More Info');
+    var item_button = document.createElement("button");
+    item_more_info_actual_link.appendChild(item_button);
+    var item_more_info_actual_link_text = document.createTextNode('');
     item_more_info_actual_link.appendChild(item_more_info_actual_link_text);
+    item_button.setAttribute('class', "btn btn-block btn-primary fa fa-info");
+    // item_button.setAttribute('class', "fa fa-info");
+    // item_button.setAttribute('style', "width: 40%; height: 30px; background-color: silver;");
+    item_more_info_actual_link.href = "order_details.html?id="+id+ "&uid="+user_id;
+    // item_more_info_actual_link.setAttribute('href','order_details.html?id='+id+'&uid='+user_id);
+    
+    
+    
+    
 
     //CellValue
     var order_status_cell_value = document.createTextNode(cs_order_status);
