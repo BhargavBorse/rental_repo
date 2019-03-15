@@ -180,127 +180,69 @@
                 <body class="hold-transition skin-blue sidebar-mini">
                     <div class="wrapper">
                         
-                            <header class="main-header">
-                                    <!-- Logo -->
-                                    <a href="index.html" class="logo">
-                                      <!-- mini logo for sidebar mini 50x50 pixels -->
-                                      
-                                      <!-- logo for regular state and mobile devices -->
-                                      <span class="logo-lg"><b>F4F</b></span>
+                        <header class="main-header">
+                            <!-- Logo -->
+                              <a href="#" class="logo" data-toggle="control-sidebar" role="button">
+                                <span class="logo-lg fa fa-tasks" style="margin-top:6.3%;"></span>
+                                <!-- <span class="logo-lg sidebar-toggle">F4F</span> -->
+                                <!-- <a href="index.html" style="float:right; font-size: 15pt; padding: 5%;"> Home</a> -->
+                              </a>
+                            <!-- <a href="index.html" class="logo"> -->
+                              <!-- mini logo for sidebar mini 50x50 pixels -->
+                              
+                              <!-- logo for regular state and mobile devices -->
+                              
+                              <!-- <span class="logo-lg"><b>F4F</b></span>
+                            </a> -->
+                            <!-- Header Navbar: style can be found in header.less -->
+                            <nav class="navbar navbar-static-top">
+                              <!-- Sidebar toggle button-->
+                              <!-- <a href="#" class="sidebar-toggle" data-toggle="control-sidebar" role="button">
+                                <span class=""></span>
+                              </a> -->
+                              
+                              <div class="navbar-custom-menu">
+                                <ul class="nav navbar-nav">
+                                  
+                                  <li class="dropdown user user-menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                      <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
+                                      <h class="fa fa-user"> Profile </h>
+                                      <span class="hidden-xs" id="name_out"></span>
                                     </a>
-                                    <!-- Header Navbar: style can be found in header.less -->
-                                    <nav class="navbar navbar-static-top">
-                                      <!-- Sidebar toggle button-->
-                                      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                                        <span class="sr-only">Toggle navigation</span>
-                                      </a>
+                                    <ul class="dropdown-menu">
+                                      <!-- User image -->
+                                      <li class="user-header">
+                                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                        
+                                        <p id="name-in">
+                                          <i id="user_email"></i>
+                                          <small>Member since Nov. 2018</small>
+                                        </p>
+                                      </li>
                                       
-                                      <div class="navbar-custom-menu">
-                                        <ul class="nav navbar-nav">
-                                                        
-                                              <li class="dropdown user user-menu">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                                  <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
-                                                  <h class="fa fa-user"> Profile </h>
-                                                  <span class="hidden-xs" id="name_out"></span>
-                                                </a>
-                                                <ul class="dropdown-menu">
-                                                  <!-- User image -->
-                                                  <li class="user-header">
-                                                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                                                    
-                                                    <p id="name-in">
-                                                      <i id="user_email"></i>
-                                                      <small>Member since Nov. 2018</small>
-                                                    </p>
-                                                  </li>
-                                                
-                                                    <li class="user-footer">
-                                                      <div class="pull-left">
-                                                        <a href="Profile.html" class="btn btn-default btn-flat">Profile</a>
-                                                      </div>
-                                                      <div class="pull-right">
-                                                        <!-- <a onclick="logout()" class="btn btn-default btn-flat">Sign out</a> -->
-                                                        <!-- <button onclick="logout()" class="btn btn-default btn-flat"> Sign Out</button> -->
-                                                        <button onclick="logout_user()" class="btn btn-default btn-flat"> Sign Out </button>
-                                                      </div>
-                                                    </li>
-                                                  </ul>
-                                                </li>
-                                                <!-- Control Sidebar Toggle Button -->
-                                                <li>
-                                                  <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                                                </li>
-                                              </ul>
-                                            </div>
-                                          </nav>
-                                        </header>
+                                      <li class="user-footer">
+                                        <div class="pull-left">
+                                          <a href="Profile.html" class="btn btn-default btn-flat">Profile</a>
+                                        </div>
+                                        <div class="pull-right">
+                                          <!-- <a onclick="logout()" class="btn btn-default btn-flat">Sign out</a> -->
+                                          <!-- <button onclick="logout()" class="btn btn-default btn-flat"> Sign Out</button> -->
+                                          <button onclick="logout_user()" class="btn btn-default btn-flat"> Sign Out </button>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                  <!-- Control Sidebar Toggle Button -->
+                                  <!-- <li>
+                                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-tasks"></i></a>
+                                  </li> -->
+                                </ul>
+                              </div>
+                            </nav>
+                          </header>
                                         <!-- Left side column. contains the logo and sidebar -->
-                                        <aside class="main-sidebar">
-                                          <!-- sidebar: style can be found in sidebar.less -->
-                                          <section class="sidebar">
-                                            <!-- Sidebar user panel -->
-                                            <div class="user-panel">
-                                              <div class="pull-left image">
-                                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                                              </div>
-                                              <div class="pull-left info">
-                                                <p>Dharmesh Patel</p>
-                                                <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
-                                              </div>
-                                            </div>
-                                 
-                                        <!-- /.search form -->
-                                        <!-- sidebar menu: : style can be found in sidebar.less -->
-                                        <ul class="sidebar-menu" data-widget="tree">
-                                            <li class="header">MAIN NAVIGATION</li>
-                                            <li class="active treeview">
-                                                <a href="#">
-                                                    <i class="fa fa-edit"></i> <span>Manage Item</span>
-                                                    <span class="pull-right-container">
-                                                        <i class="fa fa-angle-left pull-right"></i>
-                                                    </span>
-                                                </a>
-                                                <ul class="treeview-menu">
-                                                    <li><a href="Add.html"><i class="fa fa-circle-o"></i> Add Item</a></li>
-                                                    <li class="active"><a href="View.html"><i class="fa fa-circle-o"></i> View Item</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="treeview">
-                                                <a href="#">
-                                                    <i class="fa fa-files-o"></i>
-                                                    <span>Manage Delivery</span>
-                                                    <span class="pull-right-container">
-                                                        <i class="fa fa-angle-left pull-right"></i>
-                                                    </span>
-                                                </a>
-                                                <ul class="treeview-menu">
-                                                    <li><a href="Add deliveryman.html"><i class="fa fa-circle-o"></i>Add Delivery Man</a></li>
-                                                    <li><a href="Deliveryman Details.html"><i class="fa fa-circle-o"></i>Deliveryman Details</a></li>
-                                                    
-                                                </ul>
-                                            </li>
-                                            <li class="treeview">
-                                                <a href="#">
-                                                    <i class="fa fa-dashboard"></i>
-                                                    <span>View Order</span>
-                                                    <span class="pull-right-container">
-                                                        <i class="fa fa-angle-left pull-right"></i>
-                                                    </span>
-                                                </a>
-                                                <ul class="treeview-menu">
-                                                    <li><a href="index.html"><i class="fa fa-circle-o"></i>Current Status</a></li>
-                                                    <li><a href="History.html"><i class="fa fa-circle-o"></i>Previous History</a></li>
-                                                    
-                                                </ul>
-                                            </li>
-                                            
-                                            <li><a href="Feedback.html"><i class="fa fa-book"></i> <span>View Feedback</span></a></li>
-                                            
-                                        </ul>
-                                    </section>
-                                    
-                                </aside>
+                                       
                                 
                                 
                                 <div class="content-wrapper">
@@ -379,7 +321,84 @@
                                 <footer class="main-footer">
                                     
                                 </footer>
-                                
+                                <aside class="control-sidebar control-sidebar-dark">
+                                    <!-- Create the tabs -->
+                                    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                                      <!-- <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li> -->
+                                      
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <!-- <div class="tab-content"> -->
+                                      <!-- Home tab content -->
+                                      <div class="user-panel">
+                                        <div class="pull-left image">
+                                          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                        </div>
+                                        <div class="pull-left info">
+                                          <p>Dharmesh Patel</p>
+                                          <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
+                                        </div>
+                                      </div>
+                                      <!-- search form -->
+                                      
+                                      <!-- /.search form -->
+                                      <!-- sidebar menu: : style can be found in sidebar.less -->
+                                      <ul class="sidebar-menu" data-widget="tree">
+                                        <li class="header">MAIN NAVIGATION</li>
+                                        <li class="treeview">
+                                          <a href="#">
+                                            <i class="fa fa-edit"></i> <span>Manage Item</span>
+                                            <span class="pull-right-container">
+                                              <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                          </a>
+                                          <ul class="treeview-menu">
+                                            <li><a href="Add.html"><i class="fa fa-circle-o"></i> Add Item</a></li>
+                                            <li><a href="View.html"><i class="fa fa-circle-o"></i> View Item</a></li>
+                                          </ul>
+                                        </li>
+                                        <li class="treeview">
+                                          <a href="#">
+                                            <i class="fa fa-files-o"></i>
+                                            <span>Manage Delivery</span>
+                                            <span class="pull-right-container">
+                                              <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                          </a>
+                                          <ul class="treeview-menu">
+                                            <li><a href="Add deliveryman.html"><i class="fa fa-circle-o"></i>Add Delivery Man</a></li>
+                                            <li><a href="Deliveryman Details.html"><i class="fa fa-circle-o"></i>Deliveryman Details</a></li>
+                                            
+                                          </ul>
+                                        </li>
+                                        <li class="active treeview">
+                                          <a href="#">
+                                            <i class="fa fa-dashboard"></i>
+                                            <span>View Order</span>
+                                            <span class="pull-right-container">
+                                              <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                          </a>
+                                          <ul class="treeview-menu">
+                                            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>Current Status</a></li>
+                                            <li><a href="History.html"><i class="fa fa-circle-o"></i>Previous History</a></li>
+                                            
+                                          </ul>
+                                        </li>
+                                        
+                                        <li><a href="Feedback.html"><i class="fa fa-book"></i> <span>View Feedback</span></a></li>
+                                        <!-- <li><a href="Feedback.html"><i class="fa fa-book"></i> <span>Sign Out</span></a></li> -->
+                                        <!-- <li> <button onclick="logout_user()"> Check Out </button> </li> -->
+                                        
+                                      </ul>
+                                      
+                                      
+                                      <!-- /.form-group -->
+                                    </form>
+                                  </div>
+                                  <!-- /.tab-pane -->
+                                </div>
+                              </aside>
                                 
                                 
                                 

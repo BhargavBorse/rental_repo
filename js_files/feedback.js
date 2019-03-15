@@ -1,26 +1,52 @@
-var tableRef = document.getElementById('feed_table').getElementsByTagName('tbody')[0];
+var database = firebase.database().ref();
+var eventRef = firebase.database().ref('users');
 
-firebase.database().ref().child('Feedback').on('child_added',function(feedback_snapshot){
-    
-    var feedback_email = feedback_snapshot.child('email').val();
-    var feedback_message = feedback_snapshot.child('message').val();
-    var feedback_name = feedback_snapshot.child('name').val();
-    
-    // Insert a row in the table at the last row
-    var newRow   = tableRef.insertRow(0);
-    
-    //Cells
-    var customer_name_cell = newRow.insertCell(0);
-    var email_cell = newRow.insertCell(1);
-    var message_cell = newRow.insertCell(2);
-    
-    //CellValue
-    var customer_name_cell_value = document.createTextNode(feedback_name);
-    var  email_cell_value = document.createTextNode(feedback_email);
-    var message_cell_value = document.createTextNode(feedback_message);
-    
-    customer_name_cell.appendChild(customer_name_cell_value);
-    email_cell.appendChild(email_cell_value);
-    message_cell.appendChild(message_cell_value);
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        // User is signed in.
+        // console.log(user.uid);
+        // console.log(user.email);
+        // document.getElementById('user_email').innerHTML = user.email;
+        // document.getElementById('user_email_text').innerHTML = user.email;
+        
+        // this part is for auto fill. will be used in personal details
+        eventRef.child(user.uid).child('details').on('value',function(user_details_snapshot){
+            var user_details = user_details_snapshot.val();
+            document.getElementById('name').value = user_details.name;
+            document.getElementById('user_email_inside').value = user_details.email;
+            document.getElementById('user_email').innerHTML = user_details.email;
+            document.getElementById('phone_no_text').innerHTML = user_details.phone_number;
+        });
+        // end of fetching personal details
+    } else {
+        // No user is signed in.
+        window.alert('Sorry! No user has been signed in. Please try logging in again');
+        window.location = 'Guest index.html';
+    }
 });
+document.getElementById('btn_feedback').onclick = function(){
 
+    var name_wd = document.getElementById('name').value;
+    var email_wd = document.getElementById('user_email_inside').value;
+    var message_wd = document.getElementById('message').value;
+    // alert(email_wd);
+    database.child('Feedback').push({
+        name: name_wd, 
+        email: email_wd,
+        message: message_wd
+    });
+    alert('Details Successfully Updated');
+// end of storing data
+};
+
+function logout_user(){
+    firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+        alert('Signout Successful');
+        window.location = 'Guest index.html';
+    }).catch(function(error) {
+        // An error happened.
+        alert('Please try again');
+    });
+    
+}

@@ -25,7 +25,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                 Order_Type: order_type_wd,
                 Delivery_Return_Date: d_r_date_wd,
                 Order_Status: order_status_wd,
-                Address: address_wd
+                Address: address_wd,
+                
             });
             database.child('Admin').child('Order').push({
                 product_name: p_name_wd, 
@@ -35,7 +36,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                 Order_Type: order_type_wd,
                 Delivery_Return_Date: d_r_date_wd,
                 Order_Status: order_status_wd,
-                Address: address_wd
+                Address: address_wd,
+                Placed_By : user.uid
             });
             alert('Details Successfully Updated in user');
         };
