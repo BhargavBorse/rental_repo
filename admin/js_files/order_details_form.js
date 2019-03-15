@@ -41,6 +41,7 @@ databaseRef.child('Admin').child('Order').child(id).on('value',function(more_inf
 
 databaseRef.child('users').child(uid).child('details').on('value',function(order_details_user_snapshot){
 
+    document.getElementById('email').value = order_details_user_snapshot.child('email').val();
     document.getElementById('name').value = order_details_user_snapshot.child('name').val();
     document.getElementById('mobile_number').value = order_details_user_snapshot.child('phone_number').val();
     document.getElementById('address').value = order_details_user_snapshot.child('Address').val();
