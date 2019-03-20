@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
     <meta name="keywords" content="Fashion Hub Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
     <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
@@ -89,19 +89,20 @@
         <!-- //header container -->
     </header>
     <!-- //header -->
-	<!-- inner banner -->
-	<div class="pt-sm-5 pt-3">
+    <!-- inner banner -->
+    <div class="pt-sm-5 pt-3">
         <section class="wthree-row pt-3 pb-sm-5 w3-contact">
             <div class="container py-sm-1 pb-1">
                 <h5 class="head_agileinfo text-capitalize pb-3">
                     <span>D</span>etails</h5>
                     Fill the details to proceed.
+                    <p id="date" style="visibility: hidden;"></p>
                     <div class="row contact-form pt-lg-1">
                         <div class="col-lg-8 wthree-form-center">
                             <!-- contact form grid -->
                             <div class="contact-top1">
                                 <!-- <h5 class="text-dark mb-4 text-capitalize">Fill the given </h5> -->
-                                <form class="bgx">
+                                <form name="myForm" class="bgx">
                                     <div class="form-group">
                                         <label style="color:white;">First Name</label>
                                         <input style="background-color:white;" type="text" class="form-control" id="name" required>
@@ -111,7 +112,9 @@
                                         <input style="background-color:white;" type="text" class="form-control" id="l_name" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="contactemail" style="color:white;">Email</label>
+                                        <label for="contactemail" style="color:white;">Email
+                                        <p> Once Email-Id is registered, it cannot be changed further. </p>
+                                        </label>
                                         <!-- <h5><a style="color:white;" id="user_email"></a></h5> -->
                                         <input style="background-color:white;" type="Email" class="form-control Email" id="user_email" required>
                                         <!-- <input type="text" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" style="color:black; border: hidden;" placeholder="Created By" class="form-control" id="created_by" style="color: white;" required readonly> -->
@@ -144,91 +147,94 @@
         </div>
         
         
-                <!-- js -->
-                <script src="js/jquery-2.2.3.min.js"></script>
-                <!-- //js -->
-               
-                <!-- script for password match -->
-                <!-- <script>
-                    window.onload = function () {
-                        document.getElementById("password1").onchange = validatePassword;
-                        document.getElementById("password2").onchange = validatePassword;
-                    }
+        <!-- js -->
+        <script src="js/jquery-2.2.3.min.js"></script>
+        <!-- //js -->
+        
+        <!-- script for password match -->
+        <!-- <script>
+            window.onload = function () {
+                document.getElementById("password1").onchange = validatePassword;
+                document.getElementById("password2").onchange = validatePassword;
+            }
+            
+            function validatePassword() {
+                var pass2 = document.getElementById("password2").value;
+                var pass1 = document.getElementById("password1").value;
+                if (pass1 != pass2)
+                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+                else
+                document.getElementById("password2").setCustomValidity('');
+                //empty string means no validation error
+            }
+        </script> -->
+        <!-- script for password match -->
+        
+        
+        <!-- get current date -->        
+        
+        <!-- start-smooth-scrolling -->
+        <script src="js/move-top.js"></script>
+        <script src="js/easing.js"></script>
+        <script>
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
                     
-                    function validatePassword() {
-                        var pass2 = document.getElementById("password2").value;
-                        var pass1 = document.getElementById("password1").value;
-                        if (pass1 != pass2)
-                        document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-                        else
-                        document.getElementById("password2").setCustomValidity('');
-                        //empty string means no validation error
-                    }
-                </script> -->
-                <!-- script for password match -->
-               
-                <!-- start-smooth-scrolling -->
-                <script src="js/move-top.js"></script>
-                <script src="js/easing.js"></script>
-                <script>
-                    jQuery(document).ready(function ($) {
-                        $(".scroll").click(function (event) {
-                            event.preventDefault();
-                            
-                            $('html,body').animate({
-                                scrollTop: $(this.hash).offset().top
-                            }, 1000);
-                        });
-                    });
-                </script>
-                <!-- //end-smooth-scrolling -->
-                <!-- smooth-scrolling-of-move-up -->
-                <script>
-                    $(document).ready(function () {
-                        /*
-                        var defaults = {
-                            containerID: 'toTop', // fading element id
-                            containerHoverID: 'toTopHover', // fading element hover id
-                            scrollSpeed: 1200,
-                            easingType: 'linear' 
-                        };
-                        */
-                        
-                        $().UItoTop({
-                            easingType: 'easeOutQuart'
-                        });
-                        
-                    });
-                </script>
-                <script src="js/SmoothScroll.min.js"></script>
-                <!-- //smooth-scrolling-of-move-up -->
-                <!-- Bootstrap core JavaScript
-                    ================================================== -->
-                    <!-- Placed at the end of the document so the pages load faster -->
-                    <script src="js/bootstrap.js"></script>
-                    
-                    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
-                    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
-                    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
-                    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
-                    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
-                    
-                    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
-                    <script>
-                        // Initialize Firebase
-                        var config = {
-                            apiKey: "AIzaSyBCXYBy-ry760TM9x-CEsLzIgoZJ3ucv4g",
-                            authDomain: "trial-c2b17.firebaseapp.com",
-                            databaseURL: "https://trial-c2b17.firebaseio.com",
-                            projectId: "trial-c2b17",
-                            storageBucket: "trial-c2b17.appspot.com",
-                            messagingSenderId: "181878503934"
-                        };
-                        firebase.initializeApp(config);
-                    </script>
-                    <!-- <script type="text/javascript" src="js_files/login.js"></script> -->
-                    <script type="text/javascript" src="js_files/welcome-details.js"></script>
-                    
-                </body>
+                    $('html,body').animate({
+                        scrollTop: $(this.hash).offset().top
+                    }, 1000);
+                });
+            });
+        </script>
+        <!-- //end-smooth-scrolling -->
+        <!-- smooth-scrolling-of-move-up -->
+        <script>
+            $(document).ready(function () {
+                /*
+                var defaults = {
+                    containerID: 'toTop', // fading element id
+                    containerHoverID: 'toTopHover', // fading element hover id
+                    scrollSpeed: 1200,
+                    easingType: 'linear' 
+                };
+                */
                 
-                </html>
+                $().UItoTop({
+                    easingType: 'easeOutQuart'
+                });
+                
+            });
+        </script>
+        <script src="js/SmoothScroll.min.js"></script>
+        <!-- //smooth-scrolling-of-move-up -->
+        <!-- Bootstrap core JavaScript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="js/bootstrap.js"></script>
+            
+            <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+            
+            <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+            <script>
+                // Initialize Firebase
+                var config = {
+                    apiKey: "AIzaSyBCXYBy-ry760TM9x-CEsLzIgoZJ3ucv4g",
+                    authDomain: "trial-c2b17.firebaseapp.com",
+                    databaseURL: "https://trial-c2b17.firebaseio.com",
+                    projectId: "trial-c2b17",
+                    storageBucket: "trial-c2b17.appspot.com",
+                    messagingSenderId: "181878503934"
+                };
+                firebase.initializeApp(config);
+            </script>
+            <!-- <script type="text/javascript" src="js_files/login.js"></script> -->
+            <script type="text/javascript" src="js_files/welcome-details.js"></script>
+            
+        </body>
+        
+        </html>

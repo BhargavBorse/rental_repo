@@ -25,6 +25,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             var user_details = user_details_snapshot.val();
             document.getElementById('user_email').innerHTML = user_details.email;
             document.getElementById('phone_no_text').innerHTML = user_details.phone_number;
+            document.getElementById('date').innerHTML = user_details.joining_date;
         });
         // end of fetching personal details
         
@@ -34,7 +35,9 @@ firebase.auth().onAuthStateChanged(function(user) {
         window.location = 'Guest index.html';
     }
 });
-
+document.getElementById('cart').onclick = function(){
+    window.location.href = 'checkout.html';
+}
 function logout_user(){
     firebase.auth().signOut().then(function() {
         // Sign-out successful.

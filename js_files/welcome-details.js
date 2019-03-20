@@ -21,9 +21,50 @@ firebase.auth().onAuthStateChanged(function(user) {
             document.getElementById('phone_no').value = user_details.phone_number;
         });
         // end of fetching personal details
- 
+        n =  new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        d = n.getDate();
+        
+        var date = document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
         // this part is for storing data in datbase
         document.getElementById('wd_form_submit').onclick = function(){
+            
+            var a = document.forms["myForm"]["name"].value;
+            var b = document.forms["myForm"]["l_name"].value;
+            var c = document.forms["myForm"]["phone_no"].value;
+            var d = document.forms["myForm"]["address"].value;
+            var e = document.forms["myForm"]["pin_code"].value;
+            
+            if (a == "") {
+                alert("Please enter name");
+                return false;
+            }
+            if (b == "") {
+                alert("Please enter last name");
+                return false;
+            }
+            if (c == "") {
+                alert("Please check phone number");
+                return false;
+            }
+            if(c.length != 10){
+                alert("Phone number is in wrong format");
+                return false;
+            }
+            if (d == "") {
+                alert("Please enter Address");
+                return false;
+            }
+            if (e == "") {
+                alert("Please enter Pin Code");
+                return false;
+            }
+            if(e.length !=6){
+                alert("Please enter correct pin code");
+                return false;
+            }
+            
             var name_wd = document.getElementById('name').value;
             var email_wd = document.getElementById('user_email').value;
             var l_name_wd = document.getElementById('l_name').value;
@@ -37,7 +78,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                 l_name: l_name_wd,
                 phone_number: phn_wd,
                 Address: address_wd,
-                pin_code: pincode_wd
+                pin_code: pincode_wd,
+                joining_date : date
             });
             window.location = 'index.html';
         };
@@ -48,5 +90,5 @@ firebase.auth().onAuthStateChanged(function(user) {
         window.alert('Sorry! No user has been signed in. Please try logging in again');
         window.location = 'Guest index.html';
     }
-
+    
 });

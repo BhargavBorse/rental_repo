@@ -3,12 +3,12 @@ var eventRef = firebase.database().ref('users');
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-
+        
         // var eventRef = firebase.database().ref()('users');
         // eventRef.on('value', function(snap){
         //     var users = snap.val();
         //     var keys = Object.keys(users);
-            
+        
         //     for(var i = 0; i< keys.length;i++){
         //         console.log( i +'st user key- '+ keys[i]);
         //     }
@@ -17,6 +17,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             var user_details = user_details_snapshot.val();
             document.getElementById('user_email').innerHTML = user_details.email;
             document.getElementById('phone_no_text').innerHTML = user_details.phone_number;
+            document.getElementById('date').innerHTML = user_details.joining_date;
         });
         // end of fetching personal details
         // fetch data in order history table

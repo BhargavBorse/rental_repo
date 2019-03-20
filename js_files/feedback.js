@@ -16,6 +16,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             document.getElementById('user_email_inside').value = user_details.email;
             document.getElementById('user_email').innerHTML = user_details.email;
             document.getElementById('phone_no_text').innerHTML = user_details.phone_number;
+            document.getElementById('date').innerHTML = user_details.joining_date;
         });
         // end of fetching personal details
     } else {
@@ -24,8 +25,16 @@ firebase.auth().onAuthStateChanged(function(user) {
         window.location = 'Guest index.html';
     }
 });
-document.getElementById('btn_feedback').onclick = function(){
 
+
+document.getElementById('btn_feedback').onclick = function(){
+    
+    var x = document.forms["myForm"]["message"].value;
+    if (x == "") {
+        alert("Please enter message");
+        return false;
+    }
+    
     var name_wd = document.getElementById('name').value;
     var email_wd = document.getElementById('user_email_inside').value;
     var message_wd = document.getElementById('message').value;
@@ -36,7 +45,7 @@ document.getElementById('btn_feedback').onclick = function(){
         message: message_wd
     });
     alert('Details Successfully Updated');
-// end of storing data
+    // end of storing data
 };
 
 function logout_user(){

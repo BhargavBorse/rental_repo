@@ -9,7 +9,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         //     email : user.email
         // });
         // document.getElementById('user_email').value = user.email;
-
+        
         eventRef.child(user.uid).child('details').on('value',function(user_details_snapshot){
             var user_details = user_details_snapshot.val();
             document.getElementById('name').value = user_details.name;
@@ -18,8 +18,9 @@ firebase.auth().onAuthStateChanged(function(user) {
             document.getElementById('address').value = user_details.Address;
             document.getElementById('pin_code').value = user_details.pin_code;
             document.getElementById('phone_no').value = user_details.phone_number;
-
+            
             document.getElementById('user_email_main').innerHTML = user_details.email;
+            document.getElementById('date').innerHTML = user_details.joining_date;
         });
         // end of fetching personal details
         
@@ -44,8 +45,8 @@ firebase.auth().onAuthStateChanged(function(user) {
             alert('Details Successfully Updated');
         };
         // end of storing data
-
-
+        
+        
         document.getElementById('user_email').innerHTML = user.email;
         // document.getElementById('user_email').value;
         // this part is for auto fill. will be used in personal details
@@ -61,7 +62,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         window.alert('Sorry! No user has been signed in. Please try logging in again');
         window.location = 'Guest index.html';
     }
-
+    
 });
 
 function logout_user(){
