@@ -137,6 +137,8 @@
         }
       }
     </style>
+
+    
     <script src=" http://www.sitepoint.com/responsive-data-tables-comprehensive-list-solutions"></script>
     
     <title>F4F | Dashboard</title>
@@ -258,7 +260,7 @@
                   
                   <section class="content-header">
                     <h2>
-                      <center><b>Add Item</b></center>
+                      <center><b><h2>Add Item</h2></b></center>
                       
                     </h2>
                     
@@ -271,14 +273,16 @@
                     
                     <body>
                       <div class="row" id="envelope">
-                        <form name="myForm">
+                        <form name="myform">
                           <div class="col-md-6">
-                            <label>Item Id</label>
-                            <input id="item_id" name="item_id" placeholder="1001" type="text"  width="100px;">
+                            <!-- <label>Item Id</label>
+                            <input id="item_id" name="item_id" placeholder="1001" type="text"  width="100px;"> -->
                             <label>Item Name</label>
-                            <input id="item_name" name="item_name" placeholder="Sherwani" type="text">
+                            <input id="item_name" name="item_name" placeholder="Sherwani" type="text" onkeypress="return (event.charCode > 64 && 
+                            event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
                             <label>Description</label>
-                            <input id="item_description" name="item_description" placeholder="it is ....." type="text">
+                            <input id="item_description" name="item_description" placeholder="it is ....." type="text" onkeypress="return (event.charCode > 64 && 
+                            event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
                             
                             
                             
@@ -315,12 +319,13 @@
                           
                           <div class="col-md-6">
                             <label>Quantity</label>
-                            <input id="item_quantity" placeholder="0-100" type="text">
+                            <input id="item_quantity" name="item_quantity" placeholder="0-100" type="text" onkeypress="javascript:return isNumber(event)">
                             <label>Price</label>
-                            <input id="item_price" placeholder="500rs" type="text"><br>
+                            <input id="item_price" name="item_price" placeholder="500rs" type="text" onkeypress="javascript:return isNumber(event)"><br>
                             
                             <label>Size</label>
-                            <select id = "size" style="margin-top: 4% !important;" id="size">
+                            <select id = "size" name="size" style="margin-top: 4% !important;" id="size">
+                              <option value="select_size">--Select Size--</option>
                               <option value = "S">S</option>
                               <option value = "M">M</option>
                               <option value = "L">L</option>
@@ -334,27 +339,14 @@
                             <input type="file" id="fileButton"><br>
                             
                             
-                            <!-- <table>
-                              <tr>
-                                <td>
-                                  <label>Country:</label>
-                                  <select class="country">
-                                    <option>Select</option>
-                                    <option value="usa">United States</option>
-                                    <option value="india">India</option>
-                                    <option value="uk">United Kingdom</option>
-                                  </select>
-                                </td>
-                                
-                              </tr>
-                            </table> -->
+                          
                             
                             
                           </div>
                           
                           
                           
-                          <center><input id="btn_insertname" onclick="validate()" class="btn btn-block btn-primary" type="button" value="Add Item"></center>
+                          <center><input id="btn_insertname" class="btn btn-block btn-primary" type="button" value="Add Item"></center>
                         </form>
                       </div>
                       
@@ -531,43 +523,17 @@
                   <script src="js_files/add.js" type="text/javascript"></script>
                   <script src="js_files/Add_item.js" type="text/javascript"></script>
 
-                  <script type = "text/javascript">
-               
-                       // Form validation code will come here.
-                       function validate() {
-                       
-                          if( document.myForm.item_id.value == "" ) {
-                             alert( "Please provide your id!" );
-                             document.myForm.item_id.focus() ;
-                             return false;
-                          }
-                          if( document.myForm.item_name.value == "" ) {
-                             alert( "Please provide your name!" );
-                             document.myForm.item_name.focus() ;
-                             return false;
-                          }
-                          if( document.myForm.item_description.value == "" ) {
-                             alert( "Please enter description!" );
-                             document.myForm.item_description.focus() ;
-                             return false;
-                          }
-                          // if( document.myForm.Zip.value == "" || isNaN( document.myForm.Zip.value ) ||
-                          //    document.myForm.Zip.value.length != 5 ) {
-                             
-                          //    alert( "Please provide a zip in the format #####." );
-                          //    document.myForm.Zip.focus() ;
-                          //    return false;
-                          // }
-                          // if( document.myForm.Country.value == "-1" ) {
-                          //    alert( "Please provide your country!" );
-                          //    return false;
-                          // }
-                          return( true );
-                       }
-                    //-->
-                 </script>
-
-
+                 
+                  <script>
+                    // WRITE THE VALIDATION SCRIPT.
+                    function isNumber(evt) {
+                        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+                        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+                            return false;
+                
+                        return true;
+                    }    
+                </script>
                 </body>
                 </html>
                 

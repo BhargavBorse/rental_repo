@@ -29,9 +29,10 @@ databaseRef.child('Admin').child('Order').child(id).on('value',function(more_inf
     //Value binding is left -------------------------------------------
     //document.getElementById('id').value = more_info_snapshot.child('').val();
     //document.getElementById('p_name').value = more_info_snapshot.child('product_name').val();
+    document.getElementById('item_name').value = more_info_snapshot.child('product_name').val();
     document.getElementById('price').value = more_info_snapshot.child('Price').val();
-    // document.getElementById('ordered_date').value = more_info_snapshot.child('Ordered_Date').val();
-    // document.getElementById('return_date').value = more_info_snapshot.child('Delivery_Return_Date').val();
+    document.getElementById('ordered_date').value = more_info_snapshot.child('Ordered_Date').val();
+    document.getElementById('return_date').value = more_info_snapshot.child('Delivery_Return_Date').val();
     document.getElementById('order_status').value = more_info_snapshot.child('Order_Status').val();
     document.getElementById('order_type').value = more_info_snapshot.child('Order_Type').val();
     document.getElementById('quantity').value = more_info_snapshot.child('Quantity').val();

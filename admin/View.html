@@ -21,7 +21,9 @@
         border-bottom: 1px solid black;
       }
     }
-    
+    .head-side{
+      margin-left:5%; 
+    }
     .p {
       text-align: center;
       padding-top: 140px;
@@ -106,7 +108,7 @@
   bottom: 0;
   transition: opacity 0.25s;
 }
-.btn-toggle:before {
+/* .btn-toggle:before {
   content: 'inactive';
   left: -4rem;
 }
@@ -114,7 +116,7 @@
   content: 'active';
   right: -4rem;
   opacity: 0.5;
-}
+} */
 .btn-toggle > .handle {
   position: absolute;
   top: 0.1875rem;
@@ -198,7 +200,7 @@
   bottom: 0;
   transition: opacity 0.25s;
 }
-.btn-toggle.btn-lg:before {
+/* .btn-toggle.btn-lg:before {
   content: 'inactive';
   left: -7rem;
 }
@@ -206,7 +208,7 @@
   content: 'active';
   right: -6rem;
   opacity: 5;
-}
+} */
 .btn-toggle.btn-lg > .handle {
   position: absolute;
   top: 0.3125rem;
@@ -283,7 +285,7 @@
   bottom: 0;
   transition: opacity 0.25s;
 }
-.btn-toggle.btn-sm:before {
+/* .btn-toggle.btn-sm:before {
   content: 'inactive';
   left: -0.5rem;
 }
@@ -291,7 +293,7 @@
   content: 'active';
   right: -0.5rem;
   opacity: 0.5;
-}
+} */
 .btn-toggle.btn-sm > .handle {
   position: absolute;
   top: 0.1875rem;
@@ -368,7 +370,7 @@
   bottom: 0;
   transition: opacity 0.25s;
 }
-.btn-toggle.btn-xs:before {
+/* .btn-toggle.btn-xs:before {
   content: 'inactive';
   left: 0;
 }
@@ -376,7 +378,7 @@
   content: 'active';
   right: 0;
   opacity: 0.5;
-}
+} */
 .btn-toggle.btn-xs > .handle {
   position: absolute;
   top: 0.125rem;
@@ -554,46 +556,69 @@
         <center><b>View Item</b></center>
            
       </h2>
-      <h3><b>Deals of the day!</b></h3>
+    
     </section>
 
-    <!-- Main content -->
-    <section class="content">
 
-       
+<h3><b class="head-side">Men's Fashion!</b></h3>
+  
 
 <div class="container">
   <div class="row" >
     <div class="col-xs-12">
       <div class="table-responsive">
-        <table class="table table-bordered table-hover">
+        <table id="men_table" class="table table-bordered table-hover">
         
           <thead>
             <tr>
-              <th>Item Id</th>
               <th>Item Name</th>
-              <th>Category</th>
+              <th>Description</th>
+              <!-- <th>Category</th> -->
+              <th>Quantity</th>
               <th>Price</th>
-              <th>Qunatity</th>
+              <th>Size</th>
               <th>Manage Item</th>
-              <th></th>
+              <th>Active/Inactive</th>
+              </tr>
+          </thead>
+         <tbody>
+            
+              
+            
+          </tbody>
+          <tfoot>
+            <tr>
+              
+            </tr>
+          </tfoot>
+        </table>
+      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div>
+
+<h3><b class="head-side">Women's Fashion!</b></h3>
+  
+
+<div class="container">
+  <div class="row" >
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <table  id="women_table"class="table table-bordered table-hover">
+        
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Description</th>
+              
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Size</th>
+              <th>Manage Item</th>
+              <th>Active/Inactive</th>
             </tr>
           </thead>
          <tbody>
-            <tr>
-              <td>1001</td>
-              <td>French</td>
-              <td>41,803,125</td>
-              <td>31.3</td>
-              <td>ashu boiii</td>
-              <td><a href="Update.html"><input type="Button" class="btn btn-block btn-primary" Value="Update"></a></td>
-            <!-- <input id="btn_insertname" class="btn btn-block btn-primary" type="button" value="Add Item"> -->
-            <td>
-                <button type="button" class="btn btn-lg btn-secondary btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
-                    <div class="handle"></div>
-                  </button>
-      </td>
-            </tr>
             
           </tbody>
           <tfoot>
@@ -608,45 +633,30 @@
 </div>
 
 
-<h3><b>Men's Fashion!</b></h3>
-   
-
-   
-
-       
+<h3><b class="head-side">Boy's Fashion!</b></h3>
+  
 
 <div class="container">
   <div class="row" >
     <div class="col-xs-12">
       <div class="table-responsive">
-        <table class="table table-bordered table-hover">
+        <table  id="boy_table" class="table table-bordered table-hover">
         
           <thead>
             <tr>
-              <th>Item Id</th>
               <th>Item Name</th>
-              <th>Category</th>
+              <th>Description</th>
+              <!-- <th>Category</th> -->
+              <th>Quantity</th>
               <th>Price</th>
-              <th>Qunatity</th>
+              <th>Size</th>
               <th>Manage Item</th>
-              <th></th>
+              <th>Active/Inactive</th>
             </tr>
           </thead>
          <tbody>
             <tr>
-              <td>1001</td>
-              <td>French</td>
-              <td>41,803,125</td>
-              <td>31.3</td>
-              <td>ashu boiii</td>
-              <td><a href="Update.html"><input type="Button" class="btn btn-block btn-primary" Value="Update"></a></td>
-            <!-- <input id="btn_insertname" class="btn btn-block btn-primary" type="button" value="Add Item"> -->
-            <td>
-                <button type="button" class="btn btn-lg btn-secondary btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
-                    <div class="handle"></div>
-                  </button>
-      </td>
-            </tr>
+              
             
           </tbody>
           <tfoot>
@@ -659,143 +669,29 @@
     </div>
   </div>
 </div>
-
-<h3><b>Women's Fashion!</b></h3>
-
-
-       
+<h3><b class="head-side">Girl's Fashion!</b></h3>
+  
 
 <div class="container">
   <div class="row" >
     <div class="col-xs-12">
       <div class="table-responsive">
-        <table class="table table-bordered table-hover">
+        <table  id="girl_table" class="table table-bordered table-hover">
         
           <thead>
             <tr>
-              <th>Item Id</th>
               <th>Item Name</th>
-              <th>Category</th>
+              <th>Description</th>
+              <th>Quantity</th>
               <th>Price</th>
-              <th>Qunatity</th>
+              <th>Size</th>
               <th>Manage Item</th>
-              <th></th>
+              <th>Active/Inactive</th>
             </tr>
           </thead>
          <tbody>
-            <tr>
-              <td>1001</td>
-              <td>French</td>
-              <td>41,803,125</td>
-              <td>31.3</td>
-              <td>ashu boiii</td>
-              <td><a href="Update.html"><input type="Button" class="btn btn-block btn-primary" Value="Update"></a></td>
-            <!-- <input id="btn_insertname" class="btn btn-block btn-primary" type="button" value="Add Item"> -->
-            <td>
-                <button type="button" class="btn btn-lg btn-secondary btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
-                    <div class="handle"></div>
-                  </button>
-      </td>
-            </tr>
-            
-          </tbody>
-          <tfoot>
             <tr>
               
-            </tr>
-          </tfoot>
-        </table>
-      </div><!--end of .table-responsive-->
-    </div>
-  </div>
-</div>
-
-
-<h3><b>Boy's Fashion!</b></h3>
-
-
-<div class="container">
-  <div class="row" >
-    <div class="col-xs-12">
-      <div class="table-responsive">
-        <table class="table table-bordered table-hover">
-        
-          <thead>
-            <tr>
-              <th>Item Id</th>
-              <th>Item Name</th>
-              <th>Category</th>
-              <th>Price</th>
-              <th>Qunatity</th>
-              <th>Manage Item</th>
-              <th></th>
-            </tr>
-          </thead>
-         <tbody>
-            <tr>
-              <td>1001</td>
-              <td>French</td>
-              <td>41,803,125</td>
-              <td>31.3</td>
-              <td>ashu boiii</td>
-              <td><a href="Update.html"><input type="Button" class="btn btn-block btn-primary" Value="Update"></a></td>
-            <!-- <input id="btn_insertname" class="btn btn-block btn-primary" type="button" value="Add Item"> -->
-            <td>
-                <button type="button" class="btn btn-lg btn-secondary btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
-                    <div class="handle"></div>
-                  </button>
-      </td>
-            </tr>
-            
-          </tbody>
-          <tfoot>
-            <tr>
-              
-            </tr>
-          </tfoot>
-        </table>
-      </div><!--end of .table-responsive-->
-    </div>
-  </div>
-</div>
-
-<h3><b>Girl's Fashion!</b></h3>
-   
-
-       
-
-<div class="container">
-  <div class="row" >
-    <div class="col-xs-12">
-      <div class="table-responsive">
-        <table class="table table-bordered table-hover">
-        
-          <thead>
-            <tr>
-              <th>Item Id</th>
-              <th>Item Name</th>
-              <th>Category</th>
-              <th>Price</th>
-              <th>Qunatity</th>
-              <th>Manage Item</th>
-              <th></th>
-            </tr>
-          </thead>
-         <tbody>
-            <tr>
-              <td>1001</td>
-              <td>French</td>
-              <td>41,803,125</td>
-              <td>31.3</td>
-              <td>ashu boiii</td>
-              <td><a href="Update.html"><input type="Button" class="btn btn-block btn-primary" Value="Update"></a></td>
-            <!-- <input id="btn_insertname" class="btn btn-block btn-primary" type="button" value="Add Item"> -->
-            <td>
-                <button type="button" class="btn btn-lg btn-secondary btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
-                    <div class="handle"></div>
-                  </button>
-      </td>
-            </tr>
             
           </tbody>
           <tfoot>
@@ -952,6 +848,8 @@
                                     firebase.initializeApp(config);
                                 </script>
                                 <script src="js_files/view.js" type="text/javascript"></script>
+                                <script src="js_files/view_item.js" type="text/javascript"></script>
+                                <!-- <script src="js_files/women.js" type="text/javascript"></script> -->
 
 
 
