@@ -1,4 +1,5 @@
 var eventRef = firebase.database().ref('users');
+var databaseRef = firebase.database().ref();
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -29,6 +30,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         });
         // end of fetching personal details
         
+
     } else {
         // No user is signed in.
         window.alert('Sorry! No user has been signed in. Please try logging in again');
