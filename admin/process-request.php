@@ -16,7 +16,7 @@ if(isset($_POST["category"])){
         echo "<label>Subcategory:</label>";
         echo "<select id='response_val'>";
         foreach($categoryArr[$category] as $value){
-            echo "<option>". $value . "</option>";
+            echo "<option value='$value'>". $value . "</option>";
         }
         echo "</select>";
     } 

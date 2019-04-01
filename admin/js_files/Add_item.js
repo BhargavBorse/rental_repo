@@ -63,7 +63,8 @@ document.getElementById('btn_insertname').onclick = function()  {
     var item_description = document.getElementById('item_description').value;
     var item_category = document.getElementById('category');
     var cat = item_category.options[item_category.selectedIndex].value;
-    // var item_subcategory = document.getElementById('response');
+    var item_subcategory = document.getElementById('response_val').value;
+    // alert(item_subcategory);
     // var sub = item_subcategory.options[item_subcategory.selectedIndex].value;
     var deals_of_the_day = document.getElementById('dod').checked;
     var recommanded = document.getElementById('rec').checked;
@@ -88,6 +89,7 @@ document.getElementById('btn_insertname').onclick = function()  {
                // item_id : item_id,
                 item_name : item_name,
                 item_description : item_description,
+                item_subcategory : item_subcategory,
                 deals_of_the_day : deals_of_the_day,
                 recommended : recommanded,
                 item_quantity : item_quantity,
