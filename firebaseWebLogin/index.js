@@ -8,10 +8,9 @@ firebase.auth().onAuthStateChanged(function(user) {
     var user = firebase.auth().currentUser;
     
     if(user != null){
-      
+      alert('in');
       var email_id = user.email;
       var email_verified = user.emailVerified;
-      
       if(email_verified){
         
         document.getElementById('verify_btn').style.display = "none";
