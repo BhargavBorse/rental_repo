@@ -1,9 +1,6 @@
 // var eventRef = firebase.database().ref('users');
 // var databaseRef = firebase.database().ref();
 var databaseRef_women = firebase.database().ref('item');
-document.getElementById('fileButton').onchange = function(event){
-    selectedFile = event.target.files[0];
-}
 
 firebase.auth().onAuthStateChanged(function(user) {
     
@@ -101,45 +98,4 @@ databaseRef_women.child('Women').child(id).child('recommended').on('value',funct
     }
     
 });
-document.getElementById('btn_insertname_women').onclick = function(){
-    var item_name = document.getElementById('item_name').value;
-    var item_description = document.getElementById('item_description').value;
-    var item_subcategory = document.getElementById('item_subcategory').value;
-    var deals_of_the_day = document.getElementById('dod').checked;
-    var recommended = document.getElementById('rec').checked;
-    var item_quantity = document.getElementById('item_quantity').value;
-    var item_price = document.getElementById('item_price').value;
-    var item_size = document.getElementById('item_size').value;
-    // console.log(email_wd);
-    
-    
-    var filename = selectedFile.name;
-    var storageRef = firebase.storage().ref('ClothingPictures/' + selectedFile.name);
-    var uploadTask = storageRef.put(selectedFile);
-    uploadTask.on('state_changed',
-    function(snapshot){
-        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        alert('Upload Progress : '+progress+'%');
-    },function(error){
-        
-    },function(){
-        uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL){
-            databaseRef_women.child('Women').child(id).update({
-                item_name : item_name,
-                item_description : item_description,
-                item_subcategory : item_subcategory,
-                deals_of_the_day : deals_of_the_day,
-                recommended : recommended,
-                item_quantity : item_quantity,
-                item_price :  item_price,
-                item_size : item_size,
-                optional_image : downloadURL
-            });
-            alert('Data Updated Successfully');
-        });
-        
-        
-    });
-};
-
 });

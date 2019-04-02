@@ -260,7 +260,7 @@
                   
                   <section class="content-header">
                     <h2>
-                      <center><b><h2>Add Item</h2></b></center>
+                      <center><b><h2>Update Item</h2></b></center>
                       
                     </h2>
                     
@@ -287,7 +287,7 @@
                             
                             
                             <!-- <input type="text" id="textFieldValueJS" class="form-control" placeholder="get value on option select"> -->
-                            <label>Category</label>
+                            <!-- <label>Category</label>
                             <select class="category" id = "category">
                               
                               <option value="select"> --Select Category--</option>
@@ -299,17 +299,19 @@
                             </select>
                             <div id="response">
                               
-                            </div>
-                            
+                            </div> -->
+                            <label>Subcategory</label>
+                            <input id="item_subcategory" name="subcategory"  type="text" readonly>
+
                             <div class="checkbox">
                               <label>
-                                <input type="checkbox" name = "dd" id="dod">
+                                <input type="checkbox" class='checkbox' name = "dd" id="dod" value="dod">
                                 <b> Deals Of The Day</b>
                               </label>
                             </div>
                             <div class="checkbox">
                               <label>
-                                <input type="checkbox" name = "rc" id="rec">
+                                <input type="checkbox" class='checkbox' name = "rc" id="rec" value="rec">
                                 <b>Recommended</b>
                               </label>
                             </div>
@@ -319,19 +321,13 @@
                           
                           <div class="col-md-6">
                             <label>Quantity</label>
-                            <input id="item_quantity" name="item_quantity" placeholder="0-100" type="text" onkeypress="javascript:return isNumber(event)">
+                            <input id="item_quantity" name="item_quantity" placeholder="0-100" type="text">
                             <label>Price</label>
-                            <input id="item_price" name="item_price" placeholder="500rs" type="text" onkeypress="javascript:return isNumber(event)"><br>
+                            <input id="item_price" name="item_price" placeholder="500rs" type="text"><br>
                             
                             <label>Size</label>
-                            <select id = "size" name="size" style="margin-top: 4% !important;" id="size">
-                              <option value="select_size">--Select Size--</option>
-                              <option value = "S">S</option>
-                              <option value = "M">M</option>
-                              <option value = "L">L</option>
-                              <option value = "XL">XL</option>
-                              <option value = "XXL">XXL</option>
-                            </select>
+                            <input id="item_size" name="size"  type="text" readonly>
+                           
                             
                             <label>Item Image</label>
                             <input type="file" id="item_image_main">
@@ -339,14 +335,27 @@
                             <input type="file" id="fileButton"><br>
                             
                             
-                          
+                            <!-- <table>
+                              <tr>
+                                <td>
+                                  <label>Country:</label>
+                                  <select class="country">
+                                    <option>Select</option>
+                                    <option value="usa">United States</option>
+                                    <option value="india">India</option>
+                                    <option value="uk">United Kingdom</option>
+                                  </select>
+                                </td>
+                                
+                              </tr>
+                            </table> -->
                             
                             
                           </div>
                           
                           
                           
-                          <center><input id="btn_insertname" class="btn btn-block btn-primary" type="button" value="Add Item"></center>
+                          <center><input id="btn_insertname" class="btn btn-block btn-primary" type="button" value="Update Item"></center>
                         </form>
                       </div>
                       
@@ -390,8 +399,6 @@
                       <!-- sidebar menu: : style can be found in sidebar.less -->
                       <ul class="sidebar-menu" data-widget="tree">
                         <li class="header">MAIN NAVIGATION</li>
-                        
-
                         <li class="treeview">
                             <a href="#">
                               <i class="fa fa-share"></i> <span>Manage Item</span>
@@ -418,9 +425,6 @@
                               
                             </ul>
                           </li>
-
-
-
                         <li class="treeview">
                           <a href="#">
                             <i class="fa fa-files-o"></i>
@@ -539,20 +543,18 @@
                       document.getElementById("textFieldValueJS").value = selValue;
                     }
                   </script>
-                  <script src="js_files/add.js" type="text/javascript"></script>
-                  <script src="js_files/Add_item.js" type="text/javascript"></script>
+                  <script src="js_files/update.js" type="text/javascript"></script>
+                  <script src="js_files/men.js" type="text/javascript"></script> 
+                  <!-- <script src="js_files/women.js" type="text/javascript"></script>
+                  <script src="js_files/boy.js" type="text/javascript"></script>
+                  <script src="js_files/girls.js" type="text/javascript"></script> -->
 
-                 
-                  <script>
-                    // WRITE THE VALIDATION SCRIPT.
-                    function isNumber(evt) {
-                        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
-                        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
-                            return false;
-                
-                        return true;
-                    }    
-                </script>
+                  
+                   <!-- <script src="js_files/boy.js" type="text/javascript"></script>               
+                  <script src="js_files/girls.js" type="text/javascript"></script>                
+         -->
+
+                  
                 </body>
                 </html>
                 
