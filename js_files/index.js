@@ -8,7 +8,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         // console.log(user.email);
         eventRef.child(user.uid).child('details').on('value',function(return_value){
             return_value_value = return_value.val();
-            console.log(return_value_value);
+            // console.log(return_value_value);
             if(return_value_value === null){
                 window.location = 'welcome-details.html';
             }

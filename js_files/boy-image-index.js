@@ -1,12 +1,12 @@
-var dbRef = firebase.database().ref();
-var itemRef = firebase.database().ref('item');
-dbRef.child('item').child('Women').on('value',function(item_details_snapshot){
+var dbRef_men = firebase.database().ref();
+var itemRef_men = firebase.database().ref('item');
+dbRef_men.child('item').child('Boy').on('value',function(item_details_snapshot){
     var item_details = item_details_snapshot.val();
-    var women_keys = Object.keys(item_details);
-    for(var i=0;i<women_keys.length;i++)
+    var boy_keys = Object.keys(item_details);
+    for(var i=0;i<boy_keys.length;i++)
     {
-        itemRef.child('Women').child(women_keys[i]).on('value',function(item_deep_details_snapshot){
-            var item_deep_details = item_deep_details_snapshot.val();
+        itemRef_men.child('Boy').child(boy_keys[i]).on('value',function(item_details_boy_snapshot){
+            var item_deep_details = item_details_boy_snapshot.val();
             // alert(item_deep_details.item_name);
             //Div (class="owl-stage-outer")  CHECK in Responsive Mode for more Info.
             // var div_subMinus2 = document.createElement('div');
@@ -29,7 +29,7 @@ dbRef.child('item').child('Women').on('value',function(item_details_snapshot){
             div_sub0.setAttribute('style','width: auto; padding:5px; ');
 
             // //Appending div-class=owl-item to div-class=owl-stage
-            document.getElementsByClassName('owl-stage')[0].appendChild(div_sub0);
+            document.getElementById('owl-demo3').appendChild(div_sub0);
             
 
             //Sub-div (class=item)
@@ -58,7 +58,7 @@ dbRef.child('item').child('Women').on('value',function(item_details_snapshot){
             var img1 = document.createElement('img');
             img1.className="card-img-top card-img-top-height card-item-img-top";
             img1.setAttribute('src',item_deep_details.optional_image);
-            // var img122 = document.createTextNode(women_keys[i]);
+            // var img122 = document.createTextNode(boy_keys[i]);
 
             //Append img-class=card-img-top card-img-top-height to div-class=men-thumb-item
             div_sub3.appendChild(img1);
@@ -135,11 +135,11 @@ dbRef.child('item').child('Women').on('value',function(item_details_snapshot){
             // creating input:hidden for redirecting to another page with image details and cart button
             var input_image_details = document.createElement('input');
             input_image_details.setAttribute('type', 'hidden');
-            input_image_details.setAttribute('value',women_keys[i]);
+            input_image_details.setAttribute('value',boy_keys[i]);
 
             // creating a link 
             var alink = document.createElement('a');
-            alink.setAttribute('href', 'checkout.html?item=' + women_keys[i] + '&category=women');
+            alink.setAttribute('href', 'checkout.html?item=' + boy_keys[i] + '&category=boy');
             
             //Button under div-class=card-footer d-flex justify-content-end
             var btn1 = document.createElement('button');
@@ -168,9 +168,9 @@ dbRef.child('item').child('Women').on('value',function(item_details_snapshot){
         
     }
     
-    // for(var i=0; i<women_keys.length; i++){
+    // for(var i=0; i<boy_keys.length; i++){
     //     document.getElementById('insert_to_cart'+i).onclick = function(){
-    //         alert(women_keys);
+    //         alert(boy_keys);
     //     };
     // }
 
