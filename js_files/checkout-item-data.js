@@ -519,13 +519,24 @@ firebase.auth().onAuthStateChanged(function(user) {
                         remove_div_main.className = 'rem';
                         remove_cell.appendChild(remove_div_main);
                         
-                        var remove_div_sub = document.createElement('div');
+                        var remove_div_sub = document.createElement('button');
                         remove_div_sub.className = 'close1';
+                        remove_div_sub.addEventListener('click',function(){
+                            remove(user_cart_item_data.itemid);  
+                        });
                         remove_div_main.appendChild(remove_div_sub);
 
-                    tableRef.deleteRow(rows.length);
+                        // var itemid = document.createElement('input');
+                        // itemid.setAttribute('type','text');
+                        // itemid.setAttribute('value',user_cart_item_data.itemid);
+                        // remove_div_main.appendChild(itemid);
 
+                        
+
+                        tableRef.deleteRow(user_cart_AcKeys.length);
+                        
                     });
+
                 }
                 else  if(user_cart_item_data.category == 'Men')
                 {
@@ -609,6 +620,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                         var remove_div_sub = document.createElement('div');
                         remove_div_sub.className = 'close1';
                         remove_div_main.appendChild(remove_div_sub);
+                        
+                        tableRef.deleteRow(user_cart_AcKeys.length);
                     });
                 }
                 else  if(user_cart_item_data.category == 'Boy')
@@ -693,6 +706,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                         var remove_div_sub = document.createElement('div');
                         remove_div_sub.className = 'close1';
                         remove_div_main.appendChild(remove_div_sub);
+                        
+                        tableRef.deleteRow(user_cart_AcKeys.length);
                     });
                 }
                 else  if(user_cart_item_data.category == 'Girls')
@@ -778,6 +793,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                         remove_div_sub.className = 'close1';
                         remove_div_main.appendChild(remove_div_sub);
                         
+                        tableRef.deleteRow(user_cart_AcKeys.length);
                     });
                 }
             });
@@ -785,6 +801,27 @@ firebase.auth().onAuthStateChanged(function(user) {
         }
     });
     
+
+    function remove(itemid_para){
+        eventRef.child(user.uid).child('cart').on('value',function(userCartKeys_snapshot){
+            var userCartKeys = userCartKeys_snapshot.val();
+            var userCartAcKeys = Object.keys(userCartKeys);
+            for(var i=0;i<userCartAcKeys.length;i++)
+            {
+                eventRef.child(user.uid).child('cart').child(userCartAcKeys[i]).on('value',function(userCartDets_snapshot){
+                    var userCartDets = userCartDets_snapshot.val();
+                    if(userCartDets.itemid === itemid_para)
+                    {
+                        eventRef.child(user.uid).child('cart').child(userCartAcKeys[i]).remove(function(){
+                            alert('Removed');
+                            location.reload();
+                        });
+                    }
+                    
+                });
+            }
+        });
+    }
     
     
     
