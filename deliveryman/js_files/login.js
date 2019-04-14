@@ -10,7 +10,23 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
+document.getElementById('login').onclick = function(){
+  
+  var userEmail = document.getElementById("email_field").value;
+  var userPass = document.getElementById("password_field").value;
+  
+  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    
+    window.alert("Error : " + errorMessage);
+    window.alert("Error in code" + errorCode);
+  });
+}
+
 function login(){
+  alert('sdg');
   
   var userEmail = document.getElementById("email_field").value;
   var userPass = document.getElementById("password_field").value;
@@ -74,4 +90,5 @@ function send_verification(){
 
 function logout(){
   firebase.auth().signOut();
+  window.location = 'login-2.html';
 }

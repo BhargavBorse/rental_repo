@@ -6,11 +6,13 @@ dbRef.child('item').child('Women').on('value',function(item_details_snapshot){
     var women_keys = Object.keys(item_details);
     for(var i=0;i<women_keys.length;i++)
     {
+        if(i >= women_keys.length - 4){
+
         itemRef.child('Women').child(women_keys[i]).on('value',function(item_deep_details_snapshot){
             var item_deep_details = item_deep_details_snapshot.val();
             
             if(item_deep_details.recommended == true){
-                alert(item_deep_details.recommended);
+                // alert(item_deep_details.recommended);
                 
                 
                 //Div class=owl-item
@@ -155,6 +157,7 @@ dbRef.child('item').child('Women').on('value',function(item_details_snapshot){
                 btn1.appendChild(i1);
             }
         });
+    }
     }
 });
 

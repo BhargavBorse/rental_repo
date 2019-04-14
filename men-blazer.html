@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>F4F - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+        
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- Custom Theme files -->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <!-- shop css -->
+    <link href="css/shop.css" type="text/css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- Owl-Carousel-CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <!-- //Custom Theme files -->
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+    <!-- //online-fonts -->
+    
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    
+    <style>
+        *, *:before, *:after {
+            box-sizing: border-box;
+        }
+        @media screen and (max-width: 450px){
+            .girl-main{
+                visibility:hidden;
+            }
+            .card-img-dod{
+                height: 400px;
+                width: 18rem !important;
+            } 
+        }
+        .top-container {
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header {
+            
+            background: white;
+            z-index: 2;
+        }
+        .content {
+            padding: 16px;
+        }
+        
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-shadow: 0px 10px 9px rgba(0,0, 0, 0.3);
+        }
+        
+        .sticky + .content {
+            padding-top: 102px;
+        }
+        .card-img-top-height{
+            height: 500px;
+        }
+        /* .item-card{
+            width: 18rem;
+        } */
+        .card-item-img-top{
+            height: 400px;
+            width: 18rem;
+        } 
+        .card-img-dod{
+            height: 300px;
+            width: 11rem;
+        } 
+        /* .owl-stage{
+            transform: translate3d(0px, 0px, 0px); 
+            transition: all 0s ease 0s; 
+            width: 2526px;
+        } */
+        
+        @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 100%;
+            }
+            .loading_gif{
+                position:fixed;
+                top:50% !important;
+                right:40% !important;
+                width:20% !important;
+                height:10% !important;
+                /* background-color:black; */
+                background-repeat:repeat;
+                background-position:center;
+                z-index:10000000;
+                opacity: 1;
+                filter: alpha(opacity=40);
+            }
+        }
+        #loading_gif{
+            position:fixed;
+            top:35%;
+            right:50%;
+            width:5%;
+            height:10%;
+            /* background-color:black; */
+            background-repeat:repeat;
+            background-position:center;
+            z-index:10000000;
+            opacity: 1;
+            filter: alpha(opacity=40);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header" id="myHeader">
+        <div class="container">
+            <!-- top nav -->
+            <nav class="top_nav top-c d-flex pt-3 pb-1">
+                <!-- logo -->
+                <h1>
+                    <a class="navbar-brand" href="index.html">F|4|F 
+                    </a>
+                </h1>
+                <!-- //logo -->
+                <div class="w3ls_right_nav ml-auto d-flex">
+                    <!-- search form -->
+                    
+                    <!-- search form -->
+                    <div class="nav-icon d-flex">
+                        <!-- sigin and sign up -->
+                        <a class="text-dark login_btn align-self-center mx-3" href="#myModal_btn" data-toggle="modal" data-target="#myModal_btn">
+                            <i class="fas fa-gift"></i>
+                        </a>
+                        <a class="text-dark login_btn align-self-center mx-3" href="#myacc" data-toggle="modal" data-target="#myacc">
+                            <i class="far fa-user"></i>
+                        </a>
+                        <!-- sigin and sign up -->
+                        <!-- shopping cart -->
+                        <div class="cart-mainf">
+                            <div class="hubcart hubcart2 cart cart box_1">
+                                <form action="checkout.html" method="post">
+                                    <button class="btn top_hub_cart mt-1" type="submit" name="submit" value="" title="Cart">
+                                        <i class="fas fa-shopping-bag"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- //shopping cart ends here -->
+                    </div>
+                </div>
+            </nav>
+            <!-- //top nav -->
+            
+            <!-- //bottom nav -->
+        </div>
+        <!-- //header container --> 
+    </header>
+    <!-- bottom nav -->
+    <nav class="navbar med-fix navbar-expand-lg navbar-light justify-content-center" id="med-fix">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto text-center">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown has-mega-menu">
+                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Men's clothing</a>
+                <div class="dropdown-menu" >
+                    <div class="px-0 container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a class="dropdown-item" href="men-sherwani.html">Sherwani</a>
+                                <a class="dropdown-item" href="men-kurta.html">Kurta Pyjama</a>
+                                <a class="dropdown-item" href="men-nehru-jacket.html">Nehru Jacket</a>
+                                <a class="dropdown-item" href="men-blazer.html">Blazer</a>
+                                <a class="dropdown-item" href="men-suit.html">Suit</a>
+                                <a class="dropdown-item" href="men-ac.html">Accessories</a>
+                            </div>
+                            <!-- <div class="col-md-4">
+                                <a class="dropdown-item" href="#">T-Shirts</a>
+                                <a class="dropdown-item" href="#">Trousers</a>
+                                <a class="dropdown-item" href="#">Shirts</a>
+                                <a class="dropdown-item" href="#">Suits & Blazers</a>
+                                <a class="dropdown-item" href="#">Coats & Jackets</a>
+                                <a class="dropdown-item" href="#">Jackets</a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="dropdown-item" href="#">T-Shirts</a>
+                                <a class="dropdown-item" href="#">Coats</a>
+                                <a class="dropdown-item" href="#">Shirts</a>
+                                <a class="dropdown-item" href="#">Suits & Blazers</a>
+                                <a class="dropdown-item" href="#">Jackets</a>
+                                <a class="dropdown-item" href="#">Trousers</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item dropdown has-mega-menu">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Women's clothing</a>
+                <div class="dropdown-menu">
+                    <div class="px-0 container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a class="dropdown-item" href="#">Anarkali</a>
+                                <a class="dropdown-item" href="#">Lehengas</a>
+                                <a class="dropdown-item" href="#">Gowns</a>
+                                <a class="dropdown-item" href="#">Sarees</a>
+                                <a class="dropdown-item" href="#">Dhoti Sets</a>
+                                <a class="dropdown-item" href="#">Accessories</a>
+                            </div>
+                            <!-- <div class="col-md-4">
+                                <a class="dropdown-item" href="#">T-shirts</a>
+                                <a class="dropdown-item" href="#">Dresses</a>
+                                <a class="dropdown-item" href="#">Tunics</a>
+                                <a class="dropdown-item" href="#">Skirts</a>
+                                <a class="dropdown-item" href="#">Jeans</a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="dropdown-item" href="#">Dresses</a>
+                                <a class="dropdown-item" href="#">T-shirts</a>
+                                <a class="dropdown-item" href="#">Skirts</a>
+                                <a class="dropdown-item" href="#">Jeans</a>
+                                <a class="dropdown-item" href="#">Tunics</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item dropdown has-mega-menu">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kids Clothing</a>
+                <div class="dropdown-menu" style="width:100%">
+                    <div class="container">
+                        <div class="row w3_kids">
+                            <div class="col-md-12">
+                                <!-- <span class="bg-light"></span> -->
+                                <a class="dropdown-item" href="#">Boy</a>
+                                <a class="dropdown-item" href="#">Girl</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="feedback.html">Feedback</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- //header -->
+<!-- banner -->
+
+<!-- //banner -->
+<!--services-->
+<!-- <div class="agileits-services" id="services">
+    <div class="no-gutters agileits-services-row row">
+        <div class="col-lg-3 col-sm-6 agileits-services-grids p-sm-5 p-3">
+            <span class="fas fa-sync-alt p-4"></span>
+            <h4 class="mt-2 mb-3">30 days replacement</h4>
+        </div>
+        <div class="col-lg-3 col-sm-6 agileits-services-grids p-sm-5 p-3">
+            <span class="fas fa-gift p-4"></span>
+            <h4 class="mt-2 mb-3">Gift Card</h4>
+        </div>
+        
+        <div class="col-lg-3 col-sm-6 agileits-services-grids p-sm-5 p-3">
+            <span class="fas fa-lock p-4"></span>
+            <h4 class="mt-2 mb-3">secure payments</h4>
+        </div>
+        <div class="col-lg-3 col-sm-6 agileits-services-grids p-sm-5 p-3">
+            <span class="fas fa-shipping-fast p-4"></span>
+            <h4 class="mt-2 mb-3">free shipping</h4>
+        </div>
+    </div>
+</div> -->
+<!-- //services-->
+<!-- about -->
+<img src="https://static.wubook.net/shstatic/imgs/cloading.gif" class="loading_gif" id="loading_gif">
+
+<!-- //about -->
+<!-- product tabs -->
+<section class="tabs_pro">
+    <div class="tabs tabs-style-line pt-md-4" style="margin-bottom: 5%;">
+        <!-- Content Panel -->
+        <div id="clothing-nav-content" class="tab-content py-sm-5">
+            <div role="tabpanel" class="tab-pane fade show active" id="women" aria-labelledby="women-tab">
+                <div id="owl-demo" class="owl-carousel men-blazer text-center">
+                    
+                </div>
+            </div>                
+        </div>
+    </div>
+</section>
+
+
+<!-- <div class="item-card">
+    <img class="card-img-top card-img-top-height" src="Photos/Women/Gown/1.PNG" alt="Card image cap">
+    <div class="card-body">
+        <h3 class="card-title" style="text-align: center;">Gown</h3>
+        <p class="card-text">Rent: 800/-</p>
+    </div>
+    <div class="card-footer d-flex justify-content-end">
+        <button type="submit" class="hub-cart phub-cart btn">
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+        </button>
+    </div>
+</div> -->
+
+
+<!-- //product tabs -->
+<!-- insta posts -->
+<!--  -->
+<!-- //insta posts -->
+<footer>   
+    <!-- //footer-top -->
+    <div class="footer-bottomv2 py-5" style="background-color: black;">
+        <div class="container">
+            <ul class="bottom-links-agile">
+                <li>
+                    <a href="index.html" style="color: white;">Home</a>
+                </li>
+                <li>
+                    <a href="#myModal_btn" data-toggle="modal" data-target="#myModal_btn" style="color: white;">Deals</a>
+                </li>
+                <li>
+                    <a href="#myacc" data-toggle="modal" data-target="#myacc" style="color: white;">Profile</a>
+                </li>
+                <li>
+                    <a href="Feedback.html" style="color: white;">Feedback</a>
+                </li>
+                
+            </ul>
+            
+            
+            <div class="cpy-right align-self-center">
+                <h2 class="agile_btxt">
+                    <a href="index.html" style="color: white;">
+                        <span>F</span>reedom
+                        <span>f</span>or
+                        <span>F</span>ashion</a>
+                    </h2>
+                    <p style="float:right;">© 2019 Freedom for Fashion. All rights reserved 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- //footer -->
+<!-- Modal -->
+<div class="modal fade" id="myModal_btn" role="dialog" aria-labelledby="myModal_btn" aria-hidden="true">
+    <div class="agilemodal-dialog modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Deals of the Day</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            
+            <div class="modal-body pt-3 pb-5 px-sm-5">
+                <div class="row">
+                    <div id="clothing-nav-content" class="tab-content py-sm-5">
+                        <img src="https://static.wubook.net/shstatic/imgs/cloading.gif" class="loading_gif" id="loading_gif">
+                        <div role="tabpanel" class="tab-pane fade show active" id="women" aria-labelledby="women-tab">
+                            <div id="owl-demo" class="owl-carousel bhargav text-center">
+                                
+                            </div>
+                        </div>
+                        <!-- <div role="tabpanel" class="tab-pane fade" id="men" aria-labelledby="men-tab">
+                            <div id="owl-demo1" class="owl-carousel text-center">
+                                
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="girl" aria-labelledby="girl-tab">
+                            <div id="owl-demo2" class="owl-carousel text-center">
+                                
+                            </div>
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="boy" aria-labelledby="boy-tab">
+                            <div id="owl-demo3" class="owl-carousel text-center">
+                                
+                            </div>
+                        </div> -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //modal -->
+
+
+<!-- My account -->
+<div class="modal fade" id="myacc" role="dialog" aria-labelledby="myacc" aria-hidden="true">
+    <div class="agilemodal-dialog modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">My Account</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body pt-3 pb-5 px-sm-5">
+                <div class="row">
+                    <div class="col-md-4 mx-auto align-self-center">
+                        <img src="images/cartoon.jpg" class="img-fluid" alt="login_image" />
+                    </div>
+                    <div class="col-md-8">
+                        
+                        <div class="right-w3l">
+                            <p> Email: </p>
+                            <h4><a id="user_email"></a></h4>
+                            <p> Phone Number: </p>
+                            <h4><a id="phone_no_text"></a></h4>
+                            <p> Member Since: </p>
+                            <h4><a id="date"></a></h4>
+                        </div>
+                        <br>
+                        <div class="right-w3l">
+                            <!-- <input type="submit" class="form-control" value="Update Details"> -->
+                            <a href="user-details.html"  class="btn btn-primary btn-norm form-control">Update Details</a>
+                        </div>
+                        <br>                        
+                        <div class="right-w3l">
+                            <!-- <input type="submit" class="form-control" value="Order History"> -->
+                            <a href="order-history.html" class="form-control btn-norm btn btn-primary">Order History</a>
+                        </div>
+                        <br>
+                        <div class="right-w3l">
+                            <button class="btn btn-danger form-control log-out" id="logout_btn" onclick="logout_user()">LOGOUT</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //my account -->
+
+<!-- js -->
+<script src="js/jquery-2.2.3.min.js"></script>
+<!-- //js -->
+<!-- script for show signin and signup modal -->
+<script>
+    $(document).ready(function () {
+        $("#myModal_btn").modal();
+    });
+</script>
+<!-- //script for show signin and signup modal -->
+<!-- smooth dropdown -->
+<script>
+    $(document).ready(function () {
+        $('ul li.dropdown').hover(function () {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
+        }, function () {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
+        });
+    });
+</script>
+<!-- //smooth dropdown -->
+<!-- script for password match -->
+<!-- <script>
+    window.onload = function () {
+        document.getElementById("password1").onchange = validatePassword;
+        document.getElementById("password2").onchange = validatePassword;
+    }
+    
+    function validatePassword() {
+        var pass2 = document.getElementById("password2").value;
+        var pass1 = document.getElementById("password1").value;
+        if (pass1 != pass2)
+        document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+        else
+        document.getElementById("password2").setCustomValidity('');
+        //empty string means no validation error
+    }
+</script> -->
+<!-- script for password match -->
+<!-- Banner Responsiveslides -->
+<script src="js/responsiveslides.min.js"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 4
+        $("#slider3").responsiveSlides({
+            auto: false,
+            pager: true,
+            nav: false,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+        
+    });
+</script>
+<!-- // Banner Responsiveslides -->
+<!-- Product slider Owl-Carousel-JavaScript -->
+<script src="js/owl.carousel.js"></script>
+<script>
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+        items: 4,
+        loop: false,
+        // margin: 10,
+        autoplay: false,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: false,
+        responsive: {
+            320: {
+                items: 1,
+            },
+            568: {
+                items: 2,
+            },
+            991: {
+                items: 3,
+            },
+            1050: {
+                items: 4
+            }
+        }
+    });
+</script>
+<!-- //Product slider Owl-Carousel-JavaScript -->
+<!-- cart-js -->
+<script src="js/minicart.js">
+</script>
+<script>
+    hub.render();
+    
+    hub.cart.on('new_checkout', function (evt) {
+        var items, len, i;
+        
+        if (this.subtotal() > 0) {
+            items = this.items();
+            
+            for (i = 0, len = items.length; i < len; i++) {}
+        }
+    });
+</script>
+<!-- //cart-js -->
+<!-- start-smooth-scrolling -->
+<script src="js/move-top.js"></script>
+<script src="js/easing.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 1000);
+        });
+    });
+</script>
+<!-- //end-smooth-scrolling -->
+<!-- smooth-scrolling-of-move-up -->
+<script>
+    $(document).ready(function () {
+        /*
+        var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear' 
+        };
+        */
+        
+        $().UItoTop({
+            easingType: 'easeOutQuart'
+        });
+        
+    });
+</script>
+<script>
+    window.onscroll = function() {myFunction()};
+    
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    }
+</script>
+<script src="js/SmoothScroll.min.js"></script>
+<!-- //smooth-scrolling-of-move-up -->
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="js/bootstrap.js"></script> -->
+    
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBCXYBy-ry760TM9x-CEsLzIgoZJ3ucv4g",
+            authDomain: "trial-c2b17.firebaseapp.com",
+            databaseURL: "https://trial-c2b17.firebaseio.com",
+            projectId: "trial-c2b17",
+            storageBucket: "trial-c2b17.appspot.com",
+            messagingSenderId: "181878503934"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <!-- <script type="text/javascript" src="js_files/login.js"></script> -->
+    <script type="text/javascript" src="js_files/index.js"></script>
+    <!-- <script src="js_files/try-item.js"></script> -->
+    <!-- <script src="js_files/men-image-index.js"></script> -->
+    <!-- <script src="js_files/boy-image-index.js"></script> -->
+    <!-- <script src="js_files/girl-image-index.js"></script> -->
+    <script type="text/javascript" src="js_files/checkout-item-data.js"></script>
+    <script type="text/javascript" src="js_files/item_men/men-blazer.js"></script>
+    <script type="text/javascript" src="js_files/dod.js"></script>
+    <!-- <script type="text/javascript" src="js_files/men-sherwani.js"></script> -->
+</body>
+
+</html>

@@ -47,6 +47,10 @@
             .girl-main{
                 visibility:hidden;
             }
+            .card-img-dod{
+                height: 400px;
+                width: 18rem !important;
+            } 
         }
         .top-container {
             background-color: #f1f1f1;
@@ -83,6 +87,47 @@
             height: 400px;
             width: 18rem;
         } 
+        .card-img-dod{
+            height: 300px;
+            width: 11rem;
+        } 
+        /* .owl-stage{
+            transform: translate3d(0px, 0px, 0px); 
+            transition: all 0s ease 0s; 
+            width: 2526px;
+        } */
+        
+        @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 100%;
+            }
+            .loading_gif{
+                position:fixed;
+                top:40% !important;
+                right:40% !important;
+                width:20% !important;
+                height:30% !important;
+                /* background-color:black; */
+                background-repeat:repeat;
+                background-position:center;
+                z-index:10000000;
+                opacity: 1;
+                filter: alpha(opacity=40);
+            }
+        }
+        #loading_gif{
+            position:fixed;
+            top:55%;
+            right:50%;
+            width:10%;
+            height:15%;
+            /* background-color:black; */
+            background-repeat:repeat;
+            background-position:center;
+            z-index:10000000;
+            opacity: 1;
+            filter: alpha(opacity=40);
+        }
     </style>
 </head>
 
@@ -114,9 +159,7 @@
                         <!-- shopping cart -->
                         <div class="cart-mainf">
                             <div class="hubcart hubcart2 cart cart box_1">
-                                <form action="#" method="post">
-                                    <input type="hidden" name="cmd" value="_cart">
-                                    <input type="hidden" name="display" value="1">
+                                <form action="checkout.html" method="post">
                                     <button class="btn top_hub_cart mt-1" type="submit" name="submit" value="" title="Cart">
                                         <i class="fas fa-shopping-bag"></i>
                                     </button>
@@ -142,7 +185,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto text-center">
             <li class="nav-item">
-                <a class="nav-link  active" href="index.html">Home
+                <a class="nav-link" href="index.html">Home
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
@@ -152,12 +195,12 @@
                     <div class="px-0 container">
                         <div class="row">
                             <div class="col-md-12">
-                                <a class="dropdown-item" href="#">Blazer</a>
-                                <a class="dropdown-item" href="#">Kurta Pyjama</a>
-                                <a class="dropdown-item" href="#">Nehru Jacket</a>
-                                <a class="dropdown-item" href="#">Sherwani</a>
-                                <a class="dropdown-item" href="#">Suit</a>
-                                <a class="dropdown-item" href="#">Accessories</a>
+                                <a class="dropdown-item" href="men-sherwani.html">Sherwani</a>
+                                <a class="dropdown-item" href="men-kurta.html">Kurta Pyjama</a>
+                                <a class="dropdown-item" href="men-nehru-jacket.html">Nehru Jacket</a>
+                                <a class="dropdown-item" href="men-blazer.html">Blazer</a>
+                                <a class="dropdown-item" href="men-suit.html">Suit</a>
+                                <a class="dropdown-item" href="men-ac.html">Accessories</a>
                             </div>
                             <!-- <div class="col-md-4">
                                 <a class="dropdown-item" href="#">T-Shirts</a>
@@ -185,12 +228,12 @@
                     <div class="px-0 container">
                         <div class="row">
                             <div class="col-md-12">
-                                <a class="dropdown-item" href="#">Anarkali</a>
-                                <a class="dropdown-item" href="#">Lehengas</a>
-                                <a class="dropdown-item" href="#">Gowns</a>
-                                <a class="dropdown-item" href="#">Sarees</a>
-                                <a class="dropdown-item" href="#">Dhoti Sets</a>
-                                <a class="dropdown-item" href="#">Accessories</a>
+                                <a class="dropdown-item" href="women-anarkali.html">Anarkali</a>
+                                <a class="dropdown-item" href="women-lehengas.html">Lehengas</a>
+                                <a class="dropdown-item" href="women-gowns.html">Gowns</a>
+                                <a class="dropdown-item" href="women-saree.html">Sarees</a>
+                                <a class="dropdown-item" href="women-skirt.html">Top Skirts</a>
+                                <a class="dropdown-item" href="women-ac.html">Accessories</a>
                             </div>
                             <!-- <div class="col-md-4">
                                 <a class="dropdown-item" href="#">T-shirts</a>
@@ -217,8 +260,8 @@
                         <div class="row w3_kids">
                             <div class="col-md-12">
                                 <!-- <span class="bg-light"></span> -->
-                                <a class="dropdown-item" href="#">Boy</a>
-                                <a class="dropdown-item" href="#">Girl</a>
+                                <a class="dropdown-item" href="boy-costume.html">Boy</a>
+                                <a class="dropdown-item" href="girl-costume.html">Girl</a>
                             </div>
                         </div>
                     </div>
@@ -231,7 +274,7 @@
                 <a class="nav-link" href="blog.html">Blog</a>
             </li> -->
             <li class="nav-item">
-                <a class="nav-link" href="feedback.html">Feedback</a>
+                <a class="nav-link active" href="feedback.html">Feedback</a>
             </li>
         </ul>
     </div>
@@ -277,7 +320,7 @@
             <img class="img-fluid" style="height:550px !important; width: 100%;" src="images/901e.jpg" alt="">
             <div class="overlay">
                 <h5>women's fashion</h5>
-                <a class="info" href="#">Shop Now</a>
+                <a class="info" href="short-women.html">Shop Now</a>
             </div>
         </div>
     </div>
@@ -287,7 +330,7 @@
             <img class="img-fluid" style="height:550px !important; width: 100%;" src="images/1-GoldHatPhotography2542.jpg" alt="">
             <div class="overlay">
                 <h5>kid's fashion</h5>
-                <a class="info" href="#">Shop Now</a>
+                <a class="info" href="short-kids.html">Shop Now</a>
             </div>
         </div>
     </div>
@@ -297,7 +340,7 @@
             <img class="img-fluid" style="height:550px !important; width: 100%;" src="images/9e38798e.jpg" alt="">
             <div class="overlay">
                 <h5>men's fashion</h5>
-                <a class="info" href="#">Shop Now</a>
+                <a class="info" href="short-men.html">Shop Now</a>
             </div>
         </div>
     </div>
@@ -419,9 +462,11 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
+                
                 <div class="modal-body pt-3 pb-5 px-sm-5">
                     <div class="row">
                         <div id="clothing-nav-content" class="tab-content py-sm-5">
+                            <img src="https://static.wubook.net/shstatic/imgs/cloading.gif" class="loading_gif" id="loading_gif">
                             <div role="tabpanel" class="tab-pane fade show active" id="women" aria-labelledby="women-tab">
                                 <div id="owl-demo" class="owl-carousel bhargav text-center">
                                     
@@ -687,12 +732,13 @@
         <!-- <script src="js_files/men-image-index.js"></script> -->
         <!-- <script src="js_files/boy-image-index.js"></script> -->
         <!-- <script src="js_files/girl-image-index.js"></script> -->
-        <script type="text/javascript" src="js_files/index_cart.js"></script>
+        <!-- <script type="text/javascript" src="js_files/index_cart.js"></script> -->
         <script type="text/javascript" src="js_files/recommended_women.js"></script>
         <script type="text/javascript" src="js_files/recommended_men.js"></script>
         <script type="text/javascript" src="js_files/recommended_boy.js"></script>
         <script type="text/javascript" src="js_files/recommended_girl.js"></script>
         <script type="text/javascript" src="js_files/dod.js"></script>
+        <!-- <script type="text/javascript" src="js_files/men-sherwani.js"></script> -->
     </body>
     
     </html>

@@ -18,12 +18,16 @@ firebase.auth().onAuthStateChanged(function(user) {
             document.getElementById('phone_no_text').innerHTML = user_details.phone_number;
             document.getElementById('date').innerHTML = user_details.joining_date;
         });
+
+        
         // end of fetching personal details
     } else {
         // No user is signed in.
         window.alert('Sorry! No user has been signed in. Please try logging in again');
         window.location = 'Guest index.html';
     }
+    var img = document.getElementById('loading_gif');
+        img.style.visibility = 'hidden';
 });
 
 
@@ -45,6 +49,7 @@ document.getElementById('btn_feedback').onclick = function(){
         message: message_wd
     });
     alert('Details Successfully Updated');
+    location.reload();
     // end of storing data
 };
 

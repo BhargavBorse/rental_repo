@@ -411,16 +411,17 @@ firebase.auth().onAuthStateChanged(function(user) {
                 }
                 else
                 {
-                    alert('Error! Category not selected');
+                    // alert('Error! Category not selected');
                 }
                 
             }
             else
             {
-                alert('Already Added');
+                // alert('Already Added');
             }
             
-            
+            var img = document.getElementById('loading_gif');
+            img.style.visibility = 'hidden';
         }
         
         
@@ -525,18 +526,18 @@ firebase.auth().onAuthStateChanged(function(user) {
                             remove(user_cart_item_data.itemid);  
                         });
                         remove_div_main.appendChild(remove_div_sub);
-
+                        
                         // var itemid = document.createElement('input');
                         // itemid.setAttribute('type','text');
                         // itemid.setAttribute('value',user_cart_item_data.itemid);
                         // remove_div_main.appendChild(itemid);
-
                         
-
+                        
+                        
                         tableRef.deleteRow(user_cart_AcKeys.length);
                         
                     });
-
+                    
                 }
                 else  if(user_cart_item_data.category == 'Men')
                 {
@@ -801,7 +802,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         }
     });
     
-
+    
     function remove(itemid_para){
         eventRef.child(user.uid).child('cart').on('value',function(userCartKeys_snapshot){
             var userCartKeys = userCartKeys_snapshot.val();

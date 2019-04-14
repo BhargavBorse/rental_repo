@@ -22,6 +22,8 @@ firebase.auth().onAuthStateChanged(function(user) {
             document.getElementById('phone_no_text').innerHTML = user_details.phone_number;
             document.getElementById('date').innerHTML = user_details.joining_date;
         });
+
+        
         // end of fetching personal details
         
         // this part is for storing data in datbase
@@ -68,6 +70,8 @@ firebase.auth().onAuthStateChanged(function(user) {
             var phn_wd = document.getElementById('phone_no').value;
             var address_wd = document.getElementById('address').value;
             var pincode_wd = document.getElementById('pin_code').value;
+            var from_date_wd = document.getElementById('from_date').value;
+            var to_date_wd = document.getElementById('to_date').value;
             
             eventRef.child(user.uid).child('details').update({
                 name: name_wd, 
@@ -75,7 +79,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                 l_name: l_name_wd,
                 phone_number: phn_wd,
                 Address: address_wd,
-                pin_code: pincode_wd
+                pin_code: pincode_wd,
+                from_date: from_date_wd,
+                to_date: to_date_wd
             });
             window.location = 'checkout-confirm.html';
         };

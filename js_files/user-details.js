@@ -21,11 +21,30 @@ firebase.auth().onAuthStateChanged(function(user) {
             
             document.getElementById('user_email_main').innerHTML = user_details.email;
             document.getElementById('date').innerHTML = user_details.joining_date;
+
+            var img = document.getElementById('loading_gif');
+            img.style.visibility = 'hidden';
         });
         // end of fetching personal details
+       
         
         // this part is for storing data in datbase
         document.getElementById('wd_form_submit').onclick = function(){
+
+
+            var c = document.forms["myForm"]["phone_no"].value;
+            var e = document.forms["myForm"]["pin_code"].value;
+
+
+            if(c.length != 10){
+                alert("Phone number is in wrong format");
+                return false;
+            }
+            if(e.length != 6){
+                alert("Please enter correct pin code");
+                return false;
+            }
+
             var name_wd = document.getElementById('name').value;
             var email_wd = document.getElementById('user_email').value;
             var l_name_wd = document.getElementById('l_name').value;
@@ -43,6 +62,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 pin_code: pincode_wd
             });
             alert('Details Successfully Updated');
+            location.reload();
         };
         // end of storing data
         

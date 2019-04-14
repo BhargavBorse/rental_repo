@@ -46,7 +46,7 @@ dbRef_dod.child('dod').on('value',function(item_details_snapshot){
                     
                     //Img under div-class=men-thumb-item
                     var img1 = document.createElement('img');
-                    img1.className="card-img-top card-img-top-height card-item-img-top";
+                    img1.className="card-img-dod";
                     img1.setAttribute('src',item_deep_dod_details.optional_image);
                     // var img122 = document.createTextNode(keys_dod[i]);
                     
@@ -153,6 +153,8 @@ dbRef_dod.child('dod').on('value',function(item_details_snapshot){
                     
                     //Append I to Button-class=hub-cart phub-cart btn
                     btn1.appendChild(i1);
+                    var img = document.getElementById('loading_gif');
+                    img.style.visibility = 'hidden';
                 }
             });
         }
