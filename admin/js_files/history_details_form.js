@@ -4,7 +4,7 @@ firebase.database().ref().child('Admin').child('Previous_History').on('child_add
     
     var email = View_item.child('email').val();
     var item_name = View_item.child('item_name').val();
-    var item_price = View_item.child('item_price').val();
+    var item_price = View_item.child('price').val();
     var deliveryman = View_item.child('deliveryman').val();
     var user_id = View_item.child('Placed_By').val();
     var id = View_item.key;
