@@ -80,7 +80,7 @@ document.getElementById('btn_insertname').onclick = function()  {
     uploadTask.on('state_changed',
     function(snapshot){
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        alert('Upload Progress : '+progress+'%');
+        // alert('Upload Progress : '+progress+'%');
     },function(error){
         
     },function(){
@@ -97,8 +97,35 @@ document.getElementById('btn_insertname').onclick = function()  {
                 item_size : item_size,
                 optional_image : downloadURL
             });
-        });
+        });        
+    });
+
+
+    var filename = selectedFile.name;
+    var storageRef_dod = firebase.storage().ref('DOD/' + selectedFile.name);
+    var uploadTask_dod = storageRef_dod.put(selectedFile);
+    uploadTask_dod.on('state_changed',
+    function(snapshot){
+        var progress_dod = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        alert('Upload Progress : '+progress_dod+'%');
+    },function(error){
         
+    },function(){
+        uploadTask_dod.snapshot.ref.getDownloadURL().then(function(downloadURL){
+            databaseRef.child('dod').push({
+               // item_id : item_id,
+                item_name : item_name,
+                item_description : item_description,
+                item_subcategory : item_subcategory,
+                deals_of_the_day : deals_of_the_day,
+                recommended : recommended,
+                item_quantity : item_quantity,
+                item_price : item_price,
+                item_size : item_size,
+                optional_image : downloadURL
+            });
+        });        
         alert('Done! Uploading');
     });
+    
 };

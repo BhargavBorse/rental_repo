@@ -34,52 +34,62 @@ firebase.auth().onAuthStateChanged(function(user) {
         document.getElementById('pin_code').value = order_details_user_snapshot.child('pin_code').val();
         
     });
-
-   
+    
+    
     //    document.getElementById('id').innerHTML = user.id;
     //    eventRef.child('Admin').child('Order').on('value',function(order_details_snapshot){
     //     var order_details = order_details_snapshot.val();
     //    })
     
     // dropdown menu
-     
-   
+    
+    
     var div_1 = document.createElement('div');
-   
+    
     // var item_dropdown = document.createElement("select");
     document.getElementsByClassName('select-dropdown')[0].appendChild(div_1);
-        var select = document.createElement('select');
-        select.setAttribute('id','deliveryman');
+    var select = document.createElement('select');
+    select.setAttribute('id','deliveryman');
     div_1.appendChild(select);
-  
+    
     var dbRef = firebase.database().ref();
     var orderRef = firebase.database().ref('Delivery_Man_Details');
-     dbRef.child('Delivery_Man_Details').on('value',function(order_details_snapshot){
-    var order_details = order_details_snapshot.val();
-    var Delivery_Man_Details_keys = Object.keys(order_details);
-    for(var i=0;i<Delivery_Man_Details_keys.length;i++)
-    {
-        orderRef.child(Delivery_Man_Details_keys[i]).on('value',function(order_deep_details_snapshot){
-            var order_deep_details = order_deep_details_snapshot.val();
-            var j = i+1;
-    var i = document.createElement("option");
-    select.appendChild(i);
-    j = document.createTextNode(order_deep_details.Name);
-    i.appendChild(j);
+    dbRef.child('Delivery_Man_Details').on('value',function(order_details_snapshot){
+        var order_details = order_details_snapshot.val();
+        var Delivery_Man_Details_keys = Object.keys(order_details);
+        for(var i=0;i<Delivery_Man_Details_keys.length;i++)
+        {
+            orderRef.child(Delivery_Man_Details_keys[i]).on('value',function(order_deep_details_snapshot){
+                var order_deep_details = order_deep_details_snapshot.val();
+                var j = i+1;
+                var k = document.createElement("option");
+                k.className = 'delivery_man_name';
+                k.setAttribute('value', order_deep_details.Email);
+                select.appendChild(k);
+                j = document.createTextNode(order_deep_details.Name);
+                k.appendChild(j);
+                
+                k.setAttribute('style',"margin-bottom: 1% !important;");
+                
+                // var hiddenKeyDeliveryMan = document.createElement('input');
+                // hiddenKeyDeliveryMan.setAttribute('type','hidden');
+                // hiddenKeyDeliveryMan.setAttribute('value',Delivery_Man_Details_keys[i]);
+                // hiddenKeyDeliveryMan.setAttribute('id','deliveryManKey');
+                // select.appendChild(hiddenKeyDeliveryMan);
 
-    i.setAttribute('style',"margin-bottom: 1% !important;");
-    
-    // var item_dropdown_button1 = document.createElement("option");
-    // select.appendChild(item_dropdown_button1);
-    // item_dropdown_text_b = document.createTextNode('B');
-    // item_dropdown_button1.appendChild(item_dropdown_text_b);
-    // item_dropdown_text_b = document.createTextNode('B');
-    // item_dropdown_button.appendChild(item_dropdown_text_b);
-    // item_dropdown_text_c = document.createTextNode('C');
-    // item_dropdown_button.appendChild(item_dropdown_text_c);
-    
+                
+                // var item_dropdown_button1 = document.createElement("option");
+                // select.appendChild(item_dropdown_button1);
+                // item_dropdown_text_b = document.createTextNode('B');
+                // item_dropdown_button1.appendChild(item_dropdown_text_b);
+                // item_dropdown_text_b = document.createTextNode('B');
+                // item_dropdown_button.appendChild(item_dropdown_text_b);
+                // item_dropdown_text_c = document.createTextNode('C');
+                // item_dropdown_button.appendChild(item_dropdown_text_c);
+                
+            });
+        }
+        
+    });
 });
-     }
-     
-     })});
-   
+

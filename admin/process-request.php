@@ -2,15 +2,15 @@
 if(isset($_POST["category"])){
     // Capture selected country
     $category = $_POST["category"];
-
+    
     // Define country and city array
     $categoryArr = array(
-                    "Men" => array("Sherwani", "Blazer", "Kurta-pyjama","Nehru Jacket", "Suit","Accessiories"),
-                    "Women" => array("Anarkali", "Gown", "lehengas", "Sarees", "Top-skirts","Accessiories"),
-                    "Boy" => array("Boy"),
-                    "Girls" => array("Girls")
-                );
-
+        "Men" => array("Sherwani", "Blazer", "Kurta-pyjama","Nehru-Jacket", "Suit","Men-Accessories"),
+        "Women" => array("Anarkali" , "Lehenga", "Gown", "Sarees", "Top-skirts","Women-Accessiories"),
+        "Boy" => array("Boy"),
+        "Girls" => array("Girls")
+    );
+    
     // Display city dropdown based on country name
     if($category !== 'Select'){
         echo "<label>Subcategory:</label>";

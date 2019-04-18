@@ -31,8 +31,5 @@ function logout_user(){
         // An error happened.
         alert('Please try again');
     });
-
     
 }
-
-})
