@@ -22,7 +22,7 @@ document.getElementById('btn_previous_history').onclick = function()  {
     var quantity = document.getElementById('quantity').value;
     var deliveryman_email = document.getElementById('deliveryman').value;
     var deliveryman_key;
-    var delivery = document.getElementById('delivery').value;
+    // var delivery = document.getElementById('delivery').value;
     var pickup = document.getElementById('pickup').value;
 
     eventRef.child('Delivery_Man_Details').on('value',async function(deliveryManInfoSnapshot){
@@ -99,7 +99,7 @@ document.getElementById('btn_previous_history').onclick = function()  {
                     order_type : order_type,
                     quantity : quantity,
                     deliveryman : deliveryman_email,
-                    delivery : delivery,
+                    // delivery : delivery,
                     pickup : pickup
                     
                 });
