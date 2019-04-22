@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>F4F - Invoice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" type="text/css" href="invoice/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="invoice/font-awesome/css/font-awesome.min.css" />
+    
+    <script type="text/javascript" src="invoice/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="invoice/bootstrap/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+    
+    <!-- Owl-Carousel-CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+
+    <style>
+        .height {
+            min-height: 200px;
+        }
+        
+        .icon {
+            font-size: 47px;
+            color: #5CB85C;
+        }
+        
+        .iconbig {
+            font-size: 77px;
+            color: #5CB85C;
+        }
+        
+        .table > tbody > tr > .emptyrow {
+            border-top: none;
+        }
+        
+        .table > thead > tr > .emptyrow {
+            border-bottom: none;
+        }
+        
+        .table > tbody > tr > .highrow {
+            border-top: 3px solid;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="page-header">
+            <h1>Freedom For Fashion</h1>
+        </div>
+        
+        <!-- Simple Invoice - START -->
+        <div id="printableArea">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="text-center">
+                        <h2>Invoice</h2>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-3 col-lg-3 pull-left">
+                            <div class="panel panel-default height">
+                                <div class="panel-heading">Order Owner
+                                    <button type="button" style="float:right;" class="btn btn-primary fa fa-edit" onclick="back()" id="back">
+                                    </div>
+                                    <div class="panel-body">
+                                        <strong id="name"></strong><br><br>
+                                        <strong id="pn_no"></strong><br><br>
+                                        <strong id="email"></strong><br><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-3 col-lg-3">
+                                <div class="panel panel-default height">
+                                    <div class="panel-heading">Shipping Address
+                                        <button type="button" style="float:right;" class="btn btn-primary fa fa-edit" onclick="checkout()" id="checkout">
+                                        </div>
+                                        <div class="panel-body">
+                                            <strong id="address"></strong><br>
+                                            <strong id="pin_code"></strong><br><br>
+                                            <strong id="">Payment Type: </strong>Cash On Delivery<br><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="text-center"><strong>Order summary</strong></h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="table-responsive">
+                                            <table class="table" id="invoice_table">
+                                                <thead>
+                                                    <tr>
+                                                        <td><strong>Item Name</strong></td>
+                                                        <td><strong>Item Price</strong></td>
+                                                        <td><strong>Item Quantity</strong></td>
+                                                        <td><strong>Total</strong></td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- <tr>
+                                                        <td>Sherwani</td>
+                                                        <td class="text-center">2000</td>
+                                                        <td class="text-center">2</td>
+                                                        <td class="text-right">4000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Blazer</td>
+                                                        <td class="text-center">1500</td>
+                                                        <td class="text-center">2</td>
+                                                        <td class="text-right">3000</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Kurta</td>
+                                                        <td class="text-center">800</td>
+                                                        <td class="text-center">3</td>
+                                                        <td class="text-right">2400</td>
+                                                    </tr> -->
+                                                    <tr>
+                                                        <td class="highrow"></td>
+                                                        <td class="highrow"></td>
+                                                        <td class="highrow"><strong>Subtotal</strong></td>
+                                                        <td class="highrow" id="subtotal"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="emptyrow"></td>
+                                                        <td class="emptyrow"></td>
+                                                        <td class="emptyrow"><strong>GST(18%)</strong></td>
+                                                        <td class="emptyrow" id="gst"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="emptyrow"></td>
+                                                        <td class="emptyrow"></td>
+                                                        <td class="emptyrow"><strong>Deposit</strong></td>
+                                                        <td class="emptyrow" id="deposit"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
+                                                        <td class="emptyrow"></td>
+                                                        <td class="emptyrow"><strong>Total</strong></td>
+                                                        <td class="emptyrow" id="final_total"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="button" class="btn btn-primary" onclick="back_to_checkout()" id="back_to_checkout" value="Back to Checkout">
+                <input type="button" class="btn btn-primary" onclick="more_item()" id="more_item" value="Add More Item">                                    
+                <input type="button" class="btn btn-primary" onclick="printDiv('printableArea')" value="Print Invoice">
+                <br><br>
+            </div>
+            
+            <footer>   
+                <!-- //footer-top -->
+                <div class="footer-bottomv2 py-5" style="background-color: black;">
+                    <div class="container">
+                        <ul class="bottom-links-agile">
+                            <li>
+                                <a href="index.html" style="color: white;">Home</a>
+                            </li>
+                            <li>
+                                <a href="#myModal_btn" data-toggle="modal" data-target="#myModal_btn" style="color: white;">Deals</a>
+                            </li>
+                            <li>
+                                <a href="#myacc" data-toggle="modal" data-target="#myacc" style="color: white;">Profile</a>
+                            </li>
+                            <li>
+                                <a href="Feedback.html" style="color: white;">Feedback</a>
+                            </li>
+                            
+                        </ul>
+                        
+                        
+                        <div class="cpy-right align-self-center">
+                            <h2 class="agile_btxt">
+                                <a href="index.html" style="color: white;">
+                                    <span>F</span>reedom
+                                    <span>f</span>or
+                                    <span>F</span>ashion</a>
+                                </h2>
+                                <p style="float:right;">© 2019 Freedom for Fashion. All rights reserved 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </body>
+        
+        <script>
+            document.getElementById('back_to_checkout').onclick = function(){
+                window.location.href = 'checkout.html';
+            }
+        </script>
+        <script>
+            document.getElementById('back').onclick = function(){
+                window.location.href = 'checkout.html';
+            }
+        </script>
+        <script>
+            document.getElementById('checkout').onclick = function(){
+                window.location.href = 'checkout.html';
+            }
+        </script>
+        <script>
+            document.getElementById('more_item').onclick = function(){
+                window.location.href = 'index.html';
+            }
+        </script>
+        <script>
+            function printDiv(divName) {
+                var printContents = document.getElementById(divName).innerHTML;
+                var originalContents = document.body.innerHTML;
+                
+                document.body.innerHTML = printContents;
+                
+                window.print();
+                
+                document.body.innerHTML = originalContents;
+            }
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+        
+        <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyBCXYBy-ry760TM9x-CEsLzIgoZJ3ucv4g",
+                authDomain: "trial-c2b17.firebaseapp.com",
+                databaseURL: "https://trial-c2b17.firebaseio.com",
+                projectId: "trial-c2b17",
+                storageBucket: "trial-c2b17.appspot.com",
+                messagingSenderId: "181878503934"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script type="text/javascript" src="js_files/invoice.js"></script>
+        </html>

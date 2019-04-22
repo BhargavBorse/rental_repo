@@ -24,8 +24,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                 Ordered_Date: order_date_wd,
                 Order_Type: order_type_wd,
                 Delivery_Return_Date: d_r_date_wd,
-                Order_Status: order_status_wd,
+                Order_Status: "Order Delivered",
                 Address: address_wd,
+                Placed_By : user.uid
                 
             });
             database.child('Admin').child('Order').push({
@@ -35,7 +36,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 Ordered_Date: order_date_wd,
                 Order_Type: order_type_wd,
                 Delivery_Return_Date: d_r_date_wd,
-                Order_Status: order_status_wd,
+                Order_Status: 'New Order',
                 Address: address_wd,
                 Placed_By : user.uid
             });

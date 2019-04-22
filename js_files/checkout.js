@@ -83,7 +83,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 from_date: from_date_wd,
                 to_date: to_date_wd
             });
-            window.location = 'checkout-confirm.html';
+            window.location = 'invoice.html';
         };
         document.getElementById('back_changes').onclick = function(){
             window.location = 'checkout.html';

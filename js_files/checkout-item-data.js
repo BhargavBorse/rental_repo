@@ -815,7 +815,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     {
                         eventRef.child(user.uid).child('cart').child(userCartAcKeys[i]).remove(function(){
                             alert('Removed');
-                            location.reload();
+                            // location.reload();
                         });
                     }
                     

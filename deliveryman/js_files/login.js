@@ -7,41 +7,86 @@ firebase.auth().onAuthStateChanged(function(user) {
     
   } else {
     // No user is signed in.
-
+    
   }
 });
 
+
+
+
+
+
+// database.child('Delivery_Man_Details').child(user.uid).child('role').child('admin').on('value',function(getadminrolesnapshot){
+
+//   var getadminrole = getadminrolesnapshot.val();
+//   console.log(getadminrole);
+//   if(getadminrole == true)
+//   {
+//     alert("You're admin, you can proceed");
+//     window.location.href = 'index.html';
+//   }
+//   else
+//   {
+//     alert('Sorry, you aren"t admin');
+//   }
+
+// });
+
+
+
 document.getElementById('login').onclick = function(){
   
-  var userEmail = document.getElementById("email_field").value;
-  var userPass = document.getElementById("password_field").value;
   
-  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    
-    window.alert("Error : " + errorMessage);
-    window.alert("Error in code" + errorCode);
+  var dbRef_men = firebase.database().ref();
+  var itemRef_men = firebase.database().ref('Delivery_Man_Details');
+  dbRef_men.child('Delivery_Man_Details').on('value',function(deliveryman_details_snapshot){
+    var deliveryman_details = deliveryman_details_snapshot.val();
+    var deliveryman_keys = Object.keys(deliveryman_details);
+    for(var i=0;i<deliveryman_keys.length;i++)
+    {
+      firebase.database().ref().child('Delivery_Man_Details').child(deliveryman_keys[i]).on('value',function(deliveryman_snapshot){
+        var deliveryman_details = deliveryman_snapshot.val();
+        var userEmail = document.getElementById("email_field").value;
+        // alert(deliveryman_details.Name);
+        if(userEmail == deliveryman_details.Email){
+          // alert('hello');
+          var userEmail = document.getElementById("email_field").value;
+          var userPass = document.getElementById("password_field").value;
+          
+          firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            
+            window.alert("Error : " + errorMessage);
+            window.alert("Error in code" + errorCode);
+          });
+          return true;
+        }
+        else{
+          
+        }
+      });
+    }
   });
 }
 
 // function login(){
 //   alert('sdg');
-  
+
 //   var userEmail = document.getElementById("email_field").value;
 //   var userPass = document.getElementById("password_field").value;
-  
+
 //   firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
 //     // Handle Errors here.
 //     var errorCode = error.code;
 //     var errorMessage = error.message;
-    
+
 //     window.alert("Error : " + errorMessage);
 //     window.alert("Error in code" + errorCode);
 //     // ...
 //   });
-  
+
 // }
 
 function create_account(){

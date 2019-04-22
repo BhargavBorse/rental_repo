@@ -99,8 +99,7 @@ document.getElementById('btn_previous_history').onclick = function()  {
                     order_type : order_type,
                     quantity : quantity,
                     deliveryman : deliveryman_email,
-                    // delivery : delivery,
-                    pickup : pickup
+                    work_order : pickup
                     
                 });
                 alert('order sent successfully');
