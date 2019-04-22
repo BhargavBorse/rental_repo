@@ -23,7 +23,6 @@ document.getElementById('btn_previous_history').onclick = function()  {
     var deliveryman_email = document.getElementById('deliveryman').value;
     var deliveryman_key;
     var delivery = document.getElementById('delivery').value;
-    var pickup = document.getElementById('pickup').value;
 
     eventRef.child('Delivery_Man_Details').on('value',async function(deliveryManInfoSnapshot){
         var deliveryManInfo = deliveryManInfoSnapshot.val();
@@ -99,8 +98,7 @@ document.getElementById('btn_previous_history').onclick = function()  {
                     order_type : order_type,
                     quantity : quantity,
                     deliveryman : deliveryman_email,
-                    delivery : delivery,
-                    pickup : pickup
+                    work_order : delivery
                     
                 });
                 alert('order sent successfully');
