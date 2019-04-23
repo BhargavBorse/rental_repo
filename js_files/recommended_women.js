@@ -114,7 +114,7 @@ dbRef.child('item').child('Women').on('value',function(item_details_snapshot){
                 //Append p to div-class=card-text d-flex justify-content-between
                 div_sub_sub2.appendChild(p1);
                 
-                //////////////CARD - FOOTER//////////
+                //////////////CARD - FOOTER///////////////
                 
                 //Sub-Sub-Sub3
                 var div_sub_sub2 = document.createElement('div');

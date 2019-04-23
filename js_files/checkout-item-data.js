@@ -202,6 +202,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             else
             {
                 alert('Error! Category not selected');
+                document.getElementById('wd_submit').disabled = true;
             }
         }
         else

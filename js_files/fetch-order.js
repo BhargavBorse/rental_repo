@@ -25,16 +25,18 @@ firebase.auth().onAuthStateChanged(function(user) {
         // databaseRef.child(keys[i]).child('details').child('email').on('value',function(email)        
         eventRef.child(user.uid).child('Order').on('child_added',function(Order_snapshot){
             
+            alert('dsfw');
             // var product_image = Order_snapshot.child('optional_image').val();
             // alert(product_image);
-            var product_name = Order_snapshot.child('product_name').val();
-            var Quantity = Order_snapshot.child('Quantity').val();
-            var Price = Order_snapshot.child('Price').val();
-            var Ordered_Date = Order_snapshot.child('Ordered_Date').val();
-            var Order_Type = Order_snapshot.child('Order_Type').val(); 
-            var Order_Status = Order_snapshot.child('Order_Status').val();
-            var Delivery_Return_Date = Order_snapshot.child('Delivery_Return_Date').val();
-            var Address = Order_snapshot.child('Address').val();
+            var product_name = Order_snapshot.child('item_name').val();
+            alert(product_name);
+            var Quantity = Order_snapshot.child('item_quantity').val();
+            var Price = Order_snapshot.child('item_price').val();
+            var Ordered_Date = Order_snapshot.child('delivery_date').val();
+            // var Order_Type = Order_snapshot.child('Order_Type').val(); 
+            // var Order_Status = Order_snapshot.child('Order_Status').val();
+            var Delivery_Return_Date = Order_snapshot.child('return_date').val();
+            // var Address = Order_snapshot.child('Address').val();
             
             // Insert a row in the table at the last row
             var newRow   = tableRef.insertRow(0);
@@ -62,7 +64,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             
             var product_image = document.createElement('img');
             product_image.className = 'img-responsive';
-            product_image.setAttribute('src', Order_snapshot.optional_image);
+            product_image.setAttribute('src', Order_snapshot.item_image);
             a_image_link.appendChild(product_image);
             
             var product_name_cell_value = document.createTextNode(product_name);

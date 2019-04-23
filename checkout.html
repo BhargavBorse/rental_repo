@@ -40,7 +40,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     
     <style>
         .log-out{
@@ -322,14 +322,14 @@
                     <h4 class="mt-sm-0 mt-3">Your shopping cart contains:
                         <span id="cart_total_items"></span>
                         <img src="https://static.wubook.net/shstatic/imgs/cloading.gif" class="loading_gif" id="loading_gif">
-
+                        
                     </h4>
                 </div>
                 <div class="checkout-right">
                     <table id="cart_table"class="timetable_sub">
                         <thead>
                             <tr>
-
+                                
                                 <th>SL No.</th>
                                 <th>Product</th>
                                 <th>Quantity</th>
@@ -416,15 +416,20 @@
                                         <div class="card_number_grid_right">
                                             <div class="controls">
                                                 <label class="control-label">From: </label>
-                                                <input class="form-control" type="date" id="from_date">
+                                                <input class="form-control" type="date" id="from_date" required>
                                                 <!-- <h5><a style="color:black;" id="user_email_text"></a></h5> -->
                                             </div>
                                         </div>
                                         <div class="card_number_grid_right">
                                             <div class="controls">
                                                 <label class="control-label">To: </label>
-                                                <input class="form-control" type="date" id="to_date">
+                                                <input class="form-control" type="date" id="to_date" required>
                                                 <!-- <h5><a style="color:black;" id="user_email_text"></a></h5> -->
+                                            </div>
+                                        </div>
+                                        <div class="card_number_grid_right">
+                                            <div class="controls">
+                                                <input class="form-control" type="text" id="result" hidden>
                                             </div>
                                         </div>
                                     </div>
@@ -566,6 +571,74 @@
     </div>
     <!-- //my account -->
     <!-- js -->
+    <script>
+        $(function(){
+            var dtToday = new Date();
+            
+            var month = dtToday.getMonth() + 1;
+            var day = dtToday.getDate();
+            var year = dtToday.getFullYear();
+            if(month < 10)
+            month = '0' + month.toString();
+            if(day < 10)
+            day = '0' + day.toString();
+            
+            var minDate= day+ '-' + month + '-' + year;
+            
+            $('#to_date').attr('min', minDate);
+        });
+    </script>
+    <script>
+        $(function(){
+            var dtToday = new Date();
+            
+            var month = dtToday.getMonth() + 1;
+            var day = dtToday.getDate();
+            var year = dtToday.getFullYear();
+            if(month < 10)
+            month = '0' + month.toString();
+            if(day < 10)
+            day = '0' + day.toString();
+            
+            var minDate= year + '-' + month + '-' + day;
+            
+            $('#from_date').attr('min', minDate);
+        });
+    </script>
+    
+    <script>
+        const setup = () => {
+            let firstDate = $('#from_date').val();
+            let secondDate = $('#to_date').val();
+            const findTheDifferenceBetweenTwoDates = (firstDate, secondDate) => {
+                firstDate = new Date(firstDate);
+                secondDate = new Date(secondDate);
+                
+                let timeDifference = Math.abs(secondDate.getTime() - firstDate.getTime());
+                
+                let millisecondsInADay = (1000 * 3600 * 24);
+                
+                let differenceOfDays = Math.ceil(timeDifference / millisecondsInADay);
+                
+                return differenceOfDays;
+                
+            }
+            
+            let result = findTheDifferenceBetweenTwoDates(firstDate, secondDate);
+            // alert(result);
+            
+            $("#result").val(result);
+            
+            
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#wd_submit').click(function () {
+                setup();
+            })
+        });
+    </script>
     <script>
         // WRITE THE VALIDATION SCRIPT.
         function isNumber(evt) {
@@ -747,6 +820,7 @@
         <script type="text/javascript" src="js_files/checkout.js"></script>
         <script type="text/javascript" src="js_files/checkout-item-data.js"></script>
         <script type="text/javascript" src="js_files/dod.js"></script>
+        <script type="text/javascript" src="js_files/invoice.js"></script>
         
         
         <script>

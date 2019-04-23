@@ -22,19 +22,24 @@ firebase.auth().onAuthStateChanged(function(user) {
             document.getElementById('phone_no_text').innerHTML = user_details.phone_number;
             document.getElementById('date').innerHTML = user_details.joining_date;
         });
-
+        
         
         // end of fetching personal details
         
+        
         // this part is for storing data in datbase
         document.getElementById('wd_submit').onclick = function(){
+            
+            setup();
             
             var a = document.forms["myForm"]["name"].value;
             var b = document.forms["myForm"]["l_name"].value;
             var c = document.forms["myForm"]["phone_no"].value;
             var d = document.forms["myForm"]["address"].value;
             var e = document.forms["myForm"]["pin_code"].value;
-
+            var f = document.forms["myForm"]["from_date"].value;
+            var g = document.forms["myForm"]["to_date"].value;
+            
             if (a == "") {
                 alert("Please enter name");
                 return false;
@@ -63,6 +68,14 @@ firebase.auth().onAuthStateChanged(function(user) {
                 alert("Please enter correct pin code");
                 return false;
             }
+            if (f == "") {
+                alert("Please enter Date");
+                return false;
+            }
+            if (g == "") {
+                alert("Please enter Date");
+                return false;
+            }
             
             var name_wd = document.getElementById('name').value;
             // var email_wd = document.getElementById('user_email').value;
@@ -72,22 +85,46 @@ firebase.auth().onAuthStateChanged(function(user) {
             var pincode_wd = document.getElementById('pin_code').value;
             var from_date_wd = document.getElementById('from_date').value;
             var to_date_wd = document.getElementById('to_date').value;
+            var result = document.getElementById('result').value;
             
             eventRef.child(user.uid).child('details').update({
-                name: name_wd, 
-                // email: email_wd,
+                name: name_wd,
                 l_name: l_name_wd,
                 phone_number: phn_wd,
                 Address: address_wd,
                 pin_code: pincode_wd,
-                from_date: from_date_wd,
-                to_date: to_date_wd
             });
-            window.location = 'invoice.html';
+            
+            
+            var dbRef_dod = firebase.database().ref();
+            
+            dbRef_dod.child('users').child(user.uid).child('cart').on('value',function(cart_details_snapshot){
+                var cart_details = cart_details_snapshot.val();
+                var keys_cart = Object.keys(cart_details);
+                
+                for(var i=0;i<keys_cart.length;i++)
+                {
+                    firebase.database().ref().child('users').child(user.uid).child('cart').child(keys_cart[i]).on('value',function(cart_deep_details_snapshot){
+                        var cart_deep_details = cart_deep_details_snapshot.val();
+                        
+                        firebase.database().ref().child('users').child(user.uid).child('cart').child(keys_cart[i]).update({
+                            
+                            // remove when needed(tempo)
+                            from_date: from_date_wd,
+                            to_date: to_date_wd,
+                            total_days : result
+                        });
+                        window.location = 'invoice.html';
+                        
+                    });
+                }
+            });
+            
+            
         };
-        document.getElementById('back_changes').onclick = function(){
-            window.location = 'checkout.html';
-        }
+        // document.getElementById('back_changes').onclick = function(){
+        //     window.location = 'checkout.html';
+        // }
         
     } else {
         // No user is signed in.

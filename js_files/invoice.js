@@ -5,6 +5,10 @@ var total = 0;
 var total_gst = 0;
 var total_deposit = 0;
 var total_final = 0;
+
+var diff = 0;
+
+var tot_gst = 0;
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         // User is signed in.
@@ -31,9 +35,13 @@ firebase.auth().onAuthStateChanged(function(user) {
             document.getElementById('name').innerHTML = user_details.name;
             document.getElementById('email').innerHTML = user_details.email;
             document.getElementById('pn_no').innerHTML = user_details.phone_number;
+            // var to_date = user_details.to_date;
+            // var from_date = user_details.from_date;
             
             document.getElementById('address').innerHTML = user_details.Address;
             document.getElementById('pin_code').innerHTML = user_details.pin_code;
+
+            
         });
         // end of fetching personal details
         
@@ -41,11 +49,25 @@ firebase.auth().onAuthStateChanged(function(user) {
         var tableRef = document.getElementById('invoice_table').getElementsByTagName('tbody')[0];
         
         firebase.database().ref().child('users').child(user.uid).child('cart').on('child_added', function(cart_snapshot){
-            
+            var cart_det = cart_snapshot.val();
+
             var item_name = cart_snapshot.child('item_name').val();
             var item_price = cart_snapshot.child('item_price').val();
             var item_quantity = cart_snapshot.child('item_quantity').val();
-            var item_total = item_price * item_quantity;
+            var total_days = cart_snapshot.child('total_days').val();
+
+            alert(cart_det.item_name);
+
+            document.getElementById('from_date').innerText = cart_det.from_date;
+            document.getElementById('to_date').innerHTML = cart_det.to_date;
+            document.getElementById('total_days').innerHTML = cart_det.total_days;
+
+            // var from_date = cart_snapshot.child('from_date').val();
+            // var to_date = cart_snapshot.child('to_date').val();
+            
+
+            
+            var item_total = item_price * item_quantity * total_days;
             
             
             // Insert a row in the table at the last row
@@ -55,29 +77,45 @@ firebase.auth().onAuthStateChanged(function(user) {
             var item_name_cell = newRow.insertCell(0);
             var item_price_cell = newRow.insertCell(1);
             var item_quantity_cell = newRow.insertCell(2);
-            var item_total_cell = newRow.insertCell(3);
+            var item_days_cell = newRow.insertCell(3);
+            var item_total_cell = newRow.insertCell(4);
             
             //CellValue
             var item_name_cell_value = document.createTextNode(item_name);
             var item_price_cell_value = document.createTextNode(item_price);
             var item_quantity_cell_value = document.createTextNode(item_quantity);
+            var item_days_cell_value = document.createTextNode(total_days);
             var item_total_cell_value = document.createTextNode(item_total);
             
             
             item_name_cell.appendChild(item_name_cell_value);
             item_price_cell.appendChild(item_price_cell_value);
             item_quantity_cell.appendChild(item_quantity_cell_value);
+            item_days_cell.appendChild(item_days_cell_value);
             item_total_cell.appendChild(item_total_cell_value);
             
-            total += item_price * item_quantity;
+            total += item_price * item_quantity * total_days;
             document.getElementById('subtotal').innerHTML = total;
-            total_gst = total * 18/100;
+
+            total_gst = total * 5/100;
+
+            tot_gst = total +total_gst;
+
             document.getElementById('gst').innerHTML = total_gst;
-            total_deposit = total * 30/100;
+            total_deposit = tot_gst * 30/100;
             document.getElementById('deposit').innerHTML = total_deposit;
 
             total_final = total + total_gst + total_deposit;
             document.getElementById('final_total').innerHTML = total_final;
+            
+
+            // document.getElementById('in_item_name').value = item_name;
+            // document.getElementById('in_item_price').value = item_price;
+            // document.getElementById('in_item_quantity').value = item_quantity;
+            // document.getElementById('in_item_days').value = total_days;
+            // document.getElementById('in_item_gst').value = tot_gst;
+            // document.getElementById('in_item_deposit').value = total_deposit;
+            // document.getElementById('in_item_total').value = diff;
         });
         
         
@@ -86,4 +124,70 @@ firebase.auth().onAuthStateChanged(function(user) {
         window.alert('Sorry! No user has been signed in. Please try logging in again');
         window.location = 'Guest index.html';
     }
+    document.getElementById('finish').onclick = function(){
+        firebase.database().ref().child('users').child(user.uid).child('cart').on('child_added', function(cart_snapshot){
+            var cart_det = cart_snapshot.val();
+            
+            var img = cart_det.optional_image;
+            var item_name = cart_det.item_name;
+            var quantity = cart_det.item_quantity;
+            var price = cart_det.item_price;
+            var order_date = cart_det.from_date;
+            var return_date = cart_det.to_date;
+
+            firebase.database().ref().child('users').child(user.uid).child('Order').push({
+                item_image : img,
+                item_name : item_name,
+                item_quantity : quantity,
+                item_price : price,
+                delivery_date : order_date,
+                return_date : return_date,
+                order_status : "Order Sent",
+                order_type : "Rent",
+                Placed_By : user.uid
+            });     
+            // database.child('Admin').child('Order').push({
+                // product_name: p_name_wd, 
+                // Quantity: quantity_wd,
+                // Price: price_wd,
+                // Ordered_Date: order_date_wd,
+                // Order_Type: order_type_wd,
+                // Delivery_Return_Date: d_r_date_wd,
+                // Order_Status: 'New Order',
+                // Address: address_wd,
+                // Placed_By : user.uid
+            // });
+            alert('Order Successfully Placed!');
+            // location.reload();
+
+            firebase.database().ref().child('users').child(user.uid).child('cart').remove(function(){
+                // alert('Removed');
+                window.location.href = 'index.html'; 
+            });
+        });
+    }
 });
+
+
+
+
+function finish(itemid_para){
+    eventRef.child(user.uid).child('cart').on('value',function(userCartKeys_snapshot){
+        var userCartKeys = userCartKeys_snapshot.val();
+        var userCartAcKeys = Object.keys(userCartKeys);
+        for(var i=0;i<userCartAcKeys.length;i++)
+        {
+            eventRef.child(user.uid).child('cart').child(userCartAcKeys[i]).on('value',function(userCartDets_snapshot){
+                var userCartDets = userCartDets_snapshot.val();
+                if(userCartDets.itemid === itemid_para)
+                {
+                    eventRef.child(user.uid).child('cart').child(userCartAcKeys[i]).remove(function(){
+                        alert('Removed');
+                        // location.reload();
+                    });
+                }
+                
+            });
+        }
+    });
+}

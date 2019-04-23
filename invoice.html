@@ -13,11 +13,11 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-
+    
     
     <!-- Owl-Carousel-CSS -->
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-
+    
     <style>
         .height {
             min-height: 200px;
@@ -56,42 +56,45 @@
         
         <!-- Simple Invoice - START -->
         <div id="printableArea">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="text-center">
-                        <h2>Invoice</h2>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-3 col-lg-3 pull-left">
-                            <div class="panel panel-default height">
-                                <div class="panel-heading">Order Owner
-                                    <button type="button" style="float:right;" class="btn btn-primary fa fa-edit" onclick="back()" id="back">
-                                    </div>
-                                    <div class="panel-body">
-                                        <strong id="name"></strong><br><br>
-                                        <strong id="pn_no"></strong><br><br>
-                                        <strong id="email"></strong><br><br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-3 col-lg-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="text-center">
+                            <h2>Invoice</h2>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-3 col-lg-3 pull-left">
                                 <div class="panel panel-default height">
-                                    <div class="panel-heading">Shipping Address
-                                        <button type="button" style="float:right;" class="btn btn-primary fa fa-edit" onclick="checkout()" id="checkout">
+                                    <div class="panel-heading">Order Owner
+                                        <button type="button" style="float:right;" class="btn btn-primary fa fa-edit" onclick="back()" id="back">
                                         </div>
                                         <div class="panel-body">
-                                            <strong id="address"></strong><br>
-                                            <strong id="pin_code"></strong><br><br>
-                                            <strong id="">Payment Type: </strong>Cash On Delivery<br><br>
+                                            <strong id="name"></strong><br><br>
+                                            <strong id="pn_no"></strong><br><br>
+                                            <strong id="email"></strong><br><br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-3 col-lg-3">
+                                    <div class="panel panel-default height">
+                                        <div class="panel-heading">Shipping Address
+                                            <button type="button" style="float:right;" class="btn btn-primary fa fa-edit" onclick="checkout()" id="checkout">
+                                            </div>
+                                            <div class="panel-body">
+                                                <strong id="address"></strong><br>
+                                                <strong id="pin_code"></strong><br><br>
+                                                
+                                                <strong id="">Payment Type: </strong>Cash On Delivery<br><br>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
+                        <strong>From: </strong> <strong id="from_date"> </strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <strong>To: </strong> <strong id="to_date"> </strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <strong>For: </strong> <strong id="total_days"></strong> <strong>Days</strong> <br><br>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="panel panel-default">
@@ -106,6 +109,7 @@
                                                         <td><strong>Item Name</strong></td>
                                                         <td><strong>Item Price</strong></td>
                                                         <td><strong>Item Quantity</strong></td>
+                                                        <td><strong>Rent Days</strong></td>
                                                         <td><strong>Total</strong></td>
                                                     </tr>
                                                 </thead>
@@ -128,7 +132,9 @@
                                                         <td class="text-center">3</td>
                                                         <td class="text-right">2400</td>
                                                     </tr> -->
+                                                    
                                                     <tr>
+                                                        <td class="highrow"></td>
                                                         <td class="highrow"></td>
                                                         <td class="highrow"></td>
                                                         <td class="highrow"><strong>Subtotal</strong></td>
@@ -137,20 +143,29 @@
                                                     <tr>
                                                         <td class="emptyrow"></td>
                                                         <td class="emptyrow"></td>
-                                                        <td class="emptyrow"><strong>GST(18%)</strong></td>
+                                                        <td class="emptyrow"></td>
+                                                        <td class="emptyrow"><strong>GST(5%)</strong></td>
                                                         <td class="emptyrow" id="gst"></td>
                                                     </tr>
                                                     <tr>
                                                         <td class="emptyrow"></td>
                                                         <td class="emptyrow"></td>
+                                                        <td class="emptyrow"></td>
                                                         <td class="emptyrow"><strong>Deposit</strong></td>
                                                         <td class="emptyrow" id="deposit"></td>
                                                     </tr>
-                                                    <tr>
-                                                        <td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
+                                                    <!-- <tr>
                                                         <td class="emptyrow"></td>
-                                                        <td class="emptyrow"><strong>Total</strong></td>
-                                                        <td class="emptyrow" id="final_total"></td>
+                                                        <td class="emptyrow"></td>
+                                                        <td class="emptyrow"><strong>try</strong></td>
+                                                        <td class="emptyrow" id="ggg"></td>
+                                                    </tr> -->
+                                                    <tr>
+                                                        <td class="highrow"><i class="fa fa-barcode iconbig"></i></td>
+                                                        <td class="highrow"></td>
+                                                        <td class="highrow"></td>
+                                                        <td class="highrow"><strong>Total</strong></td>
+                                                        <td class="highrow" id="final_total"></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -162,9 +177,27 @@
                         </div>
                     </div>
                 </div>
+<!-- 
+                item name
+                <input type="text" id="in_item_name" >
+                item price
+                <input type="text" id="in_item_price" >
+                quantity
+                <input type="text" id="in_item_quantity" >
+                days
+                <input type="text" id="in_item_days" >
+                item subtotal
+                <input type="text" id="in_item_total" >
+                item gst
+                <input type="text" id="in_item_gst" >
+                item deposit
+                <input type="text" id="in_item_deposit" >
+<br> -->
+
                 <input type="button" class="btn btn-primary" onclick="back_to_checkout()" id="back_to_checkout" value="Back to Checkout">
                 <input type="button" class="btn btn-primary" onclick="more_item()" id="more_item" value="Add More Item">                                    
                 <input type="button" class="btn btn-primary" onclick="printDiv('printableArea')" value="Print Invoice">
+                <input type="button" class="btn btn-primary" onclick="finish()" id="finish" value="Finish">                                    
                 <br><br>
             </div>
             
