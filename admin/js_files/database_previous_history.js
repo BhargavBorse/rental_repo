@@ -109,8 +109,8 @@ alert(id);
                 
 
                 firebase.database().ref().child('Admin').child('Order').child(id).remove(function(){
-                    alert('Removed');
-                    // window.location.href = 'index.html'; 
+                    // alert('Removed');
+                    window.location.href = 'index.html'; 
                 });
 
             // });

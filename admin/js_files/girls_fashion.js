@@ -24,8 +24,8 @@ firebase.database().ref().child('item').child('Girls').on('child_added',function
     var item_size_cell = newRow.insertCell(4);
     var item_status_cell = newRow.insertCell(5);
     var item_update_cell = newRow.insertCell(6);
-    var item_active_cell = newRow.insertCell(7);
-    var id_cell = newRow.insertCell(8).hidden;
+    // var item_active_cell = newRow.insertCell(7);
+    var id_cell = newRow.insertCell(7).hidden;
     
     
     
@@ -43,14 +43,14 @@ firebase.database().ref().child('item').child('Girls').on('child_added',function
     var img = document.getElementById('loading_gif');
     img.style.visibility = 'hidden';
     //inactive button
-    var item_active = document.createElement("input");
+    // var item_active = document.createElement("input");
   //  var item_active_button = document.createElement("button");
-  item_active.setAttribute('type','button');
-  item_active.setAttribute('name','Inactive');
-  item_active.setAttribute('value','Inactive');
-  item_active_cell.appendChild(item_active);
-  item_active.onclick=Hi;
-  item_active.setAttribute('class', "btn btn-block btn-primary ");
+  // item_active.setAttribute('type','button');
+  // item_active.setAttribute('name','Inactive');
+  // item_active.setAttribute('value','Inactive');
+  // item_active_cell.appendChild(item_active);
+  // item_active.onclick=Hi;
+  // item_active.setAttribute('class', "btn btn-block btn-primary ");
 
     // item_active.appendChild(item_active);
   //  var item_active_text = document.createTextNode('Inactive');
@@ -62,18 +62,18 @@ firebase.database().ref().child('item').child('Girls').on('child_added',function
 //     document.getElementById('myFunction').onclick = function(){
 // alert('hello');
 //     };
-    function Hi()
-    {
-        alert("hi");
+    // unction Hi()
+    // {
+    //     alert("hi");f
         // var dbRef = firebase.database().ref();
         // var orderRef = firebase.database().ref('item');
-        firebase.database().ref().child('item').child('Girls').child().on('value',function(item_details_snapshot){
-            var item_details = item_details_snapshot.val();
+        // firebase.database().ref().child('item').child('Girls').child().on('value',function(item_details_snapshot){
+        //     var item_details = item_details_snapshot.val();
           //  alert(item_details);
-            var item_keys = Object.keys(item_details);
-            alert(item_keys);
-        });
-    }
+    //         var item_keys = Object.keys(item_details);
+    //         alert(item_keys);
+    //     });
+    // }
     
     //
     // alert('ds');

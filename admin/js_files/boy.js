@@ -137,11 +137,23 @@ document.getElementById('btn_insertname').onclick = function(){
                 optional_image : downloadURL
             });
             alert('Data Updated Successfully');
-            window.location.href='boy.html'
+            window.location.href='index.html'
 
         });
         
         
     });
 };
+
+document.getElementById('btn_inactive').onclick = function(){
+    //var push_key = id.val();
+    // firebase.database().ref().child('item').child('Girls').child(id);
+    // alert(ref1.item_status);
+  // alert(id.item_status);
+
+    firebase.database().ref().child('item').child('Boy').child(id).remove(function(){
+        // alert('Removed');
+        window.location.href = 'index.html'; 
+    });
+}
 });

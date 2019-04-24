@@ -137,7 +137,7 @@ document.getElementById('btn_insertname_women').onclick = function(){
                 optional_image : downloadURL
             });
             alert('Data Updated Successfully');
-            window.location.href='women.html'
+            window.location.href='index.html'
 
         });
         
@@ -145,4 +145,15 @@ document.getElementById('btn_insertname_women').onclick = function(){
     });
 };
 
+document.getElementById('btn_inactive_women').onclick = function(){
+    //var push_key = id.val();
+    // firebase.database().ref().child('item').child('Girls').child(id);
+    // alert(ref1.item_status);
+  // alert(id.item_status);
+
+    firebase.database().ref().child('item').child('Women').child(id).remove(function(){
+        alert('Removed');
+        window.location.href = 'index.html'; 
+    });
+}
 });

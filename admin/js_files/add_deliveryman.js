@@ -94,6 +94,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                 id_proof : downloadURL
             });
             alert('New Deliveryman Added!');
+            window.location.href='index.html'
+
         });        
     });
             // alert("before adding");

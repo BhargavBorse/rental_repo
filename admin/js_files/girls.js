@@ -142,7 +142,7 @@ document.getElementById('btn_insertname_girl').onclick = function(){
                 optional_image : downloadURL
             });
             alert('Data Updated Successfully');
-            window.location.href='girl.html'
+            window.location.href='index.html'
 
         });
         
@@ -164,8 +164,8 @@ document.getElementById('btn_inactive_girl').onclick = function(){
   // alert(id.item_status);
 
     firebase.database().ref().child('item').child('Girls').child(id).remove(function(){
-        alert('Removed');
-        // window.location.href = 'index.html'; 
+        // alert('Removed');
+        window.location.href = 'index.html'; 
     });
 }
 

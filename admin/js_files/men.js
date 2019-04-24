@@ -140,12 +140,23 @@ document.getElementById('btn_insertname').onclick = function(){
             });
             
             alert('Data Updated Successfully');
-            window.location.href='men.html'
+            window.location.href='index.html'
         });
         
         
     });
 };
 
+document.getElementById('btn_inactive').onclick = function(){
+    //var push_key = id.val();
+    // firebase.database().ref().child('item').child('Girls').child(id);
+    // alert(ref1.item_status);
+  // alert(id.item_status);
+
+    firebase.database().ref().child('item').child('Men').child(id).remove(function(){
+        // alert('Removed');
+        window.location.href = 'index.html'; 
+    });
+}
 
 });
