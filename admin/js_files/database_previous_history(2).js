@@ -15,7 +15,7 @@ document.getElementById('btn_previous_history').onclick = function()  {
     var address = document.getElementById('address').value;
     var pincode = document.getElementById('pin_code').value;
     var price = document.getElementById('price').value;
-    var ordered_date = document.getElementById('ordered_date').value;
+    
     var delivery_return_date = document.getElementById('return_date').value;
     var order_status = document.getElementById('order_status').value;
     var order_type = document.getElementById('order_type').value;
@@ -60,7 +60,7 @@ document.getElementById('btn_previous_history').onclick = function()  {
         address : address,
         pincode : pincode,
         price : price,
-        ordered_date : ordered_date,
+       
         delivery_return_date : delivery_return_date,
         order_status : order_status,
         order_type : order_type,
@@ -93,7 +93,7 @@ document.getElementById('btn_previous_history').onclick = function()  {
                     address : address,
                     pincode : pincode,
                     price : price,
-                    ordered_date : ordered_date,
+                   
                     delivery_return_date : delivery_return_date,
                     order_status : order_status,
                     order_type : order_type,

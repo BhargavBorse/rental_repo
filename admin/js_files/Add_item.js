@@ -95,6 +95,7 @@ document.getElementById('btn_insertname').onclick = function()  {
                 item_quantity : item_quantity,
                 item_price : item_price,
                 item_size : item_size,
+                item_status : true,
                 optional_image : downloadURL
             });
         });        

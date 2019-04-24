@@ -23,7 +23,8 @@ firebase.auth().onAuthStateChanged(function(user) {
         document.getElementById('item_price').value = update_snapshot.child('item_price').val();
         document.getElementById('item_size').value = update_snapshot.child('item_size').val();
         
-       
+        var img = document.getElementById('loading_gif');
+        img.style.visibility = 'hidden';
         
     });
    
@@ -120,6 +121,7 @@ document.getElementById('btn_insertname').onclick = function(){
     function(snapshot){
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         alert('Upload Progress : '+progress+'%');
+        
     },function(error){
         
     },function(){
@@ -134,8 +136,11 @@ document.getElementById('btn_insertname').onclick = function(){
                 item_price :  item_price,
                 item_size : item_size,
                 optional_image : downloadURL
+                
             });
+            
             alert('Data Updated Successfully');
+            window.location.href='men.html'
         });
         
         

@@ -14,27 +14,26 @@ firebase.auth().onAuthStateChanged(function(user) {
         //Value binding is left -------------------------------------------
         //document.getElementById('id').value = more_info_snapshot.child('').val();
         //document.getElementById('p_name').value = more_info_snapshot.child('product_name').val();
-        document.getElementById('item_name').value = more_info_snapshot.child('product_name').val();
-        document.getElementById('price').value = more_info_snapshot.child('Price').val();
-        document.getElementById('ordered_date').value = more_info_snapshot.child('Ordered_Date').val();
-        document.getElementById('return_date').value = more_info_snapshot.child('Delivery_Return_Date').val();
-        document.getElementById('order_status').value = more_info_snapshot.child('Order_Status').val();
-        document.getElementById('order_type').value = more_info_snapshot.child('Order_Type').val();
-        document.getElementById('quantity').value = more_info_snapshot.child('Quantity').val();
+        document.getElementById('item_name').value = more_info_snapshot.child('item_name').val();
+        document.getElementById('price').value = more_info_snapshot.child('item_price').val();
+        document.getElementById('ordered_date').value = more_info_snapshot.child('delivery_date').val();
+        document.getElementById('return_date').value = more_info_snapshot.child('return_date').val();
+        document.getElementById('order_status').value = more_info_snapshot.child('order_status').val();
+        document.getElementById('order_type').value = more_info_snapshot.child('order_type').val();
+        document.getElementById('quantity').value = more_info_snapshot.child('item_quantity').val();
         //document.getElementById('deliveryman').value = more_info_snapshot.child('').val();
-        
+        document.getElementById('email').value =more_info_snapshot.child('customer_email').val();
+        document.getElementById('name').value = more_info_snapshot.child('customer_name').val();
+        document.getElementById('mobile_number').value = more_info_snapshot.child('customer_phone_no').val();
+        document.getElementById('address').value = more_info_snapshot.child('customer_address').val();
+        document.getElementById('pin_code').value = more_info_snapshot.child('customer_pincode').val();
     });
     
-    databaseRef.child('users').child(uid).child('details').on('value',function(order_details_user_snapshot){
-        
-        document.getElementById('email').value = order_details_user_snapshot.child('email').val();
-        document.getElementById('name').value = order_details_user_snapshot.child('name').val();
-        document.getElementById('mobile_number').value = order_details_user_snapshot.child('phone_number').val();
-        document.getElementById('address').value = order_details_user_snapshot.child('Address').val();
-        document.getElementById('pin_code').value = order_details_user_snapshot.child('pin_code').val();
-        
-    });
     
+        
+        
+        
+  
     
     //    document.getElementById('id').innerHTML = user.id;
     //    eventRef.child('Admin').child('Order').on('value',function(order_details_snapshot){
@@ -86,7 +85,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                 // item_dropdown_button.appendChild(item_dropdown_text_b);
                 // item_dropdown_text_c = document.createTextNode('C');
                 // item_dropdown_button.appendChild(item_dropdown_text_c);
-                
+                var img = document.getElementById('loading_gif');
+img.style.visibility = 'hidden';
             });
         }
         

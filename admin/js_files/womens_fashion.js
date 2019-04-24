@@ -41,7 +41,8 @@ firebase.database().ref().child('item').child('Women').on('child_added',function
     item_active_button.appendChild(item_active_text);
     item_active_button.setAttribute('class', "btn btn-block btn-primary ");
 
-
+    var img = document.getElementById('loading_gif');
+    img.style.visibility = 'hidden';
     //CellValue
     var  item_name_women_cell_value = document.createTextNode(item_name_women);
     var  item_description_women_cell_value = document.createTextNode(item_description_women);

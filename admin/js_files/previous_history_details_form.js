@@ -13,17 +13,18 @@ databaseRef.child('Admin').child('Previous_History').child(id).on('value',functi
     //document.getElementById('id').value = more_info_snapshot.child('').val();
     //document.getElementById('p_name').value = more_info_snapshot.child('product_name').val();
     document.getElementById('item_name').value = more_info_snapshot.child('item_name').val();
-    document.getElementById('price').value = more_info_snapshot.child('price').val();
-    document.getElementById('ordered_date').value = more_info_snapshot.child('ordered_date').val();
-    document.getElementById('return_date').value = more_info_snapshot.child('delivery_return_date').val();
+    document.getElementById('item_price').value = more_info_snapshot.child('item_price').val();
+    document.getElementById('delivery_date').value = more_info_snapshot.child('delivery_date').val();
+    document.getElementById('return_date').value = more_info_snapshot.child('return_date').val();
     document.getElementById('order_status').value = more_info_snapshot.child('order_status').val();
     document.getElementById('order_type').value = more_info_snapshot.child('order_type').val();
-    document.getElementById('quantity').value = more_info_snapshot.child('quantity').val();
-    document.getElementById('email').value = more_info_snapshot.child('email').val();
-    document.getElementById('name').value = more_info_snapshot.child('name').val();
-    document.getElementById('mobile_number').value = more_info_snapshot.child('mobile_number').val();
-    document.getElementById('address').value = more_info_snapshot.child('address').val();
-    document.getElementById('pin_code').value = more_info_snapshot.child('pincode').val();
+    document.getElementById('item_quantity').value = more_info_snapshot.child('item_quantity').val();
+    document.getElementById('customer_email').value = more_info_snapshot.child('customer_email').val();
+    document.getElementById('customer_name').value = more_info_snapshot.child('customer_name').val();
+    document.getElementById('customer_phone_no').value = more_info_snapshot.child('customer_phone_no').val();
+    document.getElementById('customer_address').value = more_info_snapshot.child('customer_address').val();
+    document.getElementById('customer_pincode').value = more_info_snapshot.child('customer_pincode').val();
     document.getElementById('deliveryman').value = more_info_snapshot.child('deliveryman').val();
-    
+    var img = document.getElementById('loading_gif');
+img.style.visibility = 'hidden';
 });

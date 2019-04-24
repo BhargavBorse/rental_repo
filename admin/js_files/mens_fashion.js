@@ -42,7 +42,8 @@ firebase.database().ref().child('item').child('Men').on('child_added',function(V
     item_active_button.appendChild(item_active_text);
     item_active_button.setAttribute('class', "btn btn-block btn-primary ");
     
-    
+    var img = document.getElementById('loading_gif');
+img.style.visibility = 'hidden';
     //CellValue
     var  item_name_cell_value = document.createTextNode(item_name);
     var  item_description_cell_value = document.createTextNode(item_description);
@@ -60,6 +61,7 @@ firebase.database().ref().child('item').child('Men').on('child_added',function(V
     item_update_cell.appendChild(item_update);
     item_active_cell.appendChild(item_active);
     id_cell.appendChild(id_cell_text);
+    
 
 
 });

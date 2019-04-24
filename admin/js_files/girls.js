@@ -1,6 +1,9 @@
 // var eventRef = firebase.database().ref('users');
 // var databaseRef = firebase.database().ref();
+// var id = "";
 var databaseRef_girl = firebase.database().ref('item');
+
+
 document.getElementById('fileButton').onchange = function(event){
     selectedFile = event.target.files[0];
 }
@@ -9,10 +12,12 @@ firebase.auth().onAuthStateChanged(function(user) {
     
     var url_string = window.location.href;
     var url = new URL (url_string);
-    var id = url.searchParams.get('id');
+    id = url.searchParams.get('id');
     var uid = url.searchParams.get('uid');
-
-
+//     alert('id is :' + id);
+//   //  alert('status is :' + id.item_name);
+//     var ref1 = firebase.database().ref('item').child('Girls').child(id).child(item_status);
+// alert('ref1:' + ref1);
 
 
 //Women
@@ -27,7 +32,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById('item_price').value = update_snapshot_girl.child('item_price').val();
     document.getElementById('item_size').value = update_snapshot_girl.child('item_size').val();
     
-   
+    var img = document.getElementById('loading_gif');
+    img.style.visibility = 'hidden';
     
 });
 
@@ -38,7 +44,7 @@ databaseRef_girl.child('Girls').child(id).child('deals_of_the_day').on('value',f
 
     var update_checkbox = update_checkbox_snapshot.val();
  
-    console.log(update_checkbox);
+    // console.log(update_checkbox);
     if(update_checkbox == true)
     {
        
@@ -78,7 +84,7 @@ databaseRef_girl.child('Girls').child(id).child('recommended').on('value',functi
     
     var update_checkbox_rec = update_checkbox_snapshot_rec.val();
    
-    console.log(update_checkbox_rec);
+    // console.log(update_checkbox_rec);
     if(update_checkbox_rec == true)
     {
        
@@ -136,11 +142,32 @@ document.getElementById('btn_insertname_girl').onclick = function(){
                 optional_image : downloadURL
             });
             alert('Data Updated Successfully');
+            window.location.href='girl.html'
+
         });
         
         
     });
 };
+
+// firebase.database().ref().child('item').child('Girls').child().on('value',function(item_details_snapshot){
+//     var item_details = item_details_snapshot.val();
+//   //  alert(item_details);
+//     var item_keys = Object.keys(item_details);
+//     alert(item_keys);
+// });
+
+document.getElementById('btn_inactive_girl').onclick = function(){
+    //var push_key = id.val();
+    // firebase.database().ref().child('item').child('Girls').child(id);
+    // alert(ref1.item_status);
+  // alert(id.item_status);
+
+    firebase.database().ref().child('item').child('Girls').child(id).remove(function(){
+        alert('Removed');
+        // window.location.href = 'index.html'; 
+    });
+}
 
 
 });

@@ -11,7 +11,10 @@ firebase.auth().onAuthStateChanged(function(user) {
         eventRef.child(user.uid).child('details').on('value',function(user_details_snapshot){
             var user_details = user_details_snapshot.val();
             document.getElementById('user_email').innerHTML = user_details.email;
-            document.getElementById('phone_no_text').innerHTML = user_details.phone_number;
+            document.getElementById('name').innerHTML = user_details.name + " " + user_details.l_name;
+
+            // document.getElementById('phone_no_text').innerHTML = user_details.phone_number;
+
         });
         // end of fetching personal details
         

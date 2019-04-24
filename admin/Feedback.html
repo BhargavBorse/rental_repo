@@ -23,7 +23,40 @@
     text-align: center;
     padding-top: 140px;
     font-size: 14px;
-  }</style>
+  }
+  
+  @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 100%;
+            }
+            .loading_gif{
+                position:fixed;
+                top:40% !important;
+                right:40% !important;
+                width:20% !important;
+                height:30% !important;
+                /* background-color:black; */
+                background-repeat:repeat;
+                background-position:center;
+                z-index:10000000;
+                opacity: 1;
+                filter: alpha(opacity=40);
+            }
+        }
+        #loading_gif{
+            position:fixed;
+            top:55%;
+            right:50%;
+            width:10%;
+            height:15%;
+            /* background-color:black; */
+            background-repeat:repeat;
+            background-position:center;
+            z-index:10000000;
+            opacity: 1;
+            filter: alpha(opacity=40);
+        }
+  </style>
   <script src=" http://www.sitepoint.com/responsive-data-tables-comprehensive-list-solutions"></script>
   
   <title>F4F | Dashboard</title>
@@ -88,6 +121,7 @@
             <!-- <a href="#" class="sidebar-toggle" data-toggle="control-sidebar" role="button">
               <span class=""></span>
             </a> -->
+      <button class="btn btn-default"><a href="index.html" class="fa fa-arrow-left"></button></a>
             
             <div class="navbar-custom-menu">
               <ul class="nav navbar-nav">
@@ -95,24 +129,19 @@
                 <li class="dropdown user user-menu">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
-                    <h class="fa fa-user"> Profile </h>
-                    <span class="hidden-xs" id="name_out"></span>
+                  
+                        <i id="user_email"></i>
+                        
+                    
                   </a>
                   <ul class="dropdown-menu">
                     <!-- User image -->
-                    <li class="user-header">
-                      <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    
                       
-                      <p id="name-in">
-                        <i id="user_email"></i>
-                        <small>Member since Nov. 2018</small>
-                      </p>
-                    </li>
+                      
                     
                     <li class="user-footer">
-                      <div class="pull-left">
-                        <a href="Profile.html" class="btn btn-default btn-flat">Profile</a>
-                      </div>
+                      
                       <div class="pull-right">
                         <!-- <a onclick="logout()" class="btn btn-default btn-flat">Sign out</a> -->
                         <!-- <button onclick="logout()" class="btn btn-default btn-flat"> Sign Out</button> -->
@@ -162,7 +191,7 @@
                               </tr>
                             </thead>
                             <tbody>
-                              
+                                <img src="https://static.wubook.net/shstatic/imgs/cloading.gif" class="loading_gif" id="loading_gif">
                             </tbody>
                             
                           </table>
@@ -256,11 +285,9 @@
                     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
 
                         <div class="user-panel">
-                            <div class="pull-left image">
-                              <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                            </div>
+                            
                             <div class="pull-left info">
-                              <p>Dharmesh Patel</p>
+                              
                               <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
                             </div>
                           </div>
@@ -279,7 +306,14 @@
                       <!-- /.search form -->
                       <!-- sidebar menu: : style can be found in sidebar.less -->
                       <ul class="sidebar-menu" data-widget="tree">
+                <center><strong id="name"></strong></center> 
+
                         <li class="header">MAIN NAVIGATION</li>
+                        <li>
+                          <a href="index.html">
+                              <i class="fa fa-home"></i><span>Dashboard</span>
+                         </a>
+                      </li>
                         <li class="treeview">
                             <a href="#">
                               <i class="fa fa-share"></i> <span>Manage Item</span>
@@ -310,6 +344,7 @@
                           <a href="#">
                             <i class="fa fa-files-o"></i>
                             <span>Manage Delivery</span>
+                            
                             <span class="pull-right-container">
                               <i class="fa fa-angle-left pull-right"></i>
                             </span>

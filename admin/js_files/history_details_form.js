@@ -2,9 +2,9 @@ var tableRef = document.getElementById('previous_history').getElementsByTagName(
 
 firebase.database().ref().child('Admin').child('Previous_History').on('child_added',function(View_item){
     
-    var email = View_item.child('email').val();
+    var email = View_item.child('customer_email').val();
     var item_name = View_item.child('item_name').val();
-    var item_price = View_item.child('price').val();
+    var item_price = View_item.child('item_price').val();
     var deliveryman = View_item.child('deliveryman').val();
     var user_id = View_item.child('Placed_By').val();
     var id = View_item.key;
@@ -33,7 +33,8 @@ firebase.database().ref().child('Admin').child('Previous_History').on('child_add
     // item_button.setAttribute('style', "width: 40%; height: 30px; background-color: silver;");
     item_more_info_actual_link.href = "history_details.html?id="+id+ "&uid="+user_id;
     // item_more_info_actual_link.setAttribute('href','order_details.html?id='+id+'&uid='+user_id);
-    
+    var img = document.getElementById('loading_gif');
+img.style.visibility = 'hidden';
     
     
     //CellValue

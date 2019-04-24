@@ -128,6 +128,38 @@
                     margin-top: 0;
                 }
             }
+
+            @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 100%;
+            }
+            .loading_gif{
+                position:fixed;
+                top:40% !important;
+                right:40% !important;
+                width:20% !important;
+                height:30% !important;
+                /* background-color:black; */
+                background-repeat:repeat;
+                background-position:center;
+                z-index:10000000;
+                opacity: 1;
+                filter: alpha(opacity=40);
+            }
+        }
+        #loading_gif{
+            position:fixed;
+            top:55%;
+            right:50%;
+            width:10%;
+            height:15%;
+            /* background-color:black; */
+            background-repeat:repeat;
+            background-position:center;
+            z-index:10000000;
+            opacity: 1;
+            filter: alpha(opacity=40);
+        }
         </style>
          <script src=" http://www.sitepoint.com/responsive-data-tables-comprehensive-list-solutions"></script>
             
@@ -202,43 +234,38 @@
                               </a> -->
                               
                               <div class="navbar-custom-menu">
-                                <ul class="nav navbar-nav">
-                                  
-                                  <li class="dropdown user user-menu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                      <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
-                                      <h class="fa fa-user"> Profile </h>
-                                      <span class="hidden-xs" id="name_out"></span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                      <!-- User image -->
-                                      <li class="user-header">
-                                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                                        
-                                        <p id="name-in">
-                                          <i id="user_email"></i>
-                                          <small>Member since Nov. 2018</small>
-                                        </p>
-                                      </li>
+                                  <ul class="nav navbar-nav">
+                                    
+                                    <li class="dropdown user user-menu">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
                                       
-                                      <li class="user-footer">
-                                        <div class="pull-left">
-                                          <a href="Profile.html" class="btn btn-default btn-flat">Profile</a>
-                                        </div>
-                                        <div class="pull-right">
-                                          <!-- <a onclick="logout()" class="btn btn-default btn-flat">Sign out</a> -->
-                                          <!-- <button onclick="logout()" class="btn btn-default btn-flat"> Sign Out</button> -->
-                                          <button onclick="logout_user()" class="btn btn-default btn-flat"> Sign Out </button>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                  <!-- Control Sidebar Toggle Button -->
-                                  <!-- <li>
-                                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-tasks"></i></a>
-                                  </li> -->
-                                </ul>
-                              </div>
+                                            <i id="user_email"></i>
+                                            
+                                        
+                                      </a>
+                                      <ul class="dropdown-menu">
+                                        <!-- User image -->
+                                        
+                                          
+                                          
+                                        
+                                        <li class="user-footer">
+                                          
+                                          <div class="pull-right">
+                                            <!-- <a onclick="logout()" class="btn btn-default btn-flat">Sign out</a> -->
+                                            <!-- <button onclick="logout()" class="btn btn-default btn-flat"> Sign Out</button> -->
+                                            <button onclick="logout_user()" class="btn btn-default btn-flat"> Sign Out </button>
+                                          </div>
+                                        </li>
+                                      </ul>
+                                    </li>
+                                    <!-- Control Sidebar Toggle Button -->
+                                    <!-- <li>
+                                      <a href="#" data-toggle="control-sidebar"><i class="fa fa-tasks"></i></a>
+                                    </li> -->
+                                  </ul>
+                                </div>
                             </nav>
                           </header>
                                         <!-- Left side column. contains the logo and sidebar -->
@@ -281,11 +308,12 @@
                                                             <input id="price" type="text">
 
                                                             </div>
+                                                            <img src="https://static.wubook.net/shstatic/imgs/cloading.gif" class="loading_gif" id="loading_gif">
 
                                                             <div class="col-md-6">
-                                                                    <label>Ordered Date</label>
+                                                                    <label>Delivery Date</label>
                                                                     <input id="ordered_date" style="margin-top: 4% !important;" type="text"readonly>
-                                                                    <label style="margin-top: 7% !important;">Delivery Return Date</label>
+                                                                    <label style="margin-top: 7% !important;">Return Date</label>
                                                                     <input id="return_date" placeholder="xx/xx/xxxx" style="margin-top: 4% !important;" type="text"  width="100px;"readonly>
                                                                     <label style="margin-top: 7% !important;">Order Status</label>
                                                                     <input id="order_status" style="margin-top: 4% !important;" type="text">
@@ -331,96 +359,87 @@
                                 <aside class="control-sidebar control-sidebar-dark">
                                     <!-- Create the tabs -->
                                     <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-                                      <!-- <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li> -->
+                                        <div class="user-panel">
+                                           
+                                            <div class="pull-left info">
+                                              
+                                              <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
+                                            </div>
+                                          </div>
+                                <!-- /.search form -->
+                                <!-- sidebar menu: : style can be found in sidebar.less -->
+                                <ul class="sidebar-menu" data-widget="tree">
+                                    <center><strong id="name"></strong></center> 
+                              
+                                  <li class="header">MAIN NAVIGATION</li>
+                                  <li>
+                                    <a href="index.html">
+                                        <i class="fa fa-home"></i><span>Dashboard</span>
+                                   </a>
+                                </li>
+                                  <li class="treeview">
+                                          <a href="#">
+                                            <i class="fa fa-share"></i> <span>Manage Item</span>
+                                            <span class="pull-right-container">
+                                              <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                          </a>
+                                          <ul class="treeview-menu">
+                                            <li><a href="Add.html"><i class="fa fa-circle-o"></i> Add Item</a></li>
+                                            <li class=" treeview">
+                                              <a href="#"><i class="fa fa-circle-o"></i> View Item
+                                                <span class="pull-right-container">
+                                                  <i class="fa fa-angle-left pull-right"></i>
+                                                </span>
+                                              </a>
+                                              <ul class="treeview-menu">
+                                                <li><a href="men.html"><i class="fa fa-circle-o"></i>Men's Fashion</a></li>
+                                                <li><a href="women.html"><i class="fa fa-circle-o"></i>Women's Fashion</a></li>
+                                                <li><a href="boy.html"><i class="fa fa-circle-o"></i>Boy's Fashion</a></li>
+                                                <li><a href="girl.html"><i class="fa fa-circle-o"></i>Girl's Fashion</a></li>
+                                                
+                                              </ul>
+                                            </li>
+                                            
+                                          </ul>
+                                        </li>
+                                  <li class="treeview">
+                                    <a href="#">
+                                      <i class="fa fa-files-o"></i>
+                                      <span>Manage Delivery</span>
+                                      <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                      </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                      <li><a href="Add deliveryman.html"><i class="fa fa-circle-o"></i>Add Delivery Man</a></li>
+                                      <li><a href="Deliveryman Details.html"><i class="fa fa-circle-o"></i>Deliveryman Details</a></li>
                                       
                                     </ul>
-                                    <!-- Tab panes -->
-                                    <!-- <div class="tab-content"> -->
-                                      <!-- Home tab content -->
-                                      <div class="user-panel">
-                                        <div class="pull-left image">
-                                          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                                        </div>
-                                        <div class="pull-left info">
-                                          <p>Dharmesh Patel</p>
-                                          <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
-                                        </div>
-                                      </div>
-                                      <!-- search form -->
+                                  </li>
+                                  <li class=" active treeview">
+                                    <a href="#">
+                                      <i class="fa fa-dashboard"></i>
+                                      <span>View Order</span>
+                                      <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                      </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li class="active"><a href="current-status.html"><i class="fa fa-circle-o"></i>Current Status</a></li>
+                                      <li><a href="History.html"><i class="fa fa-circle-o"></i>Previous History</a></li>
                                       
-                                      <!-- /.search form -->
-                                      <!-- sidebar menu: : style can be found in sidebar.less -->
-                                      <ul class="sidebar-menu" data-widget="tree">
-                                        <li class="header">MAIN NAVIGATION</li>
-                                        <li class="treeview">
-                                            <a href="#">
-                                              <i class="fa fa-share"></i> <span>Manage Item</span>
-                                              <span class="pull-right-container">
-                                                <i class="fa fa-angle-left pull-right"></i>
-                                              </span>
-                                            </a>
-                                            <ul class="treeview-menu">
-                                              <li><a href="Add.html"><i class="fa fa-circle-o"></i> Add Item</a></li>
-                                              <li class="treeview">
-                                                <a href="#"><i class="fa fa-circle-o"></i> View Item
-                                                  <span class="pull-right-container">
-                                                    <i class="fa fa-angle-left pull-right"></i>
-                                                  </span>
-                                                </a>
-                                                <ul class="treeview-menu">
-                                                  
-                                                  <li><a href="men.html"><i class="fa fa-circle-o"></i>Men's Fashion</a></li>
-                                                  <li><a href="women.html"><i class="fa fa-circle-o"></i>Women's Fashion</a></li>
-                                                  <li><a href="boy.html"><i class="fa fa-circle-o"></i>Boy's Fashion</a></li>
-                                                  <li><a href="girl.html"><i class="fa fa-circle-o"></i>Girl's Fashion</a></li>
-                                                  
-                                                </ul>
-                                              </li>
-                                              
-                                            </ul>
-                                          </li>
-                                        <li class="treeview">
-                                          <a href="#">
-                                            <i class="fa fa-files-o"></i>
-                                            <span>Manage Delivery</span>
-                                            <span class="pull-right-container">
-                                              <i class="fa fa-angle-left pull-right"></i>
-                                            </span>
-                                          </a>
-                                          <ul class="treeview-menu">
-                                            <li><a href="Add deliveryman.html"><i class="fa fa-circle-o"></i>Add Delivery Man</a></li>
-                                            <li><a href="Deliveryman Details.html"><i class="fa fa-circle-o"></i>Deliveryman Details</a></li>
-                                            
-                                          </ul>
-                                        </li>
-                                        <li class="active treeview">
-                                          <a href="#">
-                                            <i class="fa fa-dashboard"></i>
-                                            <span>View Order</span>
-                                            <span class="pull-right-container">
-                                              <i class="fa fa-angle-left pull-right"></i>
-                                            </span>
-                                          </a>
-                                          <ul class="treeview-menu">
-                                            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>Current Status</a></li>
-                                            <li><a href="History.html"><i class="fa fa-circle-o"></i>Previous History</a></li>
-                                            
-                                          </ul>
-                                        </li>
-                                        
-                                        <li><a href="Feedback.html"><i class="fa fa-book"></i> <span>View Feedback</span></a></li>
-                                        <!-- <li><a href="Feedback.html"><i class="fa fa-book"></i> <span>Sign Out</span></a></li> -->
-                                        <!-- <li> <button onclick="logout_user()"> Check Out </button> </li> -->
-                                        
-                                      </ul>
+                                    </ul>
+                                  </li>
+                                  <li><a href="Feedback.html"><i class="fa fa-book"></i> <span>View Feedback</span></a></li>
                                       
-                                      
-                                      <!-- /.form-group -->
-                                    </form>
+                                </ul>
+                              
+                                      </form>
+                                    </div>
+                                    <!-- /.tab-pane -->
                                   </div>
-                                  <!-- /.tab-pane -->
-                                </div>
-                              </aside>
+                                </aside>
                                 
                                 
                                 

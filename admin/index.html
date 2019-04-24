@@ -28,7 +28,39 @@
     width: 50px;
   }
   
+  @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 100%;
+            }
+            .loading_gif{
+                position:fixed;
+                top:40% !important;
+                right:40% !important;
+                width:20% !important;
+                height:30% !important;
+                /* background-color:black; */
+                background-repeat:repeat;
+                background-position:center;
+                z-index:10000000;
+                opacity: 1;
+                filter: alpha(opacity=40);
+            }
+        }
+        #loading_gif{
+            position:fixed;
+            top:55%;
+            right:50%;
+            width:10%;
+            height:15%;
+            /* background-color:black; */
+            background-repeat:repeat;
+            background-position:center;
+            z-index:10000000;
+            opacity: 1;
+            filter: alpha(opacity=40);
+        }
 </style>
+
 <script src=" http://www.sitepoint.com/responsive-data-tables-comprehensive-list-solutions"></script>
 
 <title>F4F | Dashboard</title>
@@ -42,8 +74,7 @@
 <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
 <!-- Theme style -->
 <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-<!-- AdminLTE Skins. Choose a skin from the css/skins
-  folder instead of downloading all of them to reduce the load. -->
+
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
   <!-- Morris chart -->
   <link rel="stylesheet" href="bower_components/morris.js/morris.css">
@@ -90,6 +121,7 @@
           <!-- <span class="logo-lg"><b>F4F</b></span>
         </a> -->
         <!-- Header Navbar: style can be found in header.less -->
+
         <nav class="navbar navbar-static-top">
           <!-- Sidebar toggle button-->
           <!-- <a href="#" class="sidebar-toggle" data-toggle="control-sidebar" role="button">
@@ -97,29 +129,25 @@
           </a> -->
           
           <div class="navbar-custom-menu">
+            
             <ul class="nav navbar-nav">
               
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
-                  <h class="fa fa-user"> Profile </h>
-                  <span class="hidden-xs" id="name_out"></span>
+                
+                      <i id="user_email"></i>
+                      
+                  
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
-                  <li class="user-header">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                  
                     
-                    <p id="name-in">
-                      <i id="user_email"></i>
-                      <small>Member since Nov. 2018</small>
-                    </p>
-                  </li>
+                    
                   
                   <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="Profile.html" class="btn btn-default btn-flat">Profile</a>
-                    </div>
+                    
                     <div class="pull-right">
                       <!-- <a onclick="logout()" class="btn btn-default btn-flat">Sign out</a> -->
                       <!-- <button onclick="logout()" class="btn btn-default btn-flat"> Sign Out</button> -->
@@ -134,7 +162,9 @@
               </li> -->
             </ul>
           </div>
+          
         </nav>
+        
       </header>
       <!-- Left side column. contains the logo and sidebar -->
       
@@ -148,9 +178,9 @@
                   <!-- small box -->
                   <div class="small-box bg-aqua">
                     <div class="inner">
-                      <h3>150</h3>
+                      <h3 id="order_len"></h3>
         
-                      <p>New Orders</p>
+                      <p>Total Orders</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-bag"></i>
@@ -163,7 +193,8 @@
                   <!-- small box -->
                   <div class="small-box bg-green">
                     <div class="inner">
-                      <h3>53<sup style="font-size: 20px">%</sup></h3>
+                        <h3 id="user_len"></h3>
+                      
         
                       <p>Registerd Users</p>
                     </div>
@@ -178,7 +209,8 @@
                   <!-- small box -->
                   <div class="small-box bg-yellow">
                     <div class="inner">
-                      <h3>44</h3>
+                        <h3 id="deliveryman_len"></h3>
+                       
         
                       <p>Deliveryman</p>
                     </div>
@@ -217,7 +249,7 @@
                               </tr>
                             </thead>
                             <tbody>
-                              
+                            <!-- <img src="https://static.wubook.net/shstatic/imgs/cloading.gif" class="loading_gif" id="loading_gif">                               -->
                             </tbody>
                             
                           </table>
@@ -255,9 +287,9 @@
                       </tr>
                     </thead>
                     <tbody>
+                        <img src="https://static.wubook.net/shstatic/imgs/cloading.gif" class="loading_gif" id="loading_gif">                              
                       
                     </tbody>
-                    
                   </table>
                 </div><!--end of .table-responsive-->
               </div>
@@ -354,11 +386,9 @@
           <!-- <div class="tab-content"> -->
             <!-- Home tab content -->
             <div class="user-panel">
-              <div class="pull-left image">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-              </div>
+              
               <div class="pull-left info">
-                <p>Dharmesh Patel</p>
+                
                 <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
               </div>
             </div>
@@ -367,7 +397,13 @@
             <!-- /.search form -->
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
+                <center><strong id="name"></strong></center> 
               <li class="header">MAIN NAVIGATION</li>
+              <li class="active">
+                <a href="index.html">
+                    <i class="fa fa-home"></i><span>Dashboard</span>
+               </a>
+            </li>
               <li class="treeview">
                   <a href="#">
                     <i class="fa fa-share"></i> <span>Manage Item</span>
@@ -408,7 +444,7 @@
                   
                 </ul>
               </li>
-              <li class="active treeview">
+              <li class="treeview">
                 <a href="#">
                   <i class="fa fa-dashboard"></i>
                   <span>View Order</span>
@@ -417,7 +453,7 @@
                   </span>
                 </a>
                 <ul class="treeview-menu">
-                  <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>Current Status</a></li>
+                  <li><a href="current-status.html"><i class="fa fa-circle-o"></i>Current Status</a></li>
                   <li><a href="History.html"><i class="fa fa-circle-o"></i>Previous History</a></li>
                   
                 </ul>
@@ -504,7 +540,7 @@
       };
       firebase.initializeApp(config);
     </script>
-    <script src="js_files/index.js"></script>
+    <script src="js_files/index.js" type="text/javascript"></script>
     <script src="js_files/current_status.js"></script>
     <script src="js_files/daily_work.js"></script>
   </body>

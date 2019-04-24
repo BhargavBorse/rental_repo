@@ -2,6 +2,7 @@ var databaseRef = firebase.database().ref();
 
 var url_string = window.location.href;
 var url = new URL (url_string);
+var id = url.searchParams.get('id');
 var uid = url.searchParams.get('uid');
 var eventRef = firebase.database().ref();
 
@@ -16,7 +17,7 @@ document.getElementById('btn_previous_history').onclick = function()  {
     var pincode = document.getElementById('pin_code').value;
     var price = document.getElementById('price').value;
     var ordered_date = document.getElementById('ordered_date').value;
-    var delivery_return_date = document.getElementById('return_date').value;
+    var return_date = document.getElementById('return_date').value;
     var order_status = document.getElementById('order_status').value;
     var order_type = document.getElementById('order_type').value;
     var quantity = document.getElementById('quantity').value;
@@ -40,7 +41,7 @@ document.getElementById('btn_previous_history').onclick = function()  {
             });
         }
 
-        await alert(deliveryman_key);
+        // await alert(deliveryman_key);
     });
    
 
@@ -52,22 +53,22 @@ document.getElementById('btn_previous_history').onclick = function()  {
 
     databaseRef.child('Admin').child('Previous_History').push({
         
-        email : email,
+        customer_email : email,
         item_name : item_name,
-        name : name,
-        mobile_number : mobile_number, 
-        address : address,
-        pincode : pincode,
-        price : price,
-        ordered_date : ordered_date,
-        delivery_return_date : delivery_return_date,
+        customer_name : name,
+        customer_phone_no : mobile_number, 
+        customer_address : address,
+        customer_pincode : pincode,
+        item_price : price,
+        delivery_date : ordered_date,
+        return_date : return_date,
         order_status : order_status,
         order_type : order_type,
-        quantity : quantity,
+        item_quantity : quantity,
         deliveryman : deliveryman_email
         
     });
-    alert('order sent successfully');
+    // alert('order sent successfully');
     
     
     // var eventRef = firebase.database().ref();
@@ -85,24 +86,32 @@ document.getElementById('btn_previous_history').onclick = function()  {
 // alert('sds');
                 firebase.database().ref().child('Delivery_Man_Details').child(deliveryman_key).child('Order').push({
         
-                    email : email,
+                    customer_email : email,
                     item_name : item_name,
-                    name : name,
-                    mobile_number : mobile_number, 
-                    address : address,
-                    pincode : pincode,
-                    price : price,
-                    ordered_date : ordered_date,
-                    delivery_return_date : delivery_return_date,
+                    customer_name : name,
+                    customer_phone_no : mobile_number, 
+                    customer_address : address,
+                    customer_pincode : pincode,
+                    item_price : price,
+                    delivery_date : ordered_date,
+                    return_date : return_date,
                     order_status : order_status,
                     order_type : order_type,
-                    quantity : quantity,
+                    item_quantity : quantity,
                     deliveryman : deliveryman_email,
                     work_order : delivery
                     
                 });
                 alert('order sent successfully');
-                location.reload();
+                // location.reload();
+alert(id);
+
+                
+
+                firebase.database().ref().child('Admin').child('Order').child(id).remove(function(){
+                    alert('Removed');
+                    // window.location.href = 'index.html'; 
+                });
 
             // });
         // }

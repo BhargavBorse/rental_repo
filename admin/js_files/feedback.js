@@ -22,5 +22,7 @@ firebase.database().ref().child('Feedback').on('child_added',function(feedback_s
     customer_name_cell.appendChild(customer_name_cell_value);
     email_cell.appendChild(email_cell_value);
     message_cell.appendChild(message_cell_value);
+    var img = document.getElementById('loading_gif');
+img.style.visibility = 'hidden';
 });
 

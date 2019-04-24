@@ -26,7 +26,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById('item_price').value = update_snapshot_boy.child('item_price').val();
     document.getElementById('item_size').value = update_snapshot_boy.child('item_size').val();
     
-   
+    var img = document.getElementById('loading_gif');
+    img.style.visibility = 'hidden';
     
 });
 
@@ -136,6 +137,8 @@ document.getElementById('btn_insertname').onclick = function(){
                 optional_image : downloadURL
             });
             alert('Data Updated Successfully');
+            window.location.href='boy.html'
+
         });
         
         

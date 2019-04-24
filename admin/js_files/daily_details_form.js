@@ -16,7 +16,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         //document.getElementById('p_name').value = more_info_snapshot.child('product_name').val();
         document.getElementById('item_name').value = more_info_snapshot.child('product_name').val();
         document.getElementById('price').value = more_info_snapshot.child('Price').val();
-        document.getElementById('ordered_date').value = more_info_snapshot.child('Ordered_Date').val();
+        // document.getElementById('ordered_date').value = more_info_snapshot.child('Ordered_Date').val();
         document.getElementById('return_date').value = more_info_snapshot.child('Delivery_Return_Date').val();
         document.getElementById('order_status').value = more_info_snapshot.child('Order_Status').val();
         document.getElementById('order_type').value = more_info_snapshot.child('Order_Type').val();
@@ -70,6 +70,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                 k.appendChild(j);
                 
                 k.setAttribute('style',"margin-bottom: 1% !important;");
+
+                var img = document.getElementById('loading_gif');
+img.style.visibility = 'hidden';
                 
                 // var hiddenKeyDeliveryMan = document.createElement('input');
                 // hiddenKeyDeliveryMan.setAttribute('type','hidden');
