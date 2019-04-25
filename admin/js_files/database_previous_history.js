@@ -42,32 +42,34 @@ document.getElementById('btn_previous_history').onclick = function()  {
         }
 
         // await alert(deliveryman_key);
+
+        await databaseRef.child('Admin').child('Previous_History').child(deliveryman_key).set({
+        
+            customer_email : email,
+            item_name : item_name,
+            customer_name : name,
+            customer_phone_no : mobile_number, 
+            customer_address : address,
+            customer_pincode : pincode,
+            item_price : price,
+            delivery_date : ordered_date,
+            return_date : return_date,
+            order_status : order_status,
+            order_type : order_type,
+            item_quantity : quantity,
+            deliveryman : deliveryman_email
+            
+        });
     });
    
 
-    
+
     // var man = document.getElementsByClassName('delivery_man_name');
     // var man_name = man.options[man.selectedIndex].value;
     
     // alert(man_name);
 
-    databaseRef.child('Admin').child('Previous_History').push({
-        
-        customer_email : email,
-        item_name : item_name,
-        customer_name : name,
-        customer_phone_no : mobile_number, 
-        customer_address : address,
-        customer_pincode : pincode,
-        item_price : price,
-        delivery_date : ordered_date,
-        return_date : return_date,
-        order_status : order_status,
-        order_type : order_type,
-        item_quantity : quantity,
-        deliveryman : deliveryman_email
-        
-    });
+    
     // alert('order sent successfully');
     
     
@@ -109,8 +111,8 @@ alert(id);
                 
 
                 firebase.database().ref().child('Admin').child('Order').child(id).remove(function(){
-                    // alert('Removed');
-                    window.location.href = 'index.html'; 
+                    alert('Removed');
+                    // window.location.href = 'index.html'; 
                 });
 
             // });
