@@ -86,7 +86,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             var from_date_wd = document.getElementById('from_date').value;
             var to_date_wd = document.getElementById('to_date').value;
             var result = document.getElementById('result').value;
-            
+            var quantity = 
             eventRef.child(user.uid).child('details').update({
                 name: name_wd,
                 l_name: l_name_wd,
@@ -106,13 +106,21 @@ firebase.auth().onAuthStateChanged(function(user) {
                 {
                     firebase.database().ref().child('users').child(user.uid).child('cart').child(keys_cart[i]).on('value',function(cart_deep_details_snapshot){
                         var cart_deep_details = cart_deep_details_snapshot.val();
-                        
+                        var j = i + 1;
+                        var quantity = document.getElementById(j).value;
+                        var item_price = document.getElementById(j + ' price').value;
+
+                        console.log(quantity);
+                        console.log(item_price);
+
                         firebase.database().ref().child('users').child(user.uid).child('cart').child(keys_cart[i]).update({
                             
                             // remove when needed(tempo)
                             from_date: from_date_wd,
                             to_date: to_date_wd,
-                            total_days : result
+                            total_days : result,
+                            item_price : item_price,
+                            item_quantity : quantity
                         });
                         window.location = 'invoice.html';
                         

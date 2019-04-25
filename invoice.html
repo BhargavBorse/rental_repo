@@ -44,6 +44,15 @@
         .table > tbody > tr > .highrow {
             border-top: 3px solid;
         }
+        .des{
+            width: 15%;
+        }
+        @media screen and (max-width: 450px){
+            .des{
+                width: 47%;
+                margin: 1%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -60,7 +69,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="text-center">
-                            <h2>Invoice</h2>
+                            <h2>Invoice</h2>                            
                         </div>
                         <hr>
                         <div class="row">
@@ -94,7 +103,8 @@
                         </div>
                         <strong>From: </strong> <strong id="from_date"> </strong> &nbsp;&nbsp;&nbsp;&nbsp;
                         <strong>To: </strong> <strong id="to_date"> </strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <strong>For: </strong> <strong id="total_days"></strong> <strong>Days</strong> <br><br>
+                        <strong>For: </strong> <strong id="total_days"></strong> <strong>Days</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <strong>Purchase Date: </strong> <strong id="date"></strong><br><br>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="panel panel-default">
@@ -177,117 +187,113 @@
                         </div>
                     </div>
                 </div>
-<!-- 
-                item name
-                <input type="text" id="in_item_name" >
-                item price
-                <input type="text" id="in_item_price" >
-                quantity
-                <input type="text" id="in_item_quantity" >
-                days
-                <input type="text" id="in_item_days" >
-                item subtotal
-                <input type="text" id="in_item_total" >
-                item gst
-                <input type="text" id="in_item_gst" >
-                item deposit
-                <input type="text" id="in_item_deposit" >
-<br> -->
-
-                <input type="button" class="btn btn-primary" onclick="back_to_checkout()" id="back_to_checkout" value="Back to Checkout">
-                <input type="button" class="btn btn-primary" onclick="more_item()" id="more_item" value="Add More Item">                                    
-                <input type="button" class="btn btn-primary" onclick="printDiv('printableArea')" value="Print Invoice">
-                <input type="button" class="btn btn-primary" onclick="finish()" id="finish" value="Finish">                                    
-                <br><br>
-            </div>
-            
-            <footer>   
-                <!-- //footer-top -->
-                <div class="footer-bottomv2 py-5" style="background-color: black;">
-                    <div class="container">
-                        <ul class="bottom-links-agile">
-                            <li>
-                                <a href="index.html" style="color: white;">Home</a>
-                            </li>
-                            <li>
-                                <a href="#myModal_btn" data-toggle="modal" data-target="#myModal_btn" style="color: white;">Deals</a>
-                            </li>
-                            <li>
-                                <a href="#myacc" data-toggle="modal" data-target="#myacc" style="color: white;">Profile</a>
-                            </li>
-                            <li>
-                                <a href="Feedback.html" style="color: white;">Feedback</a>
-                            </li>
-                            
-                        </ul>
+                <!-- 
+                    item name
+                    <input type="text" id="in_item_name" >
+                    item price
+                    <input type="text" id="in_item_price" >
+                    quantity
+                    <input type="text" id="in_item_quantity" >
+                    days
+                    <input type="text" id="in_item_days" >
+                    item subtotal
+                    <input type="text" id="in_item_total" >
+                    item gst
+                    <input type="text" id="in_item_gst" >
+                    item deposit
+                    <input type="text" id="in_item_deposit" >
+                    <br> -->
+                    
+                    <!-- NAME
+                        <input type="text" id="user_name">
+                        ADDRESS
+                        <input type="text" id="address">
+                        PINCODE
+                        <input type="text" id="pincode">
+                        PHONE
+                        <input type="text" id="mobile_number">
+                        EMAIL
+                        <input type="text" id="email"> -->
                         
-                        
-                        <div class="cpy-right align-self-center">
-                            <h2 class="agile_btxt">
-                                <a href="index.html" style="color: white;">
-                                    <span>F</span>reedom
-                                    <span>f</span>or
-                                    <span>F</span>ashion</a>
-                                </h2>
-                                <p style="float:right;">© 2019 Freedom for Fashion. All rights reserved 
-                                </p>
+                        <input type="text" id="days" hidden>
+                        <input type="button" class="btn btn-primary des" onclick="back_to_checkout()" id="back_to_checkout" value="Back to Checkout">
+                        <input type="button" class="btn btn-primary des" onclick="more_item()" id="more_item" value="Add More Item">                                    
+                        <input type="button" class="btn btn-primary des" onclick="printDiv('printableArea')" value="Print Invoice">
+                        <input type="button" class="btn btn-primary des" onclick="finish()" id="finish" value="Finish">                                    
+                        <br><br>
+                    </div>
+                    
+                    <footer>   
+                        <!-- //footer-top -->
+                        <div class="footer-bottomv2 py-5" style="background-color: black;">
+                            <div class="container">                      
+                                
+                                <div class="cpy-right align-self-center">
+                                    <h2 class="agile_btxt">
+                                        <a href="index.html" style="color: white;">
+                                            <span>F</span>reedom
+                                            <span>f</span>or
+                                            <span>F</span>ashion</a>
+                                        </h2>
+                                        <p style="float:right;">© 2019 Freedom for Fashion. All rights reserved 
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </footer>
-        </body>
-        
-        <script>
-            document.getElementById('back_to_checkout').onclick = function(){
-                window.location.href = 'checkout.html';
-            }
-        </script>
-        <script>
-            document.getElementById('back').onclick = function(){
-                window.location.href = 'checkout.html';
-            }
-        </script>
-        <script>
-            document.getElementById('checkout').onclick = function(){
-                window.location.href = 'checkout.html';
-            }
-        </script>
-        <script>
-            document.getElementById('more_item').onclick = function(){
-                window.location.href = 'index.html';
-            }
-        </script>
-        <script>
-            function printDiv(divName) {
-                var printContents = document.getElementById(divName).innerHTML;
-                var originalContents = document.body.innerHTML;
+                    </footer>
+                </body>
+            
+                <script>
+                    document.getElementById('back_to_checkout').onclick = function(){
+                        window.location.href = 'checkout.html';
+                    }
+                </script>
+                <script>
+                    document.getElementById('back').onclick = function(){
+                        window.location.href = 'checkout.html';
+                    }
+                </script>
+                <script>
+                    document.getElementById('checkout').onclick = function(){
+                        window.location.href = 'checkout.html';
+                    }
+                </script>
+                <script>
+                    document.getElementById('more_item').onclick = function(){
+                        window.location.href = 'index.html';
+                    }
+                </script>
+                <script>
+                    function printDiv(divName) {
+                        var printContents = document.getElementById(divName).innerHTML;
+                        var originalContents = document.body.innerHTML;
+                        
+                        document.body.innerHTML = printContents;
+                        
+                        window.print();
+                        
+                        document.body.innerHTML = originalContents;
+                    }
+                </script>
+                <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
                 
-                document.body.innerHTML = printContents;
-                
-                window.print();
-                
-                document.body.innerHTML = originalContents;
-            }
-        </script>
-        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
-        
-        <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
-        <script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyBCXYBy-ry760TM9x-CEsLzIgoZJ3ucv4g",
-                authDomain: "trial-c2b17.firebaseapp.com",
-                databaseURL: "https://trial-c2b17.firebaseio.com",
-                projectId: "trial-c2b17",
-                storageBucket: "trial-c2b17.appspot.com",
-                messagingSenderId: "181878503934"
-            };
-            firebase.initializeApp(config);
-        </script>
-        <script type="text/javascript" src="js_files/invoice.js"></script>
-        </html>
+                <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+                <script>
+                    // Initialize Firebase
+                    var config = {
+                        apiKey: "AIzaSyBCXYBy-ry760TM9x-CEsLzIgoZJ3ucv4g",
+                        authDomain: "trial-c2b17.firebaseapp.com",
+                        databaseURL: "https://trial-c2b17.firebaseio.com",
+                        projectId: "trial-c2b17",
+                        storageBucket: "trial-c2b17.appspot.com",
+                        messagingSenderId: "181878503934"
+                    };
+                    firebase.initializeApp(config);
+                </script>
+                <script type="text/javascript" src="js_files/invoice.js"></script>
+                </html>

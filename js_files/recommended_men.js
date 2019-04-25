@@ -3,12 +3,29 @@ var itemRef_men = firebase.database().ref('item');
 dbRef_men.child('item').child('Men').on('value',function(item_details_snapshot){
     var item_details = item_details_snapshot.val();
     var men_keys = Object.keys(item_details);
+    
+    var recommended_array = [];
+    
     for(var i=0;i<men_keys.length;i++)
     {
         itemRef_men.child('Men').child(men_keys[i]).on('value',function(item_details_men_snapshot){
             var item_deep_details = item_details_men_snapshot.val();
             
             if(item_deep_details.recommended == true){
+                
+                recommended_array.push(men_keys[i].toString());
+                
+            }
+            
+        });
+    }
+    if(recommended_array.length == 0){
+        console.log('empty');
+    }
+    else{
+        for(var i = recommended_array.length - 4; i< recommended_array.length; i++){
+            itemRef_men.child('Men').child(men_keys[i]).on('value',function(item_details_men_snapshot){
+                var item_deep_details = item_details_men_snapshot.val();
                 
                 //Div class=owl-item
                 var div_sub0 = document.createElement('div');
@@ -151,7 +168,7 @@ dbRef_men.child('item').child('Men').on('value',function(item_details_snapshot){
                 //Append I to Button-class=hub-cart phub-cart btn
                 btn1.appendChild(i1);
                 
-            }
-        });
+            });
+        }
     }
 });

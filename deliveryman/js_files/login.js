@@ -64,7 +64,7 @@ document.getElementById('login').onclick = function(){
           return true;
         }
         else{
-          
+          // alert('you are not deliveryman');
         }
       });
     }

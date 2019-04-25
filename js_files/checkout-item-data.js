@@ -8,15 +8,66 @@ firebase.auth().onAuthStateChanged(function(user) {
     var url = new URL (url_string);
     var id = url.searchParams.get('item');
     var category = url.searchParams.get('category');
+    var dod = url.searchParams.get('dod')
     var flag;
-    
+     
+    if(id == 'undefined' || id == null)
+    {
+        
+    }
+    var total = 0;
+
     eventRef.child(user.uid).child('cart').on('value',function(cart_itemKeys_snapshot){
         var cart_itemKeys = cart_itemKeys_snapshot.val();
         
         
         if(cart_itemKeys === null)
         {
-            if(category == 'women')
+            if(dod == 'dod')
+            {
+                var dealsOfTheDay;
+                var itemDesc;
+                var itemName;
+                var itemPrice;
+                var itemQuan;
+                var itemSize;
+                var itemSubCate;
+                var optionalImg;
+                var recommended_js;
+                
+                databaseRef.child('dod').child(id).on('value',  function(category_snapshot){
+                    var item_retrive = category_snapshot.val();
+                    
+                    
+                    
+                    dealsOfTheDay = item_retrive.deals_of_the_day;
+                    itemDesc = item_retrive.item_description;
+                    itemName = item_retrive.item_name;
+                    itemPrice = item_retrive.item_price;
+                    itemQuan = item_retrive.item_quantity;
+                    itemSize =  item_retrive.item_size;
+                    itemSubCate = item_retrive.item_subcategory;
+                    optionalImg = item_retrive.optional_image;
+                    recommended_js = item_retrive.recommended;
+                    
+                    
+                    eventRef.child(user.uid).child('cart').push({
+                        deals_of_the_day : dealsOfTheDay,
+                        item_description : itemDesc,
+                        item_name : itemName,
+                        item_price : itemPrice,
+                        item_quantity : itemQuan,
+                        item_size : itemSize,
+                        item_subcategory : itemSubCate,
+                        optional_image : optionalImg,
+                        recommended : recommended_js,
+                        category : 'Women',
+                        itemid : id
+                    });
+                    alert('Added');                    
+                });
+            }
+            else if(category == 'women')
             {
                 var dealsOfTheDay;
                 var itemDesc;
@@ -59,10 +110,6 @@ firebase.auth().onAuthStateChanged(function(user) {
                     });
                     alert('Added');                    
                 });
-                
-                
-                
-                
             }
             else if(category == 'men')
             {
@@ -225,6 +272,55 @@ firebase.auth().onAuthStateChanged(function(user) {
             
             if(flag != 1)
             {
+                if(dod == 'dod')
+                {
+                    var dealsOfTheDay;
+                    var itemDesc;
+                    var itemName;
+                    var itemPrice;
+                    var itemQuan;
+                    var itemSize;
+                    var itemSubCate;
+                    var optionalImg;
+                    var recommended_js;
+                    
+                    databaseRef.child('dod').child(id).on('value',function(category_snapshot){
+                        var item_retrive = category_snapshot.val();
+                        
+                        
+                        
+                        dealsOfTheDay = item_retrive.deals_of_the_day;
+                        itemDesc = item_retrive.item_description;
+                        itemName = item_retrive.item_name;
+                        itemPrice = item_retrive.item_price;
+                        itemQuan = item_retrive.item_quantity;
+                        itemSize =  item_retrive.item_size;
+                        itemSubCate = item_retrive.item_subcategory;
+                        optionalImg = item_retrive.optional_image;
+                        recommended_js = item_retrive.recommended;
+                        
+                        
+                        eventRef.child(user.uid).child('cart').push({
+                            deals_of_the_day : dealsOfTheDay,
+                            item_description : itemDesc,
+                            item_name : itemName,
+                            item_price : itemPrice,
+                            item_quantity : "1",
+                            item_size : itemSize,
+                            item_subcategory : itemSubCate,
+                            optional_image : optionalImg,
+                            recommended : recommended_js,
+                            category : 'Women',
+                            itemid : id
+                        });
+                        alert('Added');
+                        
+                    });
+                    
+                    
+                    
+                    
+                }
                 
                 if(category == 'women')
                 {
@@ -259,7 +355,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                             item_description : itemDesc,
                             item_name : itemName,
                             item_price : itemPrice,
-                            item_quantity : itemQuan,
+                            item_quantity : "1",
                             item_size : itemSize,
                             item_subcategory : itemSubCate,
                             optional_image : optionalImg,
@@ -398,7 +494,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                             item_description : itemDesc,
                             item_name : itemName,
                             item_price : itemPrice,
-                            item_quantity : itemQuan,
+                            item_quantity : "1",
                             item_size : itemSize,
                             item_subcategory : itemSubCate,
                             optional_image : optionalImg,
@@ -440,7 +536,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         {
             eventRef.child(user.uid).child('cart').child(user_cart_AcKeys[i]).on('value',function(user_cart_item_data_snapshot){
                 var user_cart_item_data = user_cart_item_data_snapshot.val();
-                if(user_cart_item_data.category == 'Women')
+                if(user_cart_item_data.category == "Women")
                 {
                     databaseRef.child('item').child('Women').child(user_cart_item_data.itemid).on('value',function(user_item_dets_fetch_snapshot){
                         var user_item_dets_fetch = user_item_dets_fetch_snapshot.val();
@@ -482,24 +578,35 @@ firebase.auth().onAuthStateChanged(function(user) {
                         quantity_select_main.className = 'quantity-select';
                         div_quantity.appendChild(quantity_select_main);
                         
-                        var quantity_value_minus = document.createElement('div');
+                        var quantity_value_minus = document.createElement('button');
                         quantity_value_minus.className = 'entry value-minus';
                         quantity_select_main.appendChild(quantity_value_minus);
+                        quantity_value_minus.setAttribute('onclick','getTextMinusValue(' + tableRef.rows.length +','+ user_item_dets_fetch.item_price +')');
+                        var quantity_value_minus_text = document.createTextNode('-');
+                        quantity_value_minus.appendChild(quantity_value_minus_text);
                         
                         var quantity_value = document.createElement('div');
                         quantity_value.className = 'entry value';
                         quantity_select_main.appendChild(quantity_value);
-                        var quantity_span = document.createElement('span');
+                        
+                        var quantity_span = document.createElement('input');
+                        quantity_span.setAttribute('type','text');
+                        quantity_span.setAttribute('style','width: 100%;');
+                        quantity_span.setAttribute('readonly','true');
+                        
+                        quantity_span.setAttribute('value', user_cart_item_data.item_quantity);
+                        quantity_span.setAttribute('id',tableRef.rows.length);
                         quantity_value.appendChild(quantity_span);
                         
-                        var quantity_span_text = document.createTextNode('1');
-                        quantity_span.appendChild(quantity_span_text);
+                        // var quantity_span_text = document.createTextNode('1');
+                        // quantity_span.appendChild(quantity_span_text);
                         
-                        var quantity_value_plus = document.createElement('div');
+                        var quantity_value_plus = document.createElement('button');
                         quantity_value_plus.className = 'entry value-plus active';
                         quantity_select_main.appendChild(quantity_value_plus);
-                        
-                        
+                        quantity_value_plus.setAttribute('onclick','getTextValue('+tableRef.rows.length+','+ user_item_dets_fetch.item_price +')');
+                        var quantity_value_plus_text = document.createTextNode('+');
+                        quantity_value_plus.appendChild(quantity_value_plus_text);
                         
                         var product_name_cell = new_row.insertCell(3);
                         product_name_cell.className = 'invert';
@@ -510,9 +617,16 @@ firebase.auth().onAuthStateChanged(function(user) {
                         
                         
                         var price_cell = new_row.insertCell(4);
-                        price_cell.className = 'invert';
-                        var price_text = document.createTextNode(user_item_dets_fetch.item_price);
-                        price_cell.appendChild(price_text);
+                        var price_input = document.createElement('input');
+                        price_input.setAttribute('type','text');
+                        price_input.setAttribute('style','border: hidden');
+                        price_input.setAttribute('id',tableRef.rows.length + ' price');
+                        price_input.setAttribute('readonly', 'true');
+                        // price_input.setAttribute('style')
+                        price_input.setAttribute('value',user_cart_item_data.item_price);
+                        // price_cell.className = 'invert';
+                        // var price_text = document.createTextNode(user_item_dets_fetch.item_price);
+                        price_cell.appendChild(price_input);
                         
                         var remove_cell = new_row.insertCell(5);
                         remove_cell.className = 'invert';
@@ -545,6 +659,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                     databaseRef.child('item').child('Men').child(user_cart_item_data.itemid).on('value',function(user_item_dets_fetch_snapshot){
                         var user_item_dets_fetch = user_item_dets_fetch_snapshot.val();
                         var new_row = tableRef.insertRow(tableRef.rows.length);
+                        document.getElementById('cart_total_items').innerHTML = tableRef.rows.length + ' Products';
+                        
                         new_row.className ='rem1';
                         
                         var sr_no_cell = new_row.insertCell(0);
@@ -580,24 +696,34 @@ firebase.auth().onAuthStateChanged(function(user) {
                         quantity_select_main.className = 'quantity-select';
                         div_quantity.appendChild(quantity_select_main);
                         
-                        var quantity_value_minus = document.createElement('div');
+                        var quantity_value_minus = document.createElement('button');
                         quantity_value_minus.className = 'entry value-minus';
                         quantity_select_main.appendChild(quantity_value_minus);
+                        quantity_value_minus.setAttribute('onclick','getTextMinusValue(' + tableRef.rows.length +','+ user_item_dets_fetch.item_price +')');
+                        var quantity_value_minus_text = document.createTextNode('-');
+                        quantity_value_minus.appendChild(quantity_value_minus_text);
                         
                         var quantity_value = document.createElement('div');
                         quantity_value.className = 'entry value';
                         quantity_select_main.appendChild(quantity_value);
-                        var quantity_span = document.createElement('span');
+                        
+                        var quantity_span = document.createElement('input');
+                        quantity_span.setAttribute('type','text');
+                        quantity_span.setAttribute('readonly','true');
+                        quantity_span.setAttribute('style','width: 100%');
+                        quantity_span.setAttribute('value', user_cart_item_data.item_quantity);
+                        quantity_span.setAttribute('id',tableRef.rows.length);
                         quantity_value.appendChild(quantity_span);
                         
-                        var quantity_span_text = document.createTextNode('1');
-                        quantity_span.appendChild(quantity_span_text);
+                        // var quantity_span_text = document.createTextNode('1');
+                        // quantity_span.appendChild(quantity_span_text);
                         
-                        var quantity_value_plus = document.createElement('div');
+                        var quantity_value_plus = document.createElement('button');
                         quantity_value_plus.className = 'entry value-plus active';
                         quantity_select_main.appendChild(quantity_value_plus);
-                        
-                        
+                        quantity_value_plus.setAttribute('onclick','getTextValue('+tableRef.rows.length+','+ user_item_dets_fetch.item_price +')');
+                        var quantity_value_plus_text = document.createTextNode('+');
+                        quantity_value_plus.appendChild(quantity_value_plus_text);
                         
                         var product_name_cell = new_row.insertCell(3);
                         product_name_cell.className = 'invert';
@@ -608,9 +734,15 @@ firebase.auth().onAuthStateChanged(function(user) {
                         
                         
                         var price_cell = new_row.insertCell(4);
-                        price_cell.className = 'invert';
-                        var price_text = document.createTextNode(user_item_dets_fetch.item_price);
-                        price_cell.appendChild(price_text);
+                        var price_input = document.createElement('input');
+                        price_input.setAttribute('type','text');
+                        price_input.setAttribute('readonly','true');
+                        price_input.setAttribute('style','border: hidden;');
+                        price_input.setAttribute('id',tableRef.rows.length + ' price');
+                        price_input.setAttribute('value',user_cart_item_data.item_price);
+                        // price_cell.className = 'invert';
+                        // var price_text = document.createTextNode(user_item_dets_fetch.item_price);
+                        price_cell.appendChild(price_input);
                         
                         var remove_cell = new_row.insertCell(5);
                         remove_cell.className = 'invert';
@@ -619,10 +751,20 @@ firebase.auth().onAuthStateChanged(function(user) {
                         remove_div_main.className = 'rem';
                         remove_cell.appendChild(remove_div_main);
                         
-                        var remove_div_sub = document.createElement('div');
+                        var remove_div_sub = document.createElement('button');
                         remove_div_sub.className = 'close1';
+                        remove_div_sub.addEventListener('click',function(){
+                            remove(user_cart_item_data.itemid);  
+                        });
                         remove_div_main.appendChild(remove_div_sub);
                         
+                        // var itemid = document.createElement('input');
+                        // itemid.setAttribute('type','text');
+                        // itemid.setAttribute('value',user_cart_item_data.itemid);
+                        // remove_div_main.appendChild(itemid);
+                        
+                        
+                         
                         tableRef.deleteRow(user_cart_AcKeys.length);
                     });
                 }
@@ -631,6 +773,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                     databaseRef.child('item').child('Boy').child(user_cart_item_data.itemid).on('value',function(user_item_dets_fetch_snapshot){
                         var user_item_dets_fetch = user_item_dets_fetch_snapshot.val();
                         var new_row = tableRef.insertRow(tableRef.rows.length);
+                        document.getElementById('cart_total_items').innerHTML = tableRef.rows.length + ' Products';
+                        
                         new_row.className ='rem1';
                         
                         var sr_no_cell = new_row.insertCell(0);
@@ -666,24 +810,34 @@ firebase.auth().onAuthStateChanged(function(user) {
                         quantity_select_main.className = 'quantity-select';
                         div_quantity.appendChild(quantity_select_main);
                         
-                        var quantity_value_minus = document.createElement('div');
+                        var quantity_value_minus = document.createElement('button');
                         quantity_value_minus.className = 'entry value-minus';
                         quantity_select_main.appendChild(quantity_value_minus);
+                        quantity_value_minus.setAttribute('onclick','getTextMinusValue(' + tableRef.rows.length +','+ user_item_dets_fetch.item_price +')');
+                        var quantity_value_minus_text = document.createTextNode('-');
+                        quantity_value_minus.appendChild(quantity_value_minus_text);
                         
                         var quantity_value = document.createElement('div');
                         quantity_value.className = 'entry value';
                         quantity_select_main.appendChild(quantity_value);
-                        var quantity_span = document.createElement('span');
+                        
+                        var quantity_span = document.createElement('input');
+                        quantity_span.setAttribute('type','text');
+                        quantity_span.setAttribute('style','width: 100%;');
+                        quantity_span.setAttribute('readonly','true');
+                        quantity_span.setAttribute('value', user_cart_item_data.item_quantity);
+                        quantity_span.setAttribute('id',tableRef.rows.length);
                         quantity_value.appendChild(quantity_span);
                         
-                        var quantity_span_text = document.createTextNode('1');
-                        quantity_span.appendChild(quantity_span_text);
+                        // var quantity_span_text = document.createTextNode('1');
+                        // quantity_span.appendChild(quantity_span_text);
                         
-                        var quantity_value_plus = document.createElement('div');
+                        var quantity_value_plus = document.createElement('button');
                         quantity_value_plus.className = 'entry value-plus active';
                         quantity_select_main.appendChild(quantity_value_plus);
-                        
-                        
+                        quantity_value_plus.setAttribute('onclick','getTextValue('+tableRef.rows.length+','+ user_item_dets_fetch.item_price +')');
+                        var quantity_value_plus_text = document.createTextNode('+');
+                        quantity_value_plus.appendChild(quantity_value_plus_text);
                         
                         var product_name_cell = new_row.insertCell(3);
                         product_name_cell.className = 'invert';
@@ -694,9 +848,16 @@ firebase.auth().onAuthStateChanged(function(user) {
                         
                         
                         var price_cell = new_row.insertCell(4);
-                        price_cell.className = 'invert';
-                        var price_text = document.createTextNode(user_item_dets_fetch.item_price);
-                        price_cell.appendChild(price_text);
+                        var price_input = document.createElement('input');
+                        price_input.setAttribute('type','text');
+                        price_input.setAttribute('style','border: hidden');
+                        price_input.setAttribute('id',tableRef.rows.length + ' price');
+                        price_input.setAttribute('readonly', 'true');
+                        // price_input.setAttribute('style')
+                        price_input.setAttribute('value',user_cart_item_data.item_price);
+                        // price_cell.className = 'invert';
+                        // var price_text = document.createTextNode(user_item_dets_fetch.item_price);
+                        price_cell.appendChild(price_input);
                         
                         var remove_cell = new_row.insertCell(5);
                         remove_cell.className = 'invert';
@@ -705,9 +866,19 @@ firebase.auth().onAuthStateChanged(function(user) {
                         remove_div_main.className = 'rem';
                         remove_cell.appendChild(remove_div_main);
                         
-                        var remove_div_sub = document.createElement('div');
+                        var remove_div_sub = document.createElement('button');
                         remove_div_sub.className = 'close1';
+                        remove_div_sub.addEventListener('click',function(){
+                            remove(user_cart_item_data.itemid);  
+                        });
                         remove_div_main.appendChild(remove_div_sub);
+                        
+                        // var itemid = document.createElement('input');
+                        // itemid.setAttribute('type','text');
+                        // itemid.setAttribute('value',user_cart_item_data.itemid);
+                        // remove_div_main.appendChild(itemid);
+                        
+                        
                         
                         tableRef.deleteRow(user_cart_AcKeys.length);
                     });
@@ -716,10 +887,12 @@ firebase.auth().onAuthStateChanged(function(user) {
                 {
                     databaseRef.child('item').child('Girls').child(user_cart_item_data.itemid).on('value',function(user_item_dets_fetch_snapshot){
                         var user_item_dets_fetch = user_item_dets_fetch_snapshot.val();
-                        var new_row = tableRef.insertRow(0);
+                        var new_row = tableRef.insertRow(tableRef.rows.length);
+                        document.getElementById('cart_total_items').innerHTML = tableRef.rows.length + ' Products';
+                        
                         new_row.className ='rem1';
                         
-                        var sr_no_cell = new_row.insertCell(tableRef.rows.length);
+                        var sr_no_cell = new_row.insertCell(0);
                         sr_no_cell.className = 'invert';
                         var sr_no_cell_text = document.createTextNode(tableRef.rows.length);
                         sr_no_cell.appendChild(sr_no_cell_text);
@@ -752,24 +925,34 @@ firebase.auth().onAuthStateChanged(function(user) {
                         quantity_select_main.className = 'quantity-select';
                         div_quantity.appendChild(quantity_select_main);
                         
-                        var quantity_value_minus = document.createElement('div');
+                        var quantity_value_minus = document.createElement('button');
                         quantity_value_minus.className = 'entry value-minus';
                         quantity_select_main.appendChild(quantity_value_minus);
+                        quantity_value_minus.setAttribute('onclick','getTextMinusValue(' + tableRef.rows.length +','+ user_item_dets_fetch.item_price +')');
+                        var quantity_value_minus_text = document.createTextNode('-');
+                        quantity_value_minus.appendChild(quantity_value_minus_text);
                         
                         var quantity_value = document.createElement('div');
                         quantity_value.className = 'entry value';
                         quantity_select_main.appendChild(quantity_value);
-                        var quantity_span = document.createElement('span');
+                        
+                        var quantity_span = document.createElement('input');
+                        quantity_span.setAttribute('type','text');
+                        quantity_span.setAttribute('style','width: 100%;');
+                        quantity_span.setAttribute('readonly','true');
+                        quantity_span.setAttribute('value', user_cart_item_data.item_quantity);
+                        quantity_span.setAttribute('id',tableRef.rows.length);
                         quantity_value.appendChild(quantity_span);
                         
-                        var quantity_span_text = document.createTextNode('1');
-                        quantity_span.appendChild(quantity_span_text);
+                        // var quantity_span_text = document.createTextNode('1');
+                        // quantity_span.appendChild(quantity_span_text);
                         
-                        var quantity_value_plus = document.createElement('div');
+                        var quantity_value_plus = document.createElement('button');
                         quantity_value_plus.className = 'entry value-plus active';
                         quantity_select_main.appendChild(quantity_value_plus);
-                        
-                        
+                        quantity_value_plus.setAttribute('onclick','getTextValue('+tableRef.rows.length+','+ user_item_dets_fetch.item_price +')');
+                        var quantity_value_plus_text = document.createTextNode('+');
+                        quantity_value_plus.appendChild(quantity_value_plus_text);
                         
                         var product_name_cell = new_row.insertCell(3);
                         product_name_cell.className = 'invert';
@@ -780,9 +963,16 @@ firebase.auth().onAuthStateChanged(function(user) {
                         
                         
                         var price_cell = new_row.insertCell(4);
-                        price_cell.className = 'invert';
-                        var price_text = document.createTextNode(user_item_dets_fetch.item_price);
-                        price_cell.appendChild(price_text);
+                        var price_input = document.createElement('input');
+                        price_input.setAttribute('type','text');
+                        price_input.setAttribute('style','border: hidden');
+                        price_input.setAttribute('id',tableRef.rows.length + ' price');
+                        price_input.setAttribute('readonly', 'true');
+                        // price_input.setAttribute('style')
+                        price_input.setAttribute('value',user_cart_item_data.item_price);
+                        // price_cell.className = 'invert';
+                        // var price_text = document.createTextNode(user_item_dets_fetch.item_price);
+                        price_cell.appendChild(price_input);
                         
                         var remove_cell = new_row.insertCell(5);
                         remove_cell.className = 'invert';
@@ -791,9 +981,19 @@ firebase.auth().onAuthStateChanged(function(user) {
                         remove_div_main.className = 'rem';
                         remove_cell.appendChild(remove_div_main);
                         
-                        var remove_div_sub = document.createElement('div');
+                        var remove_div_sub = document.createElement('button');
                         remove_div_sub.className = 'close1';
+                        remove_div_sub.addEventListener('click',function(){
+                            remove(user_cart_item_data.itemid);  
+                        });
                         remove_div_main.appendChild(remove_div_sub);
+                        
+                        // var itemid = document.createElement('input');
+                        // itemid.setAttribute('type','text');
+                        // itemid.setAttribute('value',user_cart_item_data.itemid);
+                        // remove_div_main.appendChild(itemid);
+                        
+                        
                         
                         tableRef.deleteRow(user_cart_AcKeys.length);
                     });
@@ -816,7 +1016,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     {
                         eventRef.child(user.uid).child('cart').child(userCartAcKeys[i]).remove(function(){
                             alert('Removed');
-                            // location.reload();
+                            window.location.href = 'checkout.html';
                         });
                     }
                     
@@ -921,3 +1121,39 @@ firebase.auth().onAuthStateChanged(function(user) {
     // }
 });
 
+
+function getTextValue(tbleRowLength, item_price)
+{
+    var txtvalue = document.getElementById(tbleRowLength).value;
+    // var price_value = document.getElementById(tbleRowLength + ' price').value;
+    var price_value_int = parseInt(item_price);
+
+    var txtvalueInt = parseInt(txtvalue);
+    txtvalueInt = txtvalueInt + 1;
+    var updated_price = txtvalueInt * price_value_int;
+    document.getElementById(tbleRowLength + ' price').value = updated_price.toString();
+    document.getElementById(tbleRowLength).value = txtvalueInt.toString();
+    
+}
+
+function getTextMinusValue(tbleRowLength, item_minus_price)
+{
+    var txtvalue = document.getElementById(tbleRowLength).value;
+    var price_value_int = parseInt(item_minus_price);
+    var txtvalueInt = parseInt(txtvalue);
+    txtvalueInt = txtvalueInt - 1;
+
+    var updated_price = txtvalueInt * price_value_int;
+    document.getElementById(tbleRowLength + ' price').value = updated_price.toString();
+    document.getElementById(tbleRowLength).value = txtvalueInt.toString();
+
+    if(txtvalueInt <= 1)
+    {
+        txtvalueInt = 1;
+        document.getElementById(tbleRowLength).value = txtvalueInt.toString();
+        document.getElementById(tbleRowLength + ' price').value = item_minus_price;
+    }
+    else{
+        document.getElementById(tbleRowLength).value = txtvalueInt.toString();
+    }
+}

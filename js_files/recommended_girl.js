@@ -3,12 +3,28 @@ var itemRef_men = firebase.database().ref('item');
 dbRef_men.child('item').child('Girls').on('value',function(item_details_snapshot){
     var item_details = item_details_snapshot.val();
     var girl_keys = Object.keys(item_details);
+    
+    var recommended_array = [];
+    
     for(var i=0;i<girl_keys.length;i++)
     {
         itemRef_men.child('Girls').child(girl_keys[i]).on('value',function(item_details_girls_snapshot){
             var item_deep_details = item_details_girls_snapshot.val();
             
             if(item_deep_details.recommended == true){
+                recommended_array.push(girl_keys[i].toString());
+            }
+        });
+    }
+    if(recommended_array.length == 0){
+        console.log('empty');
+    }
+    else{
+        for(var i = recommended_array.length - 4; i< recommended_array.length; i++){
+            itemRef_men.child('Girls').child(girl_keys[i]).on('value',function(item_details_girls_snapshot){
+                var item_deep_details = item_details_girls_snapshot.val();
+                
+                
                 //Div class=owl-item
                 var div_sub0 = document.createElement('div');
                 div_sub0.className="owl-item";
@@ -149,7 +165,8 @@ dbRef_men.child('item').child('Girls').on('value',function(item_details_snapshot
                 
                 //Append I to Button-class=hub-cart phub-cart btn
                 btn1.appendChild(i1);
-            }
-        });
+                
+            });
+        }
     }
 });

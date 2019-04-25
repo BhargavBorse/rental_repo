@@ -1,9 +1,11 @@
-alert('sihf');
+// alert('sihf');
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         // User is signed in.
-        document.getElementById('man_name').innerHTML = user.email;                
+        document.getElementById('man_name').innerHTML = user.email;       
+        document.getElementById('email_field').value = user.email;                
+
         //   window.location = 'index.html';
         alert(user.email);
         var url_string = window.location.href;
@@ -15,17 +17,17 @@ firebase.auth().onAuthStateChanged(function(user) {
         
         eventRef_return.child('Delivery_Man_Details').child(Did).child('Order').child(Oid).on('value',function(return_dm_order_snapshot){
             var return_dm_order = return_dm_order_snapshot.val();
-            alert('sr');
-            console.log(return_dm_order);
-            document.getElementById('customer_name').value = return_dm_order.name;
-            document.getElementById('p_no').value = return_dm_order.mobile_number;
-            document.getElementById('address').value = return_dm_order.address;
-            document.getElementById('pin_code').value = return_dm_order.pincode;
-            document.getElementById('email').value = return_dm_order.email;                                    
+            // alert('sr');
+            // console.log(return_dm_order);
+            document.getElementById('customer_name').value = return_dm_order.customer_name;
+            document.getElementById('p_no').value = return_dm_order.customer_phone_no;
+            document.getElementById('address').value = return_dm_order.customer_address;
+            document.getElementById('pin_code').value = return_dm_order.customer_pincode;
+            document.getElementById('email').value = return_dm_order.customer_email;                                    
             document.getElementById('item_name').value = return_dm_order.item_name;
-            document.getElementById('return_date').value = return_dm_order.delivery_return_date;
-            document.getElementById('quantity').value = return_dm_order.quantity;
-            document.getElementById('price').value = return_dm_order.price;
+            document.getElementById('return_date').value = return_dm_order.return_date;
+            document.getElementById('quantity').value = return_dm_order.item_quantity;
+            document.getElementById('price').value = return_dm_order.item_price;
             document.getElementById('order_type').value = return_dm_order.order_type;
             document.getElementById('order_status').value = return_dm_order.order_status;
         });

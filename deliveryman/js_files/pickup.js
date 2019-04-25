@@ -7,7 +7,8 @@ firebase.auth().onAuthStateChanged(function(user) {
         var tableRef = document.getElementById('order_details').getElementsByTagName('tbody')[0];
         
         document.getElementById('man_name').innerHTML = user.email;
-        
+        document.getElementById('email_field').value = user.email;
+
         var eventRef = firebase.database().ref();
         eventRef.child('Delivery_Man_Details').on('value',function(deliveryman_details_snapshot){
             var delivery_man_details = deliveryman_details_snapshot.val();

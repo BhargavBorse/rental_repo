@@ -7,6 +7,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         var tableRef = document.getElementById('order_details').getElementsByTagName('tbody')[0];
         
         document.getElementById('man_name').innerHTML = user.email;
+        document.getElementById('email_field').value = user.email;
         
         var eventRef = firebase.database().ref();
         eventRef.child('Delivery_Man_Details').on('value',function(deliveryman_details_snapshot){
@@ -34,10 +35,10 @@ firebase.auth().onAuthStateChanged(function(user) {
                                         var hide = document.getElementById('no_order');
                                         hide.style.visibility = 'hidden';
                                         
-                                        var cust_name = dm_order.name;
+                                        var cust_name = dm_order.customer_name;
                                         var cs_item_name = dm_order.item_name;
-                                        var cust_address = dm_order.address;
-                                        var order_date = dm_order.ordered_date;                                   
+                                        var cust_address = dm_order.customer_address;
+                                        var order_date = dm_order.delivery_date;                                   
                                         var id = dm_order_keys_AC[j];
                                         
                                         var newRow   = tableRef.insertRow(0);
@@ -48,7 +49,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                                         var item_price_cell = newRow.insertCell(2);
                                         var order_date_cell = newRow.insertCell(3);
                                         var item_more_info_link = newRow.insertCell(4);
-                                        var id_cell = newRow.insertCell(5).hidden;                                    
+                                        // var id_cell = newRow.insertCell(5).hidden;                                    
                                         
                                         //Creation of More Info Link (Not Cell)
                                         var item_more_info_actual_link = document.createElement("a");
@@ -67,7 +68,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                                         var  item_name_cell_value = document.createTextNode(cs_item_name);
                                         var item_price_cell_value = document.createTextNode(cust_address);
                                         var order_date_text = document.createTextNode(order_date);
-                                        var id_cell_text = document.createTextNode(id);
+                                        // var id_cell_text = document.createTextNode(id);
                                         
                                         //Append Cell value to cell   
                                         customer_name_cell.appendChild(customer_name_cell_value);
@@ -75,7 +76,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                                         item_price_cell.appendChild(item_price_cell_value);
                                         order_date_cell.appendChild(order_date_text);
                                         item_more_info_link.appendChild(item_more_info_actual_link);
-                                        id_cell.appendChild(id_cell_text);
+                                        // id_cell.appendChild(id_cell_text);
                                         
                                         // more_info_cell.appendChild(button_text_cell_value);
                                         
