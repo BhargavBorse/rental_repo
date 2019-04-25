@@ -127,7 +127,7 @@ document.getElementById('btn_insertname').onclick = function()  {
             });
         });        
         alert('Done! Uploading');
-        window.location.href='index.html'
+        // window.location.href='index.html'
 
     });
     
