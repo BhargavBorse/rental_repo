@@ -25,7 +25,7 @@ dbRef.child('item').child('Women').on('value',function(item_details_snapshot){
     else{
         for(var i = recommended_array.length - 4; i< recommended_array.length; i++){
             
-            itemRef.child('Women').child(women_keys[i]).on('value',function(item_deep_details_snapshot){
+            itemRef.child('Women').child(recommended_array[i]).on('value',function(item_deep_details_snapshot){
                 var item_deep_details = item_deep_details_snapshot.val();
                 
                 //Div class=owl-item

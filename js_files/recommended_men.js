@@ -24,7 +24,7 @@ dbRef_men.child('item').child('Men').on('value',function(item_details_snapshot){
     }
     else{
         for(var i = recommended_array.length - 4; i< recommended_array.length; i++){
-            itemRef_men.child('Men').child(men_keys[i]).on('value',function(item_details_men_snapshot){
+            itemRef_men.child('Men').child(recommended_array[i]).on('value',function(item_details_men_snapshot){
                 var item_deep_details = item_details_men_snapshot.val();
                 
                 //Div class=owl-item
