@@ -136,6 +136,10 @@
           margin-top: 0;
         }
       }
+
+      div {
+    display: inline-block; 
+  }
     </style>
 
     
@@ -283,7 +287,7 @@
                             
                             <!-- <input type="text" id="textFieldValueJS" class="form-control" placeholder="get value on option select"> -->
                             <label>Category</label>
-                            <select class="category" id = "category">
+                            <!-- <select class="category" id = "category">
                               
                               <option value="select"> --Select Category--</option>
                               <option value = "Men">Men's Fashion</option>
@@ -294,8 +298,26 @@
                             </select>
                             <div id="response">
                               
-                            </div>
+                            </div> -->
+                            <select class="countries" id="category">          
+                            </select>
+                            <div class="option">
+                              <select class="Men">
                             
+                              </select>
+                              <select class="Women">
+                            
+                              </select>
+                              <select class="Boy">
+                            
+                              </select>
+                              <select class="Girls">
+                            
+                              </select>
+                            </div>
+
+
+
                             <div class="checkbox">
                               <label>
                                 <input type="checkbox" name = "dd" id="dod">
@@ -556,8 +578,77 @@
                             return false;
                 
                         return true;
-                    }    
+                    }   
+                    
                 </script>
-                </body>
+              <script>
+              $(function () {
+   
+    'use strict';
+    
+    var CountSelect = $('.countries'),
+    
+        myCountries = ['Men', 'Women', 'Boy', 'Girls'],
+        
+        Men = ['Sherwani', 'Suit', 'Blazer', 'Nehru-Jacket', 'Kurta-pyjama', 'Men-Accessories'],
+        
+        Women = ['Gown', 'Anarkali', 'Lehenga', 'Sarees', 'Top-skirts', 'Women-Accessories' ],
+        
+        Boy = ['Boy'],
+        
+        Girls = ['Girls'];
+        
+    // Function Create Option    
+    
+    function CreateOption(valriable, elementToAppend) {
+        
+        var i;
+        
+        for (i = 0; i < valriable.length; i += 1) {
+    
+            $('<option>', {value: valriable[i], text: valriable[i], id: valriable[i]})
+                .appendTo(elementToAppend);
+        }
+    }
+    
+    
+    // Create Option myCountries
+    CreateOption(myCountries, $('.countries'));
+    
+    // Create Option Africa
+    CreateOption(Men, $('.Men'));
+    
+    // Create Option Africa
+    CreateOption(Women, $('.Women'));
+    
+    // Create Option Africa
+    CreateOption(Boy, $('.Boy'));
+    
+    // Create Option Africa
+    CreateOption(Girls, $('.Girls'));
+    
+    // Hide All Select
+    $('.option select').hide();
+    
+    // Show First Selected
+    $('').show().css('display', 'inline-block');
+    
+    
+    
+    // Show List Option City Whene user Chosse Countries
+    
+    CountSelect.on('change', function () {
+        
+        // get Id option 
+        var myId = $(this).find(':selected').attr('id');
+        console.log($(this).val());
+        // Show Select Has class = Id And Hide Siblings
+        $('.option select').filter('.' + myId).fadeIn(400).siblings('select').hide();
+        
+    });
+    
+});
+              </script>  
+              </body>
                 </html>
                 

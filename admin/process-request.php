@@ -6,7 +6,7 @@ if(isset($_POST["category"])){
     // Define country and city array
     $categoryArr = array(
         "Men" => array("Sherwani", "Blazer", "Kurta-pyjama","Nehru-Jacket", "Suit","Men-Accessories"),
-        "Women" => array("Anarkali" , "Lehenga", "Gown", "Sarees", "Top-skirts","Women-Accessiories"),
+        "Women" => array("Anarkali" , "Lehenga", "Gown", "Sarees", "Top-skirts","Women-Accessories"),
         "Boy" => array("Boy"),
         "Girls" => array("Girls")
     );
