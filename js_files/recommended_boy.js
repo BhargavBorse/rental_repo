@@ -22,7 +22,7 @@ dbRef_men.child('item').child('Boy').on('value',function(item_details_snapshot){
     else{
         for(var i = recommended_array.length - 4; i< recommended_array.length; i++){
             
-            itemRef_men.child('Boy').child(boy_keys[i]).on('value',function(item_details_boy_snapshot){
+            itemRef_men.child('Boy').child(recommended_array[i]).on('value',function(item_details_boy_snapshot){
                 var item_deep_details = item_details_boy_snapshot.val();
                 
                 

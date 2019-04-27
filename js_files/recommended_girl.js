@@ -21,7 +21,7 @@ dbRef_men.child('item').child('Girls').on('value',function(item_details_snapshot
     }
     else{
         for(var i = recommended_array.length - 4; i< recommended_array.length; i++){
-            itemRef_men.child('Girls').child(girl_keys[i]).on('value',function(item_details_girls_snapshot){
+            itemRef_men.child('Girls').child(recommended_array[i]).on('value',function(item_details_girls_snapshot){
                 var item_deep_details = item_details_girls_snapshot.val();
                 
                 
