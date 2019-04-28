@@ -28,6 +28,17 @@
     <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
     <!-- //online-fonts -->
     
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- Owl-Carousel-CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    
+    
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
     
@@ -110,127 +121,127 @@
                     <!-- shopping cart -->
                     <div class="cart-mainf">
                         <div class="hubcart hubcart2 cart cart box_1">
-                            <form action="#" method="post">
+                            <!-- <form action="#" method="post"> -->
                                 <input type="hidden" name="cmd" value="_cart">
                                 <input type="hidden" name="display" value="1">
-                                <button class="btn top_hub_cart mt-1" type="submit" name="submit" value="" title="Cart">
+                                <button class="btn top_hub_cart mt-1" id="cart" name="submit" value="" title="Cart">
                                     <i class="fas fa-shopping-bag"></i>
                                 </button>
-                            </form>
+                                <!-- </form> -->
+                            </div>
+                        </div>
+                        <!-- //shopping cart ends here -->
+                    </div>
+                </div>
+            </nav>
+            <!-- //top nav -->
+            
+            <!-- //bottom nav -->
+        </div>
+        <!-- //header container --> 
+    </header>
+    <!-- bottom nav -->
+    <nav class="navbar med-fix navbar-expand-lg navbar-light justify-content-center" id="med-fix">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto text-center">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown has-mega-menu">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Men's clothing</a>
+                <div class="dropdown-menu" >
+                    <div class="px-0 container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=sherwani">Sherwani</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=kurta">Kurta Pyjama</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=Nehru_Jacket">Nehru Jacket</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=Blazer">Blazer</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=Suit">Suit</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=acc">Accessories</a>
+                            </div>
+                            <!-- <div class="col-md-4">
+                                <a class="dropdown-item" href="#">T-Shirts</a>
+                                <a class="dropdown-item" href="#">Trousers</a>
+                                <a class="dropdown-item" href="#">Shirts</a>
+                                <a class="dropdown-item" href="#">Suits & Blazers</a>
+                                <a class="dropdown-item" href="#">Coats & Jackets</a>
+                                <a class="dropdown-item" href="#">Jackets</a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="dropdown-item" href="#">T-Shirts</a>
+                                <a class="dropdown-item" href="#">Coats</a>
+                                <a class="dropdown-item" href="#">Shirts</a>
+                                <a class="dropdown-item" href="#">Suits & Blazers</a>
+                                <a class="dropdown-item" href="#">Jackets</a>
+                                <a class="dropdown-item" href="#">Trousers</a>
+                            </div> -->
                         </div>
                     </div>
-                    <!-- //shopping cart ends here -->
                 </div>
-            </div>
-        </nav>
-        <!-- //top nav -->
-        
-        <!-- //bottom nav -->
+            </li>
+            <li class="nav-item dropdown has-mega-menu">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Women's clothing</a>
+                <div class="dropdown-menu">
+                    <div class="px-0 container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=anarkali">Anarkali</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=lehengas">Lehengas</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=gowns">Gowns</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=sarees">Sarees</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=top-skirts">Top Skirts</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=women-acc">Accessories</a>
+                            </div>
+                            <!-- <div class="col-md-4">
+                                <a class="dropdown-item" href="#">T-shirts</a>
+                                <a class="dropdown-item" href="#">Dresses</a>
+                                <a class="dropdown-item" href="#">Tunics</a>
+                                <a class="dropdown-item" href="#">Skirts</a>
+                                <a class="dropdown-item" href="#">Jeans</a>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="dropdown-item" href="#">Dresses</a>
+                                <a class="dropdown-item" href="#">T-shirts</a>
+                                <a class="dropdown-item" href="#">Skirts</a>
+                                <a class="dropdown-item" href="#">Jeans</a>
+                                <a class="dropdown-item" href="#">Tunics</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item dropdown has-mega-menu">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kids Clothing</a>
+                <div class="dropdown-menu" style="width:100%">
+                    <div class="container">
+                        <div class="row w3_kids">
+                            <div class="col-md-12">
+                                <!-- <span class="bg-light"></span> -->
+                                <a class="dropdown-item" href="kids.html?category=kids&&sub=boy">Boy</a>
+                                <a class="dropdown-item" href="kids.html?category=kids&&sub=girl">Girl</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link active" href="feedback.html">Feedback</a>
+            </li>
+        </ul>
     </div>
-    <!-- //header container --> 
-</header>
-<!-- bottom nav -->
-<nav class="navbar med-fix navbar-expand-lg navbar-light justify-content-center" id="med-fix">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mx-auto text-center">
-        <li class="nav-item">
-            <a class="nav-link" href="index.html">Home
-                <span class="sr-only">(current)</span>
-            </a>
-        </li>
-        <li class="nav-item dropdown has-mega-menu">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Men's clothing</a>
-            <div class="dropdown-menu" >
-                <div class="px-0 container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <a class="dropdown-item" href="men-single.html?category=men&&sub=sherwani">Sherwani</a>
-                            <a class="dropdown-item" href="men-single.html?category=men&&sub=kurta">Kurta Pyjama</a>
-                            <a class="dropdown-item" href="men-single.html?category=men&&sub=Nehru_Jacket">Nehru Jacket</a>
-                            <a class="dropdown-item" href="men-single.html?category=men&&sub=Blazer">Blazer</a>
-                            <a class="dropdown-item" href="men-single.html?category=men&&sub=Suit">Suit</a>
-                            <a class="dropdown-item" href="men-single.html?category=men&&sub=acc">Accessories</a>
-                        </div>
-                        <!-- <div class="col-md-4">
-                            <a class="dropdown-item" href="#">T-Shirts</a>
-                            <a class="dropdown-item" href="#">Trousers</a>
-                            <a class="dropdown-item" href="#">Shirts</a>
-                            <a class="dropdown-item" href="#">Suits & Blazers</a>
-                            <a class="dropdown-item" href="#">Coats & Jackets</a>
-                            <a class="dropdown-item" href="#">Jackets</a>
-                        </div>
-                        <div class="col-md-4">
-                            <a class="dropdown-item" href="#">T-Shirts</a>
-                            <a class="dropdown-item" href="#">Coats</a>
-                            <a class="dropdown-item" href="#">Shirts</a>
-                            <a class="dropdown-item" href="#">Suits & Blazers</a>
-                            <a class="dropdown-item" href="#">Jackets</a>
-                            <a class="dropdown-item" href="#">Trousers</a>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="nav-item dropdown has-mega-menu">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Women's clothing</a>
-            <div class="dropdown-menu">
-                <div class="px-0 container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <a class="dropdown-item" href="women-single.html?category=women&&sub=anarkali">Anarkali</a>
-                            <a class="dropdown-item" href="women-single.html?category=women&&sub=lehengas">Lehengas</a>
-                            <a class="dropdown-item" href="women-single.html?category=women&&sub=gowns">Gowns</a>
-                            <a class="dropdown-item" href="women-single.html?category=women&&sub=sarees">Sarees</a>
-                            <a class="dropdown-item" href="women-single.html?category=women&&sub=top-skirts">Top Skirts</a>
-                            <a class="dropdown-item" href="women-single.html?category=women&&sub=women-acc">Accessories</a>
-                        </div>
-                        <!-- <div class="col-md-4">
-                            <a class="dropdown-item" href="#">T-shirts</a>
-                            <a class="dropdown-item" href="#">Dresses</a>
-                            <a class="dropdown-item" href="#">Tunics</a>
-                            <a class="dropdown-item" href="#">Skirts</a>
-                            <a class="dropdown-item" href="#">Jeans</a>
-                        </div>
-                        <div class="col-md-4">
-                            <a class="dropdown-item" href="#">Dresses</a>
-                            <a class="dropdown-item" href="#">T-shirts</a>
-                            <a class="dropdown-item" href="#">Skirts</a>
-                            <a class="dropdown-item" href="#">Jeans</a>
-                            <a class="dropdown-item" href="#">Tunics</a>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="nav-item dropdown has-mega-menu">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kids Clothing</a>
-            <div class="dropdown-menu" style="width:100%">
-                <div class="container">
-                    <div class="row w3_kids">
-                        <div class="col-md-12">
-                            <!-- <span class="bg-light"></span> -->
-                            <a class="dropdown-item" href="kids.html?category=kids&&sub=boy">Boy</a>
-                            <a class="dropdown-item" href="kids.html?category=kids&&sub=girl">Girl</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <!-- <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="blog.html">Blog</a>
-        </li> -->
-        <li class="nav-item">
-            <a class="nav-link active" href="feedback.html">Feedback</a>
-        </li>
-    </ul>
-</div>
 </nav>
 <!-- //header -->
 <!-- banner -->
@@ -622,6 +633,33 @@
                 
             });
         </script>
+        
+        <script src="js/owl.carousel.js"></script>
+        <script>
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                items: 4,
+                loop: false,
+                // margin: 10,
+                autoplay: false,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: false,
+                responsive: {
+                    320: {
+                        items: 1,
+                    },
+                    568: {
+                        items: 2,
+                    },
+                    991: {
+                        items: 3,
+                    },
+                    1050: {
+                        items: 4
+                    }
+                }
+            });
+        </script>
         <script>
             window.onscroll = function() {myFunction()};
             
@@ -634,6 +672,11 @@
                 } else {
                     header.classList.remove("sticky");
                 }
+            }
+        </script>
+        <script>
+            document.getElementById('cart').onclick = function(){
+                window.location.href = 'checkout.html';
             }
         </script>
         <!-- <script src="js/SmoothScroll.min.js"></script> -->

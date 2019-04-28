@@ -37,7 +37,7 @@ dbRef_dod.child('dod').on('value',function(item_details_snapshot){
                 var item_deep_dod_details = item_deep_dod_details_snapshot.val();
                 
                 var div_sub0 = document.createElement('div');
-                div_sub0.className="owl-item";
+                div_sub0.className="owl-item dod";
                 div_sub0.setAttribute('style','width: auto; padding:5px; ');
                 
                 // //Appending div-class=owl-item to div-class=owl-stage
