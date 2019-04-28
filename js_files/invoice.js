@@ -59,6 +59,9 @@ firebase.auth().onAuthStateChanged(function(user) {
             document.getElementById('from_date').innerText = cart_det.from_date;
             document.getElementById('to_date').innerHTML = cart_det.to_date;
             document.getElementById('total_days').innerHTML = cart_det.total_days;
+            document.getElementById('to_time').innerHTML = cart_det.to_time;
+            document.getElementById('from_time').innerHTML = cart_det.from_time;
+
             
             // var from_date = cart_snapshot.child('from_date').val();
             // var to_date = cart_snapshot.child('to_date').val();

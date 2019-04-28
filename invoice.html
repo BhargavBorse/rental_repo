@@ -98,204 +98,223 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <strong>Delivery Date: </strong> <strong id="from_date"> </strong> &nbsp;&nbsp;
-                        <strong>Return Date: </strong> <strong id="to_date"> </strong> &nbsp;&nbsp;
-                        <strong>For: </strong> <strong id="total_days"></strong> <strong>Days</strong>&nbsp;&nbsp;
-                        <strong>Delivery Time: </strong> <strong id="d_time"></strong> <strong>Days</strong>&nbsp;&nbsp;
-                        <strong>Return Time: </strong> <strong id="r_time"></strong> <strong>Days</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <strong>Purchase Date: </strong> <strong id="date"></strong><br><br>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h3 class="text-center"><strong>Order summary</strong></h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="table-responsive">
-                                            <table class="table" id="invoice_table">
-                                                <thead>
-                                                    <tr>
-                                                        <td><strong>Item Name</strong></td>
-                                                        <td><strong>Item Price</strong></td>
-                                                        <td><strong>Item Quantity</strong></td>
-                                                        <td><strong>Rent Days</strong></td>
-                                                        <td><strong>Total</strong></td>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <!-- <tr>
-                                                        <td>Sherwani</td>
-                                                        <td class="text-center">2000</td>
-                                                        <td class="text-center">2</td>
-                                                        <td class="text-right">4000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Blazer</td>
-                                                        <td class="text-center">1500</td>
-                                                        <td class="text-center">2</td>
-                                                        <td class="text-right">3000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Kurta</td>
-                                                        <td class="text-center">800</td>
-                                                        <td class="text-center">3</td>
-                                                        <td class="text-right">2400</td>
-                                                    </tr> -->
-                                                    
-                                                    <tr>
-                                                        <td class="highrow"></td>
-                                                        <td class="highrow"></td>
-                                                        <td class="highrow"></td>
-                                                        <td class="highrow"><strong>Subtotal</strong></td>
-                                                        <td class="highrow" id="subtotal"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="emptyrow"></td>
-                                                        <td class="emptyrow"></td>
-                                                        <td class="emptyrow"></td>
-                                                        <td class="emptyrow"><strong>GST(5%)</strong></td>
-                                                        <td class="emptyrow" id="gst"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="emptyrow"></td>
-                                                        <td class="emptyrow"></td>
-                                                        <td class="emptyrow"></td>
-                                                        <td class="emptyrow"><strong>Deposit</strong></td>
-                                                        <td class="emptyrow" id="deposit"></td>
-                                                    </tr>
-                                                    <!-- <tr>
-                                                        <td class="emptyrow"></td>
-                                                        <td class="emptyrow"></td>
-                                                        <td class="emptyrow"><strong>try</strong></td>
-                                                        <td class="emptyrow" id="ggg"></td>
-                                                    </tr> -->
-                                                    <tr>
-                                                        <td class="highrow"></td>
-                                                        <td class="highrow"></td>
-                                                        <td class="highrow"></td>
-                                                        <td class="highrow"><strong>Total</strong></td>
-                                                        <td class="highrow" id="final_total"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            
+                                    <div class="col-xs-12 col-md-3 col-lg-3 pull-left">
+                                        <div class="panel panel-default height">
+                                            <div class="panel-heading">Order Date & Timings
+                                                <button type="button" style="float:right;" class="btn btn-primary fa fa-edit" onclick="back_date()" id="back_date">
+                                                </div>
+                                                <div class="panel-body">
+                                                    <strong>Delivery Date: </strong> <strong id="from_date"></strong><br>
+                                                    <strong>Delivery Time: </strong> <strong id="from_time"></strong><br>
+                                                    <strong>Return Date: </strong> <strong id="to_date"></strong><br>
+                                                    <strong>Return Time: </strong> <strong id="to_time"></strong><br>
+                                                    <strong>Total Days: </strong> <strong id="total_days"></strong><br>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 
-                    item name
-                    <input type="text" id="in_item_name" >
-                    item price
-                    <input type="text" id="in_item_price" >
-                    quantity
-                    <input type="text" id="in_item_quantity" >
-                    days
-                    <input type="text" id="in_item_days" >
-                    item subtotal
-                    <input type="text" id="in_item_total" >
-                    item gst
-                    <input type="text" id="in_item_gst" >
-                    item deposit
-                    <input type="text" id="in_item_deposit" >
-                    <br> -->
-                    
-                    <!-- NAME
-                        <input type="text" id="user_name">
-                        ADDRESS
-                        <input type="text" id="address">
-                        PINCODE
-                        <input type="text" id="pincode">
-                        PHONE
-                        <input type="text" id="mobile_number">
-                        EMAIL
-                        <input type="text" id="email"> -->
-                        
-                        <input type="text" id="days" hidden>
-                        <input type="button" class="btn btn-primary des" onclick="back_to_checkout()" id="back_to_checkout" value="Back to Checkout">
-                        <input type="button" class="btn btn-primary des" onclick="more_item()" id="more_item" value="Add More Item">                                    
-                        <input type="button" class="btn btn-primary des" onclick="printDiv('printableArea')" value="Print Invoice">
-                        <input type="button" class="btn btn-primary des" onclick="finish()" id="finish" value="Finish">                                    
-                        <br><br>
-                    </div>
-                    
-                    <footer>   
-                        <!-- //footer-top -->
-                        <div class="footer-bottomv2 py-5" style="background-color: black;">
-                            <div class="container">                      
-                                
-                                <div class="cpy-right align-self-center">
-                                    <h2 class="agile_btxt">
-                                        <a href="index.html" style="color: white;">
-                                            <span>F</span>reedom
-                                            <span>f</span>or
-                                            <span>F</span>ashion</a>
-                                        </h2>
-                                        <p style="float:right;">© 2019 Freedom for Fashion. All rights reserved 
-                                        </p>
+                            <!-- <strong>Delivery Date: </strong> <strong id="from_date"> </strong> <br>
+                                <strong>Return Date: </strong> <strong id="to_date"> </strong> <br>
+                                <strong>For: </strong> <strong id="total_days"></strong> <strong>Days</strong><br> -->
+                                <!-- <strong>Delivery Time: </strong> <strong id="d_time"></strong> <strong>Days</strong><br>
+                                    <strong>Return Time: </strong> <strong id="r_time"></strong> <strong>Days</strong><br><br> -->
+                                    <strong>Purchase Date: </strong> <strong id="date"></strong><br><br>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h3 class="text-center"><strong>Order summary</strong></h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table" id="invoice_table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <td><strong>Item Name</strong></td>
+                                                                    <td><strong>Item Price</strong></td>
+                                                                    <td><strong>Item Quantity</strong></td>
+                                                                    <td><strong>Rent Days</strong></td>
+                                                                    <td><strong>Total</strong></td>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <!-- <tr>
+                                                                    <td>Sherwani</td>
+                                                                    <td class="text-center">2000</td>
+                                                                    <td class="text-center">2</td>
+                                                                    <td class="text-right">4000</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Blazer</td>
+                                                                    <td class="text-center">1500</td>
+                                                                    <td class="text-center">2</td>
+                                                                    <td class="text-right">3000</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Kurta</td>
+                                                                    <td class="text-center">800</td>
+                                                                    <td class="text-center">3</td>
+                                                                    <td class="text-right">2400</td>
+                                                                </tr> -->
+                                                                
+                                                                <tr>
+                                                                    <td class="highrow"></td>
+                                                                    <td class="highrow"></td>
+                                                                    <td class="highrow"></td>
+                                                                    <td class="highrow"><strong>Subtotal</strong></td>
+                                                                    <td class="highrow" id="subtotal"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="emptyrow"></td>
+                                                                    <td class="emptyrow"></td>
+                                                                    <td class="emptyrow"></td>
+                                                                    <td class="emptyrow"><strong>GST(5%)</strong></td>
+                                                                    <td class="emptyrow" id="gst"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="emptyrow"></td>
+                                                                    <td class="emptyrow"></td>
+                                                                    <td class="emptyrow"></td>
+                                                                    <td class="emptyrow"><strong>Deposit</strong></td>
+                                                                    <td class="emptyrow" id="deposit"></td>
+                                                                </tr>
+                                                                <!-- <tr>
+                                                                    <td class="emptyrow"></td>
+                                                                    <td class="emptyrow"></td>
+                                                                    <td class="emptyrow"><strong>try</strong></td>
+                                                                    <td class="emptyrow" id="ggg"></td>
+                                                                </tr> -->
+                                                                <tr>
+                                                                    <td class="highrow"></td>
+                                                                    <td class="highrow"></td>
+                                                                    <td class="highrow"></td>
+                                                                    <td class="highrow"><strong>Total</strong></td>
+                                                                    <td class="highrow" id="final_total"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </footer>
-                </body>
-            
-                <script>
-                    document.getElementById('back_to_checkout').onclick = function(){
-                        window.location.href = 'checkout.html';
-                    }
-                </script>
-                <script>
-                    document.getElementById('back').onclick = function(){
-                        window.location.href = 'checkout.html';
-                    }
-                </script>
-                <script>
-                    document.getElementById('checkout').onclick = function(){
-                        window.location.href = 'checkout.html';
-                    }
-                </script>
-                <script>
-                    document.getElementById('more_item').onclick = function(){
-                        window.location.href = 'index.html';
-                    }
-                </script>
-                <script>
-                    function printDiv(divName) {
-                        var printContents = document.getElementById(divName).innerHTML;
-                        var originalContents = document.body.innerHTML;
-                        
-                        document.body.innerHTML = printContents;
-                        
-                        window.print();
-                        
-                        document.body.innerHTML = originalContents;
-                    }
-                </script>
-                <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
-                <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
-                <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
-                <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
-                <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
-                
-                <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
-                <script>
-                    // Initialize Firebase
-                    var config = {
-                        apiKey: "AIzaSyBCXYBy-ry760TM9x-CEsLzIgoZJ3ucv4g",
-                        authDomain: "trial-c2b17.firebaseapp.com",
-                        databaseURL: "https://trial-c2b17.firebaseio.com",
-                        projectId: "trial-c2b17",
-                        storageBucket: "trial-c2b17.appspot.com",
-                        messagingSenderId: "181878503934"
-                    };
-                    firebase.initializeApp(config);
-                </script>
-                <script type="text/javascript" src="js_files/invoice.js"></script>
-                </html>
+                            <!-- 
+                                item name
+                                <input type="text" id="in_item_name" >
+                                item price
+                                <input type="text" id="in_item_price" >
+                                quantity
+                                <input type="text" id="in_item_quantity" >
+                                days
+                                <input type="text" id="in_item_days" >
+                                item subtotal
+                                <input type="text" id="in_item_total" >
+                                item gst
+                                <input type="text" id="in_item_gst" >
+                                item deposit
+                                <input type="text" id="in_item_deposit" >
+                                <br> -->
+                                
+                                <!-- NAME
+                                    <input type="text" id="user_name">
+                                    ADDRESS
+                                    <input type="text" id="address">
+                                    PINCODE
+                                    <input type="text" id="pincode">
+                                    PHONE
+                                    <input type="text" id="mobile_number">
+                                    EMAIL
+                                    <input type="text" id="email"> -->
+                                    
+                                    <input type="text" id="days" hidden>
+                                    <input type="button" class="btn btn-primary des" onclick="back_to_checkout()" id="back_to_checkout" value="Back to Checkout">
+                                    <input type="button" class="btn btn-primary des" onclick="more_item()" id="more_item" value="Add More Item">                                    
+                                    <input type="button" class="btn btn-primary des" onclick="printDiv('printableArea')" value="Print Invoice">
+                                    <input type="button" class="btn btn-primary des" onclick="finish()" id="finish" value="Finish">                                    
+                                    <br><br>
+                                </div>
+                                
+                                <footer>   
+                                    <!-- //footer-top -->
+                                    <div class="footer-bottomv2 py-5" style="background-color: black;">
+                                        <div class="container">                      
+                                            
+                                            <div class="cpy-right align-self-center">
+                                                <h2 class="agile_btxt">
+                                                    <a href="index.html" style="color: white;">
+                                                        <span>F</span>reedom
+                                                        <span>f</span>or
+                                                        <span>F</span>ashion</a>
+                                                    </h2>
+                                                    <p style="float:right;">© 2019 Freedom for Fashion. All rights reserved 
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </footer>
+                            </body>
+                            
+                            <script>
+                                document.getElementById('back_to_checkout').onclick = function(){
+                                    window.location.href = 'checkout.html';
+                                }
+                            </script>
+                            <script>
+                                document.getElementById('back_date').onclick = function(){
+                                    window.location.href = 'checkout.html';
+                                }
+                            </script>
+                            <script>
+                                document.getElementById('back').onclick = function(){
+                                    window.location.href = 'checkout.html';
+                                }
+                            </script>
+                            <script>
+                                document.getElementById('checkout').onclick = function(){
+                                    window.location.href = 'checkout.html';
+                                }
+                            </script>
+                            <script>
+                                document.getElementById('more_item').onclick = function(){
+                                    window.location.href = 'index.html';
+                                }
+                            </script>
+                            <script>
+                                function printDiv(divName) {
+                                    var printContents = document.getElementById(divName).innerHTML;
+                                    var originalContents = document.body.innerHTML;
+                                    
+                                    document.body.innerHTML = printContents;
+                                    
+                                    window.print();
+                                    
+                                    document.body.innerHTML = originalContents;
+                                }
+                            </script>
+                            <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+                            <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+                            <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+                            <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+                            <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+                            
+                            <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+                            <script>
+                                // Initialize Firebase
+                                var config = {
+                                    apiKey: "AIzaSyBCXYBy-ry760TM9x-CEsLzIgoZJ3ucv4g",
+                                    authDomain: "trial-c2b17.firebaseapp.com",
+                                    databaseURL: "https://trial-c2b17.firebaseio.com",
+                                    projectId: "trial-c2b17",
+                                    storageBucket: "trial-c2b17.appspot.com",
+                                    messagingSenderId: "181878503934"
+                                };
+                                firebase.initializeApp(config);
+                            </script>
+                            <script type="text/javascript" src="js_files/invoice.js"></script>
+                            </html>
