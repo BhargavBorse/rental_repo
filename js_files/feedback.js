@@ -18,7 +18,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             document.getElementById('phone_no_text').innerHTML = user_details.phone_number;
             document.getElementById('date').innerHTML = user_details.joining_date;
         });
-
+        
         
         // end of fetching personal details
     } else {
@@ -27,9 +27,21 @@ firebase.auth().onAuthStateChanged(function(user) {
         window.location = 'Guest index.html';
     }
     var img = document.getElementById('loading_gif');
-        img.style.visibility = 'hidden';
+    img.style.visibility = 'hidden';
 });
 
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+
+var date = document.getElementById("date").value = d + "/" + m + "/" + y;
+
+var time = new Date();
+
+ var current_time = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+
+//  alert(current_time);
 
 document.getElementById('btn_feedback').onclick = function(){
     
@@ -38,15 +50,20 @@ document.getElementById('btn_feedback').onclick = function(){
         alert("Please enter message");
         return false;
     }
-    
+
+    // alert(time);
     var name_wd = document.getElementById('name').value;
     var email_wd = document.getElementById('user_email_inside').value;
     var message_wd = document.getElementById('message').value;
-    // alert(email_wd);
+    var message_for = document.getElementById('message_for').value;
+    // alert(message_for);
     database.child('Feedback').push({
         name: name_wd, 
         email: email_wd,
-        message: message_wd
+        message: message_wd,
+        message_for : message_for,
+        feed_date: d + "/" + m + "/" + y,
+        feed_time: time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
     });
     alert('Details Successfully Updated');
     location.reload();

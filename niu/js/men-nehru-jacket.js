@@ -1,47 +1,33 @@
-var dbRef_dod = firebase.database().ref();
-var itemRef_dod = firebase.database().ref('dod');
+var dbRef = firebase.database().ref();
+var itemRef = firebase.database().ref('item');
 
-dbRef_dod.child('dod').on('value',function(item_details_snapshot){
+// var url_string = window.location.href;
+// var url = new URL (url_string);
+// var uid = url.searchParams.get('sherwani');
+
+// alert(uid);
+// if(uid == 'sherwani'){}
+
+dbRef.child('item').child('Men').on('value',function(item_details_snapshot){
     var item_details = item_details_snapshot.val();
-    var keys_dod = Object.keys(item_details);
+    var men_keys = Object.keys(item_details);
     
-    
-    var deals_of_the_day_array = [];
-    for(var i=0;i<keys_dod.length;i++)
+    for(var i=0;i<men_keys.length;i++)
     {
-        itemRef_dod.child(keys_dod[i]).on('value',function(item_deep_dod_details_snapshot){
-            var item_deep_dod_details = item_deep_dod_details_snapshot.val();
+        // if(uid == 'sherwani'){}
+        itemRef.child('Men').child(men_keys[i]).on('value',function(item_deep_details_snapshot){
+            var item_deep_details = item_deep_details_snapshot.val();
             
-            if(item_deep_dod_details.deals_of_the_day === true){
+            if(item_deep_details.item_subcategory == 'Nehru-Jacket'){
+                // alert(item_deep_details.recommended);
+                
                 //Div class=owl-item
-
-                deals_of_the_day_array.push(keys_dod[i].toString());
-                //console.log('DONE MY BOI');
-                
-            }
-
-            
-        });
-    }
-
-    if(deals_of_the_day_array.length == 0)
-    {
-        console.log('EMPTYYYYYYYYY');
-    }
-    else
-    {
-        for(var i=deals_of_the_day_array.length - 3;i<deals_of_the_day_array.length;i++)
-        {
-            // console.log(deals_of_the_day_array[i]);
-            itemRef_dod.child(deals_of_the_day_array[i]).on('value',function(item_deep_dod_details_snapshot){
-                var item_deep_dod_details = item_deep_dod_details_snapshot.val();
-                
                 var div_sub0 = document.createElement('div');
                 div_sub0.className="owl-item";
                 div_sub0.setAttribute('style','width: auto; padding:5px; ');
                 
                 // //Appending div-class=owl-item to div-class=owl-stage
-                document.getElementsByClassName('bhargav')[0].appendChild(div_sub0);
+                document.getElementsByClassName('men-nehru-jacket')[0].appendChild(div_sub0);
                 
                 
                 //Sub-div (class=item)
@@ -68,9 +54,9 @@ dbRef_dod.child('dod').on('value',function(item_details_snapshot){
                 
                 //Img under div-class=men-thumb-item
                 var img1 = document.createElement('img');
-                img1.className="card-img-dod";
-                img1.setAttribute('src',item_deep_dod_details.optional_image);
-                // var img122 = document.createTextNode(keys_dod[i]);
+                img1.className="card-img-top card-img-top-height card-item-img-top";
+                img1.setAttribute('src',item_deep_details.optional_image);
+                // var img122 = document.createTextNode(men_keys[i]);
                 
                 //Append img-class=card-img-top card-img-top-height to div-class=men-thumb-item
                 div_sub3.appendChild(img1);
@@ -111,7 +97,7 @@ dbRef_dod.child('dod').on('value',function(item_details_snapshot){
                 //H5 under div-class=card-body py-3 px-2
                 var h5_1 = document.createElement('h5');
                 h5_1.className="card-title text-capitalize";
-                var h5_1_text = document.createTextNode(item_deep_dod_details.item_name);
+                var h5_1_text = document.createTextNode(item_deep_details.item_name);
                 h5_1.appendChild(h5_1_text);
                 
                 //Append h5 to div-class=card-body py-3 px-2
@@ -127,7 +113,7 @@ dbRef_dod.child('dod').on('value',function(item_details_snapshot){
                 //P under div-class=card-text d-flex justify-content-between
                 var p1 = document.createElement('p');
                 p1.className="text-dark font-weight-bold";
-                var p1_text = document.createTextNode(item_deep_dod_details.item_price);
+                var p1_text = document.createTextNode(item_deep_details.item_price);
                 p1.appendChild(p1_text);
                 // p1.appendChild(img122);
                 // div_sub_sub2.appendChild(img122);
@@ -147,11 +133,11 @@ dbRef_dod.child('dod').on('value',function(item_details_snapshot){
                 // creating input:hidden for redirecting to another page with image details and cart button
                 var input_image_details = document.createElement('input');
                 input_image_details.setAttribute('type', 'hidden');
-                input_image_details.setAttribute('value',keys_dod[i]);
+                input_image_details.setAttribute('value',men_keys[i]);
                 
                 // creating a link 
                 var alink = document.createElement('a');
-                alink.setAttribute('href', 'checkout.html?item=' + keys_dod[i] + '&dod=dod');
+                alink.setAttribute('href', 'checkout.html?item=' + men_keys[i] + '&category=men');
                 
                 //Button under div-class=card-footer d-flex justify-content-end
                 var btn1 = document.createElement('button');
@@ -175,15 +161,10 @@ dbRef_dod.child('dod').on('value',function(item_details_snapshot){
                 
                 //Append I to Button-class=hub-cart phub-cart btn
                 btn1.appendChild(i1);
+                
                 var img = document.getElementById('loading_gif');
                 img.style.visibility = 'hidden';
-                
-                
-            });
-
-
-            
-        }
+            }
+        });
     }
-    
 });

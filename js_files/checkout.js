@@ -38,7 +38,10 @@ firebase.auth().onAuthStateChanged(function(user) {
             var d = document.forms["myForm"]["address"].value;
             var e = document.forms["myForm"]["pin_code"].value;
             var f = document.forms["myForm"]["from_date"].value;
-            var g = document.forms["myForm"]["to_date"].value;
+            var g = document.forms["myForm"]["from_time"].value;
+            var h = document.forms["myForm"]["to_date"].value;
+            var i = document.forms["myForm"]["to_time"].value;
+            
             
             if (a == "") {
                 alert("Please enter name");
@@ -69,11 +72,19 @@ firebase.auth().onAuthStateChanged(function(user) {
                 return false;
             }
             if (f == "") {
-                alert("Please enter Date");
+                alert("Please Enter Delivery Date");
                 return false;
             }
             if (g == "") {
-                alert("Please enter Date");
+                alert("Please Enter Delivery Time");
+                return false;
+            }
+            if (h == "") {
+                alert("Please Enter Return Date ");
+                return false;
+            }
+            if (i == "") {
+                alert("Please Enter Return Time");
                 return false;
             }
             
@@ -84,9 +95,11 @@ firebase.auth().onAuthStateChanged(function(user) {
             var address_wd = document.getElementById('address').value;
             var pincode_wd = document.getElementById('pin_code').value;
             var from_date_wd = document.getElementById('from_date').value;
+            var from_time_wd = document.getElementById('from_time').value;
             var to_date_wd = document.getElementById('to_date').value;
+            var to_time_wd = document.getElementById('to_time').value;
             var result = document.getElementById('result').value;
-            var quantity = 
+            
             eventRef.child(user.uid).child('details').update({
                 name: name_wd,
                 l_name: l_name_wd,
@@ -110,8 +123,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                         var quantity = document.getElementById(j).value;
                         var item_price = document.getElementById(j + ' price').value;
 
-                        console.log(quantity);
-                        console.log(item_price);
+                        // console.log(quantity);
+                        // console.log(item_price);
 
                         firebase.database().ref().child('users').child(user.uid).child('cart').child(keys_cart[i]).update({
                             
@@ -120,7 +133,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                             to_date: to_date_wd,
                             total_days : result,
                             item_price : item_price,
-                            item_quantity : quantity
+                            item_quantity : quantity,
+                            from_time : from_time_wd,
+                            to_time : to_time_wd
                         });
                         window.location = 'invoice.html';
                         

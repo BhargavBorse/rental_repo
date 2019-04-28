@@ -124,11 +124,14 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
     
     n =  new Date();
-                y = n.getFullYear();
-                m = n.getMonth() + 1;
-                d = n.getDate();
-                
-                var date = document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
+    y = n.getFullYear();
+    m = n.getMonth() + 1;
+    d = n.getDate();
+    
+    var date = document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
+    var order_id =  d +  + m +  + y;
+    // alert(order_id + user.uid);
+    
     document.getElementById('finish').onclick = function(){
         
         firebase.database().ref().child('users').child(user.uid).child('details').on('value', function(user_snapshot){
@@ -149,7 +152,10 @@ firebase.auth().onAuthStateChanged(function(user) {
                 var email = user_det.email;
                 var mobile_number = user_det.phone_number;
                 var days = document.getElementById('days').value;
-                alert(date);
+                var delivery_time = cart_det.from_time;
+                var return_time = cart_det.to_time;
+                alert(pincode+ " " + delivery_time + " " + return_time);
+                // alert(date);
                 
                 
                 
@@ -169,7 +175,10 @@ firebase.auth().onAuthStateChanged(function(user) {
                     customer_email : email,
                     customer_phone_no : mobile_number,
                     days : days,
-                    purchase_date : date
+                    purchase_date : date,
+                    order_id : order_id + user.uid,
+                    delivery_time : delivery_time,
+                    return_time : return_time
                 });     
                 
                 firebase.database().ref().child('Admin').child('Order').push({
@@ -186,14 +195,17 @@ firebase.auth().onAuthStateChanged(function(user) {
                     customer_address : address,
                     customer_pincode : pincode,
                     customer_email : email,
-                    customer_phone_no : mobile_number
+                    customer_phone_no : mobile_number,
+                    order_id : order_id + user.uid,
+                    delivery_time : delivery_time,
+                    return_time : return_time
                 });
                 alert('Order Successfully Placed!');
                 // location.reload();
                 
-                // firebase.database().ref().child('users').child(user.uid).child('cart').remove(function(){
-                //     window.location.href = 'index.html'; 
-                // });
+                firebase.database().ref().child('users').child(user.uid).child('cart').remove(function(){
+                    window.location.href = 'index.html'; 
+                });
             });
         });
     }
@@ -208,15 +220,17 @@ firebase.auth().onAuthStateChanged(function(user) {
 //         var userCartAcKeys = Object.keys(userCartKeys);
 //         for(var i=0;i<userCartAcKeys.length;i++)
 //         {
+//             alert('1')
 //             eventRef.child(user.uid).child('cart').child(userCartAcKeys[i]).on('value',function(userCartDets_snapshot){
 //                 var userCartDets = userCartDets_snapshot.val();
 //                 if(userCartDets.itemid === itemid_para)
 //                 {
+//                     alert('2')
 //                     eventRef.child(user.uid).child('cart').child(userCartAcKeys[i]).remove(function(){
-//                         // location.reload();
+//                         location.reload();
 //                     });
 //                 }
-
+                
 //             });
 //         }
 //     });

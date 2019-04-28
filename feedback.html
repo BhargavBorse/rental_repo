@@ -65,8 +65,8 @@
             height: 300px;
             width: 11rem;
         } 
-
-
+        
+        
         @media only screen and (max-width: 700px){
             .modal-content {
                 width: 100%;
@@ -97,6 +97,46 @@
             z-index:10000000;
             opacity: 1;
             filter: alpha(opacity=40);
+        }
+        
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {background-color: #f1f1f1}
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
         }
     </style>
 </head>
@@ -165,12 +205,12 @@
                     <div class="px-0 container">
                         <div class="row">
                             <div class="col-md-12">
-                                <a class="dropdown-item" href="men.html?item=sherwani">Blazer</a>
-                                <a class="dropdown-item" href="#">Kurta Pyjama</a>
-                                <a class="dropdown-item" href="#">Nehru Jacket</a>
-                                <a class="dropdown-item" href="#">Sherwani</a>
-                                <a class="dropdown-item" href="#">Suit</a>
-                                <a class="dropdown-item" href="#">Accessories</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=sherwani">Sherwani</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=kurta">Kurta Pyjama</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=Nehru_Jacket">Nehru Jacket</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=Blazer">Blazer</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=Suit">Suit</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=acc">Accessories</a>
                             </div>
                             <!-- <div class="col-md-4">
                                 <a class="dropdown-item" href="#">T-Shirts</a>
@@ -198,12 +238,12 @@
                     <div class="px-0 container">
                         <div class="row">
                             <div class="col-md-12">
-                                <a class="dropdown-item" href="#">Anarkali</a>
-                                <a class="dropdown-item" href="#">Lehengas</a>
-                                <a class="dropdown-item" href="#">Gowns</a>
-                                <a class="dropdown-item" href="#">Sarees</a>
-                                <a class="dropdown-item" href="#">Dhoti Sets</a>
-                                <a class="dropdown-item" href="#">Accessories</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=anarkali">Anarkali</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=lehengas">Lehengas</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=gowns">Gowns</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=sarees">Sarees</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=top-skirts">Top Skirts</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=women-acc">Accessories</a>
                             </div>
                             <!-- <div class="col-md-4">
                                 <a class="dropdown-item" href="#">T-shirts</a>
@@ -230,8 +270,8 @@
                         <div class="row w3_kids">
                             <div class="col-md-12">
                                 <!-- <span class="bg-light"></span> -->
-                                <a class="dropdown-item" href="#">Boy</a>
-                                <a class="dropdown-item" href="#">Girl</a>
+                                <a class="dropdown-item" href="kids.html?category=kids&&sub=boy">Boy</a>
+                                <a class="dropdown-item" href="kids.html?category=kids&&sub=girl">Girl</a>
                             </div>
                         </div>
                     </div>
@@ -290,323 +330,335 @@
                                     <!-- <h4><a id="user_email_text"></a></h4> -->
                                 </div>
                                 <div class="form-group">
+                                    <label for="contactemail">Message For?</label>
+                                    <select class="form-control" id="message_for">
+                                        <option value="service">Service</option>
+                                        <option value="delivery">Delivery</option>
+                                        <option value="clothes">Clothes</option>
+                                        <option value="features">Web-App Features</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <label for="contactcomment">Your Message</label>
                                     <textarea class="form-control" name="message" rows="5" id="message" required></textarea>
                                 </div>
-                                
-                                <input id="btn_feedback" class="btn btn-block btn-primary" type="button" value="Submit">
-                            </form>
-                        </div>
-                        <!--  //contact form grid ends here -->
-                    </div>
-                    <!-- contact details -->
-                    <div class="col-lg-6 img-feed contact-bottom pl-5 mt-lg-0 mt-5">
-                        <!-- contact details grid1-->
-                        <!-- <div class="address">
-                            <h5 class="pb-3 text-capitalize">Address</h5>
-                            <address>
-                                <p class="c-txt">90 Street, City, State 34789.</p>
-                                <p class="c-txt">76 Street, City, State 34789.</p>
-                            </address>
-                        </div> -->
-                        <!-- contact details grid2-->
-                        <!-- <div class="address my-5">
-                            <h5 class="pb-3 text-capitalize">phone</h5>
-                            <p>
-                                +10 234 5678</p>
-                                <p>
-                                    +11 222 333</p>
-                                    <p>
-                                        +12 222 333</p>
-                                    </div> -->
-                                    <!-- contact details grid3 -->
-                                    <!-- <div class="address mt-md-0 mt-3">
-                                        <h5 class="pb-3 text-capitalize">Email</h5>
-                                        <p>
-                                            <a href="mailto:info@example.com">mail@communal.com</a>
-                                        </p>
-                                        <p>
-                                            <a href="mailto:info@example.com">mail@communalinfo.com</a>
-                                        </p>
-                                    </div> -->
-                                    <!-- //contact details row ends here -->
-                                    <img class="" src="images/feedback.png" style="width:110%; height: 400px;" alt="">
-                                </div>
-                            </div>
-                            <!-- //contact details container -->
-                        </div>
-                        <!-- contact map grid -->
-                        <!-- <div class="map contact-right pb-5">
-                            <div class="pt-lg-5 bg-pricemain text-center">
-                                <h3 class="stat-title text-capitalize pb-5">get directions</h3>
-                                <span class="w3-line"></span>
-                            </div>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.719109700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1441710758555"
-                            allowfullscreen></iframe>
-                        </div> -->
-                        <!--//contact map grid ends here-->
-                    </section>
-                    <!-- contact -->
-                    <footer>   
-                        <!-- //footer-top -->
-                        <div class="footer-bottomv2 py-5" style="background-color: black;">
-                            <div class="container">
-                                <ul class="bottom-links-agile">
-                                    <li>
-                                        <a href="index.html" style="color: white;">Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="#myModal_btn" data-toggle="modal" data-target="#myModal_btn" style="color: white;">Deals</a>
-                                    </li>
-                                    <li>
-                                        <a href="#myacc" data-toggle="modal" data-target="#myacc" style="color: white;">Profile</a>
-                                    </li>
-                                    <li>
-                                        <a href="Feedback.html" style="color: white;">Feedback</a>
-                                    </li>
+                                <!-- <input type="email" class="form-control" id="date" placeholder="date"tyle="background-color: white;">
+                                    <input type="email" class="form-control" id="time" style="background-color: white;"> -->
                                     
-                                </ul>
-                                
-                                
-                                <div class="cpy-right align-self-center">
-                                    <h2 class="agile_btxt">
-                                        <a href="index.html" style="color: white;">
-                                            <span>F</span>reedom
-                                            <span>f</span>or
-                                            <span>F</span>ashion</a>
-                                        </h2>
-                                        <p style="float:right;">© 2019 Freedom for Fashion. All rights reserved 
-                                        </p>
+                                    <input id="btn_feedback" class="btn btn-block btn-primary" type="button" value="Submit">
+                                </form>
+                            </div>
+                            <!--  //contact form grid ends here -->
+                        </div>
+                        <!-- contact details -->
+                        <div class="col-lg-6 img-feed contact-bottom pl-5 mt-lg-0 mt-5">
+                            <!-- contact details grid1-->
+                            <!-- <div class="address">
+                                <h5 class="pb-3 text-capitalize">Address</h5>
+                                <address>
+                                    <p class="c-txt">90 Street, City, State 34789.</p>
+                                    <p class="c-txt">76 Street, City, State 34789.</p>
+                                </address>
+                            </div> -->
+                            <!-- contact details grid2-->
+                            <!-- <div class="address my-5">
+                                <h5 class="pb-3 text-capitalize">phone</h5>
+                                <p>
+                                    +10 234 5678</p>
+                                    <p>
+                                        +11 222 333</p>
+                                        <p>
+                                            +12 222 333</p>
+                                        </div> -->
+                                        <!-- contact details grid3 -->
+                                        <!-- <div class="address mt-md-0 mt-3">
+                                            <h5 class="pb-3 text-capitalize">Email</h5>
+                                            <p>
+                                                <a href="mailto:info@example.com">mail@communal.com</a>
+                                            </p>
+                                            <p>
+                                                <a href="mailto:info@example.com">mail@communalinfo.com</a>
+                                            </p>
+                                        </div> -->
+                                        <!-- //contact details row ends here -->
+                                        <img class="" src="images/feedback.png" style="width:110%; height: 400px;" alt="">
+                                    </div>
+                                </div>
+                                <!-- //contact details container -->
+                            </div>
+                            <!-- contact map grid -->
+                            <!-- <div class="map contact-right pb-5">
+                                <div class="pt-lg-5 bg-pricemain text-center">
+                                    <h3 class="stat-title text-capitalize pb-5">get directions</h3>
+                                    <span class="w3-line"></span>
+                                </div>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.719109700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1441710758555"
+                                allowfullscreen></iframe>
+                            </div> -->
+                            <!--//contact map grid ends here-->
+                        </section>
+                        <!-- contact -->
+                        <footer>   
+                            <!-- //footer-top -->
+                            <div class="footer-bottomv2 py-5" style="background-color: black;">
+                                <div class="container">
+                                    <ul class="bottom-links-agile">
+                                        <li>
+                                            <a href="index.html" style="color: white;">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="#myModal_btn" data-toggle="modal" data-target="#myModal_btn" style="color: white;">Deals</a>
+                                        </li>
+                                        <li>
+                                            <a href="#myacc" data-toggle="modal" data-target="#myacc" style="color: white;">Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="Feedback.html" style="color: white;">Feedback</a>
+                                        </li>
+                                        
+                                    </ul>
+                                    
+                                    
+                                    <div class="cpy-right align-self-center">
+                                        <h2 class="agile_btxt">
+                                            <a href="index.html" style="color: white;">
+                                                <span>F</span>reedom
+                                                <span>f</span>or
+                                                <span>F</span>ashion</a>
+                                            </h2>
+                                            <p style="float:right;">© 2019 Freedom for Fashion. All rights reserved 
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </footer>
-                    <!-- //footer -->
-                    <!-- //footer -->
-                    
-                    
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal_btn" role="dialog" aria-labelledby="myModal_btn" aria-hidden="true">
-                        <div class="agilemodal-dialog modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Deals of the Day</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body pt-3 pb-5 px-sm-5">
-                                    <div class="row">
-                                        <div id="clothing-nav-content" class="tab-content py-sm-5">
-                                            <div role="tabpanel" class="tab-pane fade show active" id="women" aria-labelledby="women-tab">
-                                                <div id="owl-demo" class="owl-carousel bhargav text-center">
-                                                    
+                        </footer>
+                        <!-- //footer -->
+                        <!-- //footer -->
+                        
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal_btn" role="dialog" aria-labelledby="myModal_btn" aria-hidden="true">
+                            <div class="agilemodal-dialog modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Deals of the Day</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body pt-3 pb-5 px-sm-5">
+                                        <div class="row">
+                                            <div id="clothing-nav-content" class="tab-content py-sm-5">
+                                                <div role="tabpanel" class="tab-pane fade show active" id="women" aria-labelledby="women-tab">
+                                                    <div id="owl-demo" class="owl-carousel bhargav text-center">
+                                                        
+                                                    </div>
                                                 </div>
+                                                <!-- <div role="tabpanel" class="tab-pane fade" id="men" aria-labelledby="men-tab">
+                                                    <div id="owl-demo1" class="owl-carousel text-center">
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane fade" id="girl" aria-labelledby="girl-tab">
+                                                    <div id="owl-demo2" class="owl-carousel text-center">
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+                                                <div role="tabpanel" class="tab-pane fade" id="boy" aria-labelledby="boy-tab">
+                                                    <div id="owl-demo3" class="owl-carousel text-center">
+                                                        
+                                                    </div>
+                                                </div> -->
+                                                
                                             </div>
-                                            <!-- <div role="tabpanel" class="tab-pane fade" id="men" aria-labelledby="men-tab">
-                                                <div id="owl-demo1" class="owl-carousel text-center">
-                                                    
-                                                </div>
-                                            </div>
-                                            <div role="tabpanel" class="tab-pane fade" id="girl" aria-labelledby="girl-tab">
-                                                <div id="owl-demo2" class="owl-carousel text-center">
-                                                    
-                                                </div>
-                                            </div>
-                                            
-                                            <div role="tabpanel" class="tab-pane fade" id="boy" aria-labelledby="boy-tab">
-                                                <div id="owl-demo3" class="owl-carousel text-center">
-                                                    
-                                                </div>
-                                            </div> -->
-                                            
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- //modal -->
-                    
-                    
-                    <!-- My account -->
-                    <div class="modal fade" id="myacc" role="dialog" aria-labelledby="myacc" aria-hidden="true">
-                        <div class="agilemodal-dialog modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">My Account</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body pt-3 pb-5 px-sm-5">
-                                    <div class="row">
-                                        <div class="col-md-4 mx-auto align-self-center">
-                                            <img src="images/cartoon.jpg" class="img-fluid" alt="login_image" />
-                                        </div>
-                                        <div class="col-md-8">
-                                            
-                                            <div class="right-w3l">
-                                                <p> Email: </p>
-                                                <h4><a id="user_email"></a></h4>
-                                                <p> Phone Number: </p>
-                                                <h4><a id="phone_no_text"></a></h4>
-                                                <p> Member Since: </p>
-                                                <h4><a id="date"></a></h4>
+                        <!-- //modal -->
+                        
+                        
+                        <!-- My account -->
+                        <div class="modal fade" id="myacc" role="dialog" aria-labelledby="myacc" aria-hidden="true">
+                            <div class="agilemodal-dialog modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">My Account</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body pt-3 pb-5 px-sm-5">
+                                        <div class="row">
+                                            <div class="col-md-4 mx-auto align-self-center">
+                                                <img src="images/cartoon.jpg" class="img-fluid" alt="login_image" />
                                             </div>
-                                            <br>
-                                            <div class="right-w3l">
-                                                <!-- <input type="submit" class="form-control" value="Update Details"> -->
-                                                <a href="user-details.html" class="btn-norm form-control btn btn-primary">Update Details</a>
+                                            <div class="col-md-8">
+                                                
+                                                <div class="right-w3l">
+                                                    <p> Email: </p>
+                                                    <h4><a id="user_email"></a></h4>
+                                                    <p> Phone Number: </p>
+                                                    <h4><a id="phone_no_text"></a></h4>
+                                                    <p> Member Since: </p>
+                                                    <h4><a id="date"></a></h4>
+                                                </div>
+                                                <br>
+                                                <div class="right-w3l">
+                                                    <!-- <input type="submit" class="form-control" value="Update Details"> -->
+                                                    <a href="user-details.html" class="btn-norm form-control btn btn-primary">Update Details</a>
+                                                </div>
+                                                <br>                        
+                                                <div class="right-w3l">
+                                                    <!-- <input type="submit" class="form-control" value="Order History"> -->
+                                                    <a href="order-history.html" class="btn-norm form-control btn btn-primary">Order History</a>
+                                                </div>
+                                                <br>
+                                                <div class="right-w3l">
+                                                    <button class="btn btn-danger form-control log-out" id="logout_btn" onclick="logout_user()">LOGOUT</button>
+                                                </div>
+                                                
                                             </div>
-                                            <br>                        
-                                            <div class="right-w3l">
-                                                <!-- <input type="submit" class="form-control" value="Order History"> -->
-                                                <a href="order-history.html" class="btn-norm form-control btn btn-primary">Order History</a>
-                                            </div>
-                                            <br>
-                                            <div class="right-w3l">
-                                                <button class="btn btn-danger form-control log-out" id="logout_btn" onclick="logout_user()">LOGOUT</button>
-                                            </div>
-                                            
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- //my account -->
-                    <!-- js -->
-                    <script src="js/jquery-2.2.3.min.js"></script>
-                    <!-- //js -->
-                    <!-- smooth dropdown -->
-                    <script>
-                        $(document).ready(function () {
-                            $('ul li.dropdown').hover(function () {
-                                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
-                            }, function () {
-                                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
-                            });
-                        });
-                    </script>
-                    <!-- //smooth dropdown -->
-                    <!-- script for password match -->
-                    <script>
-                        window.onload = function () {
-                            document.getElementById("password1").onchange = validatePassword;
-                            document.getElementById("password2").onchange = validatePassword;
-                        }
-                        
-                        function validatePassword() {
-                            var pass2 = document.getElementById("password2").value;
-                            var pass1 = document.getElementById("password1").value;
-                            if (pass1 != pass2)
-                            document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-                            else
-                            document.getElementById("password2").setCustomValidity('');
-                            //empty string means no validation error
-                        }
-                    </script>
-                    <!-- script for password match -->
-                    <!-- cart-js -->
-                    <script src="js/minicart.js"></script>
-                    <script>
-                        hub.render();
-                        
-                        hub.cart.on('new_checkout', function (evt) {
-                            var items, len, i;
-                            
-                            if (this.subtotal() > 0) {
-                                items = this.items();
-                                
-                                for (i = 0, len = items.length; i < len; i++) {}
-                            }
-                        });
-                    </script>
-                    
-                    <script>
-                        window.onscroll = function() {myFunction()};
-                        
-                        var header = document.getElementById("myHeader");
-                        var sticky = header.offsetTop;
-                        
-                        function myFunction() {
-                            if (window.pageYOffset > sticky) {
-                                header.classList.add("sticky");
-                            } else {
-                                header.classList.remove("sticky");
-                            }
-                        }
-                    </script>
-                    <!-- //cart-js -->
-                    <!-- start-smooth-scrolling -->
-                    <script src="js/move-top.js"></script>
-                    <script src="js/easing.js"></script>
-                    <script>
-                        jQuery(document).ready(function ($) {
-                            $(".scroll").click(function (event) {
-                                event.preventDefault();
-                                
-                                $('html,body').animate({
-                                    scrollTop: $(this.hash).offset().top
-                                }, 1000);
-                            });
-                        });
-                    </script>
-                    <!-- //end-smooth-scrolling -->
-                    <!-- smooth-scrolling-of-move-up -->
-                    <script>
-                        $(document).ready(function () {
-                            /*
-                            var defaults = {
-                                containerID: 'toTop', // fading element id
-                                containerHoverID: 'toTopHover', // fading element hover id
-                                scrollSpeed: 1200,
-                                easingType: 'linear' 
-                            };
-                            */
-                            
-                            $().UItoTop({
-                                easingType: 'easeOutQuart'
-                            });
-                            
-                        });
-                    </script>
-                    <script src="js/SmoothScroll.min.js"></script>
-                    
-                    <script>
-                        
-                    </script>
-                    <!-- //smooth-scrolling-of-move-up -->
-                    <!-- Bootstrap core JavaScript
-                        ================================================== -->
-                        <!-- Placed at the end of the document so the pages load faster -->
-                        <script src="js/bootstrap.js"></script>
-                        
-                        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
-                        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
-                        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
-                        <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
-                        <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
-                        
-                        <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+                        <!-- //my account -->
+                        <!-- js -->
+                        <script src="js/jquery-2.2.3.min.js"></script>
+                        <!-- //js -->
+                        <!-- smooth dropdown -->
                         <script>
-                            // Initialize Firebase
-                            var config = {
-                                apiKey: "AIzaSyBCXYBy-ry760TM9x-CEsLzIgoZJ3ucv4g",
-                                authDomain: "trial-c2b17.firebaseapp.com",
-                                databaseURL: "https://trial-c2b17.firebaseio.com",
-                                projectId: "trial-c2b17",
-                                storageBucket: "trial-c2b17.appspot.com",
-                                messagingSenderId: "181878503934"
-                            };
-                            firebase.initializeApp(config);
+                            $(document).ready(function () {
+                                $('ul li.dropdown').hover(function () {
+                                    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
+                                }, function () {
+                                    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
+                                });
+                            });
                         </script>
-                        <!-- <script type="text/javascript" src="js_files/login.js"></script> -->
-                        <script type="text/javascript" src="js_files/feedback.js"></script>
-                        <script type="text/javascript" src="js_files/dod.js"></script>
-                        <!-- <script type="text/javascript" src="AdminLTE-2.4.5/js_files/Feedback.js"></script> -->
-                    </body>
-                    
-                    </html>
+                        <!-- //smooth dropdown -->
+                        <!-- script for password match -->
+                        <script>
+                            window.onload = function () {
+                                document.getElementById("password1").onchange = validatePassword;
+                                document.getElementById("password2").onchange = validatePassword;
+                            }
+                            
+                            function validatePassword() {
+                                var pass2 = document.getElementById("password2").value;
+                                var pass1 = document.getElementById("password1").value;
+                                if (pass1 != pass2)
+                                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+                                else
+                                document.getElementById("password2").setCustomValidity('');
+                                //empty string means no validation error
+                            }
+                        </script>
+                        <!-- script for password match -->
+                        <!-- cart-js -->
+                        <script src="js/minicart.js"></script>
+                        <script>
+                            hub.render();
+                            
+                            hub.cart.on('new_checkout', function (evt) {
+                                var items, len, i;
+                                
+                                if (this.subtotal() > 0) {
+                                    items = this.items();
+                                    
+                                    for (i = 0, len = items.length; i < len; i++) {}
+                                }
+                            });
+                        </script>
+                        
+                        <script>
+                            window.onscroll = function() {myFunction()};
+                            
+                            var header = document.getElementById("myHeader");
+                            var sticky = header.offsetTop;
+                            
+                            function myFunction() {
+                                if (window.pageYOffset > sticky) {
+                                    header.classList.add("sticky");
+                                } else {
+                                    header.classList.remove("sticky");
+                                }
+                            }
+                        </script>
+                        <!-- //cart-js -->
+                        <!-- start-smooth-scrolling -->
+                        <script src="js/move-top.js"></script>
+                        <script src="js/easing.js"></script>
+                        <script>
+                            jQuery(document).ready(function ($) {
+                                $(".scroll").click(function (event) {
+                                    event.preventDefault();
+                                    
+                                    $('html,body').animate({
+                                        scrollTop: $(this.hash).offset().top
+                                    }, 1000);
+                                });
+                            });
+                        </script>
+                        <!-- //end-smooth-scrolling -->
+                        <!-- smooth-scrolling-of-move-up -->
+                        <script>
+                            $(document).ready(function () {
+                                /*
+                                var defaults = {
+                                    containerID: 'toTop', // fading element id
+                                    containerHoverID: 'toTopHover', // fading element hover id
+                                    scrollSpeed: 1200,
+                                    easingType: 'linear' 
+                                };
+                                */
+                                
+                                $().UItoTop({
+                                    easingType: 'easeOutQuart'
+                                });
+                                
+                            });
+                        </script>
+                        <!-- <script src="js/SmoothScroll.min.js"></script> -->
+                        
+                        <script>
+                            
+                        </script>
+                        <!-- //smooth-scrolling-of-move-up -->
+                        <!-- Bootstrap core JavaScript
+                            ================================================== -->
+                            <!-- Placed at the end of the document so the pages load faster -->
+                            <script src="js/bootstrap.js"></script>
+                            
+                            <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+                            <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+                            <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+                            <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+                            <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+                            
+                            <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+                            <script>
+                                // Initialize Firebase
+                                var config = {
+                                    apiKey: "AIzaSyBCXYBy-ry760TM9x-CEsLzIgoZJ3ucv4g",
+                                    authDomain: "trial-c2b17.firebaseapp.com",
+                                    databaseURL: "https://trial-c2b17.firebaseio.com",
+                                    projectId: "trial-c2b17",
+                                    storageBucket: "trial-c2b17.appspot.com",
+                                    messagingSenderId: "181878503934"
+                                };
+                                firebase.initializeApp(config);
+                            </script>
+                            <!-- <script type="text/javascript" src="js_files/login.js"></script> -->
+                            <script type="text/javascript" src="js_files/feedback.js"></script>
+                            <script type="text/javascript" src="js_files/dod.js"></script>
+                            <!-- <script type="text/javascript" src="AdminLTE-2.4.5/js_files/Feedback.js"></script> -->
+                        </body>
+                        
+                        </html>

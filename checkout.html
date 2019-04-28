@@ -181,6 +181,7 @@
         <!-- //header container --> 
     </header>
     <!-- bottom nav -->
+    <!-- bottom nav -->
     <nav class="navbar med-fix navbar-expand-lg navbar-light justify-content-center" id="med-fix">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -199,12 +200,12 @@
                     <div class="px-0 container">
                         <div class="row">
                             <div class="col-md-12">
-                                <a class="dropdown-item" href="men.html?item=sherwani">Blazer</a>
-                                <a class="dropdown-item" href="#">Kurta Pyjama</a>
-                                <a class="dropdown-item" href="#">Nehru Jacket</a>
-                                <a class="dropdown-item" href="#">Sherwani</a>
-                                <a class="dropdown-item" href="#">Suit</a>
-                                <a class="dropdown-item" href="#">Accessories</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=sherwani">Sherwani</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=kurta">Kurta Pyjama</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=Nehru_Jacket">Nehru Jacket</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=Blazer">Blazer</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=Suit">Suit</a>
+                                <a class="dropdown-item" href="men-single.html?category=men&&sub=acc">Accessories</a>
                             </div>
                             <!-- <div class="col-md-4">
                                 <a class="dropdown-item" href="#">T-Shirts</a>
@@ -232,12 +233,12 @@
                     <div class="px-0 container">
                         <div class="row">
                             <div class="col-md-12">
-                                <a class="dropdown-item" href="#">Anarkali</a>
-                                <a class="dropdown-item" href="#">Lehengas</a>
-                                <a class="dropdown-item" href="#">Gowns</a>
-                                <a class="dropdown-item" href="#">Sarees</a>
-                                <a class="dropdown-item" href="#">Dhoti Sets</a>
-                                <a class="dropdown-item" href="#">Accessories</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=anarkali">Anarkali</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=lehengas">Lehengas</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=gowns">Gowns</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=sarees">Sarees</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=top-skirts">Top Skirts</a>
+                                <a class="dropdown-item" href="women-single.html?category=women&&sub=women-acc">Accessories</a>
                             </div>
                             <!-- <div class="col-md-4">
                                 <a class="dropdown-item" href="#">T-shirts</a>
@@ -264,8 +265,8 @@
                         <div class="row w3_kids">
                             <div class="col-md-12">
                                 <!-- <span class="bg-light"></span> -->
-                                <a class="dropdown-item" href="#">Boy</a>
-                                <a class="dropdown-item" href="#">Girl</a>
+                                <a class="dropdown-item" href="kids.html?category=kids&&sub=boy">Boy</a>
+                                <a class="dropdown-item" href="kids.html?category=kids&&sub=girl">Girl</a>
                             </div>
                         </div>
                     </div>
@@ -278,7 +279,7 @@
                 <a class="nav-link" href="blog.html">Blog</a>
             </li> -->
             <li class="nav-item">
-                <a class="nav-link" href="feedback.html">Feedback</a>
+                <a class="nav-link active" href="feedback.html">Feedback</a>
             </li>
         </ul>
     </div>
@@ -334,7 +335,6 @@
                                 <th>Product</th>
                                 <th>Quantity</th>
                                 <th>Product Name</th>
-                                
                                 <th>Price</th>
                                 <th>Remove</th>
                             </tr>
@@ -346,9 +346,7 @@
                     </table>
                     <form>
                         <br>
-                        <input type="button" class=" btn btn-primary submit check_out" value="Check Total" id="total">
-                        <br>
-                        <input class="billing-address-name form-control" style="background-color: white; width:30% !important;" id="total_text" type="text">
+                        <input type="button" class=" btn btn-primary submit check_out" value="Add more Items" id="more-item">
                     </form>
                 </div>
                 <div class="row checkout-left mt-5">
@@ -415,18 +413,33 @@
                                         </div>
                                         <div class="card_number_grid_right">
                                             <div class="controls">
-                                                <label class="control-label">From: </label>
+                                                <label class="control-label">Delivery Date: </label>
                                                 <input class="form-control" type="date" id="from_date" required>
                                                 <!-- <h5><a style="color:black;" id="user_email_text"></a></h5> -->
                                             </div>
                                         </div>
                                         <div class="card_number_grid_right">
                                             <div class="controls">
-                                                <label class="control-label">To: </label>
+                                                <label class="control-label">Delivery Time: </label>
+                                                <input class="form-control" type="time" id="from_time" required>
+                                                <!-- <h5><a style="color:black;" id="user_email_text"></a></h5> -->
+                                            </div>
+                                        </div>
+                                        <div class="card_number_grid_right">
+                                            <div class="controls">
+                                                <label class="control-label">Return Date: </label>
                                                 <input class="form-control" type="date" id="to_date" required>
                                                 <!-- <h5><a style="color:black;" id="user_email_text"></a></h5> -->
                                             </div>
                                         </div>
+                                        <div class="card_number_grid_right">
+                                            <div class="controls">
+                                                <label class="control-label">Return Time: </label>
+                                                <input class="form-control" type="time" id="to_time" required>
+                                                <!-- <h5><a style="color:black;" id="user_email_text"></a></h5> -->
+                                            </div>
+                                        </div>
+                                        
                                         <div class="card_number_grid_right">
                                             <div class="controls">
                                                 <input class="form-control" type="text" id="result" hidden>
@@ -775,7 +788,7 @@
             
         });
     </script>
-    <script src="js/SmoothScroll.min.js"></script>
+    <!-- <script src="js/SmoothScroll.min.js"></script> -->
     <!-- //smooth-scrolling-of-move-up -->
     <!-- Bootstrap core JavaScript
         ================================================== -->
