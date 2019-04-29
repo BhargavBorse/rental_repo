@@ -3,24 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-
-  <script>
-      if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-              navigator.serviceWorker.register('sw.js')
-              .then(registration => {
-                  console.log('Service Worker is registered', registration);
-              })
-              .catch(err => {
-                  console.error('Registration failed:', err);
-              });
-          });
-      }
-  </script>
-  <link rel="manifest" href="manifest.json">
-
-  
   <style>h2 {
     text-align: center;
   }
@@ -33,6 +15,7 @@
     table caption {
       border-bottom: 1px solid #ddd;
     }
+    
   }
   
   .p {
