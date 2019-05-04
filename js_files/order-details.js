@@ -41,25 +41,43 @@ firebase.auth().onAuthStateChanged(function(user) {
                 var order_details = order_details_snapshot.val();
                 var order_keys = Object.keys(order_details);
                 
-                for(var i=0;i<order_keys.length;i++)
-                {
-                    eventRef.child(user.uid).child('Order').child(order_keys[i]).on('value',function(order_snapshot){
-                        var order = order_snapshot.val();
-                        var len = order.purchase_date;
-                        alert(order_keys[i]);
-                        // alert(len.length);
-                        document.getElementById('btn_date').onclick = function(){
+                
+                
+                // alert(order.purchase_date);
+                // alert(bb);
+                document.getElementById('btn_date').onclick = function(){
+                    for(var i=0;i<order_keys.length;i++)
+                    {
+                        eventRef.child(user.uid).child('Order').child(order_keys[i]).on('value',function(order_snapshot){
+                            var order = order_snapshot.val();
+
+                            // alert(order.purchase_date);
                             var value_date = document.getElementById('remove_duplicate').value;
-                            alert(value_date);
-                                
-                            if(value_date == '28/4/2019'){
+                            // alert(value_date);
+                            // // alert(len);
+                            if(value_date == order.purchase_date){
                                 alert('in');
                             }
-                        }
-                    });
+                        });
+                    };
                 }
             });
             
+            
+            // firebase.database().ref().child('users').child(user.uid).child('Order').on('child_added',function(feedback_snapshot){
+            
+            //     var purchase_date = feedback_snapshot.child('purchase_date').val();
+            
+            //     document.getElementById('btn_date').onclick = function(){
+            //         var value_date = document.getElementById('remove_duplicate').value;
+            //         alert(value_date);
+            //         // alert(len);
+            //         if(value_date == purchase_date){
+            //             alert('in');
+            //         }
+            //     }
+            
+            // });
             
             
             

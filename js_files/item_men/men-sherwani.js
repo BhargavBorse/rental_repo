@@ -80,7 +80,7 @@ if(category == 'men')
                         
                         //A Link under div-class=inner-men-cart-pro
                         var a1 = document.createElement('a');
-                        a1.setAttribute('href','#');
+                        a1.setAttribute('href','all_single.html?category=men&&recommended=true&&id=' + men_keys[i]);
                         a1.className="link-product-add-cart";
                         var a1_text = document.createTextNode('Quick View');
                         a1.appendChild(a1_text);
@@ -244,7 +244,7 @@ if(category == 'men')
                         
                         //A Link under div-class=inner-men-cart-pro
                         var a1 = document.createElement('a');
-                        a1.setAttribute('href','#');
+                        a1.setAttribute('href','all_single.html?category=men&&recommended=true&&id=' + men_keys[i]);
                         a1.className="link-product-add-cart";
                         var a1_text = document.createTextNode('Quick View');
                         a1.appendChild(a1_text);
@@ -407,7 +407,7 @@ if(category == 'men')
                         
                         //A Link under div-class=inner-men-cart-pro
                         var a1 = document.createElement('a');
-                        a1.setAttribute('href','#');
+                        a1.setAttribute('href','all_single.html?category=men&&recommended=true&&id=' + men_keys[i]);
                         a1.className="link-product-add-cart";
                         var a1_text = document.createTextNode('Quick View');
                         a1.appendChild(a1_text);
@@ -570,7 +570,7 @@ if(category == 'men')
                         
                         //A Link under div-class=inner-men-cart-pro
                         var a1 = document.createElement('a');
-                        a1.setAttribute('href','#');
+                        a1.setAttribute('href','all_single.html?category=men&&recommended=true&&id=' + men_keys[i]);
                         a1.className="link-product-add-cart";
                         var a1_text = document.createTextNode('Quick View');
                         a1.appendChild(a1_text);
@@ -733,7 +733,7 @@ if(category == 'men')
                         
                         //A Link under div-class=inner-men-cart-pro
                         var a1 = document.createElement('a');
-                        a1.setAttribute('href','#');
+                        a1.setAttribute('href','all_single.html?category=men&&recommended=true&&id=' + men_keys[i]);
                         a1.className="link-product-add-cart";
                         var a1_text = document.createTextNode('Quick View');
                         a1.appendChild(a1_text);
@@ -896,7 +896,7 @@ if(category == 'men')
                         
                         //A Link under div-class=inner-men-cart-pro
                         var a1 = document.createElement('a');
-                        a1.setAttribute('href','#');
+                        a1.setAttribute('href','all_single.html?category=men&&recommended=true&&id=' + men_keys[i]);
                         a1.className="link-product-add-cart";
                         var a1_text = document.createTextNode('Quick View');
                         a1.appendChild(a1_text);
@@ -1067,7 +1067,7 @@ else if(category == 'women')
                         
                         //A Link under div-class=inner-men-cart-pro
                         var a1 = document.createElement('a');
-                        a1.setAttribute('href','#');
+                        a1.setAttribute('href','all_single.html?category=women&&recommended=true&&id=' + women_keys[i]);
                         a1.className="link-product-add-cart";
                         var a1_text = document.createTextNode('Quick View');
                         a1.appendChild(a1_text);
@@ -1230,7 +1230,7 @@ else if(category == 'women')
                         
                         //A Link under div-class=inner-men-cart-pro
                         var a1 = document.createElement('a');
-                        a1.setAttribute('href','#');
+                        a1.setAttribute('href','all_single.html?category=women&&recommended=true&&id=' + women_keys[i] );
                         a1.className="link-product-add-cart";
                         var a1_text = document.createTextNode('Quick View');
                         a1.appendChild(a1_text);
@@ -1393,7 +1393,7 @@ else if(category == 'women')
                         
                         //A Link under div-class=inner-men-cart-pro
                         var a1 = document.createElement('a');
-                        a1.setAttribute('href','#');
+                        a1.setAttribute('href','all_single.html?category=women&&recommended=true&&id=' + women_keys[i] );
                         a1.className="link-product-add-cart";
                         var a1_text = document.createTextNode('Quick View');
                         a1.appendChild(a1_text);
@@ -1556,7 +1556,7 @@ else if(category == 'women')
                         
                         //A Link under div-class=inner-men-cart-pro
                         var a1 = document.createElement('a');
-                        a1.setAttribute('href','#');
+                        a1.setAttribute('href','all_single.html?category=women&&recommended=true&&id=' + women_keys[i] );
                         a1.className="link-product-add-cart";
                         var a1_text = document.createTextNode('Quick View');
                         a1.appendChild(a1_text);
@@ -1719,7 +1719,7 @@ else if(category == 'women')
                         
                         //A Link under div-class=inner-men-cart-pro
                         var a1 = document.createElement('a');
-                        a1.setAttribute('href','#');
+                        a1.setAttribute('href','all_single.html?category=women&&recommended=true&&id=' + women_keys[i] );
                         a1.className="link-product-add-cart";
                         var a1_text = document.createTextNode('Quick View');
                         a1.appendChild(a1_text);
@@ -1882,7 +1882,7 @@ else if(category == 'women')
                         
                         //A Link under div-class=inner-men-cart-pro
                         var a1 = document.createElement('a');
-                        a1.setAttribute('href','#');
+                        a1.setAttribute('href','all_single.html?category=women&&recommended=true&&id=' + women_keys[i] );
                         a1.className="link-product-add-cart";
                         var a1_text = document.createTextNode('Quick View');
                         a1.appendChild(a1_text);
@@ -2052,7 +2052,7 @@ else if(category == 'kids')
                         
                         //A Link under div-class=inner-men-cart-pro
                         var a1 = document.createElement('a');
-                        a1.setAttribute('href','#');
+                        a1.setAttribute('href','all_single.html?category=boy&&recommended=true&&id=' + boy_keys[i]);
                         a1.className="link-product-add-cart";
                         var a1_text = document.createTextNode('Quick View');
                         a1.appendChild(a1_text);
@@ -2217,7 +2217,7 @@ else if(category == 'kids')
                         
                         //A Link under div-class=inner-men-cart-pro
                         var a1 = document.createElement('a');
-                        a1.setAttribute('href','#');
+                        a1.setAttribute('href','all_single.html?category=girl&&recommended=true&&id=' + girl_keys[i]);
                         a1.className="link-product-add-cart";
                         var a1_text = document.createTextNode('Quick View');
                         a1.appendChild(a1_text);

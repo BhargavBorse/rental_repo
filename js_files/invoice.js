@@ -184,7 +184,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     return_time : return_time
                 });     
                 
-                firebase.database().ref().child('Admin').child('Order').push({
+                firebase.database().ref().child('Admin').child('Order').child(user.uid).push({
                     item_image : img,
                     item_name : item_name,
                     item_quantity : quantity,

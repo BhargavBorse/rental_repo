@@ -7,12 +7,12 @@ var uid = url.searchParams.get('sherwani');
 
 dbRef.child('item').child('Men').on('value',function(item_details_snapshot){
     var item_details = item_details_snapshot.val();
-    var women_keys = Object.keys(item_details);
+    var men_keys = Object.keys(item_details);
     
-    for(var i=0;i<women_keys.length;i++)
+    for(var i=0;i<men_keys.length;i++)
     {
         // if(uid == 'sherwani'){}
-        itemRef.child('Men').child(women_keys[i]).on('value',function(item_deep_details_snapshot){
+        itemRef.child('Men').child(men_keys[i]).on('value',function(item_deep_details_snapshot){
             var item_deep_details = item_deep_details_snapshot.val();
             
             // if(item_deep_details.item_subcategory == 'Sherwani'){
@@ -53,7 +53,7 @@ dbRef.child('item').child('Men').on('value',function(item_details_snapshot){
                 var img1 = document.createElement('img');
                 img1.className="card-img-top card-img-top-height card-item-img-top";
                 img1.setAttribute('src',item_deep_details.optional_image);
-                // var img122 = document.createTextNode(women_keys[i]);
+                // var img122 = document.createTextNode(men_keys[i]);
                 
                 //Append img-class=card-img-top card-img-top-height to div-class=men-thumb-item
                 div_sub3.appendChild(img1);
@@ -74,7 +74,7 @@ dbRef.child('item').child('Men').on('value',function(item_details_snapshot){
                 
                 //A Link under div-class=inner-men-cart-pro
                 var a1 = document.createElement('a');
-                a1.setAttribute('href','#');
+                a1.setAttribute('href','all_single.html?category=men&&recommended=true&&id=' + men_keys[i]);
                 a1.className="link-product-add-cart";
                 var a1_text = document.createTextNode('Quick View');
                 a1.appendChild(a1_text);
@@ -130,11 +130,11 @@ dbRef.child('item').child('Men').on('value',function(item_details_snapshot){
                 // creating input:hidden for redirecting to another page with image details and cart button
                 var input_image_details = document.createElement('input');
                 input_image_details.setAttribute('type', 'hidden');
-                input_image_details.setAttribute('value',women_keys[i]);
+                input_image_details.setAttribute('value',men_keys[i]);
                 
                 // creating a link 
                 var alink = document.createElement('a');
-                alink.setAttribute('href', 'checkout.html?item=' + women_keys[i] + '&category=women');
+                alink.setAttribute('href', 'checkout.html?item=' + men_keys[i] + '&category=women');
                 
                 //Button under div-class=card-footer d-flex justify-content-end
                 var btn1 = document.createElement('button');

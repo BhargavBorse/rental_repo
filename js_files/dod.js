@@ -91,7 +91,7 @@ dbRef_dod.child('dod').on('value',function(item_details_snapshot){
                 
                 //A Link under div-class=inner-men-cart-pro
                 var a1 = document.createElement('a');
-                a1.setAttribute('href','#');
+                a1.setAttribute('href','all_single.html?category=dod&&dod=true&&id=' + keys_dod[i] );
                 a1.className="link-product-add-cart";
                 var a1_text = document.createTextNode('Quick View');
                 a1.appendChild(a1_text);
