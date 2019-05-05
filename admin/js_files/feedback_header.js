@@ -14,6 +14,8 @@ firebase.auth().onAuthStateChanged(function(user) {
             // document.getElementById('phone_no_text').innerHTML = user_details.phone_number;
             // document.getElementById('name').innerHTML = user_details.name;
             document.getElementById('name').innerHTML = user_details.name + " " + user_details.l_name;
+            document.getElementById('email_field').value = user.email;
+
 
         });
         // end of fetching personal details
@@ -24,7 +26,20 @@ firebase.auth().onAuthStateChanged(function(user) {
         window.location = 'login.html';
     }
 });
-
+function forgot_password(){
+    
+    var auth = firebase.auth();
+    var userEmail = document.getElementById("email_field").value;
+    
+    auth.sendPasswordResetEmail(userEmail).then(function() {
+        // Email sent.
+        window.alert("To reset password please check your email");
+    }).catch(function(error) {
+        // An error happened.
+        window.alert("Error");
+    });
+    
+}
 function logout_user(){
     firebase.auth().signOut().then(function() {
         // Sign-out successful.

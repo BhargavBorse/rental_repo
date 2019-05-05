@@ -292,7 +292,7 @@
                   
                   <section class="content-header">
                     <h2>
-                      <center><b><h2>Update Item</h2></b></center>
+                      <center><b><h2>Inactive Items</h2></b></center>
                       
                     </h2>
                     
@@ -332,21 +332,24 @@
                             <div id="response">
                               
                             </div> -->
+                            <label>Category</label>
+                            <input id="item_category" name="category"  type="text" readonly>
+
                             <label>Subcategory</label>
                             <input id="item_subcategory" name="subcategory"  type="text" readonly>
-
                             <div class="checkbox">
-                              <label>
-                                <input type="checkbox" class='checkbox' name = "dd" id="dod" value="dod">
-                                <b> Deals Of The Day</b>
-                              </label>
-                            </div>
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox" class='checkbox' name = "rc" id="rec" value="rec">
-                                <b>Recommended</b>
-                              </label>
-                            </div>
+                                <label>
+                                  <input type="checkbox" class='checkbox' name = "dd" id="dod" value="dod">
+                                  <b> Deals Of The Day</b>
+                                </label>
+                              </div>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" class='checkbox' name = "rc" id="rec" value="rec">
+                                  <b>Recommended</b>
+                                </label>
+                              </div>
+                            
                             
                             
                           </div>
@@ -387,8 +390,8 @@
                           
                           
                           
-                          <center><input id="btn_insertname" onclick ="btn_insertname()" class="btn btn-block btn-primary" type="button" value="Update Item"></center>
-                          <center><input id="btn_inactive" onclick ="btn_inactive()" class="btn btn-block btn-primary" type="button" value="Inactive Item"></center>
+                          <!-- <center><input id="btn_insertname" onclick ="btn_insertname()" class="btn btn-block btn-primary" type="button" value="Update Item"></center> -->
+                          <center><input id="btn_active" onclick ="btn_active()" class="btn btn-block btn-primary" type="button" value="Active Item"></center>
 
                         </form>
                       </div>
@@ -447,18 +450,18 @@
                           </a>
                           <ul class="treeview-menu">
                             <li><a href="Add.html"><i class="fa fa-circle-o"></i> Add Item</a></li>
-                            <li class="active treeview">
+                            <li class=" active treeview">
                               <a href="#"><i class="fa fa-circle-o"></i> View Item
                                 <span class="pull-right-container">
                                   <i class="fa fa-angle-left pull-right"></i>
                                 </span>
                               </a>
                               <ul class="treeview-menu">
-                                <li class="active"><a href="men.html"><i class="fa fa-circle-o"></i>Men's Fashion</a></li>
+                                <li ><a href="men.html"><i class="fa fa-circle-o"></i>Men's Fashion</a></li>
                                 <li><a href="women.html"><i class="fa fa-circle-o"></i>Women's Fashion</a></li>
                                 <li><a href="boy.html"><i class="fa fa-circle-o"></i>Boy's Fashion</a></li>
                                 <li><a href="girl.html"><i class="fa fa-circle-o"></i>Girl's Fashion</a></li>
-        <li><a href="inactive_item.html"><i class="fa fa-circle-o"></i>Inactive Items</a></li>
+                            <li class="active"><a href="inactive_item.html"><i class="fa fa-circle-o"></i>Inactive Items</a></li>
                                 
                               </ul>
                             </li>
@@ -491,7 +494,6 @@
                             <li><a href="current-status.html"><i class="fa fa-circle-o"></i>Current Status</a></li>
                             <li><a href="History.html"><i class="fa fa-circle-o"></i>Previous History</a></li>
 
-                            
                           </ul>
                         </li>
                         
@@ -607,7 +609,7 @@
                     }
                   </script>
                   <script src="js_files/update.js" type="text/javascript"></script>
-                  <script src="js_files/men.js" type="text/javascript"></script> 
+                  <script src="js_files/item_activate.js" type="text/javascript"></script> 
                   <!-- <script src="js_files/women.js" type="text/javascript"></script>
                   <script src="js_files/boy.js" type="text/javascript"></script>
                   <script src="js_files/girls.js" type="text/javascript"></script> -->

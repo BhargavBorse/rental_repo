@@ -11,6 +11,9 @@ firebase.auth().onAuthStateChanged(function(user) {
     var url = new URL (url_string);
     var id = url.searchParams.get('id');
     var uid = url.searchParams.get('uid');
+    var cat = url.searchParams.get('cat');
+    
+
 
 
 
@@ -25,6 +28,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById('item_quantity').value = update_snapshot_boy.child('item_quantity').val();
     document.getElementById('item_price').value = update_snapshot_boy.child('item_price').val();
     document.getElementById('item_size').value = update_snapshot_boy.child('item_size').val();
+    document.getElementById('image_x').value = update_snapshot_boy.child('optional_image').val();            
+
     
     var img = document.getElementById('loading_gif');
     img.style.visibility = 'hidden';
@@ -146,14 +151,48 @@ document.getElementById('btn_insertname').onclick = function(){
 };
 
 document.getElementById('btn_inactive').onclick = function(){
-    //var push_key = id.val();
-    // firebase.database().ref().child('item').child('Girls').child(id);
-    // alert(ref1.item_status);
-  // alert(id.item_status);
+        
+        
+    databaseRef_boy.child('Boy').child(id).on('value',function(order_snapshot){
+        var order = order_snapshot.val();
 
+        
+        var image_link = order_snapshot.child('optional_image').val();
+
+        
+        //var push_key = id.val();
+        // firebase.database().ref().child('item').child('Girls').child(id);
+        // alert(ref1.item_status);
+        // alert(id.item_status);
+        // alert(item_name);
+        
+        
+    });
+        var item_name = document.getElementById('item_name').value;
+        var item_description = document.getElementById('item_description').value;
+        var item_subcategory = document.getElementById('item_subcategory').value;
+        var item_quantity = document.getElementById('item_quantity').value;
+        var item_price = document.getElementById('item_price').value;
+        var item_size = document.getElementById('item_size').value;
+        var image_link = document.getElementById('image_x').value;
+    
+        databaseRef_boy.child('inactive').push({
+            // item_id : item_id,
+            item_name : item_name,
+            item_description : item_description,
+            item_category : cat,
+            item_subcategory : item_subcategory,
+            item_quantity : item_quantity,
+            item_price :  item_price,
+            item_size : item_size,
+            item_image : image_link
+        });
     firebase.database().ref().child('item').child('Boy').child(id).remove(function(){
         // alert('Removed');
         window.location.href = 'index.html'; 
     });
+    
+    
+    
 }
 });

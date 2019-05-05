@@ -7,7 +7,23 @@ firebase.auth().onAuthStateChanged(function(user) {
     var url = new URL (url_string);
     var id = url.searchParams.get('id');
     var uid = url.searchParams.get('uid');
+
+    var dbRef = firebase.database().ref();
+
+var itemRef = firebase.database().ref('Admin');
+dbRef.child('Admin').child('Order').on('value',function(order_details_snapshot){
+    var order_details = order_details_snapshot.val();
+    var order_keys = Object.keys(order_details);
     
+    for(var i=0;i<order_keys.length;i++)
+    {
+        firebase.database().ref().child('Admin').child('Order').child(id).on('value',function(order_deep_details_snapshot){
+            var order_deep_details = order_deep_details_snapshot.val();
+
+            alert(order_keys[i]);
+        });
+    };
+
     
     databaseRef.child('Admin').child('Order').child(id).on('value',function(more_info_snapshot){
         
@@ -21,7 +37,6 @@ firebase.auth().onAuthStateChanged(function(user) {
         document.getElementById('order_status').value = more_info_snapshot.child('order_status').val();
         document.getElementById('order_type').value = more_info_snapshot.child('order_type').val();
         document.getElementById('quantity').value = more_info_snapshot.child('item_quantity').val();
-        //document.getElementById('deliveryman').value = more_info_snapshot.child('').val();
         document.getElementById('email').value =more_info_snapshot.child('customer_email').val();
         document.getElementById('name').value = more_info_snapshot.child('customer_name').val();
         document.getElementById('mobile_number').value = more_info_snapshot.child('customer_phone_no').val();
@@ -92,4 +107,4 @@ img.style.visibility = 'hidden';
         
     });
 });
-
+});

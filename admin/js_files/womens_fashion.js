@@ -33,7 +33,7 @@ firebase.database().ref().child('item').child('Women').on('child_added',function
     item_update_button.setAttribute('class', "btn btn-block btn-primary ");
     // item_button.setAttribute('class', "fa fa-info");
     // item_button.setAttribute('style', "width: 40%; height: 30px; background-color: silver;");
-    item_update.href = "update_women.html?id="+id+ "&uid="+user_id;
+    item_update.href = "update_women.html?id="+id+ "&uid="+user_id+"&cat=Women";
 //inactive button
  
 

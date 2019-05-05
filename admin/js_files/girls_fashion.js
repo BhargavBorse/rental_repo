@@ -38,7 +38,7 @@ firebase.database().ref().child('item').child('Girls').on('child_added',function
     item_update_button.setAttribute('class', "btn btn-block btn-primary ");
     // item_button.setAttribute('class', "fa fa-info");
     // item_button.setAttribute('style', "width: 40%; height: 30px; background-color: silver;");
-    item_update.href = "update_girl.html?id="+id+ "&uid="+user_id;
+    item_update.href = "update_girl.html?id="+id+ "&uid="+user_id +"&cat=Girls";
     // item_more_info_actual_link.setAttribute('href','order_details.html?id='+id+'&uid='+user_id);
     var img = document.getElementById('loading_gif');
     img.style.visibility = 'hidden';

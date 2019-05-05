@@ -15,14 +15,13 @@ document.getElementById('btn_previous_history').onclick = function()  {
     var address = document.getElementById('address').value;
     var pincode = document.getElementById('pin_code').value;
     var price = document.getElementById('price').value;
-    
-    var delivery_return_date = document.getElementById('return_date').value;
+    var ordered_date = document.getElementById('ordered_date').value;
+    var return_date = document.getElementById('return_date').value;
     var order_status = document.getElementById('order_status').value;
     var order_type = document.getElementById('order_type').value;
     var quantity = document.getElementById('quantity').value;
     var deliveryman_email = document.getElementById('deliveryman').value;
     var deliveryman_key;
-    // var delivery = document.getElementById('delivery').value;
     var pickup = document.getElementById('pickup').value;
 
     eventRef.child('Delivery_Man_Details').on('value',async function(deliveryManInfoSnapshot){
@@ -51,23 +50,22 @@ document.getElementById('btn_previous_history').onclick = function()  {
     
     // alert(man_name);
 
-    databaseRef.child('Admin').child('Previous_History').push({
+    await databaseRef.child('Admin').child('Previous_History').child(deliveryman_key).set({
         
-        email : email,
-        item_name : item_name,
-        name : name,
-        mobile_number : mobile_number, 
-        address : address,
-        pincode : pincode,
-        price : price,
-       
-        delivery_return_date : delivery_return_date,
-        order_status : order_status,
-        order_type : order_type,
-        quantity : quantity,
-        deliveryman : deliveryman_email
-        
-    });
+            customer_email : email,
+            item_name : item_name,
+            customer_name : name,
+            customer_phone_no : mobile_number, 
+            customer_address : address,
+            customer_pincode : pincode,
+            item_price : price,
+            return_date : return_date,
+            order_status : order_status,
+            order_type : order_type,
+            item_quantity : quantity,
+            deliveryman : deliveryman_email
+            
+        });
     alert('order sent successfully');
     
     
@@ -86,18 +84,18 @@ document.getElementById('btn_previous_history').onclick = function()  {
 // alert('sds');
                 firebase.database().ref().child('Delivery_Man_Details').child(deliveryman_key).child('Order').push({
         
-                    email : email,
+                    customer_email : email,
                     item_name : item_name,
-                    name : name,
-                    mobile_number : mobile_number, 
-                    address : address,
-                    pincode : pincode,
-                    price : price,
-                   
-                    delivery_return_date : delivery_return_date,
+                    customer_name : name,
+                    customer_phone_no : mobile_number, 
+                    customer_address : address,
+                    customer_pincode : pincode,
+                    item_price : price,
+                    delivery_date : ordered_date,
+                    return_date : return_date,
                     order_status : order_status,
                     order_type : order_type,
-                    quantity : quantity,
+                    item_quantity : quantity,
                     deliveryman : deliveryman_email,
                     work_order : pickup
                     

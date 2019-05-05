@@ -137,9 +137,9 @@
         }
       }
 
-      div {
+      /* div {
     display: inline-block; 
-  }
+  } */
     </style>
 
     
@@ -195,62 +195,71 @@
       <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
           
-          <header class="main-header">
-            <!-- Logo -->
-              <a href="#" class="logo" data-toggle="control-sidebar" role="button">
-                <span class="logo-lg fa fa-tasks" style="margin-top:6.3%;"></span>
-                <!-- <span class="logo-lg sidebar-toggle">F4F</span> -->
-                <!-- <a href="index.html" style="float:right; font-size: 15pt; padding: 5%;"> Home</a> -->
-              </a>
-            <!-- <a href="index.html" class="logo"> -->
-              <!-- mini logo for sidebar mini 50x50 pixels -->
-              
-              <!-- logo for regular state and mobile devices -->
-              
-              <!-- <span class="logo-lg"><b>F4F</b></span>
-            </a> -->
-            <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top">
-              <!-- Sidebar toggle button-->
-              <!-- <a href="#" class="sidebar-toggle" data-toggle="control-sidebar" role="button">
-                <span class=""></span>
-              </a> -->
-              <button class="btn btn-default"><a href="index.html" class="fa fa-arrow-left"></button></a>
-              <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
+            <header class="main-header">
+                <!-- Logo -->
+                  <a href="#" class="logo" data-toggle="control-sidebar" role="button">
+                    <span class="logo-lg fa fa-tasks" style="margin-top:8%;"></span>
+                    <!-- <span class="logo-lg sidebar-toggle">F4F</span> -->
+                    <!-- <a href="index.html" style="float:right; font-size: 15pt; padding: 5%;"> Home</a> -->
+                  </a>
+                <!-- <a href="index.html" class="logo"> -->
+                  <!-- mini logo for sidebar mini 50x50 pixels -->
                   
-                  <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
+                  <!-- logo for regular state and mobile devices -->
+                  
+                  <!-- <span class="logo-lg"><b>F4F</b></span>
+                </a> -->
+                <!-- Header Navbar: style can be found in header.less -->
+        
+                <nav class="navbar navbar-static-top">
+                  <!-- Sidebar toggle button-->
+                  <!-- <a href="#" class="sidebar-toggle" data-toggle="control-sidebar" role="button">
+                    <span class=""></span>
+                  </a> -->
+                  
+                  <div class="navbar-custom-menu">
                     
-                          <i id="user_email"></i>
+                    <ul class="nav navbar-nav">
+                      
+                      <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                          <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
+                          Welcome, 
+                              <i id="user_email"></i>
+                              
                           
-                      
-                    </a>
-                    <ul class="dropdown-menu">
-                      <!-- User image -->
-                      
-                        
-                        
-                      
-                      <li class="user-footer">
-                        
-                        <div class="pull-right">
-                          <!-- <a onclick="logout()" class="btn btn-default btn-flat">Sign out</a> -->
-                          <!-- <button onclick="logout()" class="btn btn-default btn-flat"> Sign Out</button> -->
-                          <button onclick="logout_user()" class="btn btn-default btn-flat"> Sign Out </button>
-                        </div>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <!-- User image -->
+                          
+                            
+                            
+                          
+                          <li class="user-footer">
+                            
+                            <div class="pull-right">
+                              <!-- <a onclick="logout()" class="btn btn-default btn-flat">Sign out</a> -->
+                              <!-- <button onclick="logout()" class="btn btn-default btn-flat"> Sign Out</button> -->
+                              <button data-toggle="modal" data-target="#basicModal" class="btn btn-default btn-flat">
+                                <i class="mdi mdi-key text-primary"></i>
+                                Change Password
+                              </button>
+                              <!-- <button > Change Password </button> -->
+                              <button onclick="logout_user()" class="btn btn-default btn-flat"> Sign Out </button>
+                            </div>
+                          </li>
+                        </ul>
                       </li>
+                      <!-- Control Sidebar Toggle Button -->
+                      <!-- <li>
+                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-tasks"></i></a>
+                      </li> -->
                     </ul>
-                  </li>
-                  <!-- Control Sidebar Toggle Button -->
-                  <!-- <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-tasks"></i></a>
-                  </li> -->
-                </ul>
-              </div>
-            </nav>
-          </header>
+                  </div>
+                  
+                </nav>
+                
+              </header>
                 <!-- Left side column. contains the logo and sidebar -->
                
                 
@@ -277,11 +286,9 @@
                             <!-- <label>Item Id</label>
                             <input id="item_id" name="item_id" placeholder="1001" type="text"  width="100px;"> -->
                             <label>Item Name</label>
-                            <input id="item_name" name="item_name" placeholder="Sherwani" type="text" onkeypress="return (event.charCode > 64 && 
-                            event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
+                            <input id="item_name" name="item_name" placeholder="Sherwani" type="text">
                             <label>Description</label>
-                            <input id="item_description" name="item_description" placeholder="it is ....." type="text" onkeypress="return (event.charCode > 64 && 
-                            event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
+                            <input id="item_description" name="item_description" placeholder="it is ....." type="text">
                             
                             
                             
@@ -302,16 +309,19 @@
                             <select class="countries" id="category">          
                             </select>
                             <div class="option">
-                              <select class="Men">
+                                <select class="select">
+                                </select>
+
+                              <select class="Men" style="margin-top: 15% !important;">
                             
                               </select>
-                              <select class="Women">
+                              <select class="Women"  style="margin-top: 15% !important;">
                             
                               </select>
-                              <select class="Boy">
+                              <select class="Boy" style="margin-top: 15% !important;">
                             
                               </select>
-                              <select class="Girls">
+                              <select class="Girls"  style="margin-top: 15% !important;">
                             
                               </select>
                             </div>
@@ -353,7 +363,7 @@
                             <!-- <input name="item_status" type="text" onkeypress="javascript:return isNumber(event)"><br> -->
                             <!-- <label>Item Image</label>
                             <input type="file" id="item_image_main"> -->
-                            <label>Optional Image</label>
+                            <label>Item Image</label>
                             <input type="file" id="fileButton"><br>
                             
                             
@@ -471,8 +481,11 @@
                             </span>
                           </a>
                           <ul class="treeview-menu">
-                            <li><a href="index.html"><i class="fa fa-circle-o"></i>Current Status</a></li>
+                            <li><a href="current-status.html"><i class="fa fa-circle-o"></i>Current Status</a></li>
                             <li><a href="History.html"><i class="fa fa-circle-o"></i>Previous History</a></li>
+        <li><a href="inactive_item.html"><i class="fa fa-circle-o"></i>Inactive Items</a></li>
+                            
+
                             
                           </ul>
                         </li>
@@ -497,8 +510,32 @@
                     immediately after the control sidebar -->
                     <div class="control-sidebar-bg"></div>
                   </div>
-                  <!-- ./wrapper -->
                   
+                  
+                  <!-- ./wrapper -->
+                  <div class="modal fade" id="basicModal" style="z-index: inherit 5;" role="dialog" aria-labelledby="basicModal">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <!-- <h3>Modal Body</h3> -->
+                            <div class="form-group">
+                              <!-- <label for="exampleInputConfirmPassword1"></label> -->
+                              <input type="text" class="form-control" id="email_field" style="margin-top: 3%;" placeholder="Please enter your Mail-Id" readonly>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit"  class="btn btn-danger" onclick="forgot_password()">Send Link</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   <!-- jQuery 3 -->
                   <script src="bower_components/jquery/dist/jquery.min.js"></script>
                   <!-- jQuery UI 1.11.4 -->
@@ -566,8 +603,7 @@
                       document.getElementById("textFieldValueJS").value = selValue;
                     }
                   </script>
-                  <script src="js_files/add.js" type="text/javascript"></script>
-                  <script src="js_files/Add_item.js" type="text/javascript"></script>
+                  
 
                  
                   <script>
@@ -588,7 +624,7 @@
     
     var CountSelect = $('.countries'),
     
-        myCountries = ['Men', 'Women', 'Boy', 'Girls'],
+        myCountries = ['Select Category', 'Men', 'Women', 'Boy', 'Girls'],
         
         Men = ['Sherwani', 'Suit', 'Blazer', 'Nehru-Jacket', 'Kurta-pyjama', 'Men-Accessories'],
         
@@ -649,6 +685,8 @@
     
 });
               </script>  
+              <script src="js_files/add.js" type="text/javascript"></script>
+              <script src="js_files/Add_item.js" type="text/javascript"></script>
               </body>
                 </html>
                 

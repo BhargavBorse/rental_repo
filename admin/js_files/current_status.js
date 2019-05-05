@@ -2,13 +2,30 @@ var tableRef = document.getElementById('current_status').getElementsByTagName('t
 // var eventRef = firebase.database().ref('admin');
 // var eventRef = firebase.database().ref('users');
 
-firebase.database().ref().child('Admin').child('Order').on('child_added',function(cs_order){
+var dbRef = firebase.database().ref();
+var itemRef = firebase.database().ref('Admin');
+dbRef.child('Admin').child('Order').on('value',function(order_details_snapshot){
+    var order_details = order_details_snapshot.val();
+    var order_keys = Object.keys(order_details);
+    
+    for(var i=0;i<order_keys.length;i++)
+    {
+        firebase.database().ref().child('Admin').child('Order').child(id).on('value',function(order_deep_details_snapshot){
+            var order_deep_details = order_deep_details_snapshot.val();
+
+            alert(order_keys[i]);
+        });
+    };
+
+
+firebase.database().ref().child('Admin').child('Order').child(order_keys[i]).on('child_added',function(cs_order){
   
-  var cs_order_status = cs_order.child('order_status').val();
-  var cs_item_name = cs_order.child('item_name').val();
-  var cs_item_price = cs_order.child('item_price').val();
+  var cs_customer_name = cs_order.child('customer_name').val();
+  var cs_customer_email = cs_order.child('customer_email').val();
+  var cs_customer_address = cs_order.child('customer_address').val();
   var user_id = cs_order.child('Placed_By').val();
   var id = cs_order.key;
+
   
   // var button = document.createElement("button");
   // var button_text = document.createAttribute("bhargav").value;
@@ -18,9 +35,9 @@ firebase.database().ref().child('Admin').child('Order').on('child_added',functio
   var newRow   = tableRef.insertRow(0);
   
   //Cells
-  var order_status_cell = newRow.insertCell(0);
-  var item_name_cell = newRow.insertCell(1);
-  var item_price_cell = newRow.insertCell(2);
+  var customer_name_cell  = newRow.insertCell(0);
+  var customer_email_cell = newRow.insertCell(1);
+  var customer_address_cell  = newRow.insertCell(2);
   var item_more_info_link = newRow.insertCell(3);
   var id_cell = newRow.insertCell(4).hidden;
   
@@ -43,15 +60,15 @@ firebase.database().ref().child('Admin').child('Order').on('child_added',functio
   
   
   //CellValue
-  var order_status_cell_value = document.createTextNode(cs_order_status);
-  var  item_name_cell_value = document.createTextNode(cs_item_name);
-  var item_price_cell_value = document.createTextNode(cs_item_price);
+  var customer_name_cell_value = document.createTextNode(cs_customer_name);
+  var customer_email_cell_value = document.createTextNode(cs_customer_email);
+  var customer_address_cell_value = document.createTextNode(cs_customer_address);
   var id_cell_text = document.createTextNode(id);
   
   //Append Cell value to cell   
-  order_status_cell.appendChild(order_status_cell_value);
-  item_name_cell.appendChild(item_name_cell_value);
-  item_price_cell.appendChild(item_price_cell_value);
+  customer_name_cell .appendChild(customer_name_cell_value);
+  customer_email_cell.appendChild(customer_email_cell_value);
+  customer_address_cell .appendChild(customer_address_cell_value);
   item_more_info_link.appendChild(item_more_info_actual_link);
   id_cell.appendChild(id_cell_text); 
   
@@ -62,5 +79,5 @@ firebase.database().ref().child('Admin').child('Order').on('child_added',functio
   
   
   // });
-  
+}); 
 });

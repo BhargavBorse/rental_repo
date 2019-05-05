@@ -106,7 +106,7 @@ document.getElementById('btn_previous_history').onclick = function()  {
                 });
                 alert('order sent successfully');
                 // location.reload();
-alert(id);
+
 
                 
 

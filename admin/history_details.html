@@ -255,6 +255,10 @@
                                       <li class="user-footer">
                                         
                                         <div class="pull-right">
+                                            <button data-toggle="modal" data-target="#basicModal" class="btn btn-default btn-flat">
+                                                <i class="mdi mdi-key text-primary"></i>
+                                                Change Password
+                                              </button>
                                           <!-- <a onclick="logout()" class="btn btn-default btn-flat">Sign out</a> -->
                                           <!-- <button onclick="logout()" class="btn btn-default btn-flat"> Sign Out</button> -->
                                           <button onclick="logout_user()" class="btn btn-default btn-flat"> Sign Out </button>
@@ -381,6 +385,7 @@
                                           <li><a href="women.html"><i class="fa fa-circle-o"></i>Women's Fashion</a></li>
                                           <li><a href="boy.html"><i class="fa fa-circle-o"></i>Boy's Fashion</a></li>
                                           <li><a href="girl.html"><i class="fa fa-circle-o"></i>Girl's Fashion</a></li>
+        <li><a href="inactive_item.html"><i class="fa fa-circle-o"></i>Inactive Items</a></li>
                                           
                                         </ul>
                                       </li>
@@ -434,6 +439,29 @@
                                 <!-- ./wrapper -->
                                 
                                 <!-- jQuery 3 -->
+                                <div class="modal fade" id="basicModal" style="z-index: inherit 5;" role="dialog" aria-labelledby="basicModal">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <!-- <h3>Modal Body</h3> -->
+                                          <div class="form-group">
+                                            <!-- <label for="exampleInputConfirmPassword1"></label> -->
+                                            <input type="text" class="form-control" id="Email_field" style="margin-top: 3%;" placeholder="Please enter your Mail-Id" readonly>
+                                          </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                          <button type="submit"  class="btn btn-danger" onclick="forgot_password()">Send Link</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                                 <script src="bower_components/jquery/dist/jquery.min.js"></script>
                                 <!-- jQuery UI 1.11.4 -->
                                 <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
