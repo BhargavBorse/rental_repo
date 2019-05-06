@@ -110,13 +110,12 @@ firebase.auth().onAuthStateChanged(function(user) {
             document.getElementById('final_total').innerHTML = total_final;
             
             
-            // document.getElementById('in_item_name').value = item_name;
-            // document.getElementById('in_item_price').value = item_price;
-            // document.getElementById('in_item_quantity').value = item_quantity;
-            // document.getElementById('in_item_days').value = total_days;
-            // document.getElementById('in_item_gst').value = tot_gst;
-            // document.getElementById('in_item_deposit').value = total_deposit;
-            // document.getElementById('in_item_total').value = diff;
+            document.getElementById('in_item_total').value = total_final;            
+            document.getElementById('in_item_gst').value = total_gst;
+            document.getElementById('in_item_deposit').value = total_deposit;  
+            document.getElementById('invoice_id').value = time + order_id;    
+            document.getElementById('purchase_date').value = date;    
+           
         });
         
         
@@ -135,14 +134,20 @@ firebase.auth().onAuthStateChanged(function(user) {
     var order_id =  d +  + m +  + y;
     // alert(order_id + user.uid);
     
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    // alert(time);
     document.getElementById('finish').onclick = function(){
         
         firebase.database().ref().child('users').child(user.uid).child('details').on('value', function(user_snapshot){
             var user_det = user_snapshot.val();
-            
+            // alert(user_det.from_time);
             firebase.database().ref().child('users').child(user.uid).child('cart').on('child_added', function(cart_snapshot){
                 var cart_det = cart_snapshot.val();
-                
+            //     var item_name_db = cart_det.item_name;
+            //     alert(item_name_db);    
+            // document.getElementById('item_name').value = item_name_db;    
+
                 var img = cart_det.optional_image;
                 var item_name = cart_det.item_name;
                 var quantity = cart_det.item_quantity;
@@ -157,9 +162,11 @@ firebase.auth().onAuthStateChanged(function(user) {
                 var days = document.getElementById('days').value;
                 var delivery_time = cart_det.from_time;
                 var return_time = cart_det.to_time;
-                alert(pincode+ " " + delivery_time + " " + return_time);
+                var total_db = total_final;
+                var gst_db = total_gst;
+                var deposit_db = total_deposit;
+                // alert(delivery_time);
                 // alert(date);
-                
                 
                 
                 firebase.database().ref().child('users').child(user.uid).child('Order').push({
@@ -172,6 +179,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                     order_status : "Order Sent",
                     order_type : "Rent",
                     Placed_By : user.uid,
+                    item_total_price : total_db,
+                    item_total_gst : gst_db,
+                    item_total_deposit :deposit_db,
                     customer_name : user_name,
                     customer_address : address,
                     customer_pincode : pincode,
@@ -179,10 +189,12 @@ firebase.auth().onAuthStateChanged(function(user) {
                     customer_phone_no : mobile_number,
                     days : days,
                     purchase_date : date,
-                    order_id : order_id + user.uid,
+                    invoice_id : time + order_id,
                     delivery_time : delivery_time,
                     return_time : return_time
-                });     
+                });  
+                
+                  
                 
                 firebase.database().ref().child('Admin').child('Order').child(user.uid).push({
                     item_image : img,
@@ -194,22 +206,43 @@ firebase.auth().onAuthStateChanged(function(user) {
                     order_status : "New Order",
                     order_type : "Rent",
                     Placed_By : user.uid,
+                    item_total_price : total_db,
+                    item_total_gst : gst_db,
+                    item_total_deposit :deposit_db,
                     customer_name : user_name,
                     customer_address : address,
                     customer_pincode : pincode,
                     customer_email : email,
                     customer_phone_no : mobile_number,
-                    order_id : order_id + user.uid,
+                    invoice_id : time + order_id,
                     delivery_time : delivery_time,
                     return_time : return_time
                 });
-                alert('Order Successfully Placed!');
+                // alert('Order Successfully Placed!');
                 // location.reload();
                 
                 firebase.database().ref().child('users').child(user.uid).child('cart').remove(function(){
                     window.location.href = 'index.html'; 
                 });
+                
             });
+            // alert('1')
+           var item_deposit = document.getElementById('in_item_deposit').value;
+           var item_price_total =  document.getElementById('in_item_total').value;
+           var item_gst = document.getElementById('in_item_gst').value;
+           var invoice_id = document.getElementById('invoice_id').value;
+           var purchase_date = document.getElementById('purchase_date').value;
+        //    alert(item_deposit);
+            firebase.database().ref().child('users').child(user.uid).child('invoice').push({
+                order_status : "Order Sent",
+                order_type : "Rent",
+                item_total_price : item_price_total,
+                invoice_id : invoice_id,
+                purchase_date : purchase_date,
+                item_total_gst : item_gst,
+                item_total_deposit : item_deposit
+            });
+            alert('Order Successfully Placed!');
         });
     }
 });

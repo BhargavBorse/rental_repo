@@ -404,7 +404,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                             item_description : itemDesc,
                             item_name : itemName,
                             item_price : itemPrice,
-                            item_quantity : itemQuan,
+                            item_quantity : "1",
                             item_size : itemSize,
                             item_subcategory : itemSubCate,
                             optional_image : optionalImg,
@@ -449,7 +449,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                             item_description : itemDesc,
                             item_name : itemName,
                             item_price : itemPrice,
-                            item_quantity : itemQuan,
+                            item_quantity : "1",
                             item_size : itemSize,
                             item_subcategory : itemSubCate,
                             optional_image : optionalImg,
@@ -594,7 +594,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                         quantity_span.setAttribute('style','width: 100%;;');
                         quantity_span.setAttribute('readonly','true');
                         
-                        quantity_span.setAttribute('value', user_cart_item_data.item_quantity);
+                        quantity_span.setAttribute('value', '1');
                         quantity_span.setAttribute('id',tableRef.rows.length);
                         quantity_value.appendChild(quantity_span);
                         
@@ -711,7 +711,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                         quantity_span.setAttribute('type','text');
                         quantity_span.setAttribute('readonly','true');
                         quantity_span.setAttribute('style','width: 100%');
-                        quantity_span.setAttribute('value', user_cart_item_data.item_quantity);
+                        quantity_span.setAttribute('value', '1');
                         quantity_span.setAttribute('id',tableRef.rows.length);
                         quantity_value.appendChild(quantity_span);
                         
@@ -825,7 +825,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                         quantity_span.setAttribute('type','text');
                         quantity_span.setAttribute('style','width: 100%;');
                         quantity_span.setAttribute('readonly','true');
-                        quantity_span.setAttribute('value', user_cart_item_data.item_quantity);
+                        quantity_span.setAttribute('value', '1');
                         quantity_span.setAttribute('id',tableRef.rows.length);
                         quantity_value.appendChild(quantity_span);
                         
@@ -940,7 +940,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                         quantity_span.setAttribute('type','text');
                         quantity_span.setAttribute('style','width: 100%;');
                         quantity_span.setAttribute('readonly','true');
-                        quantity_span.setAttribute('value', user_cart_item_data.item_quantity);
+                        quantity_span.setAttribute('value', '1');
                         quantity_span.setAttribute('id',tableRef.rows.length);
                         quantity_value.appendChild(quantity_span);
                         

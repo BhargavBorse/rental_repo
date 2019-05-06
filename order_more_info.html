@@ -69,14 +69,14 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="text-center">
-                            <h2>Invoice</h2>                            
+                            <h2>Order History</h2>                            
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-xs-12 col-md-3 col-lg-3 pull-left">
                                 <div class="panel panel-default height">
                                     <div class="panel-heading">Order Owner
-                                        <button type="button" style="float:right;" class="btn btn-primary fa fa-edit" onclick="back()" id="back">
+                                        <!-- <button type="button" style="float:right;" class="btn btn-primary fa fa-edit" onclick="back()" id="back"> -->
                                         </div>
                                         <div class="panel-body">
                                             <strong id="name"></strong><br><br>
@@ -88,7 +88,7 @@
                                 <div class="col-xs-12 col-md-3 col-lg-3">
                                     <div class="panel panel-default height">
                                         <div class="panel-heading">Shipping Address
-                                            <button type="button" style="float:right;" class="btn btn-primary fa fa-edit" onclick="checkout()" id="checkout">
+                                            <!-- <button type="button" style="float:right;" class="btn btn-primary fa fa-edit" onclick="checkout()" id="checkout"> -->
                                             </div>
                                             <div class="panel-body">
                                                 <strong id="address"></strong><br>
@@ -101,7 +101,7 @@
                                     <div class="col-xs-12 col-md-3 col-lg-3 pull-left">
                                         <div class="panel panel-default height">
                                             <div class="panel-heading">Order Date & Timings
-                                                <button type="button" style="float:right;" class="btn btn-primary fa fa-edit" onclick="back_date()" id="back_date">
+                                                <!-- <button type="button" style="float:right;" class="btn btn-primary fa fa-edit" onclick="back_date()" id="back_date"> -->
                                                 </div>
                                                 <div class="panel-body">
                                                     <strong>Delivery Date: </strong> <strong id="from_date"></strong><br>
@@ -203,16 +203,22 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                                
-                                
-                                <input type="text" id="invoice_id" hidden>
-                                <input type="text" id="in_item_total" hidden>
-                                <input type="text" id="in_item_gst" hidden>
-                                <input type="text" id="in_item_deposit" hidden>
-                                <input type="text" id="purchase_date" hidden>
-                                <!-- <input type="text" id="item_name"> -->
-                                <!-- <br> -->
+                            <!-- 
+                                item name
+                                <input type="text" id="in_item_name" >
+                                item price
+                                <input type="text" id="in_item_price" >
+                                quantity
+                                <input type="text" id="in_item_quantity" >
+                                days
+                                <input type="text" id="in_item_days" >
+                                item subtotal
+                                <input type="text" id="in_item_total" >
+                                item gst
+                                <input type="text" id="in_item_gst" >
+                                item deposit
+                                <input type="text" id="in_item_deposit" >
+                                <br> -->
                                 
                                 <!-- NAME
                                     <input type="text" id="user_name">
@@ -227,11 +233,11 @@
                                     
                                     <input type="text" id="days" hidden>
                                     <!-- <input type="text" id="db_total"> -->
-
-                                    <input type="button" class="btn btn-primary des" onclick="back_to_checkout()" id="back_to_checkout" value="Back to Checkout">
-                                    <input type="button" class="btn btn-primary des" onclick="more_item()" id="more_item" value="Add More Item">                                    
-                                    <input type="button" class="btn btn-primary des" onclick="printDiv('printableArea')" value="Print Invoice">
-                                    <input type="button" class="btn btn-primary des" onclick="finish()" id="finish" value="Finish">                                    
+                                    
+                                    <input type="button" class="btn btn-primary des" onclick="back_to_order()" id="back_to_order" value="Back to Orders">
+                                    <input type="button" class="btn btn-primary des" onclick="cancel_order()" id="cancel_order" value="Cancel Order">                                    
+                                    <input type="button" class="btn btn-primary des" onclick="printDiv('printableArea')" value="Print Order">
+                                    <input type="button" class="btn btn-primary des" onclick="back_to_home()" id="back_to_home" value="Back to Home">                                    
                                     <br><br>
                                 </div>
                                 
@@ -257,13 +263,8 @@
                             </body>
                             
                             <script>
-                                document.getElementById('back_to_checkout').onclick = function(){
-                                    window.location.href = 'checkout.html';
-                                }
-                            </script>
-                            <script>
-                                document.getElementById('back_date').onclick = function(){
-                                    window.location.href = 'checkout.html';
+                                document.getElementById('back_to_order').onclick = function(){
+                                    window.location.href = 'order-history.html';
                                 }
                             </script>
                             <script>
@@ -272,12 +273,7 @@
                                 }
                             </script>
                             <script>
-                                document.getElementById('checkout').onclick = function(){
-                                    window.location.href = 'checkout.html';
-                                }
-                            </script>
-                            <script>
-                                document.getElementById('more_item').onclick = function(){
+                                document.getElementById('back_to_home').onclick = function(){
                                     window.location.href = 'index.html';
                                 }
                             </script>
@@ -312,5 +308,5 @@
                                 };
                                 firebase.initializeApp(config);
                             </script>
-                            <script type="text/javascript" src="js_files/invoice.js"></script>
+                            <script type="text/javascript" src="js_files/order_more_info.js"></script>
                             </html>
