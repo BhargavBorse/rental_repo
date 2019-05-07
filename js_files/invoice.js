@@ -61,7 +61,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             document.getElementById('total_days').innerHTML = cart_det.total_days;
             document.getElementById('to_time').innerHTML = cart_det.to_time;
             document.getElementById('from_time').innerHTML = cart_det.from_time;
-
+            
             
             // var from_date = cart_snapshot.child('from_date').val();
             // var to_date = cart_snapshot.child('to_date').val();
@@ -115,7 +115,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             document.getElementById('in_item_deposit').value = total_deposit;  
             document.getElementById('invoice_id').value = time + order_id;    
             document.getElementById('purchase_date').value = date;    
-           
+            
         });
         
         
@@ -144,10 +144,10 @@ firebase.auth().onAuthStateChanged(function(user) {
             // alert(user_det.from_time);
             firebase.database().ref().child('users').child(user.uid).child('cart').on('child_added', function(cart_snapshot){
                 var cart_det = cart_snapshot.val();
-            //     var item_name_db = cart_det.item_name;
-            //     alert(item_name_db);    
-            // document.getElementById('item_name').value = item_name_db;    
-
+                //     var item_name_db = cart_det.item_name;
+                //     alert(item_name_db);    
+                // document.getElementById('item_name').value = item_name_db;    
+                
                 var img = cart_det.optional_image;
                 var item_name = cart_det.item_name;
                 var quantity = cart_det.item_quantity;
@@ -194,7 +194,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                     return_time : return_time
                 });  
                 
-                  
+                
                 
                 firebase.database().ref().child('Admin').child('Order').child(user.uid).push({
                     item_image : img,
@@ -227,14 +227,24 @@ firebase.auth().onAuthStateChanged(function(user) {
                 
             });
             // alert('1')
-           var item_deposit = document.getElementById('in_item_deposit').value;
-           var item_price_total =  document.getElementById('in_item_total').value;
-           var item_gst = document.getElementById('in_item_gst').value;
-           var invoice_id = document.getElementById('invoice_id').value;
-           var purchase_date = document.getElementById('purchase_date').value;
-        //    alert(item_deposit);
+            var item_deposit = document.getElementById('in_item_deposit').value;
+            var item_price_total =  document.getElementById('in_item_total').value;
+            var item_gst = document.getElementById('in_item_gst').value;
+            var invoice_id = document.getElementById('invoice_id').value;
+            var purchase_date = document.getElementById('purchase_date').value;
+            //    alert(item_deposit);
             firebase.database().ref().child('users').child(user.uid).child('invoice').push({
                 order_status : "Order Sent",
+                order_type : "Rent",
+                item_total_price : item_price_total,
+                invoice_id : invoice_id,
+                purchase_date : purchase_date,
+                item_total_gst : item_gst,
+                item_total_deposit : item_deposit
+            });
+            
+            firebase.database().ref().child('Admin').child('users_invoice').push({
+                order_status : "New Order",
                 order_type : "Rent",
                 item_total_price : item_price_total,
                 invoice_id : invoice_id,
@@ -266,7 +276,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 //                         location.reload();
 //                     });
 //                 }
-                
+
 //             });
 //         }
 //     });
