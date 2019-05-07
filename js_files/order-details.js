@@ -82,7 +82,6 @@ firebase.auth().onAuthStateChanged(function(user) {
                                         var invoice_id = order_snapshot1.child('invoice_id').val();
                                         var item_price = order_snapshot1.child('item_total_price').val();
                                         var purchase_date = order_snapshot1.child('purchase_date').val(); 
-                                        var order_status = order_snapshot1.child('order_status').val();
                                         var item_total_gst = order_snapshot1.child('item_total_gst').val();
                                         var item_total_deposit = order_snapshot1.child('item_total_deposit').val();
                                         var id = order_snapshot1.child('invoice_id').val();
@@ -101,8 +100,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                                         var item_gst_cell = newRow.insertCell(2);
                                         var item_deposit_cell = newRow.insertCell(3);
                                         var Price_cell = newRow.insertCell(4);
-                                        var Order_Status_cell = newRow.insertCell(5);
-                                        var item_more_info_link = newRow.insertCell(6);
+                                        var item_more_info_link = newRow.insertCell(5);
                                         
                                         // var item_price_cell = newRow.insertCell(7);
                                         //Creation of More Info Link (Not Cell)
@@ -134,7 +132,6 @@ firebase.auth().onAuthStateChanged(function(user) {
                                         // var Quantity_cell_value = document.createTextNode(item_quantity);
                                         var Price_cell_value = document.createTextNode(item_price);
                                         var Ordered_Date_cell_value = document.createTextNode(purchase_date);
-                                        var Order_Status_cell_value = document.createTextNode(order_status);
                                         var item_gst_cell_value = document.createTextNode(item_total_gst);
                                         var item_deposit_cell_value = document.createTextNode(item_total_deposit);
                                         // var item_price_cell_value = document.createTextNode(item_total_price);
@@ -144,7 +141,6 @@ firebase.auth().onAuthStateChanged(function(user) {
                                         // Quantity_cell.appendChild(Quantity_cell_value);
                                         Price_cell.appendChild(Price_cell_value);
                                         Ordered_Date_cell.appendChild(Ordered_Date_cell_value);
-                                        Order_Status_cell.appendChild(Order_Status_cell_value);
                                         item_gst_cell.appendChild(item_gst_cell_value);
                                         item_deposit_cell.appendChild(item_deposit_cell_value);
                                         // item_price_cell.appendChild(item_price_cell_value);

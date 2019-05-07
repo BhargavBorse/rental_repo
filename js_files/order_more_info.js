@@ -73,14 +73,73 @@ firebase.auth().onAuthStateChanged(function(user) {
                             var item_total_price = cart_snapshot.child('item_total_price').val();
                             var item_image = cart_snapshot.child('item_image').val();                
                             // alert(from_date);
+                            
+                            document.getElementById('cancel_order').onclick = function(){
+                                
+                                // alert(order_status);
+                                if(order_status == 'Order Accepted')
+                                {
+                                    alert('Sorry! You cannot cancel the order. Your order is accepted by owner.');
+                                    document.getElementById("cancel_order").disabled = true;
+                                }
+                                else if(order_status == 'Delivered')
+                                {
+                                    alert('Sorry! You cannot cancel the order. Your order is accepted by owner.');
+                                    document.getElementById("cancel_order").disabled = true;
+                                }
+                                else if(order_status == 'Completed')
+                                {
+                                    alert('Sorry! You cannot cancel the order. Your order is accepted by owner.');
+                                    document.getElementById("cancel_order").disabled = true;
+                                }
+                                else if(order_status == 'Order Cancelled')
+                                {
+                                    alert('Your order is already cancelled.');
+                                    document.getElementById("cancel_order").disabled = true;
+                                }
+                                else
+                                {
+                                    // alert('can cancel the order');
+                                    
+                                    databaseRef.child('Admin').child('Order').child(user.uid).on('value',function(admin_order_snapshot){
+                                        var admin_order_details = admin_order_snapshot.val();
+                                        var admin_order_key = Object.keys(admin_order_details);
+                                        
+                                        // alert(id);
+                                        
+                                        for(var i = 0; i<admin_order_key.length; i++)
+                                        {
+                                            databaseRef.child('Admin').child('Order').child(user.uid).child(admin_order_key[i]).on('value',function(admin_order_snapshot){
+                                                var admin_order = admin_order_snapshot.val();
+                                                var order_status = admin_order_snapshot.child('order_status').val();
+                                                // alert(admin_order.order_status);
+                                                if(admin_order.invoice_id == id)
+                                                {
+                                                    databaseRef.child('Admin').child('Order').child(user.uid).child(admin_order_key[i]).update({
+                                                        order_status : 'Order Cancelled'
+                                                    });
+                                                    
+                                                    firebase.database().ref().child('users').child(user.uid).child('Order').child(order_key[i]).update({
+                                                        order_status : 'Order Cancelled'
+                                                    });
 
-
+                                                    
+                                                }
+                                            });
+                                        }
+                                    });
+                                    alert('Order Cancelled');
+                                    location.reload();
+                                }
+                            }
+                            
                             document.getElementById('from_date').innerHTML = from_date;
                             document.getElementById('from_time').innerHTML = from_time;
                             document.getElementById('to_date').innerHTML = to_date;
                             document.getElementById('to_time').innerHTML = to_time;
                             document.getElementById('total_days').innerHTML = days;
-
+                            document.getElementById('order_status').innerHTML = order_status;
+                            
                             document.getElementById('days').value = cart_det.total_days;
                             var item_price_divided =  item_price/item_quantity;
                             var item_total = item_price_divided * item_quantity * total_days;
@@ -167,117 +226,4 @@ firebase.auth().onAuthStateChanged(function(user) {
     var date = document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
     var order_id =  d +  + m +  + y;
     // alert(order_id + user.uid);
-    
-    document.getElementById('finish').onclick = function(){
-        
-        firebase.database().ref().child('users').child(user.uid).child('details').on('value', function(user_snapshot){
-            var user_det = user_snapshot.val();
-            
-            firebase.database().ref().child('users').child(user.uid).child('cart').on('child_added', function(cart_snapshot){
-                var cart_det = cart_snapshot.val();
-                
-                var img = cart_det.optional_image;
-                var item_name = cart_det.item_name;
-                var quantity = cart_det.item_quantity;
-                var price = cart_det.item_price;
-                var order_date = cart_det.from_date;
-                var return_date = cart_det.to_date;
-                var user_name = user_det.name;
-                var address = user_det.Address;
-                var pincode = user_det.pin_code;
-                var email = user_det.email;
-                var mobile_number = user_det.phone_number;
-                var days = document.getElementById('days').value;
-                var delivery_time = cart_det.from_time;
-                var return_time = cart_det.to_time;
-                var total_db = total_final;
-                var gst_db = total_gst;
-                var deposit_db = total_deposit;
-                // alert(pincode+ " " + delivery_time + " " + return_time);
-                // alert(date);
-                
-                
-                
-                firebase.database().ref().child('users').child(user.uid).child('Order').push({
-                    item_image : img,
-                    item_name : item_name,
-                    item_quantity : quantity,
-                    item_price : price,
-                    delivery_date : order_date,
-                    return_date : return_date,
-                    order_status : "Order Sent",
-                    order_type : "Rent",
-                    Placed_By : user.uid,
-                    item_total_price : total_db,
-                    item_total_gst : gst_db,
-                    item_total_deposit :deposit_db,
-                    customer_name : user_name,
-                    customer_address : address,
-                    customer_pincode : pincode,
-                    customer_email : email,
-                    customer_phone_no : mobile_number,
-                    days : days,
-                    purchase_date : date,
-                    order_id : order_id + user.uid,
-                    delivery_time : delivery_time,
-                    return_time : return_time
-                });     
-                
-                firebase.database().ref().child('Admin').child('Order').child(user.uid).push({
-                    item_image : img,
-                    item_name : item_name,
-                    item_quantity : quantity,
-                    item_price : price,
-                    delivery_date : order_date,
-                    return_date : return_date,
-                    order_status : "New Order",
-                    order_type : "Rent",
-                    Placed_By : user.uid,
-                    item_total_price : total_db,
-                    item_total_gst : gst_db,
-                    item_total_deposit :deposit_db,
-                    customer_name : user_name,
-                    customer_address : address,
-                    customer_pincode : pincode,
-                    customer_email : email,
-                    customer_phone_no : mobile_number,
-                    order_id : order_id + user.uid,
-                    delivery_time : delivery_time,
-                    return_time : return_time
-                });
-                // alert('Order Successfully Placed!');
-                // location.reload();
-                
-                // firebase.database().ref().child('users').child(user.uid).child('cart').remove(function(){
-                //     window.location.href = 'index.html'; 
-                // });
-            });
-        });
-    }
-    // });
-    
-    
-    
-    
-    // function finish(itemid_para){
-    //     eventRef.child(user.uid).child('cart').on('value',function(userCartKeys_snapshot){
-    //         var userCartKeys = userCartKeys_snapshot.val();
-    //         var userCartAcKeys = Object.keys(userCartKeys);
-    //         for(var i=0;i<userCartAcKeys.length;i++)
-    //         {
-    //             alert('1')
-    //             eventRef.child(user.uid).child('cart').child(userCartAcKeys[i]).on('value',function(userCartDets_snapshot){
-    //                 var userCartDets = userCartDets_snapshot.val();
-    //                 if(userCartDets.itemid === itemid_para)
-    //                 {
-    //                     alert('2')
-    //                     eventRef.child(user.uid).child('cart').child(userCartAcKeys[i]).remove(function(){
-    //                         location.reload();
-    //                     });
-    //                 }
-    
-    //             });
-    //         }
-    //     });
-    // }
 });
