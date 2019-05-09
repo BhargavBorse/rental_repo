@@ -193,3 +193,16 @@ firebase.auth().onAuthStateChanged(function(user) {
         });
     }
 });
+
+
+function logout_user(){
+    firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+        alert('Signout Successful');
+        window.location = 'Guest index.html';
+    }).catch(function(error) {
+        // An error happened.
+        alert('Please try again');
+    });
+    
+}
