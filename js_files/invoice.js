@@ -214,6 +214,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                     customer_pincode : pincode,
                     customer_email : email,
                     customer_phone_no : mobile_number,
+                    days : days,
+                    purchase_date : date,
                     invoice_id : time + order_id,
                     delivery_time : delivery_time,
                     return_time : return_time
