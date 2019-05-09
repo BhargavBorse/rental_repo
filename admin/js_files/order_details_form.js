@@ -1,31 +1,16 @@
 // var eventRef = firebase.database().ref('admin');
 var eventRef = firebase.database().ref('users');
 var databaseRef = firebase.database().ref();
+
 firebase.auth().onAuthStateChanged(function(user) {
     
     var url_string = window.location.href;
     var url = new URL (url_string);
     var id = url.searchParams.get('id');
     var uid = url.searchParams.get('uid');
-
-    var dbRef = firebase.database().ref();
-
-var itemRef = firebase.database().ref('Admin');
-dbRef.child('Admin').child('Order').on('value',function(order_details_snapshot){
-    var order_details = order_details_snapshot.val();
-    var order_keys = Object.keys(order_details);
     
-    for(var i=0;i<order_keys.length;i++)
-    {
-        firebase.database().ref().child('Admin').child('Order').child(id).on('value',function(order_deep_details_snapshot){
-            var order_deep_details = order_deep_details_snapshot.val();
-
-            alert(order_keys[i]);
-        });
-    };
-
     
-    databaseRef.child('Admin').child('Order').child(id).on('value',function(more_info_snapshot){
+    databaseRef.child('Admin').child('Order').child(uid).child(id).on('value',function(more_info_snapshot){
         
         //Value binding is left -------------------------------------------
         //document.getElementById('id').value = more_info_snapshot.child('').val();
@@ -85,21 +70,6 @@ dbRef.child('Admin').child('Order').on('value',function(order_details_snapshot){
                 
                 k.setAttribute('style',"margin-bottom: 1% !important;");
                 
-                // var hiddenKeyDeliveryMan = document.createElement('input');
-                // hiddenKeyDeliveryMan.setAttribute('type','hidden');
-                // hiddenKeyDeliveryMan.setAttribute('value',Delivery_Man_Details_keys[i]);
-                // hiddenKeyDeliveryMan.setAttribute('id','deliveryManKey');
-                // select.appendChild(hiddenKeyDeliveryMan);
-
-                
-                // var item_dropdown_button1 = document.createElement("option");
-                // select.appendChild(item_dropdown_button1);
-                // item_dropdown_text_b = document.createTextNode('B');
-                // item_dropdown_button1.appendChild(item_dropdown_text_b);
-                // item_dropdown_text_b = document.createTextNode('B');
-                // item_dropdown_button.appendChild(item_dropdown_text_b);
-                // item_dropdown_text_c = document.createTextNode('C');
-                // item_dropdown_button.appendChild(item_dropdown_text_c);
                 var img = document.getElementById('loading_gif');
 img.style.visibility = 'hidden';
             });
@@ -107,4 +77,4 @@ img.style.visibility = 'hidden';
         
     });
 });
-});
+            

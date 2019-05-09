@@ -4,23 +4,23 @@ var url_string = window.location.href;
 var url = new URL (url_string);
 var id = url.searchParams.get('id');
 var uid = url.searchParams.get('uid');
-var eventRef = firebase.database().ref();
+
 
 document.getElementById('btn_previous_history').onclick = function()  {
     
     
-    var email = document.getElementById('email').value;
+    var email = document.getElementById('customer_email').value;
     var item_name = document.getElementById('item_name').value;
-    var name = document.getElementById('name').value;
-    var mobile_number = document.getElementById('mobile_number').value;
-    var address = document.getElementById('address').value;
-    var pincode = document.getElementById('pin_code').value;
-    var price = document.getElementById('price').value;
-    var ordered_date = document.getElementById('ordered_date').value;
+    var name = document.getElementById('customer_name').value;
+    var mobile_number = document.getElementById('customer_phone_no').value;
+    var address = document.getElementById('customer_address').value;
+    var pincode = document.getElementById('customer_pincode').value;
+    var price = document.getElementById('item_price').value;
+    var ordered_date = document.getElementById('delivery_date').value;
     var return_date = document.getElementById('return_date').value;
     var order_status = document.getElementById('order_status').value;
     var order_type = document.getElementById('order_type').value;
-    var quantity = document.getElementById('quantity').value;
+    var quantity = document.getElementById('item_quantity').value;
     var deliveryman_email = document.getElementById('deliveryman').value;
     var deliveryman_key;
     var delivery = document.getElementById('delivery').value;
@@ -110,10 +110,10 @@ document.getElementById('btn_previous_history').onclick = function()  {
 
                 
 
-                firebase.database().ref().child('Admin').child('Order').child(id).remove(function(){
-                    alert('Removed');
-                    // window.location.href = 'index.html'; 
-                });
+                // firebase.database().ref().child('Admin').child('Order').child(uid).child(id).remove(function(){
+                //     alert('Removed');
+                //     window.location.href = 'index.html'; 
+                // });
 
             // });
         // }
