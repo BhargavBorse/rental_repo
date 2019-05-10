@@ -10,10 +10,10 @@ firebase.auth().onAuthStateChanged(function(user) {
         // this part is for auto fill. will be used in personal details
         eventRef.child(user.uid).child('details').on('value',function(user_details_snapshot){
             var user_details = user_details_snapshot.val();
-            document.getElementById('user_email').innerHTML = user_details.email;
+            document.getElementById('user_email').innerHTML = user.email;
             // document.getElementById('phone_no_text').innerHTML = user_details.phone_number;
             // document.getElementById('name').innerHTML = user_details.name;
-            document.getElementById('name').innerHTML = user_details.name + " " + user_details.l_name;
+            // document.getElementById('name').innerHTML = user_details.name + " " + user_details.l_name;
             document.getElementById('email_field').value = user.email;
 
 

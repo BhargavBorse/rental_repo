@@ -172,8 +172,8 @@
       <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />  
    
     </head>
-    <body class="hold-transition skin-blue sidebar-mini">
-      <div class="wrapper">
+    <body class="hold-transition skin-blue sidebar-mini" style="background-color: white;">
+      <div class="wrapper" style="background-color: white;">
         
         <header class="main-header">
           <!-- Logo -->
@@ -240,17 +240,17 @@
                  
               
               <!-- Content Wrapper. Contains page content -->
-              <div class="container">
+         
         
                    
                     
                     <!-- Simple Invoice - START -->
                  
-                        <div class="container">
+                        <div class="container" style="background-color: white;">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="text-center">
-                                        <h2><font color = "white">Order History</font></h2>                            
+                                        <h2>Order History</h2>                            
                                     </div>
                                     <hr>
                                     <div class="row">
@@ -304,7 +304,7 @@
                                             <strong>For: </strong> <strong id="total_days"></strong> <strong>Days</strong><br> -->
                                             <!-- <strong>Delivery Time: </strong> <strong id="d_time"></strong> <strong>Days</strong><br>
                                                 <strong>Return Time: </strong> <strong id="r_time"></strong> <strong>Days</strong><br><br> -->
-                                                <strong ><font color="white">Purchase Date:</font> </strong> <strong id="date"></strong><br><br>
+                                                <strong >Purchase Date: </strong> <strong id="date"></strong><br><br>
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="panel panel-default">
@@ -418,16 +418,7 @@
                                                 <input type="text" id="days" hidden>
                                                 
                                                 <!-- <input type="text" id="db_total"> -->
-                                                <label style="margin-bottom: 1% !important;"><font color="white">Deliveryman</font></label>
-                                                 <div id="select-dropdown" class="select-dropdown">
-
-                                                <!--  <input type="button" class="btn btn-primary des" onclick="back_to_order()" id="back_to_order" value="Back to Orders"> -->
-                                                <!-- <input type="button" class="btn btn-primary des" onclick="cancel_order()" id="cancel_order" value="Cancel Order">-->
-                                                <!-- <input type="button" class="btn btn-primary des" onclick="printDiv('printableArea')" value="Print Order"> -->
-                                                <!-- <input type="button" class="btn btn-primary des" onclick="btn_insertname()" id="back_to_home" value="Back to Home">--> 
                                                
-                                            </div>
-                                            <center><input id="btn_previous_history" class="btn btn-block btn-primary" type="button" value="submit"></center>
 
                 <!-- /.content-wrapper -->
                
@@ -519,7 +510,7 @@
               </ul>
             
                     </form>
-                  </div>
+               
                   <!-- /.tab-pane -->
                 </div>
               </aside>
@@ -615,9 +606,10 @@
                   firebase.initializeApp(config);
                 </script>
         
-                <script src="js_files/history.js"></script>
+                <!-- <script src="js_files/history.js"></script> -->
+                <script src="js_files/feedback_header.js"></script>
          
-                <script src="js_files/order_more_info.js"></script>
+                <script src="js_files/previous_order_more_info.js"></script>
 
               </body>
               </html>

@@ -3,13 +3,13 @@ var eventRef = firebase.database().ref('users');
 //total orders
 var dbRef = firebase.database().ref();
 var itemRef = firebase.database().ref('Admin');
-dbRef.child('Admin').child('Previous_History').on('value',function(order_details_snapshot){
+dbRef.child('Admin').child('users_invoice').on('value',function(order_details_snapshot){
     var order_details = order_details_snapshot.val();
     var order_keys = Object.keys(order_details);
     
     for(var i=0;i<order_keys.length;i++)
     {
-        firebase.database().ref().child('Admin').child('Previous_History').child(order_keys[i]).on('value',function(order_deep_details_snapshot){
+        firebase.database().ref().child('Admin').child('users_invoice').child(order_keys[i]).on('value',function(order_deep_details_snapshot){
             var order_deep_details = order_deep_details_snapshot.val();
             // alert(order_keys.length);
             var length_key = order_keys.length;
@@ -62,9 +62,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                     // this part is for auto fill. will be used in personal details
                     eventRef.child(user.uid).child('details').on('value',function(user_details_snapshot){
                         var user_details = user_details_snapshot.val();
-                        document.getElementById('user_email').innerHTML = user_details.email;
+                        document.getElementById('User_Email').innerHTML = user.email;
                         // document.getElementById('phone_no_text').innerHTML = user_details.phone_number;
-                        document.getElementById('name').innerHTML = user_details.name + " " + user_details.l_name;
+                        // document.getElementById('name').innerHTML = user_details.name + " " + user_details.l_name;
                         document.getElementById('email_field').value = user.email;
 
                         

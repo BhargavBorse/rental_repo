@@ -14,6 +14,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     var url = new URL (url_string);
     id = url.searchParams.get('id');
     var uid = url.searchParams.get('uid');
+    var cat = url.searchParams.get('cat');
+
 
 //     alert('id is :' + id);
 //   //  alert('status is :' + id.item_name);
@@ -181,6 +183,8 @@ document.getElementById('btn_inactive').onclick = function(){
         var item_name = document.getElementById('item_name').value;
         var item_description = document.getElementById('item_description').value;
         var item_subcategory = document.getElementById('item_subcategory').value;
+        var deals_of_the_day = document.getElementById('dod').checked;
+        var recommended = document.getElementById('rec').checked;
         var item_quantity = document.getElementById('item_quantity').value;
         var item_price = document.getElementById('item_price').value;
         var item_size = document.getElementById('item_size').value;

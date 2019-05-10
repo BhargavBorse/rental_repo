@@ -169,6 +169,8 @@ document.getElementById('btn_inactive_women').onclick = function(){
         var item_name = document.getElementById('item_name').value;
         var item_description = document.getElementById('item_description').value;
         var item_subcategory = document.getElementById('item_subcategory').value;
+        var deals_of_the_day = document.getElementById('dod').checked;
+        var recommended = document.getElementById('rec').checked;
         var item_quantity = document.getElementById('item_quantity').value;
         var item_price = document.getElementById('item_price').value;
         var item_size = document.getElementById('item_size').value;
@@ -180,6 +182,8 @@ document.getElementById('btn_inactive_women').onclick = function(){
             item_description : item_description,
             item_category : cat,
             item_subcategory : item_subcategory,
+            deals_of_the_day : deals_of_the_day,
+            recommended : recommended,
             item_quantity : item_quantity,
             item_price :  item_price,
             item_size : item_size,

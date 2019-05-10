@@ -8,7 +8,6 @@ firebase.database().ref().child('item').child('Women').on('child_added',function
     var item_quantity_women = View_item_women.child('item_quantity').val();
     var item_price_women = View_item_women.child('item_price').val();
     var item_size_women = View_item_women.child('item_size').val();
-    var item_status_women = View_item_women.child('item_status').val();
     var user_id = View_item_women.child('Placed_By').val();
     var id = View_item_women.key;
     
@@ -21,9 +20,8 @@ firebase.database().ref().child('item').child('Women').on('child_added',function
     var item_quantity_women_cell = newRow.insertCell(2);
     var item_price_women_cell = newRow.insertCell(3);
     var item_size_women_cell = newRow.insertCell(4);
-    var item_status_women_cell = newRow.insertCell(5);
-    var item_update_cell = newRow.insertCell(6);
-    var id_cell = newRow.insertCell(7).hidden;
+    var item_update_cell = newRow.insertCell(5);
+    var id_cell = newRow.insertCell(6).hidden;
     
     var item_update = document.createElement("a");
     var item_update_button = document.createElement("button");
@@ -45,7 +43,6 @@ firebase.database().ref().child('item').child('Women').on('child_added',function
     var  item_quantity_women_cell_value = document.createTextNode(item_quantity_women);
     var  item_price_women_cell_value = document.createTextNode(item_price_women);
     var  item_size_women_cell_value = document.createTextNode(item_size_women);
-    var  item_status_women_cell_value = document.createTextNode(item_status_women);
 
     var id_cell_text = document.createTextNode(id);
     
@@ -54,7 +51,6 @@ firebase.database().ref().child('item').child('Women').on('child_added',function
     item_quantity_women_cell.appendChild(item_quantity_women_cell_value);
     item_price_women_cell.appendChild(item_price_women_cell_value);
     item_size_women_cell.appendChild(item_size_women_cell_value);
-    item_status_women_cell.appendChild(item_status_women_cell_value);
     item_update_cell.appendChild(item_update); 
     id_cell.appendChild(id_cell_text);
 

@@ -35,8 +35,8 @@
                 position:fixed;
                 top:40% !important;
                 right:40% !important;
-                width:20% !important;
-                height:30% !important;
+                width:15% !important;
+                height:15% !important;
                 /* background-color:black; */
                 background-repeat:repeat;
                 background-position:center;
@@ -49,8 +49,8 @@
             position:fixed;
             top:55%;
             right:50%;
-            width:10%;
-            height:15%;
+            width:8%;
+            height:10%;
             /* background-color:black; */
             background-repeat:repeat;
             background-position:center;
@@ -172,8 +172,8 @@
       <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />  
    
     </head>
-    <body class="hold-transition skin-blue sidebar-mini" background="white">
-      <div class="wrapper">
+    <body class="hold-transition skin-blue sidebar-mini" style="background-color: white;">
+      <div class="wrapper" style="background-color: white;">
         
         <header class="main-header">
           <!-- Logo -->
@@ -240,17 +240,17 @@
                  
               
               <!-- Content Wrapper. Contains page content -->
-              <div class="container">
+              <div class="container" style="background-color: white;">
         
                    
                     
                     <!-- Simple Invoice - START -->
                  
-                        <div class="container">
+                        <div class="container" style="background-color: white;">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="text-center">
-                                        <h2>Order History</h2>                            
+                                        <h2><font color = "white">Order History</font></h2>                            
                                     </div>
                                     <hr>
                                     <div class="row">
@@ -304,7 +304,7 @@
                                             <strong>For: </strong> <strong id="total_days"></strong> <strong>Days</strong><br> -->
                                             <!-- <strong>Delivery Time: </strong> <strong id="d_time"></strong> <strong>Days</strong><br>
                                                 <strong>Return Time: </strong> <strong id="r_time"></strong> <strong>Days</strong><br><br> -->
-                                                <strong >Purchase Date: </strong> <strong id="date"></strong><br><br>
+                                                <strong ><font color = "white">Purchase Date:</font></strong> <font color = "white"><strong id="date"></strong></font><br><br>
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="panel panel-default">
@@ -418,7 +418,7 @@
                                                 <input type="text" id="days" hidden>
                                                 
                                                 <!-- <input type="text" id="db_total"> -->
-                                                <label style="margin-bottom: 1% !important;">Deliveryman</label>
+                                                <label style="margin-bottom: 1% !important;"><font color= "white">Deliveryman</font></label>
                                                  <div id="select-dropdown" class="select-dropdown">
 
                                                 <!--  <input type="button" class="btn btn-primary des" onclick="back_to_order()" id="back_to_order" value="Back to Orders"> -->
@@ -427,8 +427,11 @@
                                                 <!-- <input type="button" class="btn btn-primary des" onclick="btn_insertname()" id="back_to_home" value="Back to Home">--> 
                                                
                                             </div>
-                                            <center><input id="btn_previous_history" class="btn btn-block btn-primary" type="button" value="submit"></center>
-
+                                            <center><input id="btn_previous_history" onclick="btn_previous_history();" class="btn btn-block btn-primary" type="button" value="submit"></center>
+                                            <footer>   
+                                                <!-- //footer-top -->
+                                               
+                                            </footer>
                 <!-- /.content-wrapper -->
                
                 <aside class="control-sidebar control-sidebar-dark">
@@ -616,9 +619,10 @@
                 </script>
         
                 <!-- <script src="js_files/history.js"></script> -->
+                <script src="js_files/feedback_header.js"></script>
          
                 <script src="js_files/order_more_info.js"></script>
-                <script src="js_files/set_deliveryman.js"></script>
+                <!-- <script src="js_files/set_deliveryman.js"></script> -->
 
 
               </body>

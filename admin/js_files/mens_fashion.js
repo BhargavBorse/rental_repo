@@ -7,7 +7,6 @@ firebase.database().ref().child('item').child('Men').on('child_added',function(V
     var item_quantity = View_item.child('item_quantity').val();
     var item_price = View_item.child('item_price').val();
     var item_size = View_item.child('item_size').val();
-    var item_status = View_item.child('item_status').val();
     var user_id = View_item.child('Placed_By').val();
     var id = View_item.key;
    
@@ -21,9 +20,8 @@ firebase.database().ref().child('item').child('Men').on('child_added',function(V
     var item_quantity_cell = newRow.insertCell(2);
     var item_price_cell = newRow.insertCell(3);
     var item_size_cell = newRow.insertCell(4);
-    var item_status_cell = newRow.insertCell(5);
-    var item_update_cell = newRow.insertCell(6);
-    var id_cell = newRow.insertCell(7).hidden;
+    var item_update_cell = newRow.insertCell(5);
+    var id_cell = newRow.insertCell(6).hidden;
 
 
     var item_update = document.createElement("a");
@@ -51,7 +49,6 @@ img.style.visibility = 'hidden';
     var  item_quantity_cell_value = document.createTextNode(item_quantity);
     var  item_price_cell_value = document.createTextNode(item_price);
     var  item_size_cell_value = document.createTextNode(item_size);
-    var  item_status_cell_value = document.createTextNode(item_status);
     // var  item_update_cell_value = document.createTextNode
     var id_cell_text = document.createTextNode(id);
     
@@ -60,7 +57,6 @@ img.style.visibility = 'hidden';
     item_quantity_cell.appendChild(item_quantity_cell_value);
     item_price_cell.appendChild(item_price_cell_value);
     item_size_cell.appendChild(item_size_cell_value);
-    item_status_cell.appendChild(item_status_cell_value);   
     item_update_cell.appendChild(item_update);
     item_active_cell.appendChild(item_active);
     id_cell.appendChild(id_cell_text);
