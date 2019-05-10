@@ -239,7 +239,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                         item_subcategory : itemSubCate,
                         optional_image : optionalImg,
                         recommended : recommended_js,
-                        category : 'Women',
+                        category : 'Girls',
                         itemid : id
                     });
                     alert('Added');
@@ -248,7 +248,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             }
             else
             {
-                alert('Error! Item not selected');
+                alert('Please try again! No item selected to add in cart.');
                 document.getElementById('wd_submit').disabled = true;
             }
         }
@@ -272,7 +272,7 @@ firebase.auth().onAuthStateChanged(function(user) {
             
             if(flag != 1)
             {
-                if(dod == 'dod')
+                if(dod == 'dod' && category == 'Women')
                 {
                     var dealsOfTheDay;
                     var itemDesc;
@@ -499,7 +499,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                             item_subcategory : itemSubCate,
                             optional_image : optionalImg,
                             recommended : recommended_js,
-                            category : 'Women',
+                            category : 'Girls',
                             itemid : id
                         });
                         alert('Added');

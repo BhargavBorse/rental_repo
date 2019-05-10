@@ -174,7 +174,7 @@ else if(category=='girl')
                     document.getElementsByClassName('occasion-cart')[0].appendChild(single_item);
                     
                     var alink = document.createElement('a');
-                    alink.setAttribute('href', 'checkout.html?item=' + girl_keys[i] + '&category=girl');
+                    alink.setAttribute('href', 'checkout.html?item=' + girl_keys[i] + '&category=Girls');
                     
                     var btn1 = document.createElement('button');
                     btn1.setAttribute('type','button');

@@ -134,7 +134,7 @@ dbRef.child('item').child('Men').on('value',function(item_details_snapshot){
                 
                 // creating a link 
                 var alink = document.createElement('a');
-                alink.setAttribute('href', 'checkout.html?item=' + men_keys[i] + '&category=women');
+                alink.setAttribute('href', 'checkout.html?item=' + men_keys[i] + '&category=men');
                 
                 //Button under div-class=card-footer d-flex justify-content-end
                 var btn1 = document.createElement('button');
