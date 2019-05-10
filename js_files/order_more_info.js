@@ -18,19 +18,19 @@ firebase.auth().onAuthStateChanged(function(user) {
         // User is signed in.
         // console.log(user.uid);
         // console.log(user.email);
-        eventRef.child(user.uid).child('details').on('value',function(return_value){
-            return_value_value = return_value.val();
-            // console.log(return_value_value);
-            if(return_value_value === null){
-                window.location = 'welcome-details.html';
-            }
-            else
-            {
-                // eventRef.child(user.uid).child('details').update({
-                //     email : user.email
-                // });
-            }
-        });
+        // eventRef.child(user.uid).child('details').on('value',function(return_value){
+        //     return_value_value = return_value.val();
+        //     // console.log(return_value_value);
+        //     if(return_value_value === null){
+        //         window.location = 'welcome-details.html';
+        //     }
+        //     else
+        //     {
+        //         // eventRef.child(user.uid).child('details').update({
+        //         //     email : user.email
+        //         // });
+        //     }
+        // });
         
         
         
@@ -84,7 +84,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                                 }
                                 else if(order_status == 'Delivered')
                                 {
-                                    alert('Sorry! You cannot cancel the order. Your order is accepted by owner.');
+                                    alert('Sorry! You cannot cancel the order. Your order is completed.');
                                     document.getElementById("cancel_order").disabled = true;
                                 }
                                 else if(order_status == 'Completed')
