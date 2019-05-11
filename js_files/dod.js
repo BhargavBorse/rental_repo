@@ -137,44 +137,44 @@ dbRef_dod.child('dod').on('value',function(item_details_snapshot){
                 //////////////CARD - FOOTER//////////
                 
                 //Sub-Sub-Sub3
-                var div_sub_sub2 = document.createElement('div');
-                div_sub_sub2.className="card-footer d-flex justify-content-end";
+                // var div_sub_sub2 = document.createElement('div');
+                // div_sub_sub2.className="card-footer d-flex justify-content-end";
                 
-                //Append class=card-footer d-flex justify-content-end to class=card product-men p-3
-                div_sub2.appendChild(div_sub_sub2);
-                
-                
-                // creating input:hidden for redirecting to another page with image details and cart button
-                var input_image_details = document.createElement('input');
-                input_image_details.setAttribute('type', 'hidden');
-                input_image_details.setAttribute('value',keys_dod[i]);
-                
-                // creating a link 
-                var alink = document.createElement('a');
-                alink.setAttribute('href', 'checkout.html?item=' + keys_dod[i] + '&dod=dod');
-                
-                //Button under div-class=card-footer d-flex justify-content-end
-                var btn1 = document.createElement('button');
-                btn1.setAttribute('type','button');
-                // btn1.setAttribute('id', 'insert_to_cart' + i);
-                // btn1.setAttribute('onclick', 'insert_to_cart()');
-                btn1.className="hub-cart phub-cart btn";
-                // btn1.appendChild(img122);
+                // //Append class=card-footer d-flex justify-content-end to class=card product-men p-3
+                // div_sub2.appendChild(div_sub_sub2);
                 
                 
-                div_sub_sub2.appendChild(alink);
-                alink.appendChild(btn1);
+                // // creating input:hidden for redirecting to another page with image details and cart button
+                // var input_image_details = document.createElement('input');
+                // input_image_details.setAttribute('type', 'hidden');
+                // input_image_details.setAttribute('value',keys_dod[i]);
+                
+                // // creating a link 
+                // var alink = document.createElement('a');
+                // alink.setAttribute('href', 'checkout.html?item=' + keys_dod[i] + '&dod=dod');
+                
+                // //Button under div-class=card-footer d-flex justify-content-end
+                // var btn1 = document.createElement('button');
+                // btn1.setAttribute('type','button');
+                // // btn1.setAttribute('id', 'insert_to_cart' + i);
+                // // btn1.setAttribute('onclick', 'insert_to_cart()');
+                // btn1.className="hub-cart phub-cart btn";
+                // // btn1.appendChild(img122);
+                
+                
+                // div_sub_sub2.appendChild(alink);
+                // alink.appendChild(btn1);
                 
                 //Append button to div-class=card-footer d-flex justify-content-end
                 // div_sub_sub2.appendChild(btn1);
                 
                 //I under Button-class=hub-cart phub-cart btn
-                var i1 = document.createElement('i');
-                i1.className="fa fa-cart-plus";
-                i1.setAttribute('aria-hidden','true');
+                // var i1 = document.createElement('i');
+                // i1.className="fa fa-cart-plus";
+                // i1.setAttribute('aria-hidden','true');
                 
                 //Append I to Button-class=hub-cart phub-cart btn
-                btn1.appendChild(i1);
+                // btn1.appendChild(i1);
                 var img = document.getElementById('loading_gif');
                 img.style.visibility = 'hidden';
                 

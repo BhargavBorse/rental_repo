@@ -2112,7 +2112,7 @@ else if(category == 'kids')
                         
                         // creating a link 
                         var alink = document.createElement('a');
-                        alink.setAttribute('href', 'checkout.html?item=' + boy_keys[i] + '&category=women');
+                        alink.setAttribute('href', 'checkout.html?item=' + boy_keys[i] + '&category=boy');
                         
                         //Button under div-class=card-footer d-flex justify-content-end
                         var btn1 = document.createElement('button');
@@ -2277,7 +2277,7 @@ else if(category == 'kids')
                         
                         // creating a link 
                         var alink = document.createElement('a');
-                        alink.setAttribute('href', 'checkout.html?item=' + girl_keys[i] + '&category=women');
+                        alink.setAttribute('href', 'checkout.html?item=' + girl_keys[i] + '&category=Girls');
                         
                         //Button under div-class=card-footer d-flex justify-content-end
                         var btn1 = document.createElement('button');
