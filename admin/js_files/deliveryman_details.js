@@ -33,7 +33,8 @@ firebase.database().ref().child('Delivery_Man_Details').on('child_added',functio
     var img = document.createElement('img');
     img.className = 'example-image';
     img.setAttribute('src',id_proof_img);
-    img.setAttribute('height','20%');
+    img.setAttribute('height','50px !important');
+    img.setAttribute('width','20% !important');
 
     a.appendChild(img);
     

@@ -1,6 +1,7 @@
 // var eventRef = firebase.database().ref('users');
 // var databaseRef = firebase.database().ref();
 var databaseRef_boy = firebase.database().ref('item');
+var selectedFile;
 document.getElementById('fileButton').onchange = function(event){
     selectedFile = event.target.files[0];
 }

@@ -1,4 +1,6 @@
 var databaseRef = firebase.database().ref('item');
+var selectedFile;
+
 document.getElementById('fileButton').onchange = function(event){
     selectedFile = event.target.files[0];
 }
