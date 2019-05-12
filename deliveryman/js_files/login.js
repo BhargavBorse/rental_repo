@@ -1,13 +1,48 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-    
-    window.location = 'index.html';
+    alert('Sorry! Already a user is logged in, redirecting to index');    
+    // window.location = 'index.html';
     // alert(user.email);
     
   } else {
     // No user is signed in.
-    
+    document.getElementById('login').onclick = function(){
+  
+  
+      var dbRef_men = firebase.database().ref();
+      var itemRef_men = firebase.database().ref('Delivery_Man_Details');
+      dbRef_men.child('Delivery_Man_Details').on('value',function(deliveryman_details_snapshot){
+        var deliveryman_details = deliveryman_details_snapshot.val();
+        var deliveryman_keys = Object.keys(deliveryman_details);
+        for(var i=0;i<deliveryman_keys.length;i++)
+        {
+          firebase.database().ref().child('Delivery_Man_Details').child(deliveryman_keys[i]).on('value',function(deliveryman_snapshot){
+            var deliveryman_details = deliveryman_snapshot.val();
+            var userEmail = document.getElementById("email_field").value;
+            // alert(deliveryman_details.Name);
+            if(userEmail == deliveryman_details.Email){
+              // alert('hello');
+              var userEmail = document.getElementById("email_field").value;
+              var userPass = document.getElementById("password_field").value;
+              
+              firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                
+                window.alert("Error : " + errorMessage);
+                window.alert("Error in code" + errorCode);
+              });
+              return true;
+            }
+            else{
+              // alert('you are not deliveryman');
+            }
+          });
+        }
+      });
+    }
   }
 });
 
@@ -34,42 +69,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
 
-document.getElementById('login').onclick = function(){
-  
-  
-  var dbRef_men = firebase.database().ref();
-  var itemRef_men = firebase.database().ref('Delivery_Man_Details');
-  dbRef_men.child('Delivery_Man_Details').on('value',function(deliveryman_details_snapshot){
-    var deliveryman_details = deliveryman_details_snapshot.val();
-    var deliveryman_keys = Object.keys(deliveryman_details);
-    for(var i=0;i<deliveryman_keys.length;i++)
-    {
-      firebase.database().ref().child('Delivery_Man_Details').child(deliveryman_keys[i]).on('value',function(deliveryman_snapshot){
-        var deliveryman_details = deliveryman_snapshot.val();
-        var userEmail = document.getElementById("email_field").value;
-        // alert(deliveryman_details.Name);
-        if(userEmail == deliveryman_details.Email){
-          // alert('hello');
-          var userEmail = document.getElementById("email_field").value;
-          var userPass = document.getElementById("password_field").value;
-          
-          firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            
-            window.alert("Error : " + errorMessage);
-            window.alert("Error in code" + errorCode);
-          });
-          return true;
-        }
-        else{
-          // alert('you are not deliveryman');
-        }
-      });
-    }
-  });
-}
+
 
 // function login(){
 //   alert('sdg');
